@@ -357,7 +357,7 @@ In cases where this is not sufficient (you want subclasses to include additional
 
 Better alternative to hand-written `equals` tests: the [EqualsVerifier](http://jqno.nl/equalsverifier/) library by Jan Ouwens.
 
-```
+```java
 @Test
 public void equalsContract() {
     EqualsVerifier.forClass(Point.class).verify();
