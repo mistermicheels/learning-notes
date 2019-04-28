@@ -1,5 +1,10 @@
 # Overloading, overriding and method hiding
 
+Resources:
+
+- [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
+- [Java Method Hiding and Overriding](https://crunchify.com/java-method-hiding-and-overriding-override-static-method-in-java/9)
+
 ## Overloading
 
 What it is: a class has several methods with the same name but different number or types of parameters and Java chooses which one to call based on the arguments you pass

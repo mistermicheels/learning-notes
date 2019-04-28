@@ -92,8 +92,8 @@ public class Rectangle {
 
 ```java
 public class Square extends Rectangle {
-    public Square(int width, int height) {
-        super(width, height);
+    public Square(int size) {
+        super(size, size);
     }
 
     @Override
