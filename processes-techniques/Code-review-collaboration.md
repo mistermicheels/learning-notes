@@ -147,6 +147,10 @@ Drawbacks:
     - Some companies have guidelines to "just accept the changes if the code is decent and offer suggestions for improvement as suggestions for new changes (instead of reasons for not accepting the current changes)"
   - Can switch to synchronous review or even pairing if they are more suitable for the current change
 
+### Asynchronous review and pairing
+
+When applying the pairing strategies described in the section on synchronous review, asynchronous review could be used instead of synchronous review if there is a need or desire to handle things in an asynchronous fashion.
+
 ## Review after the fact
 
 - Code is reviewed after it is pushed/merged
