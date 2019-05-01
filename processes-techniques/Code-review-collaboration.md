@@ -122,7 +122,7 @@ Finally, even when doing classical pair programming, synchronous review can be u
   - Typically through some kind of technology, for example pull requests
     - Sharing code, making comments, tracking adjustments made to the code, ...
 
-Advantages;
+Advantages:
 
 - Asynchronous:
   - You can submit your code when it suits you
