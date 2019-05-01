@@ -179,12 +179,15 @@ Structure data and application in such a way that all updates are made using ato
 
 Could also be useful when validity of update depends on status of related object (linking items to a group, but only if the group has status “Active”), but only if checks for that are at the DB level. For example, items could be linked to a separate table holding IDs for active groups.
 
-### Transaction isolation levels
+### Higher transaction isolation levels
+
+(higher than Read Committed)
 
 See [Transaction isolation levels](Transaction-isolation-levels.md)
 
-For this to work, everything you do as part of an operation needs to happens inside the same database transaction (as is the case with pessimistic locking). Additionally, when relying on transaction isolation levels, you lose some control over what exactly is locked and when. This increases the likelihood of deadlocks if database-level locking is used.
-
-Also note that the behavior of more restrictive transaction isolation levels varies widely between database vendors and sometimes even between different versions of the same database. Therefore, they are probably not the best option for applications that need to support multiple databases.
-
-Finally, note that these transaction levels do not solve the problem of lost updates in the example with multiple users concurrently editing the same item’s description.
+- Lack of flexibility: For this to work, everything you do as part of an operation needs to happens inside the same database transaction (like pessimistic locking)
+- Lose control over what exactly is locked and when
+  - Increases likelihood of deadlocks if database uses locking to implement transaction isolation
+- Behavior varies widely between database vendors and sometimes even between different versions of the same database
+  - Probably not the best option for applications that need to support multiple databases
+- Do not solve the problem of lost updates in the example with multiple users concurrently editing the same item’s description

@@ -47,6 +47,7 @@ What extension could mean here:
 - Delegation: extend from class or its interface, store object of the original class and delegate to it as needed
     - Useful if class does not allow extension but you can use an interface it implements
     - Useful if you do not control the creation of instances of the class
+- Composition: allowing behavior to be changed by passing in different objects (dependency injection, Strategy pattern)
 
 ### Example
 
