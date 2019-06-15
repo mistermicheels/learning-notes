@@ -1,6 +1,6 @@
 # Optimistic and pessimistic locking in SQL
 
-Resources:
+See:
 
 - [Concurrency Control](https://en.wikipedia.org/wiki/Concurrency_control)
 - [PostgreSQL Returning Data From Modified Rows](https://www.postgresql.org/docs/current/static/dml-returning.html)

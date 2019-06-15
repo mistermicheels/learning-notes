@@ -27,7 +27,7 @@ Every approach will likely have its own drawbacks or limitations that another ap
 
 ## Good solutions and flexibility
 
-What should we look for, if we shouldn’t look for perfect solutions? I think we should be looking for two things:
+Instead of looking for perfect solutions, look for two things:
 
 - Good solutions that make sense and for which we don’t see an alternative that is clearly much better
 - Flexibility through good architecture and coding practices

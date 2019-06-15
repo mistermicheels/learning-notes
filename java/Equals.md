@@ -1,6 +1,6 @@
 # Java equals methods
 
-Resources:
+See:
 
 - [EqualsVerifier](http://jqno.nl/equalsverifier/)
 - [How to Write an Equality Method in Java](http://www.artima.com/lejava/articles/equality.html)

@@ -1,6 +1,6 @@
 # Code review and collaboration workflows
 
-Resources:
+See:
 
 - [4 Types Of Code Reviews Any Professional Developer Should Know About](https://dzone.com/articles/4-types-of-code-reviews-any-professional-developer)
 - [Pairing with Junior Developers](https://madeintandem.com/blog/2015-1-pairing-with-junior-developers/)

@@ -1,6 +1,6 @@
 # Solid principles
 
-Resources:
+See:
 - Clean Architure (book by Robert C. Martin)
 - [SOLID](https://en.wikipedia.org/wiki/SOLID)
 - [Functional S.O.L.I.D. Explained In 5 Examples](https://codemanship.wordpress.com/2019/03/15/functional-s-o-l-i-d-explained-in-5-examples/)
