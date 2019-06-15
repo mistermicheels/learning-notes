@@ -1,6 +1,6 @@
 # Trunk Based Development
 
-Resources:
+See:
 
 - [Trunk Based Development](https://trunkbaseddevelopment.com/)
 - [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
@@ -153,8 +153,7 @@ Then, if a fix is needed for the release, a branch is created retroactively from
 Strategies:
 
 - [Feature flags](Feature-flags.md)
-- [Branch by Abstraction](Branch-by-abstraction-application-strangulation.md)
-- [Application strangulation](Branch-by-abstraction-application-strangulation.md)
+- [Branch by Abstraction and application strangulation](Branch-by-abstraction-application-strangulation.md)
 
 ## Some good practices when applying Trunk Based Development
 
