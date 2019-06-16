@@ -233,7 +233,7 @@ Something else that can help is the `Optional` type.
 
 In some cases, you may find yourself getting a checked exception which you want to pass up the method chain as an unchecked exception (for example because you are overriding a method without a `throws` declaration allowing the checked exception).
 
-Simplest way to do this: chaining (see above):
+Simplest way to do this: chaining (see above)
 
 - Catch checked exception
 - Throw new unchecked exception with checked exception as the cause
@@ -267,8 +267,7 @@ public static void test() {
     new PrintWriter("output.txt"); 
 
     // ok
-    Exceptions.doWork(() -> 
-            new PrintWriter("output.txt"));
+    Exceptions.doWork(() -> new PrintWriter("output.txt"));
 }
 ```
 
@@ -284,8 +283,7 @@ public static void invokeTest() {
 }
 
 public static void test() {        
-    Exceptions.doWork(() -> 
-            new PrintWriter("output.txt"));
+    Exceptions.doWork(() -> new PrintWriter("output.txt"));
 }
 ```
 
@@ -303,8 +301,7 @@ Example of the `Runnable` case:
 public class TestRunnable implements Runnable {
     @Override
     public void run() {
-        Exceptions.doWork(()
-                -> new PrintWriter("unwritableFile"));
+        Exceptions.doWork(() -> new PrintWriter("unwritableFile"));
     }
 }
 ```
