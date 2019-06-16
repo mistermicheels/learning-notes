@@ -1,4 +1,4 @@
-# Java equals methods
+# Equals
 
 See:
 
