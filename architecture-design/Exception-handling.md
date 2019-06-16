@@ -1,5 +1,10 @@
 # Exception handling
 
+See:
+
+- Clean Code (book by Robert C. Martin)
+- [Exceptions: Why throw early? Why catch late?](https://softwareengineering.stackexchange.com/questions/231057/exceptions-why-throw-early-why-catch-late)
+
 ## Throw early, catch late
 
 General best practice regarding exceptions: “Throw early, catch late”. In other words: “Don’t catch an exception unless you are in the best position to do something useful with it”.

@@ -26,7 +26,7 @@ An interface can contain:
 - Private methods (since Java 9)
   - Can be used by default method implementations specified in the interface
 - Static methods (since Java 9)
-  - Can be useful as factory methods for functional interfaces
+  - Can be useful as factory methods for functional interfaces (see [Lambda expressions](./Lambda-expressions.md))
 
 ## Default methods
 
