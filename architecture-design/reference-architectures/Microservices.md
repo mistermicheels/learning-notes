@@ -46,7 +46,7 @@ This type of coupling is the most obvious one: The fact that services communicat
 - Much easier to ensure compliance and manage upgrades to monitoring system etc. than if each service team would build their own version of this
   - When the infrastructure team pushes an upgrade to the service template, the services pick it up the next time they go through the deployment pipeline
 
-Example general service templates: [DropWizard]([https://www.dropwizard.io](https://www.dropwizard.io/)) and [Spring Boot](https://spring.io/projects/spring-boot)
+Example general service templates: [DropWizard](https://www.dropwizard.io) and [Spring Boot](https://spring.io/projects/spring-boot)
 
 ## Data duplication and bounded contexts
 
