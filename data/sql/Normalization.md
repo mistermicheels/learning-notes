@@ -62,11 +62,11 @@ Solution: make Subject into its own table
 
 **Book - Subject table** (many-to-many relationship, needed because book can have multiple subjects and multiple books can share the same subject)
 
-| Title                                            | ***Subject ID*** |
-| :----------------------------------------------- | :--------------- |
-| Beginning MySQL Database Design and Optimization | *1*              |
-| Beginning MySQL Database Design and Optimization | *2*              |
-| Beginning MySQL Database Design and Optimization | 3                |
+| Title                                            | Subject ID |
+| :----------------------------------------------- | :--------- |
+| Beginning MySQL Database Design and Optimization | 1          |
+| Beginning MySQL Database Design and Optimization | 2          |
+| Beginning MySQL Database Design and Optimization | 3          |
 
 ### 2NF (second normal form)
 

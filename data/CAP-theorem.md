@@ -4,8 +4,6 @@ See:
 
 - [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 - Designing Data-Intensive Applications (book by Martin Kleppmann)
-- [SQL Server Availability Modes](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/availability-modes-always-on-availability-groups?view=sql-server-2017)
-- [Offload read-only workload to secondary replica of an Always On availability group](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups?view=sql-server-2017)
 
 This theorem states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
 
@@ -39,7 +37,15 @@ See also [ACID properties](./sql/ACID.md)
 Both mean something completely different:
 
 - CAP consistency: Every read returns either the relevant value as it was written by the latest successful write or an error
-
 - ACID consistency: The execution of the transaction must bring the database to a valid state, respecting the database’s schema
 
-In fact, when relational databases are deployed in a distributed fashion, there are typically different modes available that can have an impact on CAP consistency. For example, when settings up a high-availability cluster for Microsoft SQL Server, you have the choice between the availability modes *synchronous commit* and *asynchronous commit*. Synchronous commit waits to return for a transaction until it has effectively been synchronized to the other instances (secondary replicas). Asynchronous commit, on the other hand, does not wait for the secondary replicas to catch up. If asynchronous commit is used and the cluster is configured to allow reads to go directly to the secondary replicas, it is possible that reads return stale data.
+In fact, when relational databases are deployed in a distributed fashion, there are typically different modes available that can have an impact on CAP consistency. 
+
+### SQL Server example
+
+See: 
+
+- [SQL Server Availability Modes](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/availability-modes-always-on-availability-groups?view=sql-server-2017)
+- [Offload read-only workload to secondary replica of an Always On availability group](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups?view=sql-server-2017)
+
+When setting up a high-availability cluster for Microsoft SQL Server, you have the choice between the availability modes *synchronous commit* and *asynchronous commit*. Synchronous commit waits to return for a transaction until it has effectively been synchronized to the other instances (secondary replicas). Asynchronous commit, on the other hand, does not wait for the secondary replicas to catch up. If asynchronous commit is used and the cluster is configured to allow reads to go directly to the secondary replicas, it is possible that reads return stale data.

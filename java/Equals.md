@@ -259,7 +259,7 @@ What if we want to include the color in the `equals` method so that a `ColorPoin
 
 If we want this, we have to accept that a `ColorPoint` will never be equal to any `Point`. The reason for this is transitivity (see above). If we want to say that `ColorPoint(1, 1, Color.RED)` and `ColorPoint(1, 1, Color.BLUE)` are both equal to `Point(1, 1)` , then transitivity would imply that they are also equal to each other. That is exactly what we didn't want here.
 
-This could be seen as a violation of the [Liskov substitution principle](../architecture-design/SOLID-principles.md)
+This could be seen as a violation of the [Liskov substitution principle](../architecture-design/oo-design/SOLID-principles.md)
 
 ```java
 @Test
