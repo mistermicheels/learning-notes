@@ -75,7 +75,7 @@ Note: in practice, you could have more layers. However, the dependency rule stil
 - Use cases know about entities
 - Use cases access database through a Data Access Interface defined **inside** the use cases layer
   - Interface defines methods like `findEmployeeById` that return entities or DTOs (defined by the use cases or entities layer) that the uses cases layer or entities layer will convert to actual entities
-    - Do not pass "row structure" from a database framework to the inner layers, because this would force an inner circle to know something about an outer circle
+    - Do not pass "row structure" from a database framework to the inner layers, because this would force an inner circle to know something about an outer circle. Inner circle shouldn't know about the fact that we use a relational database or even the fact that we use an actual separate database at all!
   - Data Access implementation sits in Interface Adapters layer and depends on the interface specified by the use cases
 - Controllers call use cases through an interface defined in the use cases layer
   - Likely, the actual Use Case Interactor implementing the logic will not be directly accessible to the controllers
