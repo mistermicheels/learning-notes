@@ -28,7 +28,7 @@ See:
     - Server-side rendering would also sit here
   - Note: a layered architecture could have more layers than these if it makes sense
 - Easy to get started with this kind of architecture
-- Easy to make technical changes (e.g., swapping out the database) as changes will be confined to another layer
+- Easy to make technical changes (e.g., swapping out the database) as changes will be confined to a single layer (and if that layer's interface changes, it will likely only affect the layer above it)
 - Functional changes are likely to require changes to several layers
   - This often means that a layered architecture is not a good way to split up a system into several parts maintained by independent teams
 - Folder structure of projects
