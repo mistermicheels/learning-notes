@@ -27,7 +27,7 @@ See:
 ### Basic idea
 
 - Created by Simon Brown
-- Goal is to provide a simple and clear way of visualization a system's architecture
+- Goal is to provide a simple and clear way of visualizing a system's architecture
   - Probably not ideal way to document library, framework or SDK
 - Simplified version of concepts found in [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) and the [4+1 model for software architecture](https://en.wikipedia.org/wiki/4%2B1_architectural_view_model)
   - Aims to make it easy for developers to describe how system works

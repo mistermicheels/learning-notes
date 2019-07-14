@@ -63,7 +63,7 @@ Conway's Law is as follows:
 
 Such designs actually make sense as well: if changes within a single part of the system can happen within a single team, it’s way easier to plan and execute these changes
 
-Consequence: f there is a mismatch between the team structure within your organization and the architecture of the application you’re working on, building the application is likely to be a struggle
+Consequence: if there is a mismatch between the team structure within your organization and the architecture of the application you’re working on, building the application is likely to be a struggle
 
 You can use Conway’s Law to your advantage by structuring your application (and thus your teams) in such a way that changes to the system are pretty likely to be confined to a single part of the application. In practice, it seems that vertical slicing is typically the best way to do that.
 
@@ -72,7 +72,7 @@ You can use Conway’s Law to your advantage by structuring your application (an
 #### Source-level boundaries
 
 - Lowest-level boundaries
-- Use mechanism offered by the programming language (classes, interfaces, packages, modules, …)
+- Use mechanisms offered by the programming language (classes, interfaces, packages, modules, …)
 - Communication through simple method calls
   - Fast, don't have to worry about amount of communication passing boundary
 - Not visible at deployment time
@@ -146,7 +146,7 @@ See also [Deployable components](./Deployable-components.md)
 - Different services are assumed to live on different machines and communicate only over the network
   - Communication often happens over HTTP or some kind of message queue
   - Communication between services is expensive from a performance point of view
-- Each service typically developed and operated by a separate team that takes ownership of he service, including its tech stack and data
+- Each service typically developed and operated by a separate team that takes ownership of the service, including its tech stack and data
   - Sharing of a database between services is generally considered bad practice, because it prevents services from independently making changes to their database structure (or independently choosing the database technology which makes the most sense for the service)
 - Freedom and flexibility: Ideally, changes to a service, except for its communication with other services, do not have any effect on other services
 - Still some coupling! The fact that services communicate with each other means that services will still depend on each other to some extent
@@ -300,7 +300,7 @@ Consider creating a boundary around the external dependency that decouples the r
 - Benefits:
   - If the API of the dependency changes or you replace it, the boundary protects you from having to change all code that used the dependency. As long as you can fulfill the contract specified by the public interface of the boundary, no code outside of the boundary has to be aware of the change.
     - Especially useful if you consider the dependency to be a temporary solution that is sufficient for now but will most likely need to change in the future. The boundary allows you to avoid premature complexity by going for a simple solution, while keeping your options open regarding the upgrade to a more complex solution.
-  - Your can also use the boundary to create some automated test for the specific functionality that your system needs to get from the boundary. By testing against the boundary, you don’t have to change your tests in order to be able to test a new version of the dependency or even a replacement.
+  - You can also use the boundary to create some automated tests for the specific functionality that your system needs to get from the boundary. By testing against the boundary, you don’t have to change your tests in order to be able to test a new version of the dependency or even a replacement.
 
 Be extra careful when dealing with frameworks!
 

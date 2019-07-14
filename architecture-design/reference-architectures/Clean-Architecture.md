@@ -43,7 +43,7 @@ See:
     - Critical business rules: application-independent business rules that would still be valid for a different application or even if there was no application at all
     - Example critical business rule: calculating the interest rate for a loan
   - Independent of everything else
-  - Do not confuse with "Entity" concept from several ORMs! Entities should be complete independent of datatabase and database frameworks in Clean Architecture
+  - Do not confuse with "Entity" concept from several ORMs! Entities should be completely independent from database and database frameworks in Clean Architecture
 - Application Business Rules: Use Cases
   - Represent the use cases of the system
   - Coordinate the entities
@@ -81,7 +81,7 @@ Note: in practice, you could have more layers. However, the dependency rule stil
   - Likely, the actual Use Case Interactor implementing the logic will not be directly accessible to the controllers
   - Controller should not care which specific Use Case Interactor is injected into it as long as it satisfies the interface
 - If use case has to call a presenter, this happens through an interface (Output Boundary) defined **inside** the use cases layer that the presenter has to implement
-  - Presenter should not care which specific Use Case Interactor is injected into it as long as it satisfies the interface
+  - Use Case Interactor should not care which specific Presenter is injected into it as long as it satisfies the interface
 - The View is created from View Model created by the Presenter
-  - View Model contains as much as possible so minimal logic is required in the view
+  - View Model contains as much data as possible so minimal logic is required in the view
   - See also [Humble Object pattern](../Humble-Object-pattern.md)

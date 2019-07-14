@@ -4,6 +4,7 @@
 - Should I use a relational or NoSQL database? And which one? *It depends*
 - Should I really have more unit than integration tests? *It depends*
 - Is it bad to have an anemic domain model? *It depends*
+- Should we run our project using SCRUM? *It depends*
 
 ## Trade-offs
 
@@ -55,6 +56,15 @@ Best practices:
   - Some situations where you would be better off using another approach
   - Sometimes even several completely different best practice solutions to the same problem!
     - The more discussion over which is best, the more likely both are valid options
+
+## Tools, not rules
+
+Methodologies (DDD, SCRUM, ...) are tools, not rules!
+
+- not necessarily applicable to every situation
+- not always possible/desired to be completely strict about "rules"
+  - often makes sense to adjust the details of approach to fit the specific requirements of your project and team
+  - often, different people already have different interpretations of the rules regarding those details!
 
 ## Documenting the decision process
 

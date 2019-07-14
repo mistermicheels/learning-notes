@@ -56,6 +56,30 @@ Benefits Branch by Abstraction:
 
 See also [Trunk Based Development](./Trunk-Based-Development.md)
 
+### Real-world example
+
+See [Move Fast and Fix Things](https://github.blog/2015-12-15-move-fast/)
+
+GitHub saw the need to replace a critical part of their platform (merges) with a new implementation
+
+- change needs to happen without downtimes while deploying on average 60 times a day
+- unacceptable to break existing functionality
+
+The solution: branch by abstraction!
+
+Their abstraction layer: [Scientist](https://github.com/github/scientist)
+
+- wraps both old and new behavior
+- always runs the old behavior
+- decides whether to also run new behavior or not
+- measures the durations of all behaviors
+- always returns what old behavior returns
+- swallows and logs any exceptions thrown by new behavior
+- logs any discrepancies between the results obtained from the old and new behavior
+  - similar to the *Duplicate Writes* and *Dark Reads* in Expand-Contract data migrations (see [Data schema migration](../data/Data-schema-migration.md))
+
+This allowed them to test the new implementation on actual production data, comparing both results and performance. After fixing some bugs, it allowed them to be confident enough to completely switch over to the new behavior in production
+
 ## Application strangulation
 
 ### Basic idea
@@ -67,7 +91,7 @@ Very similar to Branch by Abstraction, but operates at different level:
 
 ### Real-world example
 
-  See [Bye bye Mongo, Hello Postgres](https://www.theguardian.com/info/2018/nov/30/bye-bye-mongo-hello-postgres)
+See [Bye bye Mongo, Hello Postgres](https://www.theguardian.com/info/2018/nov/30/bye-bye-mongo-hello-postgres)
 
 The Guardian used application strangulation to move from MongoDB to PostgreSQL, keeping their system working while performing the migration. MongoDB would stay their main source of truth until the migration was completed, but in the meantime they also needed to make sure that all of their data got migrated into PostgreSQL and that the system was able to run on PostgreSQL only once fully switched over.
 
