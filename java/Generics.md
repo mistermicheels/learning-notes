@@ -44,7 +44,7 @@ List<Dog> dogList = new ArrayList<Dog>();
 List<Animal> animalList = dogList; // compiler error
 ```
 
-Reason why this fails: that a proper `List<Animal>` allows adding any `Animal`, while a `List<Dog>` should only allow adding `Dog`s. This means that the two types are not compatible. 
+Reason why this fails: a proper `List<Animal>` allows adding any `Animal`, while a `List<Dog>` should only allow adding `Dog`s. This means that the two types are not compatible. 
 
 If we only care about the fact that our List contains some kind of `Animal`s, we can use type wildcards to define this:
 
@@ -68,6 +68,16 @@ superDogList.add(new Dog()); // works
 ```
 
  For very generic code, you can also use a wildcard (`?` without type bounds)
+
+### A note about arrays
+
+We saw above that it is not possible to assign a `List<Dog>` to a `List<Animal>`, which makes sense. However, this is not the case for arrays. You can easily assign a `Dog[]` array to an `Animal[]` array without the compiler complaining. However, if you then attempt to insert an `Animal` that is not a `Dog` into the array, you will get an error at runtime.
+
+```java
+Dog[] dogs = new Dog[10];
+Animal[] animals = dogs; // works
+animals[0] = new Animal() // fails at runtime
+```
 
 ## Generics inside the Java Virtual Machine
 

@@ -127,4 +127,4 @@ Example: Netflix's [Chaos Monkey](https://github.com/netflix/chaosmonkey)
 
 - designed to test resilience to instance failures
 - runs in production and randomly terminates instances
-- forces teams to build resilient services
+- forces teams to build resilient services while still taking into account other architectural goals
