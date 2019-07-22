@@ -136,7 +136,7 @@ Calling static methods on classes:
 
 ```java
 Object testObject = new Object();
-		
+
 StaticSuper.testStaticMethod(testObject); // super
 StaticSub.testStaticMethod(testObject); // sub
 ```
@@ -149,8 +149,8 @@ StaticSub staticSub = new StaticSub();
 StaticSuper staticSubAsSuper = staticSub;
 
 staticSuper.testStaticMethod(testObject); // super
-staticSub.testStaticMethod(testObject);	// sub
-staticSubAsSuper.testStaticMethod(testObject);	// super (!!!)
+staticSub.testStaticMethod(testObject); // sub
+staticSubAsSuper.testStaticMethod(testObject); // super (!!!)
 ```
 
 No overriding here! Instead, we get *method hiding*.

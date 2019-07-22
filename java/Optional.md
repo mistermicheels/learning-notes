@@ -36,8 +36,8 @@ Examples second option:
 optionalString.ifPresent(processString); // returns nothing
 
 optionalString.ifPresentOrElse(
-    	System.out::println, 
-    	() -> System.out.println("Empty!")); // returns nothing
+        System.out::println, 
+        () -> System.out.println("Empty!")); // returns nothing
 
 // Optional containing the length of the value (if it was present) and empty otherwise
 optionalString.map(String::length)
@@ -56,11 +56,11 @@ nullableString.length() // length throws NullPointerException
 optionalString.get().length() // get throws NoSuchElementException
 
 if (nullableString != null) {
-	length = nullableString.length()
+    length = nullableString.length()
 }
 
 if (optionalString.isPresent()) {
-	length = optionalString.get().length()
+    length = optionalString.get().length()
 }
 ```
 
@@ -80,15 +80,15 @@ Example use case:
 
 ```java
 idsStream
-		.map(Users::lookup) // Users.lookUp returns an Optional<User>
-		.flatMap(Optional::stream)
+        .map(Users::lookup) // Users.lookUp returns an Optional<User>
+        .flatMap(Optional::stream)
 ```
 
 Note: if you call a method that returns either a value or null, you can apply the samle principle using `Stream.ofNullable`:
 
 ```java
 idsStream
-		.map(Users::lookup) // Users.lookUp returns a User object or null
-		.flatMap(Stream::ofNullable)
+        .map(Users::lookup) // Users.lookUp returns a User object or null
+        .flatMap(Stream::ofNullable)
 ```
 

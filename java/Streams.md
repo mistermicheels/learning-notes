@@ -152,9 +152,9 @@ Invoke a function every time an element is retrieved:
 
 ```java
 Stream.iterate(2, n -> n * 2)
-		.peek(System.out::println) // executed every time an element is generated
-    	.limit(20)
-    	.toArray(); // terminal operation to make sure elements are actually retrieved
+        .peek(System.out::println) // executed every time an element is generated
+        .limit(20)
+        .toArray(); // terminal operation to make sure elements are actually retrieved
 ```
 
 The `peek` function from the above example is also useful for using a debugger on a stream:
@@ -187,16 +187,16 @@ Find first element:
 
 ```java
 words.stream()
-    	.filter(word -> word.length() > 12)
-    	.findFirst(); // returns Optional<String>
+        .filter(word -> word.length() > 12)
+        .findFirst(); // returns Optional<String>
 ```
 
 Find any element (useful with parallel streams):
 
 ```java
 words.stream()
-    	.filter(word -> word.length() > 12)
-    	.findAny(); // returns Optional<String>
+        .filter(word -> word.length() > 12)
+        .findAny(); // returns Optional<String>
 ```
 
 Check if something matches
@@ -215,9 +215,9 @@ words.stream().forEachOrdered(System.out::println) // guaranteed to preserve ord
 Reduce to a sum, count, average, maximum or minimum value:
 
 ```java
-IntSummaryStatistics summary = 	
-		words.stream().collect(Collectors.summarizingInt(String::length));
-		
+IntSummaryStatistics summary =     
+        words.stream().collect(Collectors.summarizingInt(String::length));
+        
 int max = summary.getMax();
 double average = summary.getAverage();
 ```
@@ -259,10 +259,10 @@ words.stream().collect(Collectors.toCollection(TreeSet::new));
 
 ```java
 words.stream().collect(
-		Collectors.toMap(String::length, String::toLowerCase)):	
+        Collectors.toMap(String::length, String::toLowerCase)):    
 
 words.stream().collect(
-		Collectors.toMap(String::length, Function.identity())): // element is value
+        Collectors.toMap(String::length, Function.identity())): // element is value
 ```
 
 Note: the above statements will throw if there is more than one element with the same key!
@@ -271,8 +271,8 @@ Fix: provide third function that resolves the conflict and determines the value 
 
 ```java
 words.stream().collect(
-		Collectors.toMap(
-        		String::length, 
+        Collectors.toMap(
+                String::length, 
                 Function.identity(), 
                 (existingValue, newValue) -> existingValue));
 ```
@@ -283,7 +283,7 @@ Transforming into map of lists:
 
 ```java
 words.stream().collect(
-		Collectors.groupingBy(String::length));
+        Collectors.groupingBy(String::length));
 ```
 
 If classifier function you want to pass to groupingBy is a predicate, partitioningBy is more efficient:
@@ -291,14 +291,14 @@ If classifier function you want to pass to groupingBy is a predicate, partitioni
 ```java
 // Map<Boolean, List<String>>
 words.stream().collect(
-		Collectors.partitioningBy(word -> word.startsWith("t"))); 
+        Collectors.partitioningBy(word -> word.startsWith("t"))); 
 ```
 
 Transforming into map of sets:
 
 ```java
 words.stream().collect(
-		Collectors.groupingBy(String::length, Collectors.toSet()));
+        Collectors.groupingBy(String::length, Collectors.toSet()));
 ```
 
 ## Streams of primitive types
@@ -351,18 +351,18 @@ Important: operations to execute in parallel should be stateless and should be a
 int[] shortWordCounts = new int[12]
 
 words.parallelStream().forEach(word -> {
-	if (word.length < 12) {
-		shortWords[word.length()]++; // race condition!
-	}
+    if (word.length < 12) {
+        shortWords[word.length()]++; // race condition!
+    }
 })
 
 // better alternative
 Map<Integer, Long> shortWordCounts = 
-    	words.parallelStream()
-    			.filter(word -> word.length < 12)
-    			.collect(Collectors.groupingBy(
-                		String::length,
-                		Collectors.counting()));
+        words.parallelStream()
+                .filter(word -> word.length < 12)
+                .collect(Collectors.groupingBy(
+                        String::length,
+                        Collectors.counting()));
 ```
 
 Some operations on parallel streams can be made more efficient by making it clear that you do not care about ordering!
@@ -401,7 +401,7 @@ for (Integer i : list) {
 
 /*
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at misc.Main.main(Main.java:15)
+    at misc.Main.main(Main.java:15)
 */
 
 // streams
@@ -413,12 +413,12 @@ list.forEach(i -> {
 
 /*
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at misc.Main.lambda$1(Main.java:22)
-	at java.base/java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:104)
-	at java.base/java.util.stream.IntPipeline$Head.forEach(IntPipeline.java:593)
-	at misc.Main.lambda$0(Main.java:21)
-	at java.base/java.util.Arrays$ArrayList.forEach(Arrays.java:4390)
-	at misc.Main.main(Main.java:20)
+    at misc.Main.lambda$1(Main.java:22)
+    at java.base/java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:104)
+    at java.base/java.util.stream.IntPipeline$Head.forEach(IntPipeline.java:593)
+    at misc.Main.lambda$0(Main.java:21)
+    at java.base/java.util.Arrays$ArrayList.forEach(Arrays.java:4390)
+    at misc.Main.main(Main.java:20)
 */
 ```
 
