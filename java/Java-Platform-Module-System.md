@@ -113,7 +113,7 @@ Properties of the unnamed module:
 
 JDK: one huge library with all functionality spread across a huge number of packages and without a clear structure in the way things depend on each other
 
-![JDK JAR before modules](C:/docs/git/learning-notes/java/_img/Java-Platform-Module-System/jdk-jar-before-modules.png)
+![JDK JAR before modules](_img/Java-Platform-Module-System/jdk-jar-before-modules.png)
 
 ### Modular JDK
 
@@ -122,9 +122,9 @@ JDK: one huge library with all functionality spread across a huge number of pack
 - All modules directly or indirectly depend on java.base which contains the most basic functionality
   - Note: Every user-defined module also implicitly depends on java.base
 
-![JDK JARs after modules](C:/docs/git/learning-notes/java/_img/Java-Platform-Module-System/jdk-jars-after-modules.png)
+![JDK JARs after modules](_img/Java-Platform-Module-System/jdk-jars-after-modules.png)
 
-![JDK modules dependencies](C:/docs/git/learning-notes/java/_img/Java-Platform-Module-System/jdk-modules-dependencies.png)
+![JDK modules dependencies](_img/Java-Platform-Module-System/jdk-modules-dependencies.png)
 
 
 
