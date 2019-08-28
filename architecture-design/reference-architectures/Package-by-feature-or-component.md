@@ -21,7 +21,9 @@ See:
     - If one feature needs another, it needs to go through the controller
   - In package by component, the separation happens below the level of controllers
     - If one component needs to call another, there is no need to go through controllers
+    - Controllers can group and combine data based on what makes sense to API consumers
     - A single controller can easily use several components (could be especially handy for retrieving data)
+    - A single component could be used by several controllers
     - The way components are divided into functional areas could potentially differ from the way controllers are divided into functional areas
   - Encapsulation of internals should be enforced
     - Ideally, use language constructs like packages, modules, ...
@@ -31,7 +33,7 @@ See:
 - Good way to divide codebase into different functional areas that different teams could potentially take ownership of
   - "Modular monolith"
   - Can be a good stepping stone towards microservices
-- Finding a sensible way to divide the system into features/components could be challenging or feel artificial for some applications
+- Finding a sensible way to divide the system into clearly separated features/components could be challenging or feel artificial for some applications
 - Note: probably still some cross-cutting concerns that apply to several features/components
   - Can just put these next to the features/components structure
   - Not all code has to be divided into features/components

@@ -155,5 +155,6 @@ Things that OSGi supports that the Java Platform Module System does not offer:
     - This solves "JAR hell", where you run into issues because dependency A and dependency B each depend on a different version of dependency C
 - Dynamic loading, unloading and updating of modules at runtime
   - Very useful for IoT: perform on-the-fly updates by sending only modules that have actually changed
+- Potentially cyclic dependencies between modules
 
 Because of these kinds of advantages, OSGi could be a better choice for modularizing your own applications (while still getting the benefits of the modularized Java JDK as well)

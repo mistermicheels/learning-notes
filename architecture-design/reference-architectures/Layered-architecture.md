@@ -30,17 +30,8 @@ See:
 - Easy to get started with this kind of architecture
 - Easy to make technical changes (e.g., swapping out the database) as changes will be confined to a single layer (and if that layer's interface changes, it will likely only affect the layer above it)
 - Functional changes are likely to require changes to several layers
+  - Problem: when working on a single functional area, you will likely need to find the relevant classes below several top-level folders (according to the layer they are in)
   - This often means that a layered architecture is not a good way to split up a system into several parts maintained by independent teams
-- Folder structure of projects
-  - Option: organize by layer
-    - Clearly groups everything within the layer, making it easy to make bigger changes within a single layer
-    - As the sytem grows, there will probably need to be several folders within each layer that each represent a certain functional concept
-    - Problem: top-level structure (layers) doesn't say anything about the project
-    - Problem: when working on a single functional area, you will likely need to find the relevant classes below several top-level folders
-  - Option: organize by functional area
-    - The folder for a functional area contains all layers, potentially in different subfolders
-    - Easy to find everything related to a particular functional area
-    - Problem: harder to find everything that belongs in a single layer
 - If separation by functional areas is more important, consider looking at [Package by feature or component](./Package-by-feature-or-component.md)
 
 ## Open/closed layers
