@@ -336,7 +336,7 @@ existingStream.parallel()
 
 Note: if the stream is in parallel mode when the terminal method executes, all intermediate stream operations will also be parallelized!
 
-Note: there is quite some overhead in parallelization, so don't blindly make all of your strams parallel! Parallel streams only make sense for huge in-memory collections of data and computationally expensive processing.
+Note: there is quite some overhead in parallelization, so don't blindly make all of your streams parallel! Parallel streams only make sense for huge in-memory collections of data and computationally expensive processing where different parts of the stream can be processed separately
 
 Getting an idea of the threads involved:
 

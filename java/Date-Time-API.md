@@ -43,12 +43,12 @@ Computations with durations:
 ```java
 // Option 1
 if (duration1.multipliedBy(10).minus(duration2).isNegative()) {
-	// ...
+    // ...
 }
 
 // Option 2
 if (duration1.toNanos() * 10 < duration2.toNanos()) {
-	// ...
+    // ...
 }
 ```
 
