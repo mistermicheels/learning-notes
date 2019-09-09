@@ -3,6 +3,7 @@
 See:
 
 - Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+- [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
 
 ## High-level concurrency
 
@@ -210,6 +211,81 @@ See [Streams](./Streams.md)
 ```java
 Arrays.parallelSetAll(theArray, i -> i % 10);
 Arrays.parallelSort(theArray);
+```
+
+## Be careful with blocking operations
+
+If you are using a thread pool with a limited or fixed number of threads, be very careful with blocking operations. Once all of the treads in the pool are executing a block or long-running operation, the pool will not be able to do any other kind of work until at least one of those blocking operations finishes.
+
+Example:
+
+```java
+public static void main(String[] args) throws InterruptedException {
+    ExecutorService es = Executors.newFixedThreadPool(2);
+    es.execute(() -> blockingTask());
+    es.execute(() -> blockingTask());
+    es.execute(() -> normalTask());
+    es.execute(() -> normalTask());
+    es.execute(() -> normalTask());
+}
+
+private static void normalTask() {
+    System.out.println("Starting normal task");
+    System.out.println("Finished normal task");
+}
+
+private static void blockingTask() {
+    System.out.println("Starting blocking task");
+    
+    try {
+        Thread.sleep(Integer.MAX_VALUE);
+    } catch (InterruptedException e) {
+    }
+
+    System.out.println("Finished blocking task");
+}
+```
+
+Important note: the common fork-join pool (`ForkJoinPool.commonPool()`) is a pool with a fixed number of threads which is used under the hood by parallel streams and by default also by completable futures!
+
+See below example for completable futures and see [Streams](./Streams.md) for an example with parallel streams
+
+```java
+public static void main(String[] args) throws InterruptedException {
+    int commonPoolParallelism = ForkJoinPool.commonPool().getParallelism();
+
+    for (int i = 0; i < commonPoolParallelism; i++) {
+        CompletableFuture.supplyAsync(() -> blockingTask()).thenAccept(result -> {
+            System.out.println(result);
+        });
+    }
+
+    for (int i = 0; i < 10; i++) {
+        CompletableFuture.supplyAsync(() -> normalTask()).thenAccept(result -> {
+            System.out.println(result);
+        });
+    }
+    
+    Thread.sleep(Integer.MAX_VALUE);
+}
+
+private static String normalTask() {
+    System.out.println("Starting normal task");
+    System.out.println("Finished normal task");
+    return "normal";
+}
+
+private static String blockingTask() {
+    System.out.println("Starting blocking task");
+
+    try {
+        Thread.sleep(Integer.MAX_VALUE);
+    } catch (InterruptedException e) {
+    }
+
+    System.out.println("Finished blocking task");
+    return "blocking";
+}
 ```
 
 ## Thread safety

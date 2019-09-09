@@ -21,7 +21,7 @@ Simple approach but not doable if system needs to keep running!
 ## Data First
 
 - Migrate DB schema in a way that is compatible with both old and new code
-- Deploy new code (n instance next to instance running old code)
+- Deploy new code (on instance next to instance running old code)
 - Retire old code
 
 ## Expand-Contract migrations

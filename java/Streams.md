@@ -3,6 +3,8 @@
 See:
 
 - Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+- [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
+- [Think Twice Before Using Java 8 Parallel Streams](https://dzone.com/articles/think-twice-using-java-8)
 - [3 Reasons why You Shouldn’t Replace Your for-loops by Stream.forEach()](https://blog.jooq.org/2015/12/08/3-reasons-why-you-shouldnt-replace-your-for-loops-by-stream-foreach/)
 
 ## Basic idea
@@ -375,6 +377,47 @@ Some operations on parallel streams can be made more efficient by making it clea
 Note: by default, streams from ordered collections (arrays and lists), ranges, generators, iterators or from `Stream.sorted` are ordered!
 
 Making a stream unordered: simply call `Stream.unordered`
+
+### Avoid blocking operations in parallel streams
+
+When using parallel streams, avoid blocking operations!
+
+Parallel streams use the common fork-join pool (`ForkJoinPool.commoPool()`). The number of threads in this common pool is determined by the number of cores available and is equal to (#cores - 1). If you use blocking (or in general-long-running) operations in your parallel streams, these will affect **all** other parallel streams (and any other code that is using the common fork-join pool). It's not that hard to actually block all threads in the common fork-join pool, meaning that no other parallel streams can get any work done until those threads aren't blocked anymore.
+
+Example illustrating this:
+
+```java
+public static void main(String[] args) throws InterruptedException {     
+    System.out.println("CommonPool Parallelism: " + ForkJoinPool.commonPool().getParallelism());
+    ExecutorService es = Executors.newCachedThreadPool();  
+    es.execute(() -> blockingStreamTask());   
+    es.execute(() -> blockingStreamTask());  
+    es.execute(() -> normalStreamTask());  
+    es.execute(() -> normalStreamTask());   
+    es.execute(() -> normalStreamTask());   
+ }
+
+private static void normalStreamTask() {
+    IntStream.range(1, Integer.MAX_VALUE).parallel().filter(i -> i % 2 == 0).count();
+    System.out.println("Finished normal stream task");
+}
+
+private static void blockingStreamTask() {
+    IntStream.range(1, Integer.MAX_VALUE).parallel().filter(i -> {
+        try {
+            Thread.sleep(Integer.MAX_VALUE);
+        } catch (InterruptedException e) {}
+        
+        return i % 2 == 0;
+    }).count();
+    
+    System.out.println("Finished bocking stream task");
+}
+```
+
+The result of executing the above code might be different every time you execute it, but you will likely see that one or more normal stream tasks are blocked by the blocking stream tasks. Once all threads in the common fork-join pool are executing the `Thread.sleep(Integer.MAX_VALUE);` statement, no other work can be processed by the common fork-join pool until the threads stop sleeping.
+
+See also [Concurrency (high-level)](./Concurrency-high-level.md)
 
 ## Drawbacks of using streams
 

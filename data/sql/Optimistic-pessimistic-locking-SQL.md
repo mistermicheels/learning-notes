@@ -190,4 +190,4 @@ See [Transaction isolation levels](Transaction-isolation-levels.md)
   - Increases likelihood of deadlocks if database uses locking to implement transaction isolation
 - Behavior varies widely between database vendors and sometimes even between different versions of the same database
   - Probably not the best option for applications that need to support multiple databases
-- Do not solve the problem of lost updates in the example with multiple users concurrently editing the same item’s description
+- Does not solve the problem of lost updates in the example with multiple users concurrently editing the same item’s description

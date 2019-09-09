@@ -99,9 +99,10 @@ Depending on who you ask, Continuous Integration can mean two things:
 ## Trunk Based Development and Continuous Delivery/Deployment
 
 - *Continuous Delivery*: Commits that build successfully are automatically deployed to a quality assurance or acceptance testing environment.
+  - You will likely need several QA/UAT environments, each with different rules regarding frequency of deployment. Some of them might even temporarily be "reserved" for various reasons.
 - *Continuous Deployment*: Commits that build successfully are actually pushed all the way to production.
   - Some large tech companies are doing this
-  - Note that this requires very extensive checking as part of the build process.
+  - Note that this requires very extensive checking as part of the build process, as well as the use of techniques like [Feature flags](./Feature-flags.md) to gain control over the extent to which new features are turned on in production
 
 ## Releases
 
@@ -160,5 +161,7 @@ Strategies:
 - *Quick reviews*: Developers try to get their code reviewed as soon as possible.
 - *Chasing HEAD*: Developers try to stay up to date with changes to the trunk.
 - *Shared nothing*: Developers run the build locally before pushing their code, typically including integration and functional tests talking to real databases etc. This means individual developers must be able to run the application and all its dependencies locally, without depending on resources shared with others.
+  - Small teams could even survive without a CI server for quite some time if every developer runs the build locally before committing
+  - A problem with testing locally is that the environment on which the tests are run is likely quite different from the production environment. Therefore, you will likely still need several QA/UAT environments. These environments will ideally contain real instances of services and applications that your system integrates with, but those will ideally not be shared between the different environments.
 - *Facilitating commits*: Developers sometimes chop up their work into multiple smaller commits in order to make their changes easier for their teammates to adjust to. For example, when building a feature entails introducing a new dependency, this dependency could be introduced separately through a new commit that the developer explicitly notifies the team of.
 - *Thin Vertical Slices*: Stories or tasks from the backlog can ideally be implemented completely by a single developer or pair of developers in a short amount of time and small number of commits. They cut across the whole stack and they do not need to be passed around between developers with specialized knowledge in order to get completed.

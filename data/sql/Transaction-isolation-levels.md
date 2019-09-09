@@ -75,8 +75,8 @@ Implementations:
   - Implemented using DB-level locking (basically pessimistic locking)
   - Simple row locks not sufficient for preventing *Phantom Reads* -> can also acquire *key-range locks* which are specifically aimed at preventing the insertion of rows that would match a query previously executed by an active Serializable transaction
     - Example: if a Serializable transaction queries for an order and its order lines, the database will prevent other transactions from inserting order lines for the order until the transaction is completed
-  - PostgreSQL
-    - Similar to *Repeatable Read* (still basically optimistic locking)
-    - Checks for all situations that prevent the results of the executed transactions to match some sequential order of execution. If such a situation is detected, the transaction fails.
-    - Even the results of SELECT queries are not guaranteed to be valid until the transaction is successfully committed
-      - As an alternative, a Serializable Read-only Deferrable transaction can be used. In that case, SELECT statements block until they can return a result that is guaranteed to be valid.
+- PostgreSQL
+  - Similar to *Repeatable Read* (still basically optimistic locking)
+  - Checks for all situations that prevent the results of the executed transactions to match some sequential order of execution. If such a situation is detected, the transaction fails.
+  - Even the results of SELECT queries are not guaranteed to be valid until the transaction is successfully committed
+    - As an alternative, a Serializable Read-only Deferrable transaction can be used. In that case, SELECT statements block until they can return a result that is guaranteed to be valid.

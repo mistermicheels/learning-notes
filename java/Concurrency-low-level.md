@@ -139,7 +139,7 @@ Starting a new thread manually:
 ```java
 Runnable task = () -> {
     // ...
-}
+};
 
 Thread thread = new Thread(task);
 thread.start();
@@ -184,3 +184,14 @@ A thread might not be active at the time it is interrupted. If a thread is inter
 If the thread was interrupted before a call to `wait()`, `join()` or `sleep()`, the call immediately throws an `InterruptedException`. This could mean you don't need to check for the interruption status yourself as long as you catch the `InterruptedException` when it is thrown.
 
 When you are calling a method throwing `InterruptedException` at a point where you cannot do anything sensible with it, either let it propagate upwards (by declaring the exception on your method) or at least set the current thread's interruption status to true (`Thread.currentThread().interrupt()`).
+
+### Daemon threads
+
+You can mark a thread as a daemon thread, which indicates that the thread is just a helper for other threads and should not prevent the program from exiting. When all non-daemon threads finish, the program exits.
+
+```java
+Thread thread = new Thread(task);
+thread.setDaemon(true);
+thread.start();
+```
+
