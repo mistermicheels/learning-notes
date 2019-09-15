@@ -4,6 +4,7 @@ See:
 
 - Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures))
 - Clean Architecture (book by Robert C. Martin)
+- [Learning the hard way: Microservices](https://itnext.io/microservices-c8b5dbdd58b8)
 - [BoundedContext](https://www.martinfowler.com/bliki/BoundedContext.html)
 - [Pattern: Database per service](https://microservices.io/patterns/data/database-per-service.html)
 - [How to keep relationship integrity with Microservice Architecture](https://softwareengineering.stackexchange.com/questions/381279/how-to-keep-relationship-integrity-with-microservice-architecture)
@@ -16,10 +17,11 @@ See:
   - "Shared nothing", decrease coupling between services as much as possible
   - Sharing of a database between services is generally considered bad practice, because it prevents services from independently making changes to their database structure (or independently choosing the database technology which makes the most sense for the service)
   - Freedom to choose or change the technology used by a service based on what makes most sense. Some service may use a relational database while another one uses a document store. A service providing information about the relationships between different users could switch to a graph database without any other service being affected by the change.
-  
 - Different small teams each take ownership of one or more of these services
   - Team responsible for a microservice takes control of development and deployment
     - Each service is expected to handle reasonable error scenarios and recover if possible
+    - Services can be developed, deployed and scaled independently
+      - Challenge: making sure integration points between services don't break (things like contract testing can help)
   - Changes within a single functional domain (= single service) can happen within a single team
   - Coordination with other teams is only required if the communication with their services needs changes as well
 - Services integrate with each other by passing messages, most often over HTTP or message queues
@@ -27,6 +29,9 @@ See:
 - Monitoring and logging typically first-class architectural concepts
   - Several services, each of which might be scaled across several instances -> large number of processes to watch
   - This means having a good monitoring and logging setup is essential in keeping the system running smoothly
+- Can help with scaling the development organization into several teams that can (to a large extent) work independently of other teams
+- Can be overkill (and introduce more problems than it solves) for a single small team
+- Challenging to find the best way to divide the system into services. Defining this upfront is risky. Typically, it's best to start with a monolith or very small number of services and extract certain parts into separate services when it makes sense.
 
 ## Coupling in a microservices architecture
 
@@ -45,6 +50,7 @@ This type of coupling is the most obvious one: The fact that services communicat
 - Teams maintaining the services build their services upon this template
 - Much easier to ensure compliance and manage upgrades to monitoring system etc. than if each service team would build their own version of this
   - When the infrastructure team pushes an upgrade to the service template, the services pick it up the next time they go through the deployment pipeline
+- This likely means all services will be built using the same language or limited set of languages. Although this takes away some of the freedom regarding technology, it also means that developers can more easily move between teams if necessary and that it's easier to create shared libraries or share knowledge between teams.
 
 Example general service templates: [DropWizard](https://www.dropwizard.io) and [Spring Boot](https://spring.io/projects/spring-boot)
 

@@ -215,7 +215,7 @@ Arrays.parallelSort(theArray);
 
 ## Be careful with blocking operations
 
-If you are using a thread pool with a limited or fixed number of threads, be very careful with blocking operations. Once all of the treads in the pool are executing a block or long-running operation, the pool will not be able to do any other kind of work until at least one of those blocking operations finishes.
+If you are using a thread pool with a limited or fixed number of threads, be very careful with blocking operations. Once all of the treads in the pool are executing a blocking or long-running operation, the pool will not be able to do any other kind of work until at least one of those blocking operations finishes.
 
 Example:
 
