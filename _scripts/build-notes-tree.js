@@ -15,19 +15,32 @@ function fillTreeLines() {
     processDirectory(baseDirectoryPath, 0);
 }
 
-function processDirectory(absolutePath, indentationLevel) {    
+function processDirectory(absolutePath, indentationLevel) {
     const entries = fs.readdirSync(absolutePath, { withFileTypes: true });
-    
-    for (const entry of entries) {
-        const entryPath = path.join(absolutePath, entry.name);
-        
-        if (entry.isDirectory() && shouldIncludeDirectory(entry.name)) {
-            writeTreeLine(`**${entry.name}**`, entryPath, indentationLevel)
-            processDirectory(entryPath, indentationLevel + 1);
-        } else if (shouldIncludeFile(entry.name, entryPath)) {
-            processMarkdownFile(entryPath, indentationLevel);
+
+    const directories = entries.filter(entry => entry.isDirectory());
+    const files = entries.filter(entry => !entry.isDirectory());
+
+    for (const directory of directories) {
+        const directoryPath = getFullPath(directory.name, absolutePath);
+
+        if (shouldIncludeDirectory(directory.name)) {
+            writeTreeLine(`**${directory.name}**`, directoryPath, indentationLevel)
+            processDirectory(directoryPath, indentationLevel + 1);
         }
     }
+
+    for (const file of files) {
+        const filePath = getFullPath(file.name, absolutePath);
+
+        if (shouldIncludeFile(file.name, filePath)) {
+            processMarkdownFile(filePath, indentationLevel);
+        }
+    }
+}
+
+function getFullPath(name, parentPath) {
+    return path.join(parentPath, name);
 }
 
 function shouldIncludeDirectory(name) {
@@ -45,12 +58,12 @@ function getRelativePath(absolutePath) {
 function processMarkdownFile(absolutePath, indentationLevel) {
     const fullContents = fs.readFileSync(absolutePath, { encoding: "utf-8" });
     const firstLine = fullContents.split(endOfLine, 1)[0];
-    
+
     if (!firstLine.startsWith("# ")) {
         throw new Error(`No title found for Markdown file ${absolutePath}`);
     }
-    
-    const title = firstLine.substring(2);    
+
+    const title = firstLine.substring(2);
     writeTreeLine(title, absolutePath, indentationLevel);
 }
 
@@ -67,13 +80,13 @@ function writeTreeToMainReadme() {
     const currentReadmeContents = fs.readFileSync(mainReadmePath, { encoding: "utf-8" });
     const notesTreeMarker = "<!-- auto-generated notes tree starts here -->";
     const indexMarker = currentReadmeContents.indexOf(notesTreeMarker);
-    
+
     if (indexMarker < 0) {
         throw new Error("No notes tree marker found in README.md");
     }
-    
+
     const contentsBeforeMarker = currentReadmeContents.substring(0, indexMarker);
-    
+
     const treeText = treeLines.join(endOfLine);
     const newContents = contentsBeforeMarker + notesTreeMarker + endOfLine.repeat(2) + treeText;
     fs.writeFileSync(mainReadmePath, newContents);
