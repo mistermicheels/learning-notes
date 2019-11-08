@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd _scripts
+node build-notes-tree.js
+
+cd ..
+git add README.md
