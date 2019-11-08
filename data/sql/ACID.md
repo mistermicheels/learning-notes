@@ -17,6 +17,6 @@ The four ACID properties:
   - Example: no matter how many concurrent transactions are executing, you will never be able to set a foreign key from a row to another row that does not exist (but maybe did exist when you retrieved your data)
 - *Isolation*: 
   - Although multiple transactions may be running concurrently, their effects on each other’s execution are limited. 
-  - Relational database systems typically provide multiple isolation levels, where higher levels protect against more concurrency-induced phenomena than lower levels. For more details, see [transaction isolation levels](./Transaction-isolation-levels).
+  - Relational database systems typically provide multiple isolation levels, where higher levels protect against more concurrency-induced phenomena than lower levels. For more details, see [transaction isolation levels](./Transaction-isolation-levels.md).
 - *Durability*: 
   - Once a transaction has been successfully committed, it will remain so, even if the system crashes, power is shut off, etc. right after the transaction has completed.

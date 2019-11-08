@@ -265,7 +265,7 @@ The `Class<T>` object is also very useful when using `reflection`. For example, 
   - The Class instances that you get are also always raw types. There is no `ArrayList<Dog>.class`, only `ArrayList.class`.
 
 - Type variables cannot be instantiated
-  - If you have a type variable T, you cannot do new T(...) or new T[...] (array). 
+  - If you have a type variable T, you cannot do `new T(...)` or `new T[...] (array)`. 
   - Reason: type erasure (you would be instantiating the erased value for T, not T itself).
   - If you want to construct objects of type T or arrays of type T inside a generic method, you will have to ask the caller for the right object or array constructor or for a Class object.
   - While you cannot instantiate an array of type T, you can easily create an ArrayList<T>. This is because ArrayList is a generic type itself, while in order to create an array of type T we would need the exact type T at runtime.

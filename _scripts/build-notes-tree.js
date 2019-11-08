@@ -8,10 +8,13 @@ const indentationUnit = "    ";
 // will be filled and read by functions below
 const treeLines = [];
 
-fillTreeLines();
+console.log("Processing files in order to build notes tree");
+processFiles();
+console.log("Writing notes tree to main README file");
 writeTreeToMainReadme();
+console.log("Finished writing notes tree to main README file");
 
-function fillTreeLines() {
+function processFiles() {    
     processDirectory(baseDirectoryPath, 0);
 }
 
@@ -44,7 +47,7 @@ function getFullPath(name, parentPath) {
 }
 
 function shouldIncludeDirectory(name) {
-    return !name.startsWith(".") && !name.startsWith("_");
+    return !name.startsWith(".") && !name.startsWith("_") && name !== "node_modules";
 }
 
 function shouldIncludeFile(name, absolutePath) {

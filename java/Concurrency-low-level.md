@@ -6,7 +6,7 @@ See:
 
 ## Low-level concurrency
 
-This page describes some low-level tools that Java offers to parallelize computations. These are typically used by system programmers writing things like web servers or middleware. When writing normal applications, it's probably easier and safer to use [high-level concurrency tools](./Concurrency-high-level).
+This page describes some low-level tools that Java offers to parallelize computations. These are typically used by system programmers writing things like web servers or middleware. When writing normal applications, it's probably easier and safer to use [high-level concurrency tools](./Concurrency-high-level.md).
 
 ## Locking
 
@@ -35,7 +35,7 @@ int count = 0; // shared among threads
 
 It is important to release the lock in the `finally` clause, so it is always released at the end of the operation even if an exception occurred
 
-The above example is simple, but implementing locking yourself can get tricky. You might have inadequate locking, you might have deadlocks, ... Therefore, it is recommended to use [high-level concurrency tools](./Concurrency-high-level) when possible.
+The above example is simple, but implementing locking yourself can get tricky. You might have inadequate locking, you might have deadlocks, ... Therefore, it is recommended to use [high-level concurrency tools](./Concurrency-high-level.md) when possible.
 
 ### The `synchronized` keyword
 
@@ -86,7 +86,7 @@ synchronized (theObject) {
 }
 ```
 
-Note: locks also guarantee visibility. More specifically, changes that happen before releasing a lock are visible to anyone acquiring the same lock afterwards. For more about visibility, see [high-level concurrency tools](./Concurrency-high-level).
+Note: locks also guarantee visibility. More specifically, changes that happen before releasing a lock are visible to anyone acquiring the same lock afterwards. For more about visibility, see [high-level concurrency tools](./Concurrency-high-level.md).
 
 ### Using locks to coordinate between threads
 
@@ -145,7 +145,7 @@ Thread thread = new Thread(task);
 thread.start();
 ```
 
-Note: typically, you are better off letting executors manage thread creation for you (see [high-level concurrency tools](./Concurrency-high-level))
+Note: typically, you are better off letting executors manage thread creation for you (see [high-level concurrency tools](./Concurrency-high-level.md))
 
 Making the current thread sleep for a given amount of time:
 
