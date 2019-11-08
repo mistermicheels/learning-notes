@@ -57,7 +57,8 @@ function processMarkdownFile(absolutePath, indentationLevel) {
 function writeTreeLine(name, absolutePath, indentationLevel) {
     const indentation = indentationUnit.repeat(indentationLevel);
     const relativePath = getRelativePath(absolutePath);
-    const newTreeLine = `${indentation}- [${name}](${relativePath})`;
+    const relativePathForwardSlashes = relativePath.replace(/\\/g, "/");
+    const newTreeLine = `${indentation}- [${name}](${relativePathForwardSlashes})`;
     treeLines.push(newTreeLine);
 }
 
