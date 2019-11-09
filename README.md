@@ -13,7 +13,7 @@ Each note will typically include a summary of the most important ideas regarding
 
 - [**architecture-design**](architecture-design)
     - [**oo-design**](architecture-design/oo-design)
-        - [Solid principles](architecture-design/oo-design/SOLID-principles.md)
+        - [SOLID principles](architecture-design/oo-design/SOLID-principles.md)
     - [**reference-architectures**](architecture-design/reference-architectures)
         - [Clean Architecture](architecture-design/reference-architectures/Clean-Architecture.md)
         - [Layered architecture](architecture-design/reference-architectures/Layered-architecture.md)

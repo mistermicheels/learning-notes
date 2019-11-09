@@ -1,4 +1,4 @@
-# Solid principles
+# SOLID principles
 
 See:
 - Clean Architure (book by Robert C. Martin)

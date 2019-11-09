@@ -6,7 +6,7 @@ const baseDirectoryPath = path.join(__dirname, "..");
 const indentationUnit = "    ";
 
 // will be filled and read by functions below
-const treeLines = [];
+let notesTreeText = "";
 
 console.log("Processing files in order to build notes tree");
 processFiles();
@@ -75,7 +75,7 @@ function writeTreeLine(name, absolutePath, indentationLevel) {
     const relativePath = getRelativePath(absolutePath);
     const relativePathForwardSlashes = relativePath.replace(/\\/g, "/");
     const newTreeLine = `${indentation}- [${name}](${relativePathForwardSlashes})`;
-    treeLines.push(newTreeLine);
+    notesTreeText = notesTreeText + newTreeLine + endOfLine;
 }
 
 function writeTreeToMainReadme() {
@@ -89,9 +89,7 @@ function writeTreeToMainReadme() {
     }
 
     const contentsBeforeMarker = currentReadmeContents.substring(0, indexMarker);
-
-    const treeText = treeLines.join(endOfLine);
-    const newContents = contentsBeforeMarker + notesTreeMarker + endOfLine.repeat(2) + treeText;
+    const newContents = contentsBeforeMarker + notesTreeMarker + endOfLine.repeat(2) + notesTreeText;
     fs.writeFileSync(mainReadmePath, newContents);
 }
 

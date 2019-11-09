@@ -92,7 +92,7 @@ Some services may even be entirely focused on aggregating bits of data from othe
   - Service stores data in a format that includes exactly the required information
   - When the service receives a request, it can gather the required data directly from its own database
 
-### Micro frontends
+## Micro frontends
 
 See:
 

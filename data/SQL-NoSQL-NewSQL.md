@@ -131,6 +131,9 @@ Note: some relational databases actually offer document store capabilities!
   - All the data is stored in the database as a value with a unique key identifying that value. 
 - Values for different keys can have different data types. Data types offered by a key-value store may include strings, lists of strings, sets of strings and even key-value maps. 
 - It is typically up to the application to determine what the keys look like. For example, if you want to store data for users, you may use the key `user:1` for the user with id 1.
+- You can typically provide an expiration date or TTL for a key, automatically deleting it at a certain time
+  - Can be useful to automatically invalidate tokens stored in the key-value store
+  - Can help to automatically purge old cached data
 - Example: Redis
 
 Fit:
