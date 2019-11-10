@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "Contains script invocations and their dependencies",
     "scripts": {
-        "pre-commit": "npm run build-notes-tree && npm run validate-internal-links",
-        "build-notes-tree": "node _scripts/build-notes-tree.js",
+        "pre-commit": "npm run write-notes-trees && npm run validate-internal-links",
+        "write-notes-trees": "node _scripts/write-notes-trees.js",
         "validate-internal-links": "remark --use remark-validate-links --frail ."
     },
     "devDependencies": {
