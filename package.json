@@ -4,10 +4,11 @@
     "description": "Contains script invocations and their dependencies",
     "scripts": {
         "pre-commit": "npm run write-notes-trees && npm run validate-internal-links",
-        "write-notes-trees": "node _scripts/write-notes-trees.js",
+        "write-notes-trees": "markdown-notes-tree",
         "validate-internal-links": "remark --use remark-validate-links --frail ."
     },
     "devDependencies": {
+        "markdown-notes-tree": "^1.0.0",
         "remark-cli": "^7.0.0",
         "remark-validate-links": "^9.0.1"
     }
