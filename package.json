@@ -3,13 +3,15 @@
     "version": "1.0.0",
     "description": "Contains script invocations and their dependencies",
     "scripts": {
-        "pre-commit": "npm run write-notes-trees && npm run validate-internal-links",
+        "pre-commit": "npm run replace-tabs && npm run write-notes-trees && npm run validate-internal-links",
+        "replace-tabs": "replace-in-file --configFile=replace-in-file.config.js",
         "write-notes-trees": "markdown-notes-tree",
         "validate-internal-links": "remark --use remark-validate-links --frail ."
     },
     "devDependencies": {
         "markdown-notes-tree": "^1.0.0",
         "remark-cli": "^7.0.0",
-        "remark-validate-links": "^9.0.1"
+        "remark-validate-links": "^9.0.1",
+        "replace-in-file": "^5.0.2"
     }
 }
