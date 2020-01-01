@@ -59,3 +59,7 @@ Each note will typically include a summary of the most important ideas regarding
     - [Code review and collaboration workflows](processes-techniques/Code-review-collaboration.md)
     - [Feature flags](processes-techniques/Feature-flags.md)
     - [Trunk Based Development](processes-techniques/Trunk-Based-Development.md)
+- [**web**](web)
+    - [**css**](web/css)
+        - [Inheritance, the cascade and specificity ](web/css/Inheritance-cascade-specificity.md)
+        - [Selectors](web/css/Selectors.md)

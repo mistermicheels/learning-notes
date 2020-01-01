@@ -4,5 +4,4 @@
 npm run pre-commit || exit 1
 
 # make sure any changes to README.md files are committed
-git add README.md
-git add **/README.md
+git add --all
