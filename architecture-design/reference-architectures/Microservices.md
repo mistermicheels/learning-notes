@@ -19,17 +19,17 @@ See:
   - Freedom to choose or change the technology used by a service based on what makes most sense. Some service may use a relational database while another one uses a document store. A service providing information about the relationships between different users could switch to a graph database without any other service being affected by the change.
 - Different small teams each take ownership of one or more of these services
   - Team responsible for a microservice takes control of development and deployment
-    - Each service is expected to handle reasonable error scenarios and recover if possible
-    - Services can be developed, deployed and scaled independently
-      - Challenge: making sure integration points between services don't break (things like contract testing can help)
+    - Each service is expected to handle reasonable error scenarios and recover if possibe
   - Changes within a single functional domain (= single service) can happen within a single team
   - Coordination with other teams is only required if the communication with their services needs changes as well
+  - Challenge: making sure integration points between services don't break (things like contract testing can help)
 - Services integrate with each other by passing messages, most often over HTTP or message queues
 - Typically combined with Continuous Delivery, automatic machine provisioning and deployment, ...
 - Monitoring and logging typically first-class architectural concepts
   - Several services, each of which might be scaled across several instances -> large number of processes to watch
   - This means having a good monitoring and logging setup is essential in keeping the system running smoothly
-- Can help with scaling the development organization into several teams that can (to a large extent) work independently of other teams
+- Can help with scaling the development organization into several teams that can (to a large extent) work independently of each other
+- Services can be developed, deployed and scaled independently
 - Can be overkill (and introduce more problems than it solves) for a single small team
 - Challenging to find the best way to divide the system into services. Defining this upfront is risky. Typically, it's best to start with a monolith or very small number of services and extract certain parts into separate services when it makes sense.
 
@@ -99,6 +99,7 @@ See:
 - [Micro Frontends](https://micro-frontends.org/)
 - [Micro frontends—a microservice approach to front-end web development](https://medium.com/@tomsoderlund/micro-frontends-a-microservice-approach-to-front-end-web-development-f325ebdadc16)
 - [MicroFrontends](https://martinfowler.com/articles/micro-frontends.html)
+- [[Tailor made Micro Frontends](https://craftsmen.nl/tailor-made-micro-frontends/)](https://craftsmen.nl/tailor-made-micro-frontends/)
 
 Even with microservices in the backend, the frontend is often monolithic:
 
@@ -117,3 +118,15 @@ Alternative approach: Micro frontends
 - Teams are responsible for their functional part of the application across the entire stack, from the database up to the frontend.
 - The actual frontend that the user interacts with is stitched together from the functional parts developed by different teams
   - Some patterns/frameworks available that can help
+
+Implementation approaches:
+
+- **Server-side template composition:** HTML is rendered on the server side, the main template contains includes that insert the HTML of the relevant micro frontends
+- **Build-time integration:** The micro frontends are published as packages, which are then imported into the main "container" application as dependencies
+  - Disadvantage: coupling at build and release time
+- **Run-time integration via iframes:** Use iframes to stitch together the different parts
+  - Disadvantage: routing, history, and deep-linking are more complicated
+  - Disadvantage: harder to create good responsive designs
+- **Run-time integration via JavaScript:** Each micro frontend will be a bundle.js file that can be released independently and is retrieved and mounted asynchronously as needed, using JavaScript
+  - Example implementation: [Tailor](https://github.com/zalando/tailor)
+- **Run-time integration via WebComponents:** Each micro frontend will define a custom HTML element (WebComponent) that the container application can instantiate
