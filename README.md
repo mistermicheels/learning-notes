@@ -63,4 +63,5 @@ Each note will typically include a summary of the most important ideas regarding
     - [**css**](web/css)
         - [The box model](web/css/Box-model.md)
         - [Inheritance, the cascade and specificity ](web/css/Inheritance-cascade-specificity.md)
+        - [Positioning](web/css/Positioning.md)
         - [Selectors](web/css/Selectors.md)
