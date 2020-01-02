@@ -61,5 +61,6 @@ Each note will typically include a summary of the most important ideas regarding
     - [Trunk Based Development](processes-techniques/Trunk-Based-Development.md)
 - [**web**](web)
     - [**css**](web/css)
+        - [The box model](web/css/Box-model.md)
         - [Inheritance, the cascade and specificity ](web/css/Inheritance-cascade-specificity.md)
         - [Selectors](web/css/Selectors.md)
