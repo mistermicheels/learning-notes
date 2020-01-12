@@ -139,6 +139,8 @@ Drawbacks:
   - What to do while waiting for feedback?
     - Simplest option: work on something unrelated
     - If other work depends on work under review, things can get more complex. Avoid submitting code for review if it depends on other code that is still under review. It's often more productive to push people for a review of the original code.
+      - Git example: Stay on the feature branch that you submitted for review but don't commit yet. Then, when your other work has been approved, you can stash those changes, merge your feature branch to master, pull master and unstash your changes.
+      - If you make it clear that your PR is part of a series, reviewers might be inclined to immediately approve your PR but specify comments for further improvement
   - The team should make sure that code and comments are reviewed and processed fairly quickly, meaning that the feedback loop stays relatively short
     - The longer the feedback loop gets, the harder it is for a committer or reviewer to switch contexts when they receive feedback on their code or comments.
     - A longer feedback loop also increases the chance that other changes in the codebase will conflict with the code under review

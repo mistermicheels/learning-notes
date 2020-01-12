@@ -3,6 +3,7 @@
 See:
 
 - [Trunk Based Development](https://trunkbaseddevelopment.com/)
+- [Long-Running Branches Considered Harmful](https://blog.newrelic.com/culture/long-running-branches-considered-harmful/)
 - [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
 - [SemanticConflict](https://martinfowler.com/bliki/SemanticConflict.html)
 - [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
@@ -37,7 +38,9 @@ Some examples of semantic conflicts:
 - There is a method that has a certain side effect. I decide to split out the side effect into a separate method, potentially because I have a new case where it is not needed. Then, I make sure to update all existing calls to the method to call the method for the side effect separately. Meanwhile, you write some new code calling the original method and expecting the side effect. The compiler doesn’t detect anything once we merge our code, we can only hope our tests will.
 - I change an abstraction while you build some code on top of the original abstraction. This one will probably trigger some compiler errors once we merge (if our language is statically typed), but could require you to completely change your approach.
 
-If developers collaborate on a single branch, these types of issues are less likely to occur because developers try to stay up to date with the trunk and analyze if any changes made by other developers affect them. And, if semantic conflicts do occur, Trunk Based Development will make sure they are detected sooner rather than later, making them much easier to solve.
+Even if you frequently rebase your feature branch from the main development branch, other people won't see your changes until you merge your feature branch (and you're also not seeing other people's work that they haven't merged yet). 
+
+If developers collaborate on a single branch, these types of issues are less likely to occur because developers try to stay up to date with the trunk and analyze if any changes made by other developers affect them. Additionally, developers can see if any changes they are making conflict with the path that others are taking (instead of turning their life into merge hell without realizing it). And, if semantic conflicts do occur, Trunk Based Development will make sure they are detected sooner rather than later, making them much easier to solve.
 
 ### Commitment to quality of code and build process
 
@@ -52,6 +55,10 @@ This part also highlights a possible challenge: Trunk Based Development does req
 ### Flexibility to refactor where needed
 
 In teams where work happens on long-lived feature branches, refactoring could turn an already challenging merge into a complete disaster. The thought of a painful merge can actually keep the team from applying the refactoring that the codebase needs. When practicing Trunk Based Development, the reduced distance between developers makes refactoring a lot easier, meaning that developers are more likely to do it when it makes sense.
+
+### Encouraging incremental development
+
+Trunk-Based Development forces you to divide your work into small pieces that don't break the rest of the codebase. Each of those steps is less risky than taking a giant step at once, plus you will get faster feedback if something went wrong.
 
 ### Flexibility regarding releases
 
@@ -72,12 +79,17 @@ Trunk Based Development allow feature branches as a tool for code review, with s
 
 - Feature branches are short-lived (shorter is better, definitely not more than a few days)
 - Only one developer commits to a given feature branch.
-- Merging from the feature branch to trunk is also allowed once and also means the end of the feature branch
+- Feature branches branch from the trunk and can only be merged to the trunk.
+- Merging from the feature branch to trunk is allowed only once and also means the end of the feature branch
 - Merging from trunk to bring the feature branch up to date with new changes is allowed anytime. It is especially recommended to bring your feature branch fully up to date with the trunk (and check that it builds) before actually merging into trunk
 
 ![Feature branch](_img/Trunk-Based-Development/feature-branch.png)
 
 Pull requests (as offered by GitHub and Bitbucket) are a good way to handle this, and they make it easy to delete the branch when you merge it.
+
+As feature branches are an alternative to committing directly to the trunk, the scope of a feature branch should be small enough to have been the scope for a single commit to trunk.
+
+When merging a feature branch back to the trunk, it could make sense to perform a squash merge that makes the changes appear as a single commit on the trunk. Note, however, that this means losing information regarding the individual commits in the feature branch.
 
 ### Review after the fact
 
@@ -163,5 +175,7 @@ Strategies:
 - *Shared nothing*: Developers run the build locally before pushing their code, typically including integration and functional tests talking to real databases etc. This means individual developers must be able to run the application and all its dependencies locally, without depending on resources shared with others.
   - Small teams could even survive without a CI server for quite some time if every developer runs the build locally before committing
   - A problem with testing locally is that the environment on which the tests are run is likely quite different from the production environment. Therefore, you will likely still need several QA/UAT environments. These environments will ideally contain real instances of services and applications that your system integrates with, but those will ideally not be shared between the different environments.
-- *Facilitating commits*: Developers sometimes chop up their work into multiple smaller commits in order to make their changes easier for their teammates to adjust to. For example, when building a feature entails introducing a new dependency, this dependency could be introduced separately through a new commit that the developer explicitly notifies the team of.
+- *Facilitating commits*: Developers sometimes chop up their work into multiple smaller commits in order to make their changes easier for their teammates to adjust to.
+  - Example: When building a feature entails introducing a new dependency, this dependency could be introduced separately through a new commit that the developer explicitly notifies the team of
+  - Example: First create and commit interfaces, then work on implementation while others can already code against the interfaces
 - *Thin Vertical Slices*: Stories or tasks from the backlog can ideally be implemented completely by a single developer or pair of developers in a short amount of time and small number of commits. They cut across the whole stack and they do not need to be passed around between developers with specialized knowledge in order to get completed.
