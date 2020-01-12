@@ -73,12 +73,14 @@ Specificity: a measure for how specific the selectors of the CSS rules are, wher
 
 See also [Selectors](./Selectors.md)
 
-A rule's specificity is determined by four values. Highest to lowest priority:
+A rule's specificity is determined based on four elements. Highest to lowest priority:
 
 - **Inline style:** Inline style (defined directly on an element) is more specific than any rule that matches the element based on a selector
 - **ID selectors**: Number of ID selectors in the overall selector of the rule
 - **Class selectors, attribute selectors and pseudo-classes:** Number of class selectors, attribute selectors and pseudo-classes in the overall selector of the rule
 - **Element selectors and pseudo-elements:** Number of element selectors and pseudo-elements in the overall selector of the rule
+
+Here, higher priority always beats lower priority. For example, a rule with a million class selectors but no ID selectors is still less specific than a rule with a single ID selector.
 
 Important: the universal selector (`*`), combinators and the negation pseudo-class (`:not`) have no effect on specificity!
 
