@@ -105,6 +105,8 @@ Example: automated tests checking the direction of package imports
 
 ![JDepend test for direction of imports](_img/Architectural-fitness-functions/jdepend-direction-dependencies.png)
 
+([source](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+
 ### Holistic and triggered
 
 Typically run by developers and in deployment pipeline

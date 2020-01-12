@@ -109,6 +109,8 @@ Example of combining the above: use case boundary as specified by the Clean Arch
 
 ![Clean Architecture boundary](_img/Architectural-boundaries/clean-architecture-boundary.jpg)
 
+([source](https://softwareengineering.stackexchange.com/questions/380251/clean-architecture-what-is-the-view-model))
+
 - Abstraction, specifying interfaces for both client and provider
 - Data transfer objects for input and output data
 - Ideally, encapsulation is used to prevent clients from calling the implementation(s) of the input boundary interface directly

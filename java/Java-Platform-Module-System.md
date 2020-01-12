@@ -37,6 +37,8 @@ Lowest level of encapsulation: classes
 
 ![Access modifiers](_img/Java-Platform-Module-System/access-modifiers.png)
 
+([source](https://www.programcreek.com/2011/11/java-access-level-public-protected-private/))
+
 Higher level of encapsulation: packages
 
 - Package can make some classes public to expose them and keep the rest package private
@@ -126,7 +128,7 @@ JDK: one huge library with all functionality spread across a huge number of pack
 
 ![JDK modules dependencies](_img/Java-Platform-Module-System/jdk-modules-dependencies.png)
 
-
+([source](https://dzone.com/articles/the-java-platform-module-system))
 
 ## Adjusting your own applications
 

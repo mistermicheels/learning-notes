@@ -15,6 +15,8 @@ See:
 
 ![Package by component](_img/Package-by-feature-or-component/package-by-component.png)
 
+([source](http://www.codingthearchitecture.com/2015/03/08/package_by_component_and_architecturally_aligned_testing.html))
+
 - Divide system into features/components based on functional areas
 - A feature/component exposes an interface for the outside world to use and hides its internals (including DB access etc.) from the rest of the codebase
   - In package by feature, features are separated onto the level of controllers
@@ -51,5 +53,5 @@ The "reshaped testing pyramid" by Simon Brown (aimed at package by component or 
 
 ![Reshaped testing pyramid](_img/Package-by-feature-or-component/reshaped-testing-pyramid.png)
 
-
+([source](http://www.codingthearchitecture.com/2015/03/08/package_by_component_and_architecturally_aligned_testing.html))
 

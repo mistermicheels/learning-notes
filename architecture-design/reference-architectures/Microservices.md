@@ -2,7 +2,7 @@
 
 See:
 
-- Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures))
+- Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures), [summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
 - Clean Architecture (book by Robert C. Martin)
 - [Learning the hard way: Microservices](https://itnext.io/microservices-c8b5dbdd58b8)
 - [BoundedContext](https://www.martinfowler.com/bliki/BoundedContext.html)
@@ -12,6 +12,8 @@ See:
 ## Basic idea
 
 ![Microservices](_img/Microservices/microservices.png)
+
+(source: O'Reilly)
 
 - The system is divided into several small services that each encapsulate a certain functional area across several layers of the technical stack, even down to the database
   - "Shared nothing", decrease coupling between services as much as possible
@@ -105,6 +107,8 @@ Even with microservices in the backend, the frontend is often monolithic:
 
 ![Monolithic frontend](_img/Microservices/monolithic-frontend.png)
 
+([source](https://micro-frontends.org/))
+
 - Often a single, large and feature-rich single-page app cutting across all of the functional areas represented by the backend microservices
 - Problems:
   - Frontend can become so big that it’s difficult to maintain
@@ -113,6 +117,8 @@ Even with microservices in the backend, the frontend is often monolithic:
 Alternative approach: Micro frontends
 
 ![Monolithic frontend](_img/Microservices/micro-frontend.png)
+
+([source](https://micro-frontends.org/))
 
 - Frontend is split into different parts in the same way that the backend is
 - Teams are responsible for their functional part of the application across the entire stack, from the database up to the frontend.
