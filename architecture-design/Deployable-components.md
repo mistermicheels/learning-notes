@@ -55,7 +55,7 @@ Tension diagram (edges of diagram show the cost of abandoning the principle on t
 
 ![Tension diagram](_img/Deployable-components/cohesion-principles-tension-diagram.jpg)
 
-([source](https://www.codingblocks.net/podcast/clean-architecture-components-and-component-cohesion/))
+([image source](https://www.codingblocks.net/podcast/clean-architecture-components-and-component-cohesion/))
 
 - Are “too many” components changing at the same time? Then your classes should be consolidated better (CCP)
 - Do you have “too many” releases? You should take a look at streamlining and minimizing your dependencies (CRP)

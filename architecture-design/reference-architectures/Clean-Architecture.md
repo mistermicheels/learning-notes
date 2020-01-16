@@ -13,7 +13,7 @@ See:
 
 ![Clean Architecture](_img/Clean-Architecture/clean-architecture.jpg)
 
-([source](https://codeiwrote.net/2019-06-18-Part-2/))
+([image source](https://codeiwrote.net/2019-06-18-Part-2/))
 
 - Inspired by Hexagonal Architecture (Ports and Adapters) etc.
 - Divides the systems into different layers
@@ -71,7 +71,7 @@ Note: in practice, you could have more layers. However, the dependency rule stil
 
 ![Clean Architecture](_img/Clean-Architecture/clean-architecture-boundaries.jpg)
 
-([source](https://softwareengineering.stackexchange.com/questions/380251/clean-architecture-what-is-the-view-model))
+([image source](https://softwareengineering.stackexchange.com/questions/380251/clean-architecture-what-is-the-view-model))
 
 - Main rule: no code in inner layers should depend on code in outer layers!
   - This also means that the format of the data crossing a layer is defined in the innermost layer

@@ -10,7 +10,7 @@ See:
 
 ![Layered architecture](_img/Layered-architecture/layered-architecture.png)
 
-([source](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html))
+([image source](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html))
 
 - System is divided into set of layers based on their technical purpose (separation of concerns)
 - Layers encapsulate as much of their behavior as possible in order to isolate layers from changes inside other layers
@@ -58,7 +58,7 @@ Sometimes, it makes sense to mark a layer as **open**:
 
 ![Layered architecture](_img/Layered-architecture/open-closed-layers.png)
 
-([source](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html))
+([image source](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html))
 
 ## Typical antipattern: lasagna architecture
 

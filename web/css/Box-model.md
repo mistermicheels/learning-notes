@@ -102,7 +102,7 @@ With and height of an element define the width and height of the *content box*
 
 ![Standard box model](./_img/Box-model/standard-box-model.png)
 
-([source](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model))
+([image source](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model))
 
 The padding and the border are then added to this to determine the total size taken up by the box (margins are seen as space *between* boxes, see later)
 
@@ -112,7 +112,7 @@ Width and height of an element include the padding and the border (and thus, the
 
 ![Alternative box model](./_img/Box-model/alternate-box-model.png)
 
-([source](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model))
+([image source](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model))
 
 This was introduced later on because the standard box model was seen as inconvenient to work with.
 

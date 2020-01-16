@@ -107,7 +107,7 @@ Even with microservices in the backend, the frontend is often monolithic:
 
 ![Monolithic frontend](_img/Microservices/monolithic-frontend.png)
 
-([source](https://micro-frontends.org/))
+([image source](https://micro-frontends.org/))
 
 - Often a single, large and feature-rich single-page app cutting across all of the functional areas represented by the backend microservices
 - Problems:
@@ -118,7 +118,7 @@ Alternative approach: Micro frontends
 
 ![Monolithic frontend](_img/Microservices/micro-frontend.png)
 
-([source](https://micro-frontends.org/))
+([image source](https://micro-frontends.org/))
 
 - Frontend is split into different parts in the same way that the backend is
 - Teams are responsible for their functional part of the application across the entire stack, from the database up to the frontend.
