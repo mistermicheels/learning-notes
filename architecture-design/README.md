@@ -2,9 +2,9 @@
 
 # architecture-design
 
-- [**oo-design**](oo-design)
+- [**oo-design**](oo-design/README.md)
     - [SOLID principles](oo-design/SOLID-principles.md)
-- [**reference-architectures**](reference-architectures)
+- [**reference-architectures**](reference-architectures/README.md)
     - [Clean Architecture](reference-architectures/Clean-Architecture.md)
     - [Layered architecture](reference-architectures/Layered-architecture.md)
     - [Microservices](reference-architectures/Microservices.md)

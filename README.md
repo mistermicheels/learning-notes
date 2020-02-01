@@ -1,20 +1,11 @@
 # Learning notes
 
-This is a collection of my notes regarding things I have learned over the years. These notes will serve two main purposes:
-
-- Allow me to quickly get back up to speed on a subject that I investigated before
-- Help me structure my thoughts as I am learning new things
-
-Each note will typically include a summary of the most important ideas regarding the subject (either in my own words or by quoting other people) and then refer to additional sources for more details.
-
-## Contents
-
 <!-- auto-generated notes tree starts here -->
 
-- [**architecture-design**](architecture-design)
-    - [**oo-design**](architecture-design/oo-design)
+- [**architecture-design**](architecture-design/README.md)
+    - [**oo-design**](architecture-design/oo-design/README.md)
         - [SOLID principles](architecture-design/oo-design/SOLID-principles.md)
-    - [**reference-architectures**](architecture-design/reference-architectures)
+    - [**reference-architectures**](architecture-design/reference-architectures/README.md)
         - [Clean Architecture](architecture-design/reference-architectures/Clean-Architecture.md)
         - [Layered architecture](architecture-design/reference-architectures/Layered-architecture.md)
         - [Microservices](architecture-design/reference-architectures/Microservices.md)
@@ -25,8 +16,8 @@ Each note will typically include a summary of the most important ideas regarding
     - [Exception handling](architecture-design/Exception-handling.md)
     - [Humble Object pattern](architecture-design/Humble-Object-pattern.md)
     - [Visualizing architecture](architecture-design/Visualizing-architecture.md)
-- [**data**](data)
-    - [**sql**](data/sql)
+- [**data**](data/README.md)
+    - [**sql**](data/sql/README.md)
         - [ACID](data/sql/ACID.md)
         - [Normalization](data/sql/Normalization.md)
         - [Optimistic and pessimistic locking in SQL](data/sql/Optimistic-pessimistic-locking-SQL.md)
@@ -34,7 +25,7 @@ Each note will typically include a summary of the most important ideas regarding
     - [CAP theorem](data/CAP-theorem.md)
     - [Data schema migration](data/Data-schema-migration.md)
     - [SQL, NoSQL, NewSQL](data/SQL-NoSQL-NewSQL.md)
-- [**java**](java)
+- [**java**](java/README.md)
     - [Concurrency (high-level)](java/Concurrency-high-level.md)
     - [Concurrency (low-level)](java/Concurrency-low-level.md)
     - [The Date and Time API](java/Date-Time-API.md)
@@ -47,20 +38,20 @@ Each note will typically include a summary of the most important ideas regarding
     - [The Optional type](java/Optional.md)
     - [Overloading, overriding and method hiding](java/Overloading-overriding-method-hiding.md)
     - [Streams](java/Streams.md)
-- [**javascript**](javascript)
-    - [**typescript**](javascript/typescript)
+- [**javascript**](javascript/README.md)
+    - [**typescript**](javascript/typescript/README.md)
         - [The TypeScript compiler API](javascript/typescript/Compiler-API.md)
         - [Runtime type checking in TypeScript](javascript/typescript/Runtime-type-checking.md)
-- [**mindset**](mindset)
+- [**mindset**](mindset/README.md)
     - [Hammock-driven development](mindset/Hammock-driven-development.md)
     - [It depends](mindset/It-depends.md)
-- [**processes-techniques**](processes-techniques)
+- [**processes-techniques**](processes-techniques/README.md)
     - [Branch By Abstraction and application strangulation](processes-techniques/Branch-by-abstraction-application-strangulation.md)
     - [Code review and collaboration workflows](processes-techniques/Code-review-collaboration.md)
     - [Feature flags](processes-techniques/Feature-flags.md)
     - [Trunk Based Development](processes-techniques/Trunk-Based-Development.md)
-- [**web**](web)
-    - [**css**](web/css)
+- [**web**](web/README.md)
+    - [**css**](web/css/README.md)
         - [The box model](web/css/Box-model.md)
         - [Inheritance, the cascade and specificity ](web/css/Inheritance-cascade-specificity.md)
         - [Positioning](web/css/Positioning.md)
