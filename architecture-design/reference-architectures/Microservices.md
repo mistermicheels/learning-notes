@@ -5,6 +5,7 @@ See:
 - Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures), [summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
 - Clean Architecture (book by Robert C. Martin)
 - [Learning the hard way: Microservices](https://itnext.io/microservices-c8b5dbdd58b8)
+- [A shared database is still an anti-pattern, no matter what the justification](https://www.ben-morris.com/a-shared-database-is-still-an-anti-pattern-no-matter-what-the-justification/)
 - [BoundedContext](https://www.martinfowler.com/bliki/BoundedContext.html)
 - [Pattern: Database per service](https://microservices.io/patterns/data/database-per-service.html)
 - [How to keep relationship integrity with Microservice Architecture](https://softwareengineering.stackexchange.com/questions/381279/how-to-keep-relationship-integrity-with-microservice-architecture)
@@ -13,11 +14,13 @@ See:
 
 ![Microservices](_img/Microservices/microservices.png)
 
-(source: O'Reilly)
+(image source: O'Reilly)
 
 - The system is divided into several small services that each encapsulate a certain functional area across several layers of the technical stack, even down to the database
   - "Shared nothing", decrease coupling between services as much as possible
-  - Sharing of a database between services is generally considered bad practice, because it prevents services from independently making changes to their database structure (or independently choosing the database technology which makes the most sense for the service)
+  - Sharing of a database between services is generally considered bad practice
+    - Coupling: all services using the shared database must align and stay aligned regarding type of database, schema, additional validation to happen on top of database-level restrictions, ...
+    - Increased risk of data corruption: a mismatch in the way different services use the database could result in the data becoming corrupted from the point of view of one or more of the services sharing the database
   - Freedom to choose or change the technology used by a service based on what makes most sense. Some service may use a relational database while another one uses a document store. A service providing information about the relationships between different users could switch to a graph database without any other service being affected by the change.
 - Different small teams each take ownership of one or more of these services
   - Team responsible for a microservice takes control of development and deployment
@@ -101,7 +104,7 @@ See:
 - [Micro Frontends](https://micro-frontends.org/)
 - [Micro frontends—a microservice approach to front-end web development](https://medium.com/@tomsoderlund/micro-frontends-a-microservice-approach-to-front-end-web-development-f325ebdadc16)
 - [MicroFrontends](https://martinfowler.com/articles/micro-frontends.html)
-- [[Tailor made Micro Frontends](https://craftsmen.nl/tailor-made-micro-frontends/)](https://craftsmen.nl/tailor-made-micro-frontends/)
+- [Tailor made Micro Frontends](https://craftsmen.nl/tailor-made-micro-frontends/)
 
 Even with microservices in the backend, the frontend is often monolithic:
 
