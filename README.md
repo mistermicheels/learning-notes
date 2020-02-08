@@ -53,8 +53,11 @@
 - [**web**](web/README.md)
     - [**css**](web/css/README.md)
         - [The box model](web/css/Box-model.md)
+        - [Flexbox](web/css/Flexbox.md)
+        - [Grids](web/css/Grids.md)
         - [Inheritance, the cascade and specificity ](web/css/Inheritance-cascade-specificity.md)
         - [Positioning](web/css/Positioning.md)
+        - [Sass/SCSS](web/css/Sass-SCSS.md)
         - [Selectors](web/css/Selectors.md)
 
 <!-- auto-generated notes tree ends here -->
