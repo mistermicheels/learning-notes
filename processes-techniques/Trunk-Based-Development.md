@@ -87,9 +87,9 @@ Trunk Based Development allow feature branches as a tool for code review, with s
 
 Pull requests (as offered by GitHub and Bitbucket) are a good way to handle this, and they make it easy to delete the branch when you merge it.
 
-As feature branches are an alternative to committing directly to the trunk, the scope of a feature branch should be small enough to have been the scope for a single commit to trunk.
+As feature branches are an alternative to committing directly to the trunk, the scope of a feature branch should be small enough to have been the scope for a single commit to trunk. However, it sometimes makes sense to split the work into separate commits to make the reviewing process easier. An example is having a separate commit with some refactoring and then another commit with the implementation of new functionality.
 
-When merging a feature branch back to the trunk, it could make sense to perform a squash merge that makes the changes appear as a single commit on the trunk. Note, however, that this means losing information regarding the individual commits in the feature branch.
+When merging a feature branch back to the trunk, it could make sense to perform a squash merge that makes the changes appear as a single commit on the trunk. Note, however, that this means losing information regarding the individual commits in the feature branch. Sometimes, it's better to keep the individual commits in a pull request for future reference.
 
 ### Review after the fact
 

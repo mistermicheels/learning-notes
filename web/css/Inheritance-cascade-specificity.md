@@ -4,6 +4,7 @@ See:
 
 - [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
 - [Cascade and inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [The CSS Cascade](https://wattenberger.com/blog/css-cascade)
 
 All of these determine how CSS rules with their selectors actually affect the HTML elements
 
@@ -43,8 +44,9 @@ Important to note: conflicts are resolved at the level of properties, not at the
 Factors to consider, in decreasing order of priority:
 
 1. Importance
-2. Specificity
-3. Source order
+2. Origin
+3. Specificity
+4. Source order
 
 ### Importance
 
@@ -66,6 +68,18 @@ Some libraries, for example Bootstrap, also use this for some of their utility c
     width: 100% !important;
 }
 ```
+
+This is actually not the entire picture, as transitions and animations also have an effect on importance. See [here](https://wattenberger.com/blog/css-cascade#importance)
+
+### Origin
+
+This depends on where a rule was defined. Highest to lowest priority:
+
+- Website (defined by you, the website's developer)
+- User (styles that the user has set up)
+- Browser (default styles as defined by the browser)
+  - These can be different between browsers
+  - It is common to override these default stylesheets using a **CSS reset** stylesheet at the website level, which overrides default browser styles with some styles which will then be the same regardless of which browser is used to open the page. These can then be overridden as needed by other website-level styles.
 
 ### Specificity
 
@@ -98,4 +112,4 @@ Note: **inherited** property values can be seen as rules that are less specific 
 
 In case of a tie regarding importance and specificity, the winning rule will be the one that was defined/loaded last. This can matter if the exact same selector is use for multiple rules within the same style sheet, but also when combining different style sheets.
 
-One important thing to keep in mind here is that browsers have a **default stylesheet** which can differ between browsers. These mostly use element selectors and are thus easily overridden by any CSS that is loaded by the actual web page. It is also common to override these default stylesheets using a **CSS reset** stylesheet, which overrides default browser styles with some styles which will then be the same regardless of which browser is used to open the page. Any custom CSS rules can then be loaded after the CSS reset stylesheet and override styles as necessary, starting from the "clean slate" created by the CSS reset stylesheet.
+When using a CSS reset stylesheet (see above), any custom CSS rules can be loaded after the CSS reset stylesheet and override styles as necessary, starting from the "clean slate" created by the CSS reset stylesheet.

@@ -5,6 +5,7 @@ See:
 - Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures), [summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
 - Clean Architecture (book by Robert C. Martin)
 - [Learning the hard way: Microservices](https://itnext.io/microservices-c8b5dbdd58b8)
+- [Should that be a Microservice? Keep These Six Factors in Mind](https://content.pivotal.io/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind)
 - [A shared database is still an anti-pattern, no matter what the justification](https://www.ben-morris.com/a-shared-database-is-still-an-anti-pattern-no-matter-what-the-justification/)
 - [BoundedContext](https://www.martinfowler.com/bliki/BoundedContext.html)
 - [Pattern: Database per service](https://microservices.io/patterns/data/database-per-service.html)
@@ -34,7 +35,10 @@ See:
   - Several services, each of which might be scaled across several instances -> large number of processes to watch
   - This means having a good monitoring and logging setup is essential in keeping the system running smoothly
 - Can help with scaling the development organization into several teams that can (to a large extent) work independently of each other
-- Services can be developed, deployed and scaled independently
+  - Apart from decisions impacting the communication between services, different teams can work independently. This helps to scale the development organization, as communication is way more efficient within a small, focused team than within a large team with large scope.
+  - Services can be developed and deployed independently
+  - Services can be scaled independently (you don't have to scale your entire monolith to support your most volatile component in terms of need for capacity)
+  - Different services can have different release cycles
 - Can be overkill (and introduce more problems than it solves) for a single small team
 - Challenging to find the best way to divide the system into services. Defining this upfront is risky. Typically, it's best to start with a monolith or very small number of services and extract certain parts into separate services when it makes sense.
 
