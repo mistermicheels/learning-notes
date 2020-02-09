@@ -1,4 +1,4 @@
-# Concurrency (high-level)
+# Concurrency
 
 See:
 

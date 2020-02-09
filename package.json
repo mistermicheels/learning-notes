@@ -9,7 +9,7 @@
         "validate-internal-links": "remark --use remark-validate-links --frail ."
     },
     "devDependencies": {
-        "markdown-notes-tree": "^1.5.0",
+        "markdown-notes-tree": "^1.5.1",
         "remark-cli": "^7.0.0",
         "remark-validate-links": "^9.0.1",
         "replace-in-file": "^5.0.2"

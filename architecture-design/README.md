@@ -3,13 +3,13 @@
 # architecture-design
 
 - [**architectural-boundaries**](architectural-boundaries/README.md)
+    - [Architectural boundaries](architectural-boundaries/_Architectural-boundaries.md)
     - [Boundaries and the database](architectural-boundaries/Boundaries-database.md)
     - [Boundaries and duplication](architectural-boundaries/Boundaries-duplication.md)
     - [Boundaries and libraries/frameworks](architectural-boundaries/Boundaries-libraries-frameworks.md)
     - [Boundaries and the web](architectural-boundaries/Boundaries-web.md)
     - [Horizontal versus vertical separation](architectural-boundaries/Horizontal-vertical-separation.md)
     - [Separation mechanisms](architectural-boundaries/Separation-mechanisms.md)
-    - [Architectural boundaries](architectural-boundaries/_Architectural-boundaries.md)
 - [**oo-design**](oo-design/README.md)
     - [SOLID principles](oo-design/SOLID-principles.md)
 - [**reference-architectures**](reference-architectures/README.md)

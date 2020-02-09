@@ -3,10 +3,10 @@
 # java
 
 - [**concurrency**](concurrency/README.md)
+    - [Concurrency](concurrency/_Concurrency.md)
     - [Locking](concurrency/Locking.md)
     - [Thread safety](concurrency/Thread-safety.md)
     - [Threads](concurrency/Threads.md)
-    - [Concurrency (high-level)](concurrency/_Concurrency.md)
 - [The Date and Time API](Date-Time-API.md)
 - [Equals](Equals.md)
 - [Exceptions](Exceptions.md)
