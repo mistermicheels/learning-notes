@@ -110,6 +110,6 @@ Note: **inherited** property values can be seen as rules that are less specific 
 
 ### Source order
 
-In case of a tie regarding importance and specificity, the winning rule will be the one that was defined/loaded last. This can matter if the exact same selector is use for multiple rules within the same style sheet, but also when combining different style sheets.
+In case of a tie regarding importance and specificity, the winning rule will be the one that was defined/loaded last. This can matter if the exact same selector is used for multiple rules, but also when an element is matched by two selectors that are equally specific.
 
 When using a CSS reset stylesheet (see above), any custom CSS rules can be loaded after the CSS reset stylesheet and override styles as necessary, starting from the "clean slate" created by the CSS reset stylesheet.

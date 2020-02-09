@@ -1,4 +1,4 @@
-# The TypeScript compiler API
+# Compiler API
 
 When writing an application using TypeScript, you typically use the “typescript” module as a build tool to transpile your TypeScript code into JavaScript. This is usually all you need. However, if you import the “typescript” module in your application code, you get access to the compiler API. This compiler API provides some very powerful tools for interacting with TypeScript code. Some of its features are documented on the TypeScript wiki: [Using the Compiler API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API).
 

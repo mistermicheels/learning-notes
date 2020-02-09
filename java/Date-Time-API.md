@@ -1,4 +1,4 @@
-# The Date and Time API
+# Date and Time API
 
 See:
 

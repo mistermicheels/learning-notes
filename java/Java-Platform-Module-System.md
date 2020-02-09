@@ -1,4 +1,4 @@
-# The Java Platform Module System
+# Java Platform Module System
 
 See:
 

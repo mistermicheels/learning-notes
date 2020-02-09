@@ -1,4 +1,4 @@
-# The box model
+# Box model
 
 See:
 

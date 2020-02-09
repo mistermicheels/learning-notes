@@ -1,4 +1,4 @@
-# The Optional type
+# Optional type
 
 See:
 
