@@ -11,7 +11,7 @@
 - "Syntactically Awesome Style Sheets"
 - Sass is a style sheet preprocessor that transpiles files in the Sass/SCSS language into regular CSS that can be understood by browsers
 - Two syntaxes available:
-  - SCSS (Sassy CSS): This is an extension of the CSS syntax, meaning that every valid CSS file is also a valid CSS file with the same meaning
+  - SCSS (Sassy CSS): This is an extension of the CSS syntax, meaning that every valid CSS file is also a valid SCSS file with the same meaning
   - Sass syntax (also known as indented syntax): Older syntax that uses indentation instead of brackets to indicate nesting and uses newlines instead of semicolons to separate different properties
 
 ## Some features
@@ -174,7 +174,7 @@ Resulting CSS:
 
 In the above example, `%message-shared` is a **placeholder class** which will not be included as such into the resulting CSS
 
-Note: inheritance and mixins are very similar, but can have different effects. See [SASS and Bootstrap - mixins vs. @extend](https://stackoverflow.com/questions/30744625/sass-and-bootstrap-mixins-vs-extend). One important difference is that inheritance also avoids duplication in the resulting CSS (see above), which is not the case when using mixins. The way inheritance avoid duplication in the resulting CSS can sometimes have confusing consequences caused by the order in which rules are loaded (example below, see alo [Inheritance, the cascade and specificity](./Inheritance-cascade-specificity.md)).
+Note: inheritance and mixins are very similar, but can have different effects. See [SASS and Bootstrap - mixins vs. @extend](https://stackoverflow.com/questions/30744625/sass-and-bootstrap-mixins-vs-extend). One important difference is that inheritance also avoids duplication in the resulting CSS (see above), which is not the case when using mixins. The way inheritance avoids duplication in the resulting CSS can sometimes have confusing consequences caused by the order in which rules are loaded (example below, see alo [Inheritance, the cascade and specificity](./Inheritance-cascade-specificity.md)).
 
 #### Same example but using mixins
 
@@ -242,7 +242,7 @@ Resulting CSS:
 
 Example element: `<div class='row highlight-row'></div>`
 
-Example SCSS (a first sight, this seems to make the element red):
+Example SCSS (at first sight, this seems to make the element red):
 
 ```scss
 .red-text {
