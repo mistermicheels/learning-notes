@@ -33,7 +33,7 @@ int count = 0; // shared among threads
 
 It is important to release the lock in the `finally` clause, so it is always released at the end of the operation even if an exception occurred
 
-The above example is simple, but implementing locking yourself can get tricky. You might have inadequate locking, you might have deadlocks, ... Therefore, it is recommended to use the other tools listed in [Concurrency](./_Concurrency.md) when possible.
+The above example is simple, but implementing locking yourself can get tricky. You might have inadequate locking, you might have deadlocks, ... Therefore, it is recommended to use the other tools listed in [Concurrency (overview)](./!-Concurrency.md) when possible.
 
 ## The `synchronized` keyword
 

@@ -2,7 +2,7 @@
 
 # architectural-boundaries
 
-- [Architectural boundaries](_Architectural-boundaries.md)
+- [Architectural boundaries (overview)](!-Architectural-boundaries.md)
 - [Boundaries and the database](Boundaries-database.md)
 - [Boundaries and duplication](Boundaries-duplication.md)
 - [Boundaries and libraries/frameworks](Boundaries-libraries-frameworks.md)

@@ -1,4 +1,4 @@
-# Architectural boundaries
+# Architectural boundaries (overview)
 
 See:
 

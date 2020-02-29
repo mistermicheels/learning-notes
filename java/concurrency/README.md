@@ -2,7 +2,7 @@
 
 # concurrency
 
-- [Concurrency](_Concurrency.md)
+- [Concurrency (overview)](!-Concurrency.md)
 - [Locking](Locking.md)
 - [Thread safety](Thread-safety.md)
 - [Threads](Threads.md)

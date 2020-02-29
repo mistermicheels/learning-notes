@@ -1,4 +1,4 @@
-# Branch By Abstraction and application strangulation
+# Branch By Abstraction and application strangulation (Strangler pattern)
 
 See:
 
@@ -80,7 +80,7 @@ Their abstraction layer: [Scientist](https://github.com/github/scientist)
 
 This allowed them to test the new implementation on actual production data, comparing both results and performance. After fixing some bugs, it allowed them to be confident enough to completely switch over to the new behavior in production
 
-## Application strangulation
+## Application strangulation (also known as Strangler pattern)
 
 ### Basic idea
 

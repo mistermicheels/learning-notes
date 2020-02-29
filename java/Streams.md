@@ -417,7 +417,7 @@ private static void blockingStreamTask() {
 
 The result of executing the above code might be different every time you execute it, but you will likely see that one or more normal stream tasks are blocked by the blocking stream tasks. Once all threads in the common fork-join pool are executing the `Thread.sleep(Integer.MAX_VALUE);` statement, no other work can be processed by the common fork-join pool until the threads stop sleeping.
 
-See also [Concurrency](./concurrency/_Concurrency.md)
+See also [Concurrency (overview)](./concurrency/!-Concurrency.md)
 
 ## Drawbacks of using streams
 

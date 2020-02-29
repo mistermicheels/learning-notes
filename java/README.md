@@ -3,7 +3,7 @@
 # java
 
 - [**concurrency**](concurrency/README.md)
-    - [Concurrency](concurrency/_Concurrency.md)
+    - [Concurrency (overview)](concurrency/!-Concurrency.md)
     - [Locking](concurrency/Locking.md)
     - [Thread safety](concurrency/Thread-safety.md)
     - [Threads](concurrency/Threads.md)
