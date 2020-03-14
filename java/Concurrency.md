@@ -1,4 +1,4 @@
-# Concurrency (overview)
+# Concurrency
 
 See:
 
@@ -16,12 +16,12 @@ public interface Runnable {
 }
 ```
 
-Note that the `run()` method cannot throw any checked exceptions! See also [Exceptions](../Exceptions.md).
+Note that the `run()` method cannot throw any checked exceptions! See also [Exceptions](./Exceptions.md).
 
 Running a task:
 
 - Can of course be run on the current thread by just invoking `run()`
-- Can be run inside a dedicated thread (see [Threads](./Threads.md))
+- Can be run inside a dedicated thread (see [Threads](./concurrency-details/Threads.md))
   - Note: This one-to-one relationship between threads and tasks is not recommended!
     - You might want to reuse the same thread for several tasks
     - If you have a large number of computationally-intensive tasks, just immediately executing all of them in their own thread will lead to a loss of performance due to overhead from switching between threads
@@ -79,7 +79,7 @@ A `Future` also has a method `cancel(mayInterruptIfRunning`) which attempts to c
 
 - If task is not running yet, it won't be scheduled
 - If the task is running and `mayInterruptIfRunning` is true, the thread running the task is interrupted
-  - Thread interruption: see [Threads](./Threads.md)
+  - Thread interruption: see [Threads](./concurrency-details/Threads.md)
 
 Invoking several tasks and waiting for all results:
 
@@ -200,7 +200,7 @@ For some computations, you can use even higher-level mechanisms than the ones ab
 
 ### Parallel streams
 
-See [Streams](../Streams.md)
+See [Streams](./Streams.md)
 
 ### Parallel Array operations
 
@@ -244,7 +244,7 @@ private static void blockingTask() {
 
 Important note: the common fork-join pool (`ForkJoinPool.commonPool()`) is a pool with a fixed number of threads which is used under the hood by parallel streams and by default also by completable futures!
 
-See below example for completable futures and see [Streams](../Streams.md) for an example with parallel streams
+See below example for completable futures and see [Streams](./Streams.md) for an example with parallel streams
 
 ```java
 public static void main(String[] args) throws InterruptedException {
@@ -286,14 +286,14 @@ private static String blockingTask() {
 
 ## Thread safety
 
-See [Thread safety](./Thread-safety.md)
+See [Thread safety](./concurrency-details/Thread-safety.md)
 
 ## Threads
 
-See [Threads](Threads.md)
+See [Threads](./concurrency-details/Threads.md)
 
 ## Locking
 
-See [Locking](./Locking.md)
+See [Locking](./concurrency-details/Locking.md)
 
-Note that locking is a low-level concurreny tool and that code using locks is hard to get right! You are likely better off using other tools.
+Note that locking is a low-level concurrency tool and that code using locks is hard to get right! You are likely better off using other tools.

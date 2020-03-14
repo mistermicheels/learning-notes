@@ -1,4 +1,4 @@
-# Architectural boundaries (overview)
+# Architectural boundaries
 
 See:
 
@@ -24,7 +24,7 @@ Benefits of this separation: flexibility!
 
 - Lower coupling: Decouple components so changes in one component don't require changes in other components
 - Higher cohesion: Group together things that change at the same rate and for the same reasons (cohesion)
-  - Manifestation of the Single Responsibility Principle (from the [SOLID principles](../oo-design/SOLID-principles.md)), but this time at the architectural level
+  - Manifestation of the Single Responsibility Principle (from the [SOLID principles](./oo-design/SOLID-principles.md)), but this time at the architectural level
 - Ability to delay choices until last possible moment
 - Example: Separating main business logic from persistence logic
   - If the business logic doesn’t have any idea about the database we use (or potentially even the fact that we use a database), we have the flexibility to change the database that our system depends on without having to make any kind of changes to the main business logic
@@ -39,11 +39,11 @@ Flexibility provided by boundaries is important, especially for maintenance (typ
 
 ### Horizontal versus vertical separation
 
-See [Horizontal versus vertical separation](./Horizontal-vertical-separation.md)
+See [Horizontal versus vertical separation](./architectural-boundaries-details/Horizontal-vertical-separation.md)
 
 ### Separation mechanisms
 
-See [Separation mechanisms](Separation-mechanisms.md)
+See [Separation mechanisms](./architectural-boundaries-details/Separation-mechanisms.md)
 
 ### Combining different kinds of boundaries
 
@@ -96,17 +96,17 @@ A good architect will keep on watching the system for signs of parts that need a
 
 ## Boundaries and the database
 
-See [Boundaries and the database](./Boundaries-database.md)
+See [Boundaries and the database](./architectural-boundaries-details/Boundaries-database.md)
 
 ## Boundaries and the web
 
-See [Boundaries and the web](./Boundaries-web.md)
+See [Boundaries and the web](./architectural-boundaries-details/Boundaries-web.md)
 
 ## Boundaries and libraries/frameworks
 
-See [Boundaries and libraries/frameworks](./Boundaries-libraries-frameworks.md)
+See [Boundaries and libraries/frameworks](./architectural-boundaries-details/Boundaries-libraries-frameworks.md)
 
 ## Boundaries and duplication
 
-See [Boundaries and duplication](./Boundaries-duplication.md)
+See [Boundaries and duplication](./architectural-boundaries-details/Boundaries-duplication.md)
 

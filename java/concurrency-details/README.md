@@ -1,11 +1,11 @@
 <!-- this entire file is auto-generated -->
 
-# javascript
+# concurrency-details
 
 <!-- optional markdown-notes-tree directory description starts here -->
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
-- [**typescript**](typescript/README.md)
-    - [Compiler API](typescript/Compiler-API.md)
-    - [Runtime type checking in TypeScript](typescript/Runtime-type-checking.md)
+- [Locking](Locking.md)
+- [Thread safety](Thread-safety.md)
+- [Threads](Threads.md)

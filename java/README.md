@@ -2,11 +2,11 @@
 
 # java
 
-- [**concurrency**](concurrency/README.md)
-    - [Concurrency (overview)](concurrency/!-Concurrency.md)
-    - [Locking](concurrency/Locking.md)
-    - [Thread safety](concurrency/Thread-safety.md)
-    - [Threads](concurrency/Threads.md)
+<!-- optional markdown-notes-tree directory description starts here -->
+
+<!-- optional markdown-notes-tree directory description ends here -->
+
+- [Concurrency](Concurrency.md)
 - [Date and Time API](Date-Time-API.md)
 - [Equals](Equals.md)
 - [Exceptions](Exceptions.md)
@@ -17,3 +17,7 @@
 - [Optional type](Optional.md)
 - [Overloading, overriding and method hiding](Overloading-overriding-method-hiding.md)
 - [Streams](Streams.md)
+- [**concurrency-details**](concurrency-details/README.md)
+    - [Locking](concurrency-details/Locking.md)
+    - [Thread safety](concurrency-details/Thread-safety.md)
+    - [Threads](concurrency-details/Threads.md)

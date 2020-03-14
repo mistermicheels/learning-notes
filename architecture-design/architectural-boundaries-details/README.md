@@ -1,8 +1,11 @@
 <!-- this entire file is auto-generated -->
 
-# architectural-boundaries
+# architectural-boundaries-details
 
-- [Architectural boundaries (overview)](!-Architectural-boundaries.md)
+<!-- optional markdown-notes-tree directory description starts here -->
+
+<!-- optional markdown-notes-tree directory description ends here -->
+
 - [Boundaries and the database](Boundaries-database.md)
 - [Boundaries and duplication](Boundaries-duplication.md)
 - [Boundaries and libraries/frameworks](Boundaries-libraries-frameworks.md)

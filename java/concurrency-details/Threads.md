@@ -17,7 +17,7 @@ Thread thread = new Thread(task);
 thread.start();
 ```
 
-Note: typically, you are better off letting executors manage thread creation for you (see [Concurrency (overview)](./!-Concurrency.md)
+Note: typically, you are better off letting executors manage thread creation for you (see [Concurrency](../Concurrency.md)
 
 Making the current thread sleep for a given amount of time:
 
