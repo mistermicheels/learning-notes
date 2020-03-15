@@ -9,3 +9,4 @@
 - [**typescript**](typescript/README.md)
     - [Compiler API](typescript/Compiler-API.md)
     - [Runtime type checking in TypeScript](typescript/Runtime-type-checking.md)
+    - [Type guards](typescript/Type-guards.md)

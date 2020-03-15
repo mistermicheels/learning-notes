@@ -8,3 +8,4 @@
 
 - [Compiler API](Compiler-API.md)
 - [Runtime type checking in TypeScript](Runtime-type-checking.md)
+- [Type guards](Type-guards.md)

@@ -54,6 +54,7 @@
     - [**typescript**](javascript/typescript/README.md)
         - [Compiler API](javascript/typescript/Compiler-API.md)
         - [Runtime type checking in TypeScript](javascript/typescript/Runtime-type-checking.md)
+        - [Type guards](javascript/typescript/Type-guards.md)
 - [**mindset**](mindset/README.md)
     - [Hammock-driven development](mindset/Hammock-driven-development.md)
     - [It depends](mindset/It-depends.md)
