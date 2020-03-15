@@ -57,6 +57,63 @@ function test(instance: ClassA | ClassB) {
 }
 ```
 
+### Type guards based on common property
+
+Can be used to implement *discriminated unions* (see [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions)):
+
+- Types with common property indicating type
+- A type alias that is the union of these types
+- Type guards on the common property
+
+Example (from [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions)):
+
+```typescript
+interface Square {
+    kind: "square";
+    size: number;
+}
+
+interface Rectangle {
+    kind: "rectangle";
+    width: number;
+    height: number;
+}
+
+interface Circle {
+    kind: "circle";
+    radius: number;
+}
+
+type Shape = Square | Rectangle | Circle;
+
+function area(shape: Shape) {
+    switch (shape.kind) {
+        case "square":
+            // shape has type Square here
+            return shape.size * shape.size;
+        case "rectangle":
+            // shape has type Rectangle here
+            return shape.height * shape.width;
+        case "circle":
+            // shape has type Circle here
+            return Math.PI * shape.radius ** 2;
+    }
+}
+```
+
+TypeScript recognizes that the common property `kind` determines the type here
+
+This also works with regular if-statements:
+
+```typescript
+function test(shape: Shape) {
+    if (shape.kind === "rectangle") {
+        // shape has type Rectangle here
+        console.log(shape.height);
+    }
+}
+```
+
 ## User-defined type guards
 
 You can also define your own type guards that perform the type check at runtime by looking at certain properties of the object you receive

@@ -53,6 +53,7 @@
 - [**javascript**](javascript/README.md)
     - [**typescript**](javascript/typescript/README.md)
         - [Compiler API](javascript/typescript/Compiler-API.md)
+        - [Index types](javascript/typescript/Index-types.md)
         - [Nullable types and optional parameters/properties](javascript/typescript/Nullable-types-optional-parameters-properties.md)
         - [Runtime type checking in TypeScript](javascript/typescript/Runtime-type-checking.md)
         - [Type guards](javascript/typescript/Type-guards.md)
