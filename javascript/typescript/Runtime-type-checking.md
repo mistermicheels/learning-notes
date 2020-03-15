@@ -20,6 +20,24 @@ TypeScript only performs static type checking at compile time! The generated Jav
 - Can be tedious and error-prone
 - Can easily get out of sync with actual code
 
+### Manual checks using a validation library
+
+Example validation library: [joi](https://hapi.dev/family/joi/)
+
+```typescript
+import Joi from "@hapi/joi"
+
+const schema = Joi.object({
+    firstName: Joi.string().required(),
+    lastName: Joi.string().required(),
+    age: Joi.number().integer().min(0).required()
+});
+```
+
+- Flexible
+- Easy to write
+- Can easily get out of sync with actual code
+
 ### Manually creating JSON Schemas
 
 Example JSON Schema:
