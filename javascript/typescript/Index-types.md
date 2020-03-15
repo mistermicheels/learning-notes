@@ -71,34 +71,88 @@ function test(input: GenericIndexSignature<number>) {
 }
 ```
 
-### Special case: dictionaries with enum keys
+### Use case: mapped types
 
-Example enum:
+Mapped types = new types based on other types
+
+#### `Readonly` and `Partial`
+
+Implementations (already provided by TypeScript language):
+
+```typescript
+type Readonly<T> = {
+  readonly [P in keyof T]: T[P];
+};
+
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+};
+
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
+```
+
+Example:
+
+```typescript
+interface Person {
+    name: string;
+    age: number;
+}
+
+type ReadonlyPerson = Readonly<Person>;
+// type ReadonlyPerson = { readonly name: string; readonly age: number; }
+
+type PartialPerson = Partial<Person>;
+// type PartialPerson = { name?: string | undefined; age? : number | undefined; }
+```
+
+####  `Pick`
+
+Implementation (already provided by TypeScript language):
+
+```typescript
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
+```
+
+Example:
+
+```typescript
+interface Test {
+    propA: string;
+    propB: number;
+    propC: boolean;
+}
+
+type Picked = Pick<Test, "propA" | "propC">;
+// type Picked = { propA: string; propC: boolean; }
+```
+
+### Use case: dictionaries with enum keys
+
+Example:
 
 ```typescript
 enum TestEnum {
-    First = "First",
-    Second = "Second",
-    Third = "Third"
+  First = "First",
+  Second = "Second",
+  Third = "Third"
 }
-```
 
-Index signature forcing all enum keys to be present:
+type DictionaryWithAllKeys = { [key in TestEnum]: number; };
+type DictionaryWithSomeKeys = { [key in TestEnum]?: number; };
 
-```typescript
 // error: property 'Third' is missing
-const testAllRequired: { [key in TestEnum]: number; } = {
-    First: 1,
-    Second: 2
+const testAllKeys: DictionaryWithAllKeys = {
+  First: 1,
+  Second: 2
 }
-```
 
-Index signature that doesn't force all enum keys to be present (mind the `?`):
-
-```typescript
-// ok
-const testNotAllRequired: { [key in TestEnum]?: number; } = {
-    First: 1,
-    Second: 2
+const testSomeKeys: DictionaryWithSomeKeys = {
+  First: 1,
+  Second: 2
 }
 ```
