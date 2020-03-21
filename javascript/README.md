@@ -6,6 +6,7 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
+- [Spread syntax, rest parameters and destructuring](Spread-syntax-rest-parameters-destructuring.md)
 - [**typescript**](typescript/README.md)
     - [Compiler API](typescript/Compiler-API.md)
     - [Conditional types](typescript/Conditional-types.md)

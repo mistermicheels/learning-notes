@@ -51,6 +51,7 @@
         - [Thread safety](java/concurrency-details/Thread-safety.md)
         - [Threads](java/concurrency-details/Threads.md)
 - [**javascript**](javascript/README.md)
+    - [Spread syntax, rest parameters and destructuring](javascript/Spread-syntax-rest-parameters-destructuring.md)
     - [**typescript**](javascript/typescript/README.md)
         - [Compiler API](javascript/typescript/Compiler-API.md)
         - [Conditional types](javascript/typescript/Conditional-types.md)
