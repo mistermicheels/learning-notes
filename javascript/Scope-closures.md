@@ -15,7 +15,7 @@ Contents of an execution context:
 
 - A container holding variables/functions defined in the code (this can be considered the code's own **scope**)
 - **Scope chain**, determining what other scopes the code has access to
-- A `this` variable (not the focus of this note)
+- A `this` variable (see [The `this` keyword](./This-keyword.md))
 
 ### Container holding variables/functions defined in the code
 
@@ -180,7 +180,7 @@ console.log(b); // ReferenceError: b is not defined
 
 Because you are still just calling a function, you can put arguments within the parentheses used to invoke the function
 
-But functions are not the only way to hide variabes and functions from outside code. JavaScript also has the concept of **block scope**, where variables defined inside a block of code (`{ ... }`) are not accessible outside of that block. In order to accomplish this, the `let` and `const` keywords can be used.
+But functions are not the only way to hide variables and functions from outside code. JavaScript also has the concept of **block scope**, where variables defined inside a block of code (`{ ... }`) are not accessible outside of that block. In order to accomplish this, the `let` and `const` keywords can be used.
 
 Simple example:
 

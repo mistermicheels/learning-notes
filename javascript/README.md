@@ -6,8 +6,10 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
+- [Object prototypes and classes](Object-prototypes-classes.md)
 - [Scope and closures](Scope-closures.md)
 - [Spread syntax, rest parameters and destructuring](Spread-syntax-rest-parameters-destructuring.md)
+- [The `this` keyword](This-keyword.md)
 - [**typescript**](typescript/README.md)
     - [Compiler API](typescript/Compiler-API.md)
     - [Conditional types](typescript/Conditional-types.md)
