@@ -2,12 +2,21 @@
 
 See:
 
-- [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [Built-in type guards](#built-in-type-guards)
+    -   [`typeof` type guards](#typeof-type-guards)
+    -   [`instanceof` type guards](#instanceof-type-guards)
+    -   [Type guards based on common property](#type-guards-based-on-common-property)
+-   [User-defined type guards](#user-defined-type-guards)
 
 ## Basic idea
 
-- Test, at runtime, whether a certain value is of a certain type
-- TypeScript compiler knows that, if the test passes, the value is indeed of that type
+-   Test, at runtime, whether a certain value is of a certain type
+-   TypeScript compiler knows that, if the test passes, the value is indeed of that type
 
 ## Built-in type guards
 
@@ -59,11 +68,11 @@ function test(instance: ClassA | ClassB) {
 
 ### Type guards based on common property
 
-Can be used to implement *discriminated unions* (see [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions)):
+Can be used to implement _discriminated unions_ (see [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions)):
 
-- Types with common property indicating type
-- A type alias that is the union of these types
-- Type guards on the common property
+-   Types with common property indicating type
+-   A type alias that is the union of these types
+-   Type guards on the common property
 
 Example (from [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions)):
 
@@ -165,4 +174,3 @@ function test(input: object) {
     }
 }
 ```
-

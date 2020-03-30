@@ -1,24 +1,37 @@
 # Runtime type checking in TypeScript
 
+## Contents
+
+-   [Why additional type checking?](#why-additional-type-checking)
+-   [Strictness of runtime checking](#strictness-of-runtime-checking)
+-   [Runtime type checking strategies](#runtime-type-checking-strategies)
+    -   [Manual checks in custom code](#manual-checks-in-custom-code)
+    -   [Manual checks using a validation library](#manual-checks-using-a-validation-library)
+    -   [Manually creating JSON Schemas](#manually-creating-json-schemas)
+    -   [Automatically generating JSON Schemas](#automatically-generating-json-schemas)
+    -   [Transpilation](#transpilation)
+    -   [Deriving static types from runtime types](#deriving-static-types-from-runtime-types)
+    -   [Decorator-based class validation](#decorator-based-class-validation)
+
 ## Why additional type checking?
 
 TypeScript only performs static type checking at compile time! The generated JavaScript, which is what actually runs when you run your code, does not know anything about the types. 
 
-- Works fine for type checking within your codebase
-- Doesn’t provide any kind of protection against malformed input (for example, when receiving input from API)
+-   Works fine for type checking within your codebase
+-   Doesn’t provide any kind of protection against malformed input (for example, when receiving input from API)
 
 ## Strictness of runtime checking
 
-- Needs to be at least as strict as compile-time checking (otherwise, we lose the guarantees that the compile-time checking provides)
-- Can be more strict if desired (e.g., require age to be >= 0)
+-   Needs to be at least as strict as compile-time checking (otherwise, we lose the guarantees that the compile-time checking provides)
+-   Can be more strict if desired (e.g., require age to be >= 0)
 
 ## Runtime type checking strategies
 
 ### Manual checks in custom code
 
-- Flexible
-- Can be tedious and error-prone
-- Can easily get out of sync with actual code
+-   Flexible
+-   Can be tedious and error-prone
+-   Can easily get out of sync with actual code
 
 ### Manual checks using a validation library
 
@@ -34,9 +47,9 @@ const schema = Joi.object({
 });
 ```
 
-- Flexible
-- Easy to write
-- Can easily get out of sync with actual code
+-   Flexible
+-   Easy to write
+-   Can easily get out of sync with actual code
 
 ### Manually creating JSON Schemas
 
@@ -65,27 +78,27 @@ Example JSON Schema:
 }
 ```
 
-- Standard format, lots of libraries available for validation ...
-- JSON: easy to store and share
-- Can become very verbose and they can be tedious to generate by hand
-- Need to make sure Schemas and code stay in sync!
+-   Standard format, lots of libraries available for validation ...
+-   JSON: easy to store and share
+-   Can become very verbose and they can be tedious to generate by hand
+-   Need to make sure Schemas and code stay in sync!
 
 ### Automatically generating JSON Schemas
 
-- Generating JSON Schemas from TypeScript code
-  - Example library:  [typescript-json-schema](https://github.com/YousefED/typescript-json-schema) (can be used both from CLI and from code)
-  - Need to make sure Schemas and code stay in sync!
-- Generating JSON Schemas from example JSON input
-  - Doesn’t use the type information you have already defined in your TypeScript code
-  - Can lead to errors if there is a mismatch between the input JSON you provide
-  - Again, need to make sure Schemas and code stay in sync!
+-   Generating JSON Schemas from TypeScript code
+    -   Example library:  [typescript-json-schema](https://github.com/YousefED/typescript-json-schema) (can be used both from CLI and from code)
+    -   Need to make sure Schemas and code stay in sync!
+-   Generating JSON Schemas from example JSON input
+    -   Doesn’t use the type information you have already defined in your TypeScript code
+    -   Can lead to errors if there is a mismatch between the input JSON you provide
+    -   Again, need to make sure Schemas and code stay in sync!
 
 ### Transpilation
 
 Example library: [ts-runtime](https://github.com/fabiandev/ts-runtime)
 
-- Processes code
-- Transpiles code into equivalent code with built-in runtime type checking
+-   Processes code
+-   Transpiles code into equivalent code with built-in runtime type checking
 
 Example code:
 
@@ -132,8 +145,8 @@ Note: Library is still in an experimental stage and not recommended for producti
 
 Example library: [io-ts](https://github.com/gcanti/io-ts)
 
-- You define runtime types
-- TypeScript infers the corresponding static types from these
+-   You define runtime types
+-   TypeScript infers the corresponding static types from these
 
 Example runtime type:
 
@@ -163,20 +176,20 @@ interface Person {
 }
 ```
 
-- No possibility for types to get out of sync
-- [io-ts](https://github.com/gcanti/io-ts) is pretty powerful, supports recursive types etc.
-- Requires you to define your types as io-ts runtime types, which does not work when you are defining classes
+-   No possibility for types to get out of sync
+-   [io-ts](https://github.com/gcanti/io-ts) is pretty powerful, supports recursive types etc.
+-   Requires you to define your types as io-ts runtime types, which does not work when you are defining classes
 
-  -  One way to handle this could be to define an interface using io-ts and then make the class implement the interface. However, this means you need to make sure to update the io-ts type whenever you are adding properties to your class.
-- Harder to share interfaces (e.g. between backend and frontend) because they are io-ts types rather than plain TypeScript interfaces
+    -   One way to handle this could be to define an interface using io-ts and then make the class implement the interface. However, this means you need to make sure to update the io-ts type whenever you are adding properties to your class.
+-   Harder to share interfaces (e.g. between backend and frontend) because they are io-ts types rather than plain TypeScript interfaces
 
 ### Decorator-based class validation
 
 Example library: [class-validator](https://github.com/typestack/class-validator)
 
-- Uses decorators on class properties
-- Very similar to Java’s JSR-380 Bean Validation 2.0 (implemented by, for example, Hibernate Validator)
-  - Part of a family of Java EE-like libraries that also includes [typeorm](https://github.com/typeorm/typeorm) (ORM, similar to Java’s JPA) and [routing-controllers](https://github.com/typestack/routing-controllers) (similar to Java’s JAX-RS for defining APIs)
+-   Uses decorators on class properties
+-   Very similar to Java’s JSR-380 Bean Validation 2.0 (implemented by, for example, Hibernate Validator)
+    -   Part of a family of Java EE-like libraries that also includes [typeorm](https://github.com/typeorm/typeorm) (ORM, similar to Java’s JPA) and [routing-controllers](https://github.com/typestack/routing-controllers) (similar to Java’s JAX-RS for defining APIs)
 
 Example code:
 
@@ -213,16 +226,11 @@ validate(inputAsClassInstance).then(errors => {
 });
 ```
 
-- No possibility for types to get out of sync
-- Good for checking classes
-- Can be useful for checking interfaces by defining a class implementing the interface
-
-
+-   No possibility for types to get out of sync
+-   Good for checking classes
+-   Can be useful for checking interfaces by defining a class implementing the interface
 
 Note: class-validator needs actual class instances to work on
 
-- Here, we used its sister library class-transformer to transform our plain input into an actual `Person` instance. 
-  - Note: The transformation in itself does not perform any kind of type checking!
-
-
-
+-   Here, we used its sister library class-transformer to transform our plain input into an actual `Person` instance. 
+    -   Note: The transformation in itself does not perform any kind of type checking!

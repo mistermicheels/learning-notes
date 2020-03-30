@@ -2,10 +2,29 @@
 
 See:
 
-- [EqualsVerifier](http://jqno.nl/equalsverifier/)
-- [How to Write an Equality Method in Java](http://www.artima.com/lejava/articles/equality.html)
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-- [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
+-   [EqualsVerifier](http://jqno.nl/equalsverifier/)
+-   [How to Write an Equality Method in Java](http://www.artima.com/lejava/articles/equality.html)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
+
+## Contents
+
+-   [Why override standard equals?](#why-override-standard-equals)
+-   [The requirements for a good `equals` method](#the-requirements-for-a-good-equals-method)
+-   [Example class](#example-class)
+-   [Naïve implementations](#naïve-implementations)
+    -   [Not properly overriding the `equals` method](#not-properly-overriding-the-equals-method)
+    -   [Forgetting about `hashCode`](#forgetting-about-hashcode)
+    -   [Mutable variables](#mutable-variables)
+-   [Simple decent implementation](#simple-decent-implementation)
+-   [Dealing with subclasses](#dealing-with-subclasses)
+    -   [Allowing subclasses to be equal to superclasses](#allowing-subclasses-to-be-equal-to-superclasses)
+    -   [Subclasses including additional state in `equals`](#subclasses-including-additional-state-in-equals)
+        -   [General remark](#general-remark)
+        -   [The hard, but potentially more correct way](#the-hard-but-potentially-more-correct-way)
+        -   [The easy way](#the-easy-way)
+-   [In practice](#in-practice)
+-   [Testing `equals` methods](#testing-equals-methods)
 
 ## Why override standard equals?
 
@@ -27,11 +46,11 @@ If you want to define equality in such a way that two objects can be considered 
 
 ## The requirements for a good `equals` method
 
-- Reflexivity: every object is equal to itself
-- Symmetry: if a is equal to b, then b is also equal to a
-- Transitivity: if a is equal to b and b is equal to c, then a is also equal to c
-- Consistency: if a is equal to b right now, then a is always equal to b as long as none of their state that is used in the `equals` method has been modified
-- Non-nullity: an actual object is never equal to `null`
+-   Reflexivity: every object is equal to itself
+-   Symmetry: if a is equal to b, then b is also equal to a
+-   Transitivity: if a is equal to b and b is equal to c, then a is also equal to c
+-   Consistency: if a is equal to b right now, then a is always equal to b as long as none of their state that is used in the `equals` method has been modified
+-   Non-nullity: an actual object is never equal to `null`
 
 ## Example class
 
@@ -84,8 +103,8 @@ public void test() {
 }
 ```
 
-- In the first assertion, we are calling a method with signature `equals(Object)` on an object with compile-time type `Point`. As `Point` does not implement a method with that signature, the best match is the `equals(Object)` method inherited from `Object`.
-- In the second assertion, we are calling a method with signature `equals(Point)` on an object with compile-time type `Object`. As `Object` does not have an `equals(Point)` method, the best match at compile time is its `equals(Object)`method. And, because `Point` (the run-time type of `pointObject`) does not override that method, the actual implementation that gets called is still the one defined in `Object`.
+-   In the first assertion, we are calling a method with signature `equals(Object)` on an object with compile-time type `Point`. As `Point` does not implement a method with that signature, the best match is the `equals(Object)` method inherited from `Object`.
+-   In the second assertion, we are calling a method with signature `equals(Point)` on an object with compile-time type `Object`. As `Object` does not have an `equals(Point)` method, the best match at compile time is its `equals(Object)`method. And, because `Point` (the run-time type of `pointObject`) does not override that method, the actual implementation that gets called is still the one defined in `Object`.
 
 See also [Overloading, overriding and method hiding](Overloading-overriding-method-hiding.md)
 
@@ -224,9 +243,7 @@ o.getClass() != this.getClass()
 
 with
 
-```
-!(o instanceof Point)
-```
+    !(o instanceof Point)
 
 Most IDEs have option to do this when generating `equals`.
 
@@ -330,8 +347,8 @@ public class ColorPoint extends Point {
 
 Benefits:
 
-- passes all of the previous tests
-- still allows subclasses of `Point` that do not include additional state to be equal to a `Point`
+-   passes all of the previous tests
+-   still allows subclasses of `Point` that do not include additional state to be equal to a `Point`
 
 #### The easy way
 
@@ -343,13 +360,13 @@ Drawback: objects can only be equal if they are or exactly the same class
 
 Recommended approach:
 
-1. Let your IDE generate your `equals` (and `hashCode`) methods for you, using `instanceof` instead of `getClass()`.
-2. Either make your class `final` or make your `equals` and `hashCode` methods `final`.
+1.  Let your IDE generate your `equals` (and `hashCode`) methods for you, using `instanceof` instead of `getClass()`.
+2.  Either make your class `final` or make your `equals` and `hashCode` methods `final`.
 
 Note that the two options outlined in step 2 have different effects:
 
-- Making your class `final` prevents any issues with subclasses by simply not allowing subclasses for your class.
-- Making your `equals` and `hashCode` methods `final` prevents subclasses from overriding your `equals` and `hashCode` methods and including additional state in them.
+-   Making your class `final` prevents any issues with subclasses by simply not allowing subclasses for your class.
+-   Making your `equals` and `hashCode` methods `final` prevents subclasses from overriding your `equals` and `hashCode` methods and including additional state in them.
 
 In cases where this is not sufficient (you want subclasses to include additional state in their `equals` method), consider using the solution involving the `canEqual` method or the simpler solution using `getClass` if you’re ok with subclass instances never being equal to superclass instances.
 

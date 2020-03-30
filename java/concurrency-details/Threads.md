@@ -2,7 +2,13 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+
+## Contents
+
+-   [Java threads basics](#java-threads-basics)
+-   [Thread interruption](#thread-interruption)
+-   [Daemon threads](#daemon-threads)
 
 ## Java threads basics
 
@@ -27,17 +33,15 @@ Thread.sleep(millis);
 
 Blocking the current thread until another thread finishes:
 
-```
-otherThread.join();
-```
+    otherThread.join();
 
-A thread finishes when its `Runnable` finishes execution, either normally or by throwing an exception. If an exception was thrown, it is passed to the *uncaught exception handler* that was set for the thread.
+A thread finishes when its `Runnable` finishes execution, either normally or by throwing an exception. If an exception was thrown, it is passed to the _uncaught exception handler_ that was set for the thread.
 
 ## Thread interruption
 
 In Java, the code running inside a thread is responsible for ensuring that it can be interrupted if needed. Each thread has a flag indicating if it is interrupted. Other threads can set this flag to true by calling the `interrupt()` method.
 
-A `Runnable` can check the *interruption status* of its thread and then respond accordingly. Typically, this means stopping the computations.
+A `Runnable` can check the _interruption status_ of its thread and then respond accordingly. Typically, this means stopping the computations.
 
 ```java
 Runnable task = () -> {
@@ -66,4 +70,3 @@ Thread thread = new Thread(task);
 thread.setDaemon(true);
 thread.start();
 ```
-

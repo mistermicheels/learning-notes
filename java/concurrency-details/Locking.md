@@ -2,7 +2,14 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+
+## Contents
+
+-   [A word of caution](#a-word-of-caution)
+-   [Locks](#locks)
+-   [The `synchronized` keyword](#the-synchronized-keyword)
+-   [Using locks to coordinate between threads](#using-locks-to-coordinate-between-threads)
 
 ## A word of caution
 
@@ -10,7 +17,7 @@ Note: locking is a low-level concurrency tool typically used by system programme
 
 ## Locks
 
-Locks can be used to implement *critical sections*, parts of the code that can only be executed entirely, without being interrupted, by only one single thread at a time
+Locks can be used to implement _critical sections_, parts of the code that can only be executed entirely, without being interrupted, by only one single thread at a time
 
 Example of critical section using lock:
 
@@ -37,7 +44,7 @@ The above example is simple, but implementing locking yourself can get tricky. Y
 
 ## The `synchronized` keyword
 
-The code above used an explicit lock object. This isn't strictly necessary, because every object also has an *intrinsic lock*.  This lock can be used using the `synchronized` keyword.
+The code above used an explicit lock object. This isn't strictly necessary, because every object also has an _intrinsic lock_.  This lock can be used using the `synchronized` keyword.
 
 ```java
 // this ...
@@ -125,5 +132,5 @@ public synchronized void add(Object element) {
 
 Some important remarks:
 
-- The call to `wait()` should happen inside a while loop checking for the condition. This is a best practice and it prevents issues if more than one thread was waiting inside the `take()` method or a method other than `add()` calls `notifyAll()`
-- There is also a method `notify()` that only unblocks one waiting thread. This might be more efficient, but it can lead to issues it the waiting thread that is unblocked finds that it still wants to wait. In that case, that thread is just blocked again, while there might also be other blocked threads that can actually continue at this point. Typically, it's a better idea to just call `notifyAll()`.
+-   The call to `wait()` should happen inside a while loop checking for the condition. This is a best practice and it prevents issues if more than one thread was waiting inside the `take()` method or a method other than `add()` calls `notifyAll()`
+-   There is also a method `notify()` that only unblocks one waiting thread. This might be more efficient, but it can lead to issues it the waiting thread that is unblocked finds that it still wants to wait. In that case, that thread is just blocked again, while there might also be other blocked threads that can actually continue at this point. Typically, it's a better idea to just call `notifyAll()`.

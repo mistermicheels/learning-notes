@@ -2,10 +2,18 @@
 
 See:
 
-- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
-- [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
-- [Hoisting in Modern JavaScript — let, const, and var](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda)
-- [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+-   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+-   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
+-   [Hoisting in Modern JavaScript — let, const, and var](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda)
+-   [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+
+## Contents
+
+-   [Execution contexts, lexical scope and the scope chain](#execution-contexts-lexical-scope-and-the-scope-chain)
+    -   [Container holding variables/functions defined in the code](#container-holding-variablesfunctions-defined-in-the-code)
+    -   [Scope chain](#scope-chain)
+-   [Function scope versus block scope](#function-scope-versus-block-scope)
+-   [Closures](#closures)
 
 ## Execution contexts, lexical scope and the scope chain
 
@@ -13,17 +21,17 @@ All JavaScript runs inside an **execution context**. Code that is not inside any
 
 Contents of an execution context:
 
-- A container holding variables/functions defined in the code (this can be considered the code's own **scope**)
-- **Scope chain**, determining what other scopes the code has access to
-- A `this` variable (see [The `this` keyword](./This-keyword.md))
+-   A container holding variables/functions defined in the code (this can be considered the code's own **scope**)
+-   **Scope chain**, determining what other scopes the code has access to
+-   A `this` variable (see [The `this` keyword](./This-keyword.md))
 
 ### Container holding variables/functions defined in the code
 
-- Has an `arguments` entry, holding the arguments passed to the function (not applicable for the global execution context)
-- Has an entry for each *function declaration* in the code of the function (or the top level code in case of the global execution context), pointing to the function
-   - Every function that is defined by a normal function declaration (`function test() { ... }`) is immediately callable, also by the code that comes before the declaration. This is called **hoisting**
-- Has an entry for each *variable declaration* in the code of the function (or the top level code in case of the global execution context)
-   - Variable declarations are **hoisted** as well. Declarations using `var` get initialized with `undefined`, while declarations using `const` and `let` are left in an uninitialized state that prevents code from actually accessing them until their declaration is reached
+-   Has an `arguments` entry, holding the arguments passed to the function (not applicable for the global execution context)
+-   Has an entry for each _function declaration_ in the code of the function (or the top level code in case of the global execution context), pointing to the function
+    -   Every function that is defined by a normal function declaration (`function test() { ... }`) is immediately callable, also by the code that comes before the declaration. This is called **hoisting**
+-   Has an entry for each _variable declaration_ in the code of the function (or the top level code in case of the global execution context)
+    -   Variable declarations are **hoisted** as well. Declarations using `var` get initialized with `undefined`, while declarations using `const` and `let` are left in an uninitialized state that prevents code from actually accessing them until their declaration is reached
 
 Example function hosting:
 
@@ -62,11 +70,11 @@ Apart from the variables and functions defined inside a function's own scope (se
 
 JavaScript uses **lexical scoping**:
 
-- A function that is defined within another function has access to that function's scope
-- This can go several levels deep (hence the scope *chain*)
-- All functions have access to the global scope
-- The scopes a function has access to are determined by where that function sits in the codebase, not where it is executed from!
-   - Determined at write time, not execution time
+-   A function that is defined within another function has access to that function's scope
+-   This can go several levels deep (hence the scope _chain_)
+-   All functions have access to the global scope
+-   The scopes a function has access to are determined by where that function sits in the codebase, not where it is executed from!
+    -   Determined at write time, not execution time
 
 Example:
 
@@ -235,7 +243,7 @@ for (let i = 0; i < 10; i++) {
 
 ## Closures
 
-A **closure** is a function combined with references to its outer scope. What makes closures really interesting in JavaScript is that an inner function can access variables defined in its outer function, *even if that outer function has already returned*
+A **closure** is a function combined with references to its outer scope. What makes closures really interesting in JavaScript is that an inner function can access variables defined in its outer function, _even if that outer function has already returned_
 
 Use case: function factories
 
@@ -279,4 +287,3 @@ counter.increase();
 counter.decrease();
 console.log(counter.getCurrent()); // 1
 ```
-

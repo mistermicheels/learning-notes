@@ -1,17 +1,28 @@
 # The `this` keyword
 
-- See:
+-   See:
 
-   - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
-   - [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
+    -   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+    -   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
+
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [Rules for binding `this`](#rules-for-binding-this)
+    -   [Default binding](#default-binding)
+    -   [Implicit binding](#implicit-binding)
+    -   [Explicit binding](#explicit-binding)
+    -   [`new` binding](#new-binding)
+-   [Priority of the rules](#priority-of-the-rules)
+-   [Lexical this](#lexical-this)
 
 ## Basic idea
 
-- Every function has access to a `this` reference
-- The `this` reference is assigned a value when creating the *execution context* for an execution of the function (see [Scope and closures](./Scope-closures.md))
-   - Note that this means that a function's  `this` can point to different things based on how it's executed!
-   - Run-time binding, not write-time binding! In that sense, it's a bit the opposite of lexical scoping (see [Scope and closures](./Scope-closures.md))
-- What the `this` reference points to is determined by a number of rules
+-   Every function has access to a `this` reference
+-   The `this` reference is assigned a value when creating the _execution context_ for an execution of the function (see [Scope and closures](./Scope-closures.md))
+    -   Note that this means that a function's  `this` can point to different things based on how it's executed!
+    -   Run-time binding, not write-time binding! In that sense, it's a bit the opposite of lexical scoping (see [Scope and closures](./Scope-closures.md))
+-   What the `this` reference points to is determined by a number of rules
 
 ## Rules for binding `this`
 
@@ -31,14 +42,14 @@ var a = "test";
 logA();
 ```
 
-What `this` is bound to depends on *strict mode*:
+What `this` is bound to depends on _strict mode_:
 
-- If *strict mode* is not enabled, the function's `this` points to the global object. Since the global object has a variable `a` with value `test`, the code will print `test`
-- If *strict mode* is enabled, the function's `this` is not allowed to point to the global object. Instead, `this` points to `undefined`, and the code throws a `TypeError` because we tried to access `undefined.a`
+-   If _strict mode_ is not enabled, the function's `this` points to the global object. Since the global object has a variable `a` with value `test`, the code will print `test`
+-   If _strict mode_ is enabled, the function's `this` is not allowed to point to the global object. Instead, `this` points to `undefined`, and the code throws a `TypeError` because we tried to access `undefined.a`
 
 ### Implicit binding
 
-*Implicit binding* occurs when the function is called through an object that holds a reference to it. In this case, that object is called the *context object* and the function's `this` points to the object.
+_Implicit binding_ occurs when the function is called through an object that holds a reference to it. In this case, that object is called the _context object_ and the function's `this` points to the object.
 
 Example:
 
@@ -77,7 +88,7 @@ const theFunction = theObject.logA; // theFunction now just points to logA
 theFunction(); // logs undefined (non-strict mode) or throws TypeError (strict mode)
 ```
 
-As we see above, assigning the function to a variable and then calling it doesn't use *implicit binding* anymore. Instead, we fall back to *default binding*.
+As we see above, assigning the function to a variable and then calling it doesn't use _implicit binding_ anymore. Instead, we fall back to _default binding_.
 
 One case where we need to be careful with that is when passing functions around as callbacks. Example:
 
@@ -104,7 +115,7 @@ setTimeout(function () {
 
 ### Explicit binding
 
-As the name suggests, *explicit binding* is more explicit about what the function's `this` reference is bound to
+As the name suggests, _explicit binding_ is more explicit about what the function's `this` reference is bound to
 
 Example:
 
@@ -132,10 +143,10 @@ setTimeout(theObject.logA.bind(theObject), 1000); // test
 
 Some things to notice:
 
-- `call` and `apply` can be used to call a function while explicitly specifying what `this` should point to. You can use these to dynamically call a function with any `this` reference you like.
-- `bind` returns a new function that is identical the original function except that its `this` is hard-wired to the argument you passed to `bind`. One use case is passing the function as a callback (see example code above)
+-   `call` and `apply` can be used to call a function while explicitly specifying what `this` should point to. You can use these to dynamically call a function with any `this` reference you like.
+-   `bind` returns a new function that is identical the original function except that its `this` is hard-wired to the argument you passed to `bind`. One use case is passing the function as a callback (see example code above)
 
-Other use case: *monkey patching* (extending the behavior of a function defined on an existing object):
+Other use case: _monkey patching_ (extending the behavior of a function defined on an existing object):
 
 ```javascript
 const existingObject = {
@@ -160,12 +171,12 @@ existingObject.logA(); // before, test, after
 
 The `new` binding occurs when using the keyword `new` to call a function. Invoking a function using the `new` keyword has the following effect:
 
-- A new object is created
-- The new object's `__proto__` points to the function (see [Object prototypes and classes](./Object-prototypes-classes.md))
-- The new object is set as the `this` binding for that call to the function
-- Unless the function returns something itself, the function call will automatically return the new object
+-   A new object is created
+-   The new object's `__proto__` points to the function (see [Object prototypes and classes](./Object-prototypes-classes.md))
+-   The new object is set as the `this` binding for that call to the function
+-   Unless the function returns something itself, the function call will automatically return the new object
 
-Important: `new` does not require any specific kind of function to be called on! It can be used on any function, and when it does, it modifies the function's behavior according to the above. In this case, the function is sometimes called a *constructor*, but it is still just a regular function. The only thing making it behave differently is the `new` keyword.
+Important: `new` does not require any specific kind of function to be called on! It can be used on any function, and when it does, it modifies the function's behavior according to the above. In this case, the function is sometimes called a _constructor_, but it is still just a regular function. The only thing making it behave differently is the `new` keyword.
 
 Example:
 
@@ -187,14 +198,14 @@ console.log(two.a); // two
 
 From highest to lowest:
 
-- `new`  binding (overrides all the rest)
-- Explicit binding
-- Implicit binding
-- Default binding
+-   `new`  binding (overrides all the rest)
+-   Explicit binding
+-   Implicit binding
+-   Default binding
 
 ## Lexical this
 
-One exception to the behavior of `this` inside a function occurs when using *arrow functions*. Arrow function's don't follow the rules above. Instead, the `this` inside an arrow function points to the `this` of the surrounding scope.
+One exception to the behavior of `this` inside a function occurs when using _arrow functions_. Arrow function's don't follow the rules above. Instead, the `this` inside an arrow function points to the `this` of the surrounding scope.
 
 One use case: calling other function on same object from a callback
 

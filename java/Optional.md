@@ -2,8 +2,16 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-- [Why should Java 8's Optional not be used in arguments](https://stackoverflow.com/a/39005452)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Why should Java 8's Optional not be used in arguments](https://stackoverflow.com/a/39005452)
+
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [How to use Optional values](#how-to-use-optional-values)
+-   [How not to use Optional values](#how-not-to-use-optional-values)
+-   [Creating Optional values](#creating-optional-values)
+-   [Turning an Optional into a Stream](#turning-an-optional-into-a-stream)
 
 ## Basic idea
 
@@ -19,8 +27,8 @@ Note: Method parameters of type `Optional` are not recommended because this make
 
 Basically, two sensible options:
 
-- use a method that produces an alternative value if the Optional is empty
-- use a method that only consumes the value if the Optional is not empty
+-   use a method that produces an alternative value if the Optional is empty
+-   use a method that only consumes the value if the Optional is not empty
 
 Examples first option:
 
@@ -91,4 +99,3 @@ idsStream
         .map(Users::lookup) // Users.lookUp returns a User object or null
         .flatMap(Stream::ofNullable)
 ```
-

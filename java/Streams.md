@@ -2,10 +2,24 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-- [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
-- [Think Twice Before Using Java 8 Parallel Streams](https://dzone.com/articles/think-twice-using-java-8)
-- [3 Reasons why You Shouldn’t Replace Your for-loops by Stream.forEach()](https://blog.jooq.org/2015/12/08/3-reasons-why-you-shouldnt-replace-your-for-loops-by-stream-foreach/)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
+-   [Think Twice Before Using Java 8 Parallel Streams](https://dzone.com/articles/think-twice-using-java-8)
+-   [3 Reasons why You Shouldn’t Replace Your for-loops by Stream.forEach()](https://blog.jooq.org/2015/12/08/3-reasons-why-you-shouldnt-replace-your-for-loops-by-stream-foreach/)
+
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [Creating streams](#creating-streams)
+-   [Intermediate operations](#intermediate-operations)
+-   [Terminal operations](#terminal-operations)
+    -   [Simple reductions](#simple-reductions)
+    -   [Transforming into arrays or collections](#transforming-into-arrays-or-collections)
+    -   [Transforming into maps](#transforming-into-maps)
+-   [Streams of primitive types](#streams-of-primitive-types)
+-   [Parallel streams](#parallel-streams)
+    -   [Avoid blocking operations in parallel streams](#avoid-blocking-operations-in-parallel-streams)
+-   [Drawbacks of using streams](#drawbacks-of-using-streams)
 
 ## Basic idea
 
@@ -13,7 +27,7 @@ Streams are a way to specify operations on lists in a more declarative way.
 
 Example: counting all of the words in a list that are longer than 3 characters.
 
-The classic imperative way (*imperative*, focus on *how* to do it):
+The classic imperative way (_imperative_, focus on _how_ to do it):
 
 ```java
 long numberLongWords = 0;
@@ -25,7 +39,7 @@ for (String word: words) {
 }
 ```
 
-The streams approach (more *declarative*, focus on *what* to do without specifying exactly how):
+The streams approach (more _declarative_, focus on _what_ to do without specifying exactly how):
 
 ```java
 numberLongWords = words.stream()
@@ -37,14 +51,15 @@ Because we are specifying what to do rather than how to do it, it becomes easier
 
 Streams can seem similar to collections, but there are some important differences:
 
-- A stream does not necessarily store its elements. They can also be generated on demand. There are even situations when storing all of the elements would be impossible. An example of this are *infinite* streams, which do not have a finite number of elements.
-- Operations on a stream don't change the stream itself. Instead, they generate a new altered stream.
-- Stream operations are **lazy** when possible. This means results are only calculated when needed. For example, if you have a stream expression that filters a list of words to only keep the long words and then takes the first five words, the filter will only be executed until the first five matching words are found. This also makes it possible to perform finite operations on infinite streams.
+-   A stream does not necessarily store its elements. They can also be generated on demand. There are even situations when storing all of the elements would be impossible. An example of this are _infinite_ streams, which do not have a finite number of elements.
+-   Operations on a stream don't change the stream itself. Instead, they generate a new altered stream.
+-   Stream operations are **lazy** when possible. This means results are only calculated when needed. For example, if you have a stream expression that filters a list of words to only keep the long words and then takes the first five words, the filter will only be executed until the first five matching words are found. This also makes it possible to perform finite operations on infinite streams.
 
 A stream expression is typically composed of three stages:
-- Creating the stream
-- *Intermediate operations* that transform the stream into new streams
-- A *terminal operation* that turns a stream into a non-stream result. Because this is the part that determines what result we need, this is also the part that determines exactly which lazy operations are executed. Without a terminal operation, nothing will happen!
+
+-   Creating the stream
+-   _Intermediate operations_ that transform the stream into new streams
+-   A _terminal operation_ that turns a stream into a non-stream result. Because this is the part that determines what result we need, this is also the part that determines exactly which lazy operations are executed. Without a terminal operation, nothing will happen!
 
 ## Creating streams
 
@@ -52,8 +67,8 @@ Obtaining a stream from a collection: see above.
 
 Obtaining a stream from an array:
 
-- You can use the static `Stream.of()` method and pass the array to it. That method has a varargs parameter, so instead of an actual array you can also pass it a variable number of arguments that will make up the stream.
--  If you already have an array but want a stream representing only a part of it, you can use the method `Arrays.stream(array, from, to)` to get such a stream
+-   You can use the static `Stream.of()` method and pass the array to it. That method has a varargs parameter, so instead of an actual array you can also pass it a variable number of arguments that will make up the stream.
+-   If you already have an array but want a stream representing only a part of it, you can use the method `Arrays.stream(array, from, to)` to get such a stream
 
 ```java
 Stream.of("a", "b", "c");
@@ -66,9 +81,9 @@ Creating an empty stream: `Stream.empty()`
 
 Creating infinite streams:
 
-- Use the `Stream.generate()` method, which takes a `Supplier<T>` that generates the actual values. Whenever a new value must be generated for the stream, that supplier function is used.
-- Use the `Stream.iterate()` method when the next value of a stream needs to depend on the previous value
-  - Since Java 9, there is also an overload for this method that takes 3 arguments instead of 2. The added argument (in the middle, not at the end) is a `Predicate` that specifies when the generation of new elements should finish. If the `Predicate` fails for a newly generated element, that element is not added to the stream and the generation of new elements is stopped.
+-   Use the `Stream.generate()` method, which takes a `Supplier<T>` that generates the actual values. Whenever a new value must be generated for the stream, that supplier function is used.
+-   Use the `Stream.iterate()` method when the next value of a stream needs to depend on the previous value
+    -   Since Java 9, there is also an overload for this method that takes 3 arguments instead of 2. The added argument (in the middle, not at the end) is a `Predicate` that specifies when the generation of new elements should finish. If the `Predicate` fails for a newly generated element, that element is not added to the stream and the generation of new elements is stopped.
 
 ```java
 Stream.generate(() -> "constant"); // infinite constant stream
@@ -101,8 +116,8 @@ words.stream().map(String::toUpperCase);
 
 Flatmap:
 
-- apply operation that turns every element into a stream
-- flatten resulting streams into a single stream
+-   apply operation that turns every element into a stream
+-   flatten resulting streams into a single stream
 
 ```java
 words.stream().flatMap(word -> Stream.of(word.split("")));
@@ -369,10 +384,10 @@ Map<Integer, Long> shortWordCounts =
 
 Some operations on parallel streams can be made more efficient by making it clear that you do not care about ordering!
 
-- Example: distinct()
-  - If you just want distinct elements, but not necessarily in the order in which they first appeared in the original stream, the stream processing can happen in different segments and uniqueness can be tracked using a shared set of duplicates
-- Example: limit()
-  - If you just want x element, not the first x elements, elements can more easily be processed in parallel
+-   Example: distinct()
+    -   If you just want distinct elements, but not necessarily in the order in which they first appeared in the original stream, the stream processing can happen in different segments and uniqueness can be tracked using a shared set of duplicates
+-   Example: limit()
+    -   If you just want x element, not the first x elements, elements can more easily be processed in parallel
 
 Note: by default, streams from ordered collections (arrays and lists), ranges, generators, iterators or from `Stream.sorted` are ordered!
 
@@ -421,14 +436,14 @@ See also [Concurrency](./Concurrency.md)
 
 ## Drawbacks of using streams
 
-- Performance: 
-  - Using streams implies some overhead, so they are likely slower than hand-written loops etc.
-  - Note: For huge in-memory collections of data, parallel streams could actually be an easy way to speed up computations. There will still be some overhead compared to the ideal hand-written parallel code, but using parallel streams could be easier and way less error-prone.
-- Readability (subjective)
-  - From a certain level of complexity, code using streams starts to get harder to read (see below)
-  - Also depends on how familiar the team is with streams
-- Stack traces
-  - Errors happening inside streams lead to more complex stack traces than errors in simple loops
+-   Performance: 
+    -   Using streams implies some overhead, so they are likely slower than hand-written loops etc.
+    -   Note: For huge in-memory collections of data, parallel streams could actually be an easy way to speed up computations. There will still be some overhead compared to the ideal hand-written parallel code, but using parallel streams could be easier and way less error-prone.
+-   Readability (subjective)
+    -   From a certain level of complexity, code using streams starts to get harder to read (see below)
+    -   Also depends on how familiar the team is with streams
+-   Stack traces
+    -   Errors happening inside streams lead to more complex stack traces than errors in simple loops
 
 Example:
 
@@ -464,4 +479,3 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
     at misc.Main.main(Main.java:20)
 */
 ```
-

@@ -1,0 +1,8 @@
+{
+    "plugins": {
+        "remark-toc": {
+            "heading": "contents",
+            "tight": true
+        }
+    }
+}

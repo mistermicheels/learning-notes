@@ -2,7 +2,18 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+
+## Contents
+
+-   [Date and Time API basics](#date-and-time-api-basics)
+-   [Instants and Durations](#instants-and-durations)
+-   [Local dates and time](#local-dates-and-time)
+    -   [Local dates](#local-dates)
+    -   [Temporal adjusters](#temporal-adjusters)
+    -   [Local time](#local-time)
+-   [Zoned time](#zoned-time)
+-   [Formatting and parsing dates](#formatting-and-parsing-dates)
 
 ## Date and Time API basics
 
@@ -12,8 +23,8 @@ Java 8 introduced a new Data and Time API under `java.time`, which solves a lot 
 
 Some key points:
 
-- All instances of `java.time` objects are immutable (operations that change dates or times return new objects)
-- A day has exactly 86400 seconds (leap seconds are dealt with by making seconds last a little bit longer)
+-   All instances of `java.time` objects are immutable (operations that change dates or times return new objects)
+-   A day has exactly 86400 seconds (leap seconds are dealt with by making seconds last a little bit longer)
 
 ## Instants and Durations
 
@@ -36,9 +47,9 @@ long secondsInWeek = oneWeek.toSeconds();
 
 Computations with durations:
 
-- Option 1: use methods directly on durations 
-- Option 2: convert to nanoseconds
-  - Note that a long of nanoseconds doesn't allow you to use the entire range of a `Duration`, but it a long can hold almost 300 years worth of nanoseconds
+-   Option 1: use methods directly on durations 
+-   Option 2: convert to nanoseconds
+    -   Note that a long of nanoseconds doesn't allow you to use the entire range of a `Duration`, but it a long can hold almost 300 years worth of nanoseconds
 
 ```java
 // Option 1
@@ -58,10 +69,10 @@ Local date/time: has a date and/or time of day, but no time zone information
 
 Example use cases: 
 
-- Someone's birthday (this refers to a certain calendar date, but not to a precise instant on the time line)
-- Calculations with date and time when you want to ignore time zones and don't want daylight savings time to be taken into account
-  - Example: a meeting that is at 10:00 every 7 days (regardless of daylight savings time)
-  - Note: you can also ignore daylight savings time when working with zoned times, see below
+-   Someone's birthday (this refers to a certain calendar date, but not to a precise instant on the time line)
+-   Calculations with date and time when you want to ignore time zones and don't want daylight savings time to be taken into account
+    -   Example: a meeting that is at 10:00 every 7 days (regardless of daylight savings time)
+    -   Note: you can also ignore daylight savings time when working with zoned times, see below
 
 ### Local dates
 
@@ -113,8 +124,8 @@ LocalTime alarmTime = bedTime.plusHours(8);
 
 Zoned time: date and time plus time zone information
 
-- Represents particular instant in time
-- When performing calculations or transforming between time zones, daylight savings time and time zone rules are taken into account
+-   Represents particular instant in time
+-   When performing calculations or transforming between time zones, daylight savings time and time zone rules are taken into account
 
 ```java
 ZonedDateTime apolloLaunch = ZonedDateTime.of(1969, 7, 16, 9, 32, 0, 0,   
@@ -160,4 +171,3 @@ System.out.println(parsed1.equals(parsed2)); // true
 // throws DateTimeParseException
 LocalDate parsed3 = LocalDate.parse("2019/08/28", patternFormatter);
 ```
-

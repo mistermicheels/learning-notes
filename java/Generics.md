@@ -2,7 +2,7 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
 
 Simple class hierarchy for examples:
 
@@ -13,6 +13,18 @@ public class Animal {}
 ```java
 public class Dog extends Animal {}
 ```
+
+## Contents
+
+-   [Generics basics](#generics-basics)
+-   [Wildcards](#wildcards)
+    -   [A note about arrays](#a-note-about-arrays)
+-   [Generics inside the Java Virtual Machine](#generics-inside-the-java-virtual-machine)
+    -   [Type erasure](#type-erasure)
+    -   [Cast insertion](#cast-insertion)
+    -   [Bridge methods](#bridge-methods)
+-   [The Class class](#the-class-class)
+-   [Generics restrictions](#generics-restrictions)
 
 ## Generics basics
 
@@ -33,7 +45,7 @@ public <T extends Animal> T getFirstAnimal(List<T> animals) {
 }
 ```
 
-`T extends Animal` is a *type bound*.
+`T extends Animal` is a _type bound_.
 
 ## Wildcards
 
@@ -53,7 +65,7 @@ List<Dog> dogList = new ArrayList<Dog>();
 List<? extends Animal> extendsAnimalList = dogList; // works
 ```
 
-`? extends Animal` is called a *subtype wildcard*. `? super Dog` is called a *supertype wildcard*
+`? extends Animal` is called a _subtype wildcard_. `? super Dog` is called a _supertype wildcard_
 
 ```java
 List<Dog> dogList = new ArrayList<Dog>();
@@ -101,7 +113,7 @@ public class AnimalWrapper<T extends Animal> {
 }
 ```
 
-The above type is compiled into the following *raw* type:
+The above type is compiled into the following _raw_ type:
 
 ```java
 public class AnimalWrapper {    
@@ -130,9 +142,9 @@ Animal animal = new Animal();
 rawList.add(animal);
 ```
 
-The above code generates warnings, but if you choose to ignore those, you now have an `Animal` sitting inside a `List<Dog>`. This is known as *heap pollution*. But what about type safety?
+The above code generates warnings, but if you choose to ignore those, you now have an `Animal` sitting inside a `List<Dog>`. This is known as _heap pollution_. But what about type safety?
 
-Java handles this in the compiler by inserting a cast whenever the code *reads* from an expression with erased type. This means that, while we can add the `Animal` to our `List<Dog>`, we will get a `ClassCastException` if we try to retrieve that `Animal` as a `Dog`.
+Java handles this in the compiler by inserting a cast whenever the code _reads_ from an expression with erased type. This means that, while we can add the `Animal` to our `List<Dog>`, we will get a `ClassCastException` if we try to retrieve that `Animal` as a `Dog`.
 
 ```java
 List<Dog> dogList = new ArrayList<Dog>();  
@@ -158,7 +170,7 @@ Animal retrievedAnimal = (Animal) dogList.get(0); // works
 Dog retrievedDog = (Dog) dogList.get(0); // ClassCastException
 ```
 
-when we get the `ClassCastException` on the last line, that does not help us to find the actual source of the problem (which is the code where we inserted an `Animal` inside a `List<Dog>`). When debugging such problem, it can be useful to use a *checked view* of the `List`. This checks the type of inserted objects as they are inserted.
+when we get the `ClassCastException` on the last line, that does not help us to find the actual source of the problem (which is the code where we inserted an `Animal` inside a `List<Dog>`). When debugging such problem, it can be useful to use a _checked view_ of the `List`. This checks the type of inserted objects as they are inserted.
 
 ```java
 List<Dog> dogList = 
@@ -173,7 +185,7 @@ Note the use of `Dog.class`, a `Class<Dog>` instance which is needed to know the
 
 ### Bridge methods
 
-In some cases, basic type erasure would lead to problems with method overriding. In order to prevent this, the Java compiler sometimes generates *bridge methods*.
+In some cases, basic type erasure would lead to problems with method overriding. In order to prevent this, the Java compiler sometimes generates _bridge methods_.
 
 Example class:
 
@@ -208,21 +220,19 @@ public boolean add(Object dog) {
 
 Bridge methods can also be used when the return type varies. For example, imagine that our `GoodBoyList` also overrides the `get(int)` method.
 
-```
-public class GoodBoyList extends ArrayList<Dog>{
-    @Override
-    public Dog get(int i) {
-        Dog dog = super.get(i);
-        dog.pet():
-        return dog;
+    public class GoodBoyList extends ArrayList<Dog>{
+        @Override
+        public Dog get(int i) {
+            Dog dog = super.get(i);
+            dog.pet():
+            return dog;
+        }
     }
-}
-```
 
-Note: inside the Java Virtual Machine, a method is defined by its name, the number and types of its arguments *and* by its return type. This means that, after erasure, we again need a bridge method to make overriding work here. This way, we get two `get` methods in `GoodBoyList`:
+Note: inside the Java Virtual Machine, a method is defined by its name, the number and types of its arguments _and_ by its return type. This means that, after erasure, we again need a bridge method to make overriding work here. This way, we get two `get` methods in `GoodBoyList`:
 
-- `Dog get(int)`: this is the actual method as defined in `GoodBoyList`
-- `Object get(int)`: this is a generated bridge method that overrides the `Object get(int)` method in `ArrayList`.
+-   `Dog get(int)`: this is the actual method as defined in `GoodBoyList`
+-   `Object get(int)`: this is a generated bridge method that overrides the `Object get(int)` method in `ArrayList`.
 
 The compiler takes care of the generation of bridge methods, so in principle you don’t have to worry about them. However, they may show up in stack traces or explain why the compiler complains about certain pieces of code.
 
@@ -257,31 +267,36 @@ The `Class<T>` object is also very useful when using `reflection`. For example, 
 
 ## Generics restrictions
 
-- Type arguments cannot be primitives
-  - A type parameter must always be Object or a subclass of Object. This means that, for example, it is not possible to define an `ArrayList<int>`.
-- At runtime, all types are raw
-  - Reason: type erasure
-  - Something like `if (object instanceof ArrayList<Dog>`) will not compile because this check is impossible to execute at runtime.
-  - The Class instances that you get are also always raw types. There is no `ArrayList<Dog>.class`, only `ArrayList.class`.
+-   Type arguments cannot be primitives
+    -   A type parameter must always be Object or a subclass of Object. This means that, for example, it is not possible to define an `ArrayList<int>`.
 
-- Type variables cannot be instantiated
-  - If you have a type variable T, you cannot do `new T(...)` or `new T[...] (array)`. 
-  - Reason: type erasure (you would be instantiating the erased value for T, not T itself).
-  - If you want to construct objects of type T or arrays of type T inside a generic method, you will have to ask the caller for the right object or array constructor or for a Class object.
-  - While you cannot instantiate an array of type T, you can easily create an ArrayList<T>. This is because ArrayList is a generic type itself, while in order to create an array of type T we would need the exact type T at runtime.
-- It’s impossible to create arrays of parameterized types
-  - You can declare arrays of a parameterized type (e.g. `AnimalWrapper<Dog>[]`)
-  - You cannot instantiate an array of a parameterized type. 
-  - Reason: type erasure. At runtime, we would just get an `AnimalWrapper[]` array that allows any kind of `AnimalWrapper` without throwing an `ArrayStoreException`. If that is what you want, you can create an `AnimalWrapper[]` and then cast it to `AnimalWrapper<Dog>[]` (this will generate compiler warnings though).
-  - The simplest solution is often to just create an `ArrayList<AnimalWrapper<Dog>>` instead.
-- Class type variables are not valid in static contexts
-  - Type variables defined at the level of the class cannot be used in static contexts (static variables and static methods). 
-  - Example: if you have a class with type parameter T, you cannot have a static variable of type T. 
-  - Reason: type erasure. You can use a class multiple times with different values for T but a static variable only exists once (on the raw type), so it’s impossible to have a static variable with the exact type T for each of those values.
-  - Remember that you can still use type variables in static contexts if they are not defined at the level of the class. For example, you can have a static method parameterized with type T if that type parameter is declared at the level of the method.
-- Methods may not clash after erasure
-  - You are not allowed to declare methods that would clash after erasure (meaning that, after erasure, there would be two methods with the same signature).
-  - This includes bridge methods! If you get a compiler error about methods clashing after erasure, it’s possible that the clash is generated by the bridge methods generated by the compiler. This is why it’s important to have some understanding of what these bridge methods are.
-- Exceptions: it is not possible to throw objects of a generic class. 
-  - Reason: type erasure. Catching instances of a generic class with a specific type parameter would require information that is not available at runtime.
-  - It is still allowed to have a type variable in your throws declaration, as this is checked by the compiler.
+-   At runtime, all types are raw
+    -   Reason: type erasure
+    -   Something like `if (object instanceof ArrayList<Dog>`) will not compile because this check is impossible to execute at runtime.
+    -   The Class instances that you get are also always raw types. There is no `ArrayList<Dog>.class`, only `ArrayList.class`.
+
+-   Type variables cannot be instantiated
+    -   If you have a type variable T, you cannot do `new T(...)` or `new T[...] (array)`. 
+    -   Reason: type erasure (you would be instantiating the erased value for T, not T itself).
+    -   If you want to construct objects of type T or arrays of type T inside a generic method, you will have to ask the caller for the right object or array constructor or for a Class object.
+    -   While you cannot instantiate an array of type T, you can easily create an ArrayList<T>. This is because ArrayList is a generic type itself, while in order to create an array of type T we would need the exact type T at runtime.
+
+-   It’s impossible to create arrays of parameterized types
+    -   You can declare arrays of a parameterized type (e.g. `AnimalWrapper<Dog>[]`)
+    -   You cannot instantiate an array of a parameterized type. 
+    -   Reason: type erasure. At runtime, we would just get an `AnimalWrapper[]` array that allows any kind of `AnimalWrapper` without throwing an `ArrayStoreException`. If that is what you want, you can create an `AnimalWrapper[]` and then cast it to `AnimalWrapper<Dog>[]` (this will generate compiler warnings though).
+    -   The simplest solution is often to just create an `ArrayList<AnimalWrapper<Dog>>` instead.
+
+-   Class type variables are not valid in static contexts
+    -   Type variables defined at the level of the class cannot be used in static contexts (static variables and static methods). 
+    -   Example: if you have a class with type parameter T, you cannot have a static variable of type T. 
+    -   Reason: type erasure. You can use a class multiple times with different values for T but a static variable only exists once (on the raw type), so it’s impossible to have a static variable with the exact type T for each of those values.
+    -   Remember that you can still use type variables in static contexts if they are not defined at the level of the class. For example, you can have a static method parameterized with type T if that type parameter is declared at the level of the method.
+
+-   Methods may not clash after erasure
+    -   You are not allowed to declare methods that would clash after erasure (meaning that, after erasure, there would be two methods with the same signature).
+    -   This includes bridge methods! If you get a compiler error about methods clashing after erasure, it’s possible that the clash is generated by the bridge methods generated by the compiler. This is why it’s important to have some understanding of what these bridge methods are.
+
+-   Exceptions: it is not possible to throw objects of a generic class. 
+    -   Reason: type erasure. Catching instances of a generic class with a specific type parameter would require information that is not available at runtime.
+    -   It is still allowed to have a type variable in your throws declaration, as this is checked by the compiler.

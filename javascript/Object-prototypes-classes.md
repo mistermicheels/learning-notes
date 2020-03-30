@@ -2,22 +2,35 @@
 
 See:
 
-- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
-- [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
-- [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
-- [Prototype pollution attacks in NodeJS applications](https://www.youtube.com/watch?v=LUsiFV3dsK8&feature=emb_logo)
-- [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)
-- [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript)
-- [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes)
-- [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d)
+-   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+-   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
+-   [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+-   [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+-   [Prototype pollution attacks in NodeJS applications](https://www.youtube.com/watch?v=LUsiFV3dsK8&feature=emb_logo)
+-   [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)
+-   [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript)
+-   [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes)
+-   [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d)
+
+## Contents
+
+-   [JavaScript objects](#javascript-objects)
+    -   [Built-in objects](#built-in-objects)
+-   [The prototype chain](#the-prototype-chain)
+    -   [Property shadowing](#property-shadowing)
+    -   [Prototype pollution](#prototype-pollution)
+-   [Functions and `.prototype`](#functions-and-prototype)
+-   [Prototypical inheritance and object-oriented design](#prototypical-inheritance-and-object-oriented-design)
+-   [Object-oriented design vs. delegation-oriented design](#object-oriented-design-vs-delegation-oriented-design)
+-   [Classes](#classes)
+-   [Encapsulation](#encapsulation)
 
 ## JavaScript objects
 
 Misconception: "everything is an object in JavaScript"
 
-- There *simple primitives* (`string`,  `number`, `boolean`, `null`, and `undefined`) which are not objects
-- However, everything else is indeed an object: simple objects, arrays, functions, ...
+-   There _simple primitives_ (`string`,  `number`, `boolean`, `null`, and `undefined`) which are not objects
+-   However, everything else is indeed an object: simple objects, arrays, functions, ...
 
 Example:
 
@@ -41,9 +54,9 @@ console.log(Object.prototype.toString.apply(/aaa/g)); // [object RegExp]
 
 ### Built-in objects
 
-- `String`,  `Number`, `Boolean`, `Object`, `Function`, `Array`, `Date`, `RegExp`, `Error`
-- Look like actual types, even classes
-- In reality, they are actually just built-in functions
+-   `String`,  `Number`, `Boolean`, `Object`, `Function`, `Array`, `Date`, `RegExp`, `Error`
+-   Look like actual types, even classes
+-   In reality, they are actually just built-in functions
 
 Example with `String` (note how it behaves differently whether it's called as constructor):
 
@@ -86,7 +99,7 @@ console.log(typeof test3); // boolean
 
 ## The prototype chain
 
-Every JavaScript object has an internal `[[Prototype]]` property that is a reference to another object. If we try to get a property from an object that is not present on the object itself, JavaScript follows the `[[Prototype]]` link of the object. If it's not found on that object, it follows that object's `[[Prototype]]` link, until the end of the chain is reached. The chain formed by the `[[Prototype]]` links is called the *prototype chain*.
+Every JavaScript object has an internal `[[Prototype]]` property that is a reference to another object. If we try to get a property from an object that is not present on the object itself, JavaScript follows the `[[Prototype]]` link of the object. If it's not found on that object, it follows that object's `[[Prototype]]` link, until the end of the chain is reached. The chain formed by the `[[Prototype]]` links is called the _prototype chain_.
 
 The prototype chain typically ends at the built-in `Object.prototype`
 
@@ -116,7 +129,7 @@ Note: an object can only prototypically inherit from a single other object. Ther
 
 ### Property shadowing
 
-*Shadowing* occurs when a property on an object hides a property with the same name deeper down the prototype chain. This can often be a source of confusion. Therefore, it's recommended to avoid creating properties with a name that already exists somewhere in the chain.
+_Shadowing_ occurs when a property on an object hides a property with the same name deeper down the prototype chain. This can often be a source of confusion. Therefore, it's recommended to avoid creating properties with a name that already exists somewhere in the chain.
 
 It's easy to accidentally shadow a property! Example:
 
@@ -142,9 +155,9 @@ console.log(objectB.hasOwnProperty("counter")); // true
 
 Here, the line `objectB.counter++` is equivalent to `objectB.counter = objectB.counter + 1`, which:
 
-- Looks for a property `counter` on the prototype chain and finds it on  `objectA`
-- Gets the value of that property
-- Creates a new property `counter` on `objectB`
+-   Looks for a property `counter` on the prototype chain and finds it on  `objectA`
+-   Gets the value of that property
+-   Creates a new property `counter` on `objectB`
 
 From that point on, `objectB` has its own  `counter` property shadowing the  `counter` property on  `objectA`.
 
@@ -194,12 +207,12 @@ Prototype pollution vulnerabilities could be exploited to prevent system from wo
 
 Some ways to avoid being vulnerable:
 
-- If you need to write your own recursive merge, make sure to have it ignore `__proto__`
-   - Vulnerabilities in libraries like Lodash have already been patched
+-   If you need to write your own recursive merge, make sure to have it ignore `__proto__`
+    -   Vulnerabilities in libraries like Lodash have already been patched
 
-- Validate all user input, rejecting any input with unexpected properties
+-   Validate all user input, rejecting any input with unexpected properties
 
-- An interesting way to avoid this kind of attack is to freeze the Object prototype. If you add `Object.freeze(Object.prototype);` on top of the example above, the vulnerability is gone. This works because the freeze prevents the prototype from being altered in any way.
+-   An interesting way to avoid this kind of attack is to freeze the Object prototype. If you add `Object.freeze(Object.prototype);` on top of the example above, the vulnerability is gone. This works because the freeze prevents the prototype from being altered in any way.
 
 ## Functions and `.prototype`
 
@@ -318,8 +331,8 @@ Comparison of how the two approaches compare in terms of objects created and the
 
 Basic idea:
 
-- New syntax introduced in ES6
-- In the background we still just have prototypes and the prototype chain!
+-   New syntax introduced in ES6
+-   In the background we still just have prototypes and the prototype chain!
 
 Example of how to implement the example from above using ES6 classes:
 
@@ -448,7 +461,7 @@ console.log(instance.getSharedCounter(), Test.prototype.sharedCounter); // 2, 1
 
 ## Encapsulation
 
-One important concept in object-oriented design is *encapsulation*: classes expose a public interface while hiding internals using private fields and private methods. Currently, JavaScript doesn't offer private fields and methods, although there is a proposal underway to provide public and private class fields (see [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)). 
+One important concept in object-oriented design is _encapsulation_: classes expose a public interface while hiding internals using private fields and private methods. Currently, JavaScript doesn't offer private fields and methods, although there is a proposal underway to provide public and private class fields (see [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)). 
 
 There are also several techniques that can be used as workarounds (closures, `Symbols`, `WeakMaps`, `Proxies`, ...), but all have some performance or "cleanness" disadvantages. See: [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript), [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes), [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d), ...
 
@@ -503,4 +516,3 @@ class A {
 const instance = new A("theName");
 instance._name = "test"; // as per convention, you should not do this
 ```
-

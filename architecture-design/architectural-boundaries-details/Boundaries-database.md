@@ -2,17 +2,22 @@
 
 See:
 
-- Clean Architecture (book by Robert C. Martin)
-- Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures))
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures))
+
+## Contents
+
+-   [Boundaries between the domain and the database](#boundaries-between-the-domain-and-the-database)
+-   [Separation at the database level](#separation-at-the-database-level)
 
 ## Boundaries between the domain and the database
 
 Typically makes sense to draw a boundary between the actual domain logic and the database (unless your application is a thin layer around the database that doesn’t really have any domain logic)
 
-One widespread convention: *Repository* pattern:
+One widespread convention: _Repository_ pattern:
 
-- All interaction with the database is encapsulated inside Repository classes
-- The domain logic interacts with these classes, without having to know anything database-specific
+-   All interaction with the database is encapsulated inside Repository classes
+-   The domain logic interacts with these classes, without having to know anything database-specific
 
 ```java
 interface UserRepository {

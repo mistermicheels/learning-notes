@@ -2,15 +2,23 @@
 
 See:
 
-- [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
-- [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
-- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+-   [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+-   [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+-   [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+## Contents
+
+-   [Spread syntax](#spread-syntax)
+-   [Rest parameters](#rest-parameters)
+-   [Destructuring](#destructuring)
+    -   [Array destructuring](#array-destructuring)
+    -   [Object destructuring](#object-destructuring)
 
 ## Spread syntax
 
-- Syntax: `...`
-- Allows expanding an array or string into individual elements/characters
-- Allows expanding an object into key-value pairs of properties
+-   Syntax: `...`
+-   Allows expanding an array or string into individual elements/characters
+-   Allows expanding an object into key-value pairs of properties
 
 Use case: expanding array into function arguments (before spread syntax, you would need to use `apply` for this)
 
@@ -69,8 +77,8 @@ const c = { ...a, ...b }; // {} (undefined overwrites true)
 
 ## Rest parameters
 
-- Syntax: `...`
-- Allows to represent any number of arguments as an array
+-   Syntax: `...`
+-   Allows to represent any number of arguments as an array
 
 Example:
 
@@ -145,4 +153,3 @@ test({ name: "Cookie" }); // Cookie Doe
 test({ lastName: undefined }); // John Doe
 test({ lastName: null }); // John null
 ```
-

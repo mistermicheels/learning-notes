@@ -1,18 +1,29 @@
 # Sass/SCSS
 
-- See:
+-   See:
 
-  - [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
-  - [Sass](https://sass-lang.com/)
-  - [What's the difference between SCSS and Sass?](https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass)
+    -   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+    -   [Sass](https://sass-lang.com/)
+    -   [What's the difference between SCSS and Sass?](https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass)
+
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [Some features](#some-features)
+    -   [Variables](#variables)
+    -   [Nesting](#nesting)
+    -   [Mixins](#mixins)
+    -   [Inheritance](#inheritance)
+        -   [Same example but using mixins](#same-example-but-using-mixins)
+        -   [Example where inheritance can be confusing](#example-where-inheritance-can-be-confusing)
 
 ## Basic idea
 
-- "Syntactically Awesome Style Sheets"
-- Sass is a style sheet preprocessor that transpiles files in the Sass/SCSS language into regular CSS that can be understood by browsers
-- Two syntaxes available:
-  - SCSS (Sassy CSS): This is an extension of the CSS syntax, meaning that every valid CSS file is also a valid SCSS file with the same meaning
-  - Sass syntax (also known as indented syntax): Older syntax that uses indentation instead of brackets to indicate nesting and uses newlines instead of semicolons to separate different properties
+-   "Syntactically Awesome Style Sheets"
+-   Sass is a style sheet preprocessor that transpiles files in the Sass/SCSS language into regular CSS that can be understood by browsers
+-   Two syntaxes available:
+    -   SCSS (Sassy CSS): This is an extension of the CSS syntax, meaning that every valid CSS file is also a valid SCSS file with the same meaning
+    -   Sass syntax (also known as indented syntax): Older syntax that uses indentation instead of brackets to indicate nesting and uses newlines instead of semicolons to separate different properties
 
 ## Some features
 
@@ -269,4 +280,3 @@ Resulting CSS (actually makes the element green):
     color: green;
 }
 ```
-

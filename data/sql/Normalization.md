@@ -2,7 +2,17 @@
 
 See: 
 
-- [Database normalization](https://en.wikipedia.org/wiki/Database_normalization)
+-   [Database normalization](https://en.wikipedia.org/wiki/Database_normalization)
+
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [Normal forms](#normal-forms)
+    -   [1NF (first normal form)](#1nf-first-normal-form)
+    -   [2NF (second normal form)](#2nf-second-normal-form)
+    -   [3NF (third normal form)](#3nf-third-normal-form)
+
+## Basic idea
 
 > Database normalization is the process of structuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity.
 
@@ -18,17 +28,17 @@ Normal forms = formally defined "levels of database normalization"
 
 Normal forms from least normalized to most normalized (see below for ones in bold)
 
-- UNF: [Unnormalized form](https://en.wikipedia.org/wiki/Unnormalized_form) (no normalization applied yet)
-- **1NF**: [First normal form](https://en.wikipedia.org/wiki/First_normal_form)
-- **2NF**: [Second normal form](https://en.wikipedia.org/wiki/Second_normal_form)
-- **3NF**: [Third normal form](https://en.wikipedia.org/wiki/Third_normal_form)
-- EKNF: [Elementary key normal form](https://en.wikipedia.org/wiki/Elementary_key_normal_form)
-- BCNF: [Boyce–Codd normal form](https://en.wikipedia.org/wiki/Boyce–Codd_normal_form)
-- 4NF: [Fourth normal form](https://en.wikipedia.org/wiki/Fourth_normal_form)
-- ETNF: [Essential tuple normal form](https://en.wikipedia.org/w/index.php?title=Essential_tuple_normal_form&action=edit&redlink=1)
-- 5NF: [Fifth normal form](https://en.wikipedia.org/wiki/Fifth_normal_form)
-- DKNF: [Domain-key normal form](https://en.wikipedia.org/wiki/Domain-key_normal_form)
-- 6NF: [Sixth normal form](https://en.wikipedia.org/wiki/Sixth_normal_form)
+-   UNF: [Unnormalized form](https://en.wikipedia.org/wiki/Unnormalized_form) (no normalization applied yet)
+-   **1NF**: [First normal form](https://en.wikipedia.org/wiki/First_normal_form)
+-   **2NF**: [Second normal form](https://en.wikipedia.org/wiki/Second_normal_form)
+-   **3NF**: [Third normal form](https://en.wikipedia.org/wiki/Third_normal_form)
+-   EKNF: [Elementary key normal form](https://en.wikipedia.org/wiki/Elementary_key_normal_form)
+-   BCNF: [Boyce–Codd normal form](https://en.wikipedia.org/wiki/Boyce–Codd_normal_form)
+-   4NF: [Fourth normal form](https://en.wikipedia.org/wiki/Fourth_normal_form)
+-   ETNF: [Essential tuple normal form](https://en.wikipedia.org/w/index.php?title=Essential_tuple_normal_form&action=edit&redlink=1)
+-   5NF: [Fifth normal form](https://en.wikipedia.org/wiki/Fifth_normal_form)
+-   DKNF: [Domain-key normal form](https://en.wikipedia.org/wiki/Domain-key_normal_form)
+-   6NF: [Sixth normal form](https://en.wikipedia.org/wiki/Sixth_normal_form)
 
 ### 1NF (first normal form)
 
@@ -54,11 +64,11 @@ Solution: make Subject into its own table
 
 **Subject table**
 
-| ID   | Name     |
-| ---- | -------- |
-| 1    | MySQL    |
-| 2    | Database |
-| 3    | Design   |
+| ID  | Name     |
+| --- | -------- |
+| 1   | MySQL    |
+| 2   | Database |
+| 3   | Design   |
 
 **Book - Subject table** (many-to-many relationship, needed because book can have multiple subjects and multiple books can share the same subject)
 
@@ -70,7 +80,7 @@ Solution: make Subject into its own table
 
 ### 2NF (second normal form)
 
-Meaning: 1NF + no partial dependencies (values depend on the whole of every *candidate key*)
+Meaning: 1NF + no partial dependencies (values depend on the whole of every _candidate key_)
 
 Candidate key: minimal set of columns whose values uniquely identify a single row in the table
 
@@ -122,7 +132,7 @@ Example:
 | Beginning MySQL Database Design and Optimization        | Chad Russell | 1        | Tutorial        |
 | The Relational Model for Database Management: Version 2 | E.F.Codd     | 2        | Popular science |
 
-Problem: Genre ID and Genre Name both depend on the primary key { Title } but are not independent of each other. Dependency *Title* -> *Genre Name* can be deduced from *Title -> Genre ID* and *Genre ID -> Genre Name* (this means we have a transitive dependency)
+Problem: Genre ID and Genre Name both depend on the primary key { Title } but are not independent of each other. Dependency _Title_ -> _Genre Name_ can be deduced from _Title -> Genre ID_ and _Genre ID -> Genre Name_ (this means we have a transitive dependency)
 
 Solution: separate Genre table
 
@@ -139,4 +149,3 @@ Solution: separate Genre table
 | -------- | --------------- |
 | 1        | Tutorial        |
 | 2        | Popular science |
-

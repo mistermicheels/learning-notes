@@ -1,15 +1,34 @@
 # Compiler API
 
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [SourceFiles and the abstract syntax tree (AST)](#sourcefiles-and-the-abstract-syntax-tree-ast)
+    -   [Getting SourceFile for code](#getting-sourcefile-for-code)
+    -   [Printing AST for SourceFile](#printing-ast-for-sourcefile)
+-   [Turning code into a Program](#turning-code-into-a-program)
+-   [Transpiling code](#transpiling-code)
+-   [Getting diagnostics](#getting-diagnostics)
+-   [Getting type information](#getting-type-information)
+-   [Creating a custom linter](#creating-a-custom-linter)
+-   [Extracting type documentation](#extracting-type-documentation)
+-   [Altering or creating code programmatically](#altering-or-creating-code-programmatically)
+    -   [Parsing and string processing](#parsing-and-string-processing)
+    -   [Programmatically creating AST nodes](#programmatically-creating-ast-nodes)
+    -   [Walking the AST and replacing nodes using a transformer](#walking-the-ast-and-replacing-nodes-using-a-transformer)
+
+## Basic idea
+
 When writing an application using TypeScript, you typically use the “typescript” module as a build tool to transpile your TypeScript code into JavaScript. This is usually all you need. However, if you import the “typescript” module in your application code, you get access to the compiler API. This compiler API provides some very powerful tools for interacting with TypeScript code. Some of its features are documented on the TypeScript wiki: [Using the Compiler API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API).
 
 ## SourceFiles and the abstract syntax tree (AST)
 
-SourceFile contains a representation of the source code itself, from which you can extract the *abstract syntax tree (AST)* for the code ([Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
+SourceFile contains a representation of the source code itself, from which you can extract the _abstract syntax tree (AST)_ for the code ([Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree))
 
 AST:
 
-- Represents the syntactical structure of the program as a tree, starting from the SourceFile itself and drilling down into the statements and their building blocks
-- In general, ASTs are used by compilers or interpreters as an initial step in the processing of the source code
+-   Represents the syntactical structure of the program as a tree, starting from the SourceFile itself and drilling down into the statements and their building blocks
+-   In general, ASTs are used by compilers or interpreters as an initial step in the processing of the source code
 
 Interactively exploring TypeScript AST: [TypeScript AST Viewer](https://ts-ast-viewer.com/)
 
@@ -49,41 +68,37 @@ printRecursiveFrom(sourceFile, 0, sourceFile);
 
 Output:
 
-```
-SourceFile: const test: number = 1 + 2;
--VariableStatement: const test: number = 1 + 2;
---VariableDeclarationList: const test: number = 1 + 2
----VariableDeclaration: test: number = 1 + 2
-----Identifier: test
-----NumberKeyword: number
-----BinaryExpression: 1 + 2
------FirstLiteralToken: 1
------PlusToken: +
------FirstLiteralToken: 2
--EndOfFileToken:
-```
+    SourceFile: const test: number = 1 + 2;
+    -VariableStatement: const test: number = 1 + 2;
+    --VariableDeclarationList: const test: number = 1 + 2
+    ---VariableDeclaration: test: number = 1 + 2
+    ----Identifier: test
+    ----NumberKeyword: number
+    ----BinaryExpression: 1 + 2
+    -----FirstLiteralToken: 1
+    -----PlusToken: +
+    -----FirstLiteralToken: 2
+    -EndOfFileToken:
 
 Here, we used `ts.Node.forEachChild()` to get the children for a node in the AST. There is an alternative to this, `ts.Node.getChildren(sourceFile).forEach()`, which creates a more detailed AST:
 
-```
-SourceFile: const test: number = 1 + 2;
--SyntaxList: const test: number = 1 + 2;
---VariableStatement: const test: number = 1 + 2;
----VariableDeclarationList: const test: number = 1 + 2
-----ConstKeyword: const
-----SyntaxList: test: number = 1 + 2
------VariableDeclaration: test: number = 1 + 2
-------Identifier: test
-------ColonToken: :
-------NumberKeyword: number
-------FirstAssignment: =
-------BinaryExpression: 1 + 2
--------FirstLiteralToken: 1
--------PlusToken: +
--------FirstLiteralToken: 2
----SemicolonToken: ;
--EndOfFileToken:
-```
+    SourceFile: const test: number = 1 + 2;
+    -SyntaxList: const test: number = 1 + 2;
+    --VariableStatement: const test: number = 1 + 2;
+    ---VariableDeclarationList: const test: number = 1 + 2
+    ----ConstKeyword: const
+    ----SyntaxList: test: number = 1 + 2
+    -----VariableDeclaration: test: number = 1 + 2
+    ------Identifier: test
+    ------ColonToken: :
+    ------NumberKeyword: number
+    ------FirstAssignment: =
+    ------BinaryExpression: 1 + 2
+    -------FirstLiteralToken: 1
+    -------PlusToken: +
+    -------FirstLiteralToken: 2
+    ---SemicolonToken: ;
+    -EndOfFileToken:
 
 ## Turning code into a Program
 
@@ -144,8 +159,8 @@ const program = ts.createProgram(
 
 Note:`getSourceFile` method of the CompilerHost is called twice:
 
--  once for getting the actual code we want to compile
-- once for getting `lib.d.ts`, the default library specifying the JavaScript/TypeScript features that are available to the code
+-   once for getting the actual code we want to compile
+-   once for getting `lib.d.ts`, the default library specifying the JavaScript/TypeScript features that are available to the code
 
 ## Transpiling code
 
@@ -271,8 +286,8 @@ The documentation for the compiler API includes an example that uses a TypeCheck
 
 ### Parsing and string processing
 
-- Traverse the AST and generate a list of changes you want to perform on the code (e.g., remove 2 characters starting from position 11 and insert the string “test” instead). 
-- Then, take the source code as a string and apply the changes in reverse order (starting from the end of the source code, so your changes don’t affect the positions where the other changes need to happen).
+-   Traverse the AST and generate a list of changes you want to perform on the code (e.g., remove 2 characters starting from position 11 and insert the string “test” instead). 
+-   Then, take the source code as a string and apply the changes in reverse order (starting from the end of the source code, so your changes don’t affect the positions where the other changes need to happen).
 
 ### Programmatically creating AST nodes
 
@@ -349,4 +364,3 @@ const result = printer.printNode(
 
 console.log(result); // const testsuffix: number = 1 + 2;
 ```
-

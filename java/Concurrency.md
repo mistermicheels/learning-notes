@@ -2,8 +2,23 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-- [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
+
+## Contents
+
+-   [Concurrent execution basics](#concurrent-execution-basics)
+-   [Synchronous tasks](#synchronous-tasks)
+-   [Asynchronous concurrency](#asynchronous-concurrency)
+    -   [Completable futures](#completable-futures)
+    -   [User Interface callbacks](#user-interface-callbacks)
+-   [Parallel algorithms](#parallel-algorithms)
+    -   [Parallel streams](#parallel-streams)
+    -   [Parallel Array operations](#parallel-array-operations)
+-   [Be careful with blocking operations](#be-careful-with-blocking-operations)
+-   [Thread safety](#thread-safety)
+-   [Threads](#threads)
+-   [Locking](#locking)
 
 ## Concurrent execution basics
 
@@ -20,14 +35,14 @@ Note that the `run()` method cannot throw any checked exceptions! See also [Exce
 
 Running a task:
 
-- Can of course be run on the current thread by just invoking `run()`
-- Can be run inside a dedicated thread (see [Threads](./concurrency-details/Threads.md))
-  - Note: This one-to-one relationship between threads and tasks is not recommended!
-    - You might want to reuse the same thread for several tasks
-    - If you have a large number of computationally-intensive tasks, just immediately executing all of them in their own thread will lead to a loss of performance due to overhead from switching between threads
-- Can be run using an *executor service*
-  - Executor service takes care of scheduling tasks on one or multiple threads
-  - Recommended approach: separates task definition and task scheduling
+-   Can of course be run on the current thread by just invoking `run()`
+-   Can be run inside a dedicated thread (see [Threads](./concurrency-details/Threads.md))
+    -   Note: This one-to-one relationship between threads and tasks is not recommended!
+        -   You might want to reuse the same thread for several tasks
+        -   If you have a large number of computationally-intensive tasks, just immediately executing all of them in their own thread will lead to a loss of performance due to overhead from switching between threads
+-   Can be run using an _executor service_
+    -   Executor service takes care of scheduling tasks on one or multiple threads
+    -   Recommended approach: separates task definition and task scheduling
 
 Cached thread pool: executor service that uses an existing idle thread if possible and creates a new thread otherwise (and cleans up unused idle threads after a while
 
@@ -39,8 +54,8 @@ executor.execute(runnable);
 
 Fixed thread pool: executor service that uses a fixed number of threads
 
-- Can use this to limit resource consumption
-- Runnables are queued until a thread becomes available
+-   Can use this to limit resource consumption
+-   Runnables are queued until a thread becomes available
 
 ```java
 Runnable runnable = () -> {};      
@@ -77,9 +92,9 @@ System.out.println(result);
 
 A `Future` also has a method `cancel(mayInterruptIfRunning`) which attempts to cancel the task:
 
-- If task is not running yet, it won't be scheduled
-- If the task is running and `mayInterruptIfRunning` is true, the thread running the task is interrupted
-  - Thread interruption: see [Threads](./concurrency-details/Threads.md)
+-   If task is not running yet, it won't be scheduled
+-   If the task is running and `mayInterruptIfRunning` is true, the thread running the task is interrupted
+    -   Thread interruption: see [Threads](./concurrency-details/Threads.md)
 
 Invoking several tasks and waiting for all results:
 

@@ -2,8 +2,26 @@
 
 See:
 
-- [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
-- [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+
+## Contents
+
+-   [Selector types](#selector-types)
+    -   [Type selector](#type-selector)
+    -   [Universal selector](#universal-selector)
+    -   [Class selector](#class-selector)
+    -   [ID selector](#id-selector)
+    -   [Attribute selector](#attribute-selector)
+    -   [Pseudo-class selector](#pseudo-class-selector)
+    -   [Pseudo-element selector](#pseudo-element-selector)
+-   [Combining selectors](#combining-selectors)
+    -   [Selector lists using `,`](#selector-lists-using-)
+    -   [Same-element combinations](#same-element-combinations)
+    -   [Descendant combinator](#descendant-combinator)
+    -   [Child combinator](#child-combinator)
+    -   [Adjacent sibling combinator](#adjacent-sibling-combinator)
+    -   [General sibling combinator](#general-sibling-combinator)
 
 ## Selector types
 
@@ -187,4 +205,3 @@ img ~ p {
   color: red;
 }
 ```
-

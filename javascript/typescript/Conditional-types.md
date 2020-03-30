@@ -2,7 +2,12 @@
 
 See:
 
-- [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+
+## Contents
+
+-   [Basic idea](#basic-idea)
+-   [Predefined conditional types](#predefined-conditional-types)
 
 ## Basic idea
 
@@ -40,9 +45,9 @@ type T3 = TypeName<() => void>; // "function"
 type T4 = TypeName<string[]>; // "object"
 ```
 
-The above were examples where the conditional type is *resolved* (the compiler can immediately decide what the resulting type is going to be)
+The above were examples where the conditional type is _resolved_ (the compiler can immediately decide what the resulting type is going to be)
 
-Alternatively, the type can be *deferred*, meaning the compiler will decide when it has more info
+Alternatively, the type can be _deferred_, meaning the compiler will decide when it has more info
 
 Example (adapted from [Conditional Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types)):
 
@@ -67,11 +72,11 @@ const result2 = test({ propA: true, propB: false }) // type: string
 
 Some conditional types already defined by the TypeScript language (see [Predefined conditional types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#predefined-conditional-types)):
 
-- `Exclude` — Exclude from `T` those types that are assignable to `U`
-- `Extract` — Extract from `T` those types that are assignable to `U`
-- `NonNullable` — Exclude `null` and `undefined` from `T`
-- `ReturnType` — Obtain the return type of a function type
-- `InstanceType` — Obtain the instance type of a constructor function type
+-   `Exclude` — Exclude from `T` those types that are assignable to `U`
+-   `Extract` — Extract from `T` those types that are assignable to `U`
+-   `NonNullable` — Exclude `null` and `undefined` from `T`
+-   `ReturnType` — Obtain the return type of a function type
+-   `InstanceType` — Obtain the instance type of a constructor function type
 
 Examples (adapted from [Predefined conditional types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#predefined-conditional-types)):
 
@@ -87,4 +92,3 @@ type Test6 = NonNullable<(string[] | null | undefined>; // string[]
 
 type Test7 = ReturnType<() => boolean> // boolean
 ```
-

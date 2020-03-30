@@ -2,15 +2,23 @@
 
 See:
 
-- [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+
+## Contents
+
+-   [Nullable types](#nullable-types)
+-   [Optional chaining](#optional-chaining)
+-   [Non-null assertion operator](#non-null-assertion-operator)
+-   [Optional parameters](#optional-parameters)
+-   [Optional properties](#optional-properties)
 
 ## Nullable types
 
 Two special types: `null` and `undefined`
 
-- Treated as different from each other, because that's what JavaScript does as well
-- By default, assignable to anything, but this can be changed by enabling the `--strictNullChecks` flag
-  - Recommended to enable this, allow type checking to prevent a lot of potential runtime errors
+-   Treated as different from each other, because that's what JavaScript does as well
+-   By default, assignable to anything, but this can be changed by enabling the `--strictNullChecks` flag
+    -   Recommended to enable this, allow type checking to prevent a lot of potential runtime errors
 
 Example without `--strictNullChecks`:
 

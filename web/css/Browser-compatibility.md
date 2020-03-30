@@ -2,8 +2,16 @@
 
 See:
 
-- [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
-- [Supporting older browsers](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Supporting_Older_Browsers)
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Supporting older browsers](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Supporting_Older_Browsers)
+
+## Contents
+
+-   [Eliminating inconsistencies](#eliminating-inconsistencies)
+-   [Checking which browsers support certain functionality](#checking-which-browsers-support-certain-functionality)
+-   [Support queries](#support-queries)
+-   [Vendor prefixes](#vendor-prefixes)
+-   [Polyfills](#polyfills)
 
 ## Eliminating inconsistencies
 
@@ -15,10 +23,10 @@ Example: [Normalize.css](https://necolas.github.io/normalize.css/)
 
 ## Checking which browsers support certain functionality
 
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
-  - Example: [compatibility for grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns#Browser_compatibility)
-- [Can I Use](https://caniuse.com/)
-  - Example: [compatibility for grid-template-columns](https://caniuse.com/#feat=mdn-css_properties_grid-template-columns)
+-   [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+    -   Example: [compatibility for grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns#Browser_compatibility)
+-   [Can I Use](https://caniuse.com/)
+    -   Example: [compatibility for grid-template-columns](https://caniuse.com/#feat=mdn-css_properties_grid-template-columns)
 
 ## Support queries
 
@@ -43,9 +51,9 @@ Vendor prefixes: browser-specific (or rendering-engine-specific) prefixes on pro
 
 Goals:
 
-- Allow developers to make use of new features before they are standardized
-- When the features become standardized, it is still possible to get the old non-standard behaviors by using the prefixes (don't break behavior for early adopters that depend on some specific non-standard behavior)
-- By including the vendor prefixes next to the normal properties/values for a standardized feature, you can still support older browser versions in which the feature was not yet standardized
+-   Allow developers to make use of new features before they are standardized
+-   When the features become standardized, it is still possible to get the old non-standard behaviors by using the prefixes (don't break behavior for early adopters that depend on some specific non-standard behavior)
+-   By including the vendor prefixes next to the normal properties/values for a standardized feature, you can still support older browser versions in which the feature was not yet standardized
 
 Example:
 

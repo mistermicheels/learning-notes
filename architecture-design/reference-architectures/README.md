@@ -6,7 +6,7 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
-- [Clean Architecture](Clean-Architecture.md)
-- [Layered architecture](Layered-architecture.md)
-- [Microservices](Microservices.md)
-- [Package by feature or component](Package-by-feature-or-component.md)
+-   [Clean Architecture](Clean-Architecture.md)
+-   [Layered architecture](Layered-architecture.md)
+-   [Microservices](Microservices.md)
+-   [Package by feature or component](Package-by-feature-or-component.md)

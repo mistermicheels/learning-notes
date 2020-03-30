@@ -2,8 +2,15 @@
 
 See:
 
-- [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
-- [Java Method Hiding and Overriding](https://crunchify.com/java-method-hiding-and-overriding-override-static-method-in-java/9)
+-   [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
+-   [Java Method Hiding and Overriding](https://crunchify.com/java-method-hiding-and-overriding-override-static-method-in-java/9)
+
+## Contents
+
+-   [Overloading](#overloading)
+-   [Overriding](#overriding)
+-   [Combining overloading and overriding](#combining-overloading-and-overriding)
+-   [Method hiding](#method-hiding)
 
 ## Overloading
 
@@ -30,7 +37,7 @@ test.testMethod(testObject); // object
 test.testMethod(testString); // string
 ```
 
-Important: the exact *signature* of the method to call is based at **compile time** using the compile-time types of the arguments
+Important: the exact _signature_ of the method to call is based at **compile time** using the compile-time types of the arguments
 
 ```java
 Object testStringAsObject = testString;
@@ -67,7 +74,7 @@ testSuper.testMethod(testObject); // super
 testSub.testMethod(testObject); // sub
 ```
 
-Important: The *implementation* to invoke is determined at **run time** based on the actual runtime type of the object and the structure of the inheritance hierarchy
+Important: The _implementation_ to invoke is determined at **run time** based on the actual runtime type of the object and the structure of the inheritance hierarchy
 
 ```java
 OverridingTestSuper testSubAsSuper = testSub;
@@ -132,6 +139,7 @@ class CombinedTestSub extends CombinedTestSuper {
     }
 }
 ```
+
 Calling static methods on classes:
 
 ```java
@@ -153,6 +161,6 @@ staticSub.testStaticMethod(testObject); // sub
 staticSubAsSuper.testStaticMethod(testObject); // super (!!!)
 ```
 
-No overriding here! Instead, we get *method hiding*.
+No overriding here! Instead, we get _method hiding_.
 
 Can be pretty confusing (not only the method hiding itself, but also the fact that we call a static method in a way that makes it look like an instance method), which is also why we get warnings when doing this.

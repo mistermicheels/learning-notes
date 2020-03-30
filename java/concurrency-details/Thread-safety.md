@@ -2,7 +2,18 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+
+## Contents
+
+-   [Concurrency issues](#concurrency-issues)
+    -   [Concurrency issue: visibility](#concurrency-issue-visibility)
+    -   [Concurrency issue: race conditions](#concurrency-issue-race-conditions)
+-   [Strategies for safe concurrency](#strategies-for-safe-concurrency)
+-   [Thread-safe data structures](#thread-safe-data-structures)
+    -   [Thread-safe collections](#thread-safe-collections)
+    -   [Atomic counters and accumulators](#atomic-counters-and-accumulators)
+    -   [Thread-local variables](#thread-local-variables)
 
 ## Concurrency issues
 
@@ -46,23 +57,23 @@ Result you might expect: first all "Hello" messages, then a "Goodbye" message wi
 
 Result you are likely to get: all "Hello" messages, and then the program never prints "Goodbye" but also never completes
 
-Problem: the effect of `done = true;` in the thread printing the "Hello" messages might not be *visible* to the to thread that needs to print the "Goodbye" message
+Problem: the effect of `done = true;` in the thread printing the "Hello" messages might not be _visible_ to the to thread that needs to print the "Goodbye" message
 
 Cause: optimizations performed by compilers, the JVM and processors
 
-- Processor tries to cache values from RAM in much faster processor cache
-- The order of instructions might be changed in an attempt to improve performance
-  - As the inner part of the `while` loop in the code above doesn't change `done`, this code might be changed to `if (!done) while (true) i++;`
-- These optimizations assume that there is no concurrent memory access
+-   Processor tries to cache values from RAM in much faster processor cache
+-   The order of instructions might be changed in an attempt to improve performance
+    -   As the inner part of the `while` loop in the code above doesn't change `done`, this code might be changed to `if (!done) while (true) i++;`
+-   These optimizations assume that there is no concurrent memory access
 
 Ways to ensure that an update to a variable is visible:
 
-- The value of a `final` variable is visible after initialization
-  - Good practice: make variables final if possible
-- The initial value of a static variable is visible after static initialization
-  - Static initialization: code running in a `static {}` block
-- Changes to a `volatile` variable are visible
-- Changes that happen before releasing a lock are visible to anyone acquiring the same lock afterwards (see [Locking](./Locking.md))
+-   The value of a `final` variable is visible after initialization
+    -   Good practice: make variables final if possible
+-   The initial value of a static variable is visible after static initialization
+    -   Static initialization: code running in a `static {}` block
+-   Changes to a `volatile` variable are visible
+-   Changes that happen before releasing a lock are visible to anyone acquiring the same lock afterwards (see [Locking](./Locking.md))
 
 In the example above, marking the variable `done` as volatile fixes the problem
 
@@ -109,30 +120,30 @@ Counters are definitely not the only problem. Race conditions can lead to issues
 
 ## Strategies for safe concurrency
 
-- *Confinement*
-  - Don't share any data between threads
-  - Data from different threads can be combined after they have finished their computations
-- *Immutability*
-  - Immutable objects are safe to share
-    - Of course, overwriting a shared variable holding an immutable object can still lead to issues! (see also the concurrency issue above, taking into account that an integer value is somewhat equivalent to an immutable object)
-  - Examples of immutable classes: `String` and the classes from the [Date and Time API](../Date-Time-API.md)
-  - Example: it's safe share a single `LocalDate` object among multiple threads, because all operations on the object (like adding a year to it) do not change the object itself but return a new object instead
-  - Tips for implementing your own immutable classes
-    - Make all instances variables `final` (this also helps with visibility, see above)
-    - Don't leak any state that could be mutated externally (example: don't return a reference to an internal array or collection from any of your methods). Return a copy instead.
-    - Don't store a reference to a mutable object received in the constructor. Make a copy of the object instead.
-    - Don't let the `this` reference escape the constructor (or someone could observe the object in an incomplete state)
-- *Thread-safe data structures*
-  - Some data structures are intended to be used concurrently by multiple threads (see below)
-- *Locking*
-  - Low-level concurrency mechanism
-  - Can be used to ensure that a sequence of operations is carried out without being interrupted
-    - This is called a *critical section*
-  - Is used internally by thread-safe classes to control concurrency
-  - Very hard to get right, so avoid implementing manually when possible
-    - Locks can become bottlenecks or even lead to deadlocks
-    - Inadequate locking might still allow concurrency issues to occur
-  - For more details, see [Locking](./Locking.md)
+-   _Confinement_
+    -   Don't share any data between threads
+    -   Data from different threads can be combined after they have finished their computations
+-   _Immutability_
+    -   Immutable objects are safe to share
+        -   Of course, overwriting a shared variable holding an immutable object can still lead to issues! (see also the concurrency issue above, taking into account that an integer value is somewhat equivalent to an immutable object)
+    -   Examples of immutable classes: `String` and the classes from the [Date and Time API](../Date-Time-API.md)
+    -   Example: it's safe share a single `LocalDate` object among multiple threads, because all operations on the object (like adding a year to it) do not change the object itself but return a new object instead
+    -   Tips for implementing your own immutable classes
+        -   Make all instances variables `final` (this also helps with visibility, see above)
+        -   Don't leak any state that could be mutated externally (example: don't return a reference to an internal array or collection from any of your methods). Return a copy instead.
+        -   Don't store a reference to a mutable object received in the constructor. Make a copy of the object instead.
+        -   Don't let the `this` reference escape the constructor (or someone could observe the object in an incomplete state)
+-   _Thread-safe data structures_
+    -   Some data structures are intended to be used concurrently by multiple threads (see below)
+-   _Locking_
+    -   Low-level concurrency mechanism
+    -   Can be used to ensure that a sequence of operations is carried out without being interrupted
+        -   This is called a _critical section_
+    -   Is used internally by thread-safe classes to control concurrency
+    -   Very hard to get right, so avoid implementing manually when possible
+        -   Locks can become bottlenecks or even lead to deadlocks
+        -   Inadequate locking might still allow concurrency issues to occur
+    -   For more details, see [Locking](./Locking.md)
 
 ## Thread-safe data structures
 
@@ -159,25 +170,25 @@ Note: you can get a concurrent `Set` (that is internally backed by a `Concurrent
 
 Useful for coordinating work between tasks: blocking queues
 
-- Examples: `LinkedBlockingQueue` and `ArrayBlockingQueue`
-- Producer tasks add elements into the queue, consumer tasks retrieve them
-- The queue blocks when trying to add an element through `put()` if the queue is currently full
-  - this makes producer tasks block if they get too far ahead of the consumers
-- The queue blocks when trying to retrieve an element through `take()`if the queue is empty
-  - this makes consumer tasks block until the producers catch up
-- In addition to the blocking methods
-  - Methods that throw on queue full/empty: `add()`, `remove()`, `element()`
-  - Methods that return null false on queue full/empty: `offer()`, `poll()`, `peak()`
-- Challenge: stopping the consumers
-  - An empty queue doesn't necessarily mean that the work is over, it might just mean the producers need to catch up
-  - If there is a singe producer, it can help to add a "last item" indicator after the last real item in the queue
+-   Examples: `LinkedBlockingQueue` and `ArrayBlockingQueue`
+-   Producer tasks add elements into the queue, consumer tasks retrieve them
+-   The queue blocks when trying to add an element through `put()` if the queue is currently full
+    -   this makes producer tasks block if they get too far ahead of the consumers
+-   The queue blocks when trying to retrieve an element through `take()`if the queue is empty
+    -   this makes consumer tasks block until the producers catch up
+-   In addition to the blocking methods
+    -   Methods that throw on queue full/empty: `add()`, `remove()`, `element()`
+    -   Methods that return null false on queue full/empty: `offer()`, `poll()`, `peak()`
+-   Challenge: stopping the consumers
+    -   An empty queue doesn't necessarily mean that the work is over, it might just mean the producers need to catch up
+    -   If there is a singe producer, it can help to add a "last item" indicator after the last real item in the queue
 
 Copy-on-write collections: `CopyOnWriteArrayList` and `CopyOnWriteArraySet`
 
-- All mutators make a copy of the underlying array
-- Useful if there are a lot more threads reading the collection than threads mutating it
-- If the collection is mutated after creation of an iterator, the iterator still refers to the old array
-  - Iterator has a consistent view, but it might be outdated
+-   All mutators make a copy of the underlying array
+-   Useful if there are a lot more threads reading the collection than threads mutating it
+-   If the collection is mutated after creation of an iterator, the iterator still refers to the old array
+    -   Iterator has a consistent view, but it might be outdated
 
 ### Atomic counters and accumulators
 
@@ -204,15 +215,15 @@ largest.updateAndGet(x -> Math.max(x, observed));
 largest.set(Math.max(largest.get(), observed));
 ```
 
-Drawback: updates are performed *optimistically*
+Drawback: updates are performed _optimistically_
 
-- The operation first computes the new value, then checks if the old value is still the same, and retries if it's not
-- This might not work well with a large number of threads all trying to make updates, as there will be a lot of retries required
+-   The operation first computes the new value, then checks if the old value is still the same, and retries if it's not
+-   This might not work well with a large number of threads all trying to make updates, as there will be a lot of retries required
 
 Better alternative when lots of threads will be updating at the same time: `LongAdder`
 
-- Keeps multiple variables, the sum of all those variables makes up the current value
-- This is efficient in the common situation where we only need the sum after all the work has been done
+-   Keeps multiple variables, the sum of all those variables makes up the current value
+-   This is efficient in the common situation where we only need the sum after all the work has been done
 
 ```java
 LongAdder count = new LongAdder();

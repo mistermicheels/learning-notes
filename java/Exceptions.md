@@ -2,20 +2,32 @@
 
 See:
 
-- Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-- Clean Code (book by Robert C. Martin)
-- [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
-- [When to choose checked and unchecked exceptions](https://stackoverflow.com/questions/27578/when-to-choose-checked-and-unchecked-exceptions)
-- [Project Lombok @SneakyThrows (throwing checked exceptions as unchecked)](https://projectlombok.org/features/SneakyThrows)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   Clean Code (book by Robert C. Martin)
+-   [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
+-   [When to choose checked and unchecked exceptions](https://stackoverflow.com/questions/27578/when-to-choose-checked-and-unchecked-exceptions)
+-   [Project Lombok @SneakyThrows (throwing checked exceptions as unchecked)](https://projectlombok.org/features/SneakyThrows)
+
+## Contents
+
+-   [Basics](#basics)
+-   [Checked versus unchecked exceptions](#checked-versus-unchecked-exceptions)
+-   [Throwing and the `throws` declaration](#throwing-and-the-throws-declaration)
+-   [Catching exceptions](#catching-exceptions)
+-   [Cleaning up using try-with-resources](#cleaning-up-using-try-with-resources)
+-   [Cleaning up using `finally`](#cleaning-up-using-finally)
+-   [Rethrowing and chaining](#rethrowing-and-chaining)
+-   [Dealing with `NullPointerException`](#dealing-with-nullpointerexception)
+-   [Turning checked exceptions into unchecked exceptions](#turning-checked-exceptions-into-unchecked-exceptions)
 
 ## Basics
 
 Exception handling:
 
-- A method can throw an exception indicating that something is wrong
-- Exceptions automatically bubble up the call chain until they are handled (or, if they are not handled, they end up terminating the current thread)
-  - Great benefit when comparing to error codes which must be manually passed up the chain if needed
-- Typically, exceptions include a stack trace, indicating where the exception occurred in the code and what the call chain looked like at the time
+-   A method can throw an exception indicating that something is wrong
+-   Exceptions automatically bubble up the call chain until they are handled (or, if they are not handled, they end up terminating the current thread)
+    -   Great benefit when comparing to error codes which must be manually passed up the chain if needed
+-   Typically, exceptions include a stack trace, indicating where the exception occurred in the code and what the call chain looked like at the time
 
 Hierarchy of exception classes in Java:
 
@@ -23,50 +35,50 @@ Hierarchy of exception classes in Java:
 
 Classes:
 
-- `Throwable`: 
-  - Common superclass for all Java exceptions
-- `Error`: 
-  - Exceptions defined by the Java language that are thrown when something really bad happens that the code can normally not recover from by itself
-  - All *unchecked* (see below)
-  - Example: `OutOfMemoryError`, which occurs when Java is unable to allocate space to an object because there is no more memory available and garbage collection does not help. If you run into that one, the best you can generally do is exit the program.
-- ``Exception``:
-  - All user-defined exceptions are subclasses of this one
-  - Exceptions deriving directly from this one are *checked* (see below) exceptions
-- `RuntimeException` :
-  - User-defined exceptions that are subclasses of this one are *unchecked* (see below) exceptions 
+-   `Throwable`: 
+    -   Common superclass for all Java exceptions
+-   `Error`: 
+    -   Exceptions defined by the Java language that are thrown when something really bad happens that the code can normally not recover from by itself
+    -   All _unchecked_ (see below)
+    -   Example: `OutOfMemoryError`, which occurs when Java is unable to allocate space to an object because there is no more memory available and garbage collection does not help. If you run into that one, the best you can generally do is exit the program.
+-   `Exception`:
+    -   All user-defined exceptions are subclasses of this one
+    -   Exceptions deriving directly from this one are _checked_ (see below) exceptions
+-   `RuntimeException` :
+    -   User-defined exceptions that are subclasses of this one are _unchecked_ (see below) exceptions 
 
 ## Checked versus unchecked exceptions
 
 Basic idea:
 
-- Checked: Checked by compiler
-  - If your code can possibly throw a checked exception, the Java compiler requires you to either catch the exception or use a `throws` declaration to indicate that your code can throw the exception
-- Unchecked: Not checked by compiler
+-   Checked: Checked by compiler
+    -   If your code can possibly throw a checked exception, the Java compiler requires you to either catch the exception or use a `throws` declaration to indicate that your code can throw the exception
+-   Unchecked: Not checked by compiler
 
 Intention of this design:
 
-- Use checked exceptions when there is a reasonable way of recovering from the failure during the execution of the program
-  - Example: a call to open a file and write to it, which can fail if the file does not exist. A reasonable way of recovering from this is trying a different filename.
-  - When using checked exceptions, the compiler forces you to to decide what to do in case such an exception occurs. This prevents you from forgetting that this kind of failure can actually happen.
-- Use unchecked exceptions for errors that the program cannot reasonably recover from
-  - Example: exceptions indicating programming errors, like `NullPointerException`
+-   Use checked exceptions when there is a reasonable way of recovering from the failure during the execution of the program
+    -   Example: a call to open a file and write to it, which can fail if the file does not exist. A reasonable way of recovering from this is trying a different filename.
+    -   When using checked exceptions, the compiler forces you to to decide what to do in case such an exception occurs. This prevents you from forgetting that this kind of failure can actually happen.
+-   Use unchecked exceptions for errors that the program cannot reasonably recover from
+    -   Example: exceptions indicating programming errors, like `NullPointerException`
 
 Alternative school of thought:
 
-- Use checked exceptions if there is a reasonable way of recovering from the failure during the execution of the program **and** the possibility for failure is unavoidable (an example is a missing file: even if you checked for its existence before, the file can still have disappeared in the meantime)
-  - If the possibility for failure is unavoidable, it makes sense to force the caller to deal with the possible failure
-- Use unchecked exceptions in all other cases.
-- Evaluate these conditions at every level in the call chain.
+-   Use checked exceptions if there is a reasonable way of recovering from the failure during the execution of the program **and** the possibility for failure is unavoidable (an example is a missing file: even if you checked for its existence before, the file can still have disappeared in the meantime)
+    -   If the possibility for failure is unavoidable, it makes sense to force the caller to deal with the possible failure
+-   Use unchecked exceptions in all other cases.
+-   Evaluate these conditions at every level in the call chain.
 
 Yet another different (and popular school of thought):
 
-- Always use unchecked exceptions. 
-- Never use checked exceptions (unless you are maybe writing a very critical library).
-- This is advertised in, amongst others, the *Clean Code* book by Robert C. Martin
-- Reason: drawbacks of checked exceptions
-  -  If you throw a checked exception from your code and the appropriate handler sits three levels higher in the call chain, you must declare the exception on every method in between
-  - This means that a single change to a small method somewhere deep in the program can require the signature of several higher-level methods to change, breaking encapsulation and coupling the handler of the exception to the code that generates it
-  - This actually negates a large benefit of exceptions, which is that you can decouple the code detecting a failure from the code handling the failure
+-   Always use unchecked exceptions. 
+-   Never use checked exceptions (unless you are maybe writing a very critical library).
+-   This is advertised in, amongst others, the _Clean Code_ book by Robert C. Martin
+-   Reason: drawbacks of checked exceptions
+    -   If you throw a checked exception from your code and the appropriate handler sits three levels higher in the call chain, you must declare the exception on every method in between
+    -   This means that a single change to a small method somewhere deep in the program can require the signature of several higher-level methods to change, breaking encapsulation and coupling the handler of the exception to the code that generates it
+    -   This actually negates a large benefit of exceptions, which is that you can decouple the code detecting a failure from the code handling the failure
 
 ## Throwing and the `throws` declaration
 
@@ -94,9 +106,9 @@ public void write(String text, String filePath) throws IOException {
 
 Throws and inheritance:
 
-- If you override a method, you cannot throw more checked exceptions than the original `throws` clause specifies. Otherwise, you would break the contract of the method.
-- If a method does not have a `throws` clause, a method overriding it cannot throw any checked exceptions
-- Note that you can perfectly override a method declaring checked exceptions with a method not throwing any exceptions at all
+-   If you override a method, you cannot throw more checked exceptions than the original `throws` clause specifies. Otherwise, you would break the contract of the method.
+-   If a method does not have a `throws` clause, a method overriding it cannot throw any checked exceptions
+-   Note that you can perfectly override a method declaring checked exceptions with a method not throwing any exceptions at all
 
 ## Catching exceptions
 
@@ -124,7 +136,7 @@ try {
 
 ## Cleaning up using try-with-resources
 
-Java offer a *try-with-resources* statement. In this form of `try`statement, you can specify resources that should be closed automatically. The fact that a resource can be closed automatically is indicated by the fact that it implements the `AutoCloseable` interface.
+Java offer a _try-with-resources_ statement. In this form of `try`statement, you can specify resources that should be closed automatically. The fact that a resource can be closed automatically is indicated by the fact that it implements the `AutoCloseable` interface.
 
 ```java
 public void write(ArrayList<String> lines) throws FileNotFoundException {
@@ -143,9 +155,9 @@ A try-with-resources statement can also have catch clauses catching any exceptio
 
 Note: it is possible that closing an `AutoCloseable` throws an exception itself!
 
-- If closing happened after normal execution of the `try` block, that exception is passed to the caller
-- If closing happened because of an exception happening inside the `try` block, the exception from the  `try` block is passed to the caller and any exceptions generated by subsequently closing the resources will be attached as *suppressed exceptions* on that exception
-  - When catching the exception that happened in the `try` block (the *primary exception*), you can access those suppressed exceptions by invoking the `getSuppressed()` method on the caught exception.
+-   If closing happened after normal execution of the `try` block, that exception is passed to the caller
+-   If closing happened because of an exception happening inside the `try` block, the exception from the  `try` block is passed to the caller and any exceptions generated by subsequently closing the resources will be attached as _suppressed exceptions_ on that exception
+    -   When catching the exception that happened in the `try` block (the _primary exception_), you can access those suppressed exceptions by invoking the `getSuppressed()` method on the caught exception.
 
 ```java
 public class ThrowsOnClose implements AutoCloseable {
@@ -172,24 +184,24 @@ try (ThrowsOnClose throwsOnClose = new ThrowsOnClose()) {
 
 Alternative to the try-with-resources statement: the `finally` clause. 
 
-- After the `try` block and potential `catch` blocks, you add a `finally block` which will run after the rest of the try-catch statement has finished
-- Especially useful if you need to clean up something that is not an `AutoCloseable`.
-- Note: avoid throwing exceptions in the `finally` block!
-  - If the code in the `try` block throws an exception and then the `finally` block throws an exception, the caller of the method will only see the exception from the `finally` block. The suppression mechanism we saw above only works with try-with-resources statements.
+-   After the `try` block and potential `catch` blocks, you add a `finally block` which will run after the rest of the try-catch statement has finished
+-   Especially useful if you need to clean up something that is not an `AutoCloseable`.
+-   Note: avoid throwing exceptions in the `finally` block!
+    -   If the code in the `try` block throws an exception and then the `finally` block throws an exception, the caller of the method will only see the exception from the `finally` block. The suppression mechanism we saw above only works with try-with-resources statements.
 
 ## Rethrowing and chaining
 
 Rethrowing:
 
-- Catch the exception
-- Do something useful with it (for example, logging it)
-- Just throw the exception object that you caught
+-   Catch the exception
+-   Do something useful with it (for example, logging it)
+-   Just throw the exception object that you caught
 
 Chaining:
 
-- Catch the exception
-- Throw a new exception instead
-- Original exception is typically included as the cause for the new exception
+-   Catch the exception
+-   Throw a new exception instead
+-   Original exception is typically included as the cause for the new exception
 
 Chaining example:
 
@@ -211,14 +223,14 @@ In this case, `ParentNotFoundException` has a constructor which allows passing t
 
 You can make failure with a `NullPointerException` less likely by using the following set of rules for your code:
 
-- Don’t return null from methods. Wherever possible, return a special case object (e.g. an empty list, which you can easily obtain from `Collections.emptyList()`, or an instance of a dedicated class that was intended for these cases).
-- Don’t pass null as a method parameter. 
-- In some other languages, for example TypeScript, the compiler can actually help you enforce these rules.
+-   Don’t return null from methods. Wherever possible, return a special case object (e.g. an empty list, which you can easily obtain from `Collections.emptyList()`, or an instance of a dedicated class that was intended for these cases).
+-   Don’t pass null as a method parameter. 
+-   In some other languages, for example TypeScript, the compiler can actually help you enforce these rules.
 
 The `Objects` class has some convenient methods for preventing problems with null pointers. These can be used for checking arguments or preventing passing null.
 
-- `Objects.requireNonNull()` throws a `NullPointerException` if the argument is null and returns the argument itself otherwise. This does not prevent the `NullPointerException` from being thrown. However, the benefit here is that we throw it where the source of the problem lies (`null` being passed where it is not allowed) instead of at some later point in the code where we try to invoke a method on a null reference.
-- `Objects.requireNonNullElse()` returns either the first parameter or, if the first parameter is null, it returns the second parameter. It is quite similar to the `COALESCE`function in SQL.
+-   `Objects.requireNonNull()` throws a `NullPointerException` if the argument is null and returns the argument itself otherwise. This does not prevent the `NullPointerException` from being thrown. However, the benefit here is that we throw it where the source of the problem lies (`null` being passed where it is not allowed) instead of at some later point in the code where we try to invoke a method on a null reference.
+-   `Objects.requireNonNullElse()` returns either the first parameter or, if the first parameter is null, it returns the second parameter. It is quite similar to the `COALESCE`function in SQL.
 
 ```java
 public static void test(String name, String nickname) {
@@ -235,10 +247,10 @@ In some cases, you may find yourself getting a checked exception which you want 
 
 Simplest way to do this: chaining (see above)
 
-- Catch checked exception
-- Throw new unchecked exception with checked exception as the cause
+-   Catch checked exception
+-   Throw new unchecked exception with checked exception as the cause
 
-More sneaky approach: trick the Java compiler into ignoring checked exceptions. Example implementation (taken from *Core Java SE 9 for the Impatient*):
+More sneaky approach: trick the Java compiler into ignoring checked exceptions. Example implementation (taken from _Core Java SE 9 for the Impatient_):
 
 ```java
 public class Exceptions {
@@ -289,11 +301,11 @@ public static void test() {
 
 Some cases where this trick may make sense (although not necessarily good practice):
 
-- Dealing with “impossible” exceptions
-  - Some methods in the standard library have a `throws`clause declaring checked exceptions, although there are some sets of arguments which are *guaranteed* to *never* throw an exception
-  - If you know that you are passing such a set of arguments, you could use this trick to stop the compiler from bothering you about this impossible exception.
-- Creating a `Runnable` that can throw a checked exception in its `run()` method (which does not declare any checked exceptions)
-  - You can define custom error handling behavior for the thread (for both checked and unchecked exceptions) in the thread’s uncaught exception handler
+-   Dealing with “impossible” exceptions
+    -   Some methods in the standard library have a `throws`clause declaring checked exceptions, although there are some sets of arguments which are _guaranteed_ to _never_ throw an exception
+    -   If you know that you are passing such a set of arguments, you could use this trick to stop the compiler from bothering you about this impossible exception.
+-   Creating a `Runnable` that can throw a checked exception in its `run()` method (which does not declare any checked exceptions)
+    -   You can define custom error handling behavior for the thread (for both checked and unchecked exceptions) in the thread’s uncaught exception handler
 
 Example of the `Runnable` case:
 

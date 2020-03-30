@@ -1,9 +1,24 @@
 # SOLID principles
 
 See:
-- Clean Architure (book by Robert C. Martin)
-- [SOLID](https://en.wikipedia.org/wiki/SOLID)
-- [Functional S.O.L.I.D. Explained In 5 Examples](https://codemanship.wordpress.com/2019/03/15/functional-s-o-l-i-d-explained-in-5-examples/)
+
+-   Clean Architure (book by Robert C. Martin)
+-   [SOLID](https://en.wikipedia.org/wiki/SOLID)
+-   [Functional S.O.L.I.D. Explained In 5 Examples](https://codemanship.wordpress.com/2019/03/15/functional-s-o-l-i-d-explained-in-5-examples/)
+
+## Contents
+
+-   [Single responsibility principle (SRP)](#single-responsibility-principle-srp)
+    -   [Example](#example)
+-   [Open–closed principle (OCP)](#openclosed-principle-ocp)
+    -   [Example](#example-1)
+-   [Liskov substitution principle (LSP)](#liskov-substitution-principle-lsp)
+    -   [Example violation](#example-violation)
+-   [Interface segregation principle (ISP)](#interface-segregation-principle-isp)
+    -   [Example](#example-2)
+-   [Dependency inversion principle (DIP)](#dependency-inversion-principle-dip)
+    -   [Example](#example-3)
+    -   [Related: Observer pattern](#related-observer-pattern)
 
 ## Single responsibility principle (SRP)
 
@@ -16,9 +31,10 @@ Arguably most important principle, is applicable on all levels of the system
 Closely related: [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
 
 Benefits:
-- Clear separation means you know where to go when one aspect needs to change
-- No chance of unintentionally messing with code related to other aspects
-- Helps us apply some other principles, see below
+
+-   Clear separation means you know where to go when one aspect needs to change
+-   No chance of unintentionally messing with code related to other aspects
+-   Helps us apply some other principles, see below
 
 ### Example
 
@@ -27,8 +43,9 @@ Before: financial report generation logic (what to include, calculations) and pr
 ![SRP before](_img/SOLID-principles/SRP-before.png)
 
 Problems:
-- Class to change if data to include in report or calculations change, but also if look needs to change
-- Changes to either of these concerns could lead to unexpected bugs in other
+
+-   Class to change if data to include in report or calculations change, but also if look needs to change
+-   Changes to either of these concerns could lead to unexpected bugs in other
 
 Application of SRP: separate report generation and presentation
 
@@ -43,11 +60,12 @@ Origin: C++, needed to explicitly design class to allow others to inherit from i
 Basic idea (still relevant, especially for creating library code): allow changing the code's behavior by adding new code rather than having to change existing code
 
 What extension could mean here:
-- Inheriting from (abstract) classes or interfaces and overriding methods
-- Delegation: extend from class or its interface, store object of the original class and delegate to it as needed
-    - Useful if class does not allow extension but you can use an interface it implements
-    - Useful if you do not control the creation of instances of the class
-- Composition: allowing behavior to be changed by passing in different objects (dependency injection, Strategy pattern)
+
+-   Inheriting from (abstract) classes or interfaces and overriding methods
+-   Delegation: extend from class or its interface, store object of the original class and delegate to it as needed
+    -   Useful if class does not allow extension but you can use an interface it implements
+    -   Useful if you do not control the creation of instances of the class
+-   Composition: allowing behavior to be changed by passing in different objects (dependency injection, Strategy pattern)
 
 ### Example
 
@@ -129,8 +147,9 @@ Alternative, more general formulation:
 > Avoid depending on things you don't need
 
 Also applies at higher level, e.g. selecting third-party dependencies:
-- Importing huge flexible library could be unnecessarily complex or heavy if all you need is small part
-- Be extra careful if dependencies also have dependencies of their own! Example with Node.js: need to update a module you use because of a vulnerability discovered in some module that it indirectly depends on, three levels down the dependency chain, for some functionality you don't care about
+
+-   Importing huge flexible library could be unnecessarily complex or heavy if all you need is small part
+-   Be extra careful if dependencies also have dependencies of their own! Example with Node.js: need to update a module you use because of a vulnerability discovered in some module that it indirectly depends on, three levels down the dependency chain, for some functionality you don't care about
 
 ### Example
 
@@ -149,8 +168,9 @@ After:
 > Abstractions should not depend on details. Details should depend on abstractions.
 
 More relaxed formulation:
-- Specific parts of your system should depend on general parts, not the other way around.
-- Abstraction can be used as a technique to reverse the direction of dependencies if needed.
+
+-   Specific parts of your system should depend on general parts, not the other way around.
+-   Abstraction can be used as a technique to reverse the direction of dependencies if needed.
 
 ### Example
 

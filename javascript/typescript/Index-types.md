@@ -2,7 +2,16 @@
 
 See:
 
-- [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+
+## Contents
+
+-   [Index operators](#index-operators)
+-   [Index signatures](#index-signatures)
+    -   [Use case: mapped types](#use-case-mapped-types)
+        -   [`Readonly` and `Partial`](#readonly-and-partial)
+        -   [`Pick`](#pick)
+    -   [Use case: dictionaries with enum keys](#use-case-dictionaries-with-enum-keys)
 
 ## Index operators
 
@@ -104,7 +113,7 @@ type PartialPerson = Partial<Person>;
 // type PartialPerson = { name?: string | undefined; age? : number | undefined; }
 ```
 
-####  `Pick`
+#### `Pick`
 
 Implementation (already provided by TypeScript language):
 

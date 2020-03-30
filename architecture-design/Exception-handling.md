@@ -2,8 +2,14 @@
 
 See:
 
-- Clean Code (book by Robert C. Martin)
-- [Exceptions: Why throw early? Why catch late?](https://softwareengineering.stackexchange.com/questions/231057/exceptions-why-throw-early-why-catch-late)
+-   Clean Code (book by Robert C. Martin)
+-   [Exceptions: Why throw early? Why catch late?](https://softwareengineering.stackexchange.com/questions/231057/exceptions-why-throw-early-why-catch-late)
+
+## Contents
+
+-   [Throw early, catch late](#throw-early-catch-late)
+-   [Providing context with exceptions](#providing-context-with-exceptions)
+-   [Client-first design for exception classes](#client-first-design-for-exception-classes)
 
 ## Throw early, catch late
 
@@ -13,9 +19,9 @@ For example, if an exception occurs because there is no file at a specific path,
 
 In general, you should only catch exceptions if:
 
-- You can perform a useful action on the exception (possibly just logging) and then rethrow it.
-- You can wrap the exception into a new exception that makes more sense to your caller and throw that new exception.
-- You can make a final decision regarding what must happen to fully handle the exception.
+-   You can perform a useful action on the exception (possibly just logging) and then rethrow it.
+-   You can wrap the exception into a new exception that makes more sense to your caller and throw that new exception.
+-   You can make a final decision regarding what must happen to fully handle the exception.
 
 ## Providing context with exceptions
 
@@ -27,9 +33,9 @@ If your application has logging, your exception (including stack trace) should c
 
 When designing which and how many exception classes you need, try to consider the point of view of the caller.
 
-- If caller needs to handle different kinds of errors in a different way, foresee different exception classes
-- If caller has only one reasonable way of handling any kind of of error, only foresee a single exception class, potentially using exception chaining to pass on more details
-  - If you are using a class with methods that can throw lots of different exception types, consider wrapping it in a class that delegates actual functionality to the wrapped class but catches a set of specific errors and wraps these into a single, more general error class.  This is one of the techniques you can use to transform a library’s interface into an interface that makes more sense to your application, decoupling your application from the interface that the library provides.
+-   If caller needs to handle different kinds of errors in a different way, foresee different exception classes
+-   If caller has only one reasonable way of handling any kind of of error, only foresee a single exception class, potentially using exception chaining to pass on more details
+    -   If you are using a class with methods that can throw lots of different exception types, consider wrapping it in a class that delegates actual functionality to the wrapped class but catches a set of specific errors and wraps these into a single, more general error class.  This is one of the techniques you can use to transform a library’s interface into an interface that makes more sense to your application, decoupling your application from the interface that the library provides.
 
 ```java
 public void open() {
