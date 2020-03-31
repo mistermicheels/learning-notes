@@ -72,6 +72,7 @@
     -   [Feature flags](processes-techniques/Feature-flags.md)
     -   [Trunk Based Development](processes-techniques/Trunk-Based-Development.md)
 -   [**web**](web/README.md)
+    -   [Cookies and Web Storage](web/Cookies-web-storage.md)
     -   [**css**](web/css/README.md)
         -   [Box model](web/css/Box-model.md)
         -   [Browser compatibility](web/css/Browser-compatibility.md)

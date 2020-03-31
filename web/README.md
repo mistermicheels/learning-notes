@@ -6,6 +6,7 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
+-   [Cookies and Web Storage](Cookies-web-storage.md)
 -   [**css**](css/README.md)
     -   [Box model](css/Box-model.md)
     -   [Browser compatibility](css/Browser-compatibility.md)
