@@ -3,7 +3,6 @@
 -   See:
 
     -   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
-    -   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
 
 ## Contents
 
@@ -14,7 +13,7 @@
     -   [Explicit binding](#explicit-binding)
     -   [`new` binding](#new-binding)
 -   [Priority of the rules](#priority-of-the-rules)
--   [Lexical this](#lexical-this)
+-   [Lexical `this`](#lexical-this)
 
 ## Basic idea
 
@@ -203,7 +202,7 @@ From highest to lowest:
 -   Implicit binding
 -   Default binding
 
-## Lexical this
+## Lexical `this`
 
 One exception to the behavior of `this` inside a function occurs when using _arrow functions_. Arrow function's don't follow the rules above. Instead, the `this` inside an arrow function points to the `this` of the surrounding scope.
 

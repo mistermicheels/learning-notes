@@ -6,6 +6,7 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
+-   [Event loop](Event-loop.md)
 -   [Object prototypes and classes](Object-prototypes-classes.md)
 -   [Scope and closures](Scope-closures.md)
 -   [Spread syntax, rest parameters and destructuring](Spread-syntax-rest-parameters-destructuring.md)

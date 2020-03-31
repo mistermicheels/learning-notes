@@ -51,6 +51,7 @@
         -   [Thread safety](java/concurrency-details/Thread-safety.md)
         -   [Threads](java/concurrency-details/Threads.md)
 -   [**javascript**](javascript/README.md)
+    -   [Event loop](javascript/Event-loop.md)
     -   [Object prototypes and classes](javascript/Object-prototypes-classes.md)
     -   [Scope and closures](javascript/Scope-closures.md)
     -   [Spread syntax, rest parameters and destructuring](javascript/Spread-syntax-rest-parameters-destructuring.md)
