@@ -6,6 +6,7 @@ See:
 -   [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
 -   [What is the difference between localStorage, sessionStorage, session and cookies?](https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
 -   [Could someone explain the life of a sessionStorage object?](https://stackoverflow.com/questions/8945744/could-someone-explain-the-life-of-a-sessionstorage-object)
+-   [In HTML5, is the localStorage object isolated per page/domain?](https://stackoverflow.com/questions/4201239/in-html5-is-the-localstorage-object-isolated-per-page-domain)
 
 ## Contents
 
@@ -38,7 +39,7 @@ See:
 
 ## Web Storage
 
--   Can be set and read from JavaScript loaded by a page in the matching domain
+-   Can be set and read from JavaScript loaded by a page with matching origin (origin = `protocol://host:port`)
     -   Values don't get sent to the server unless JavaScript adds it to a request
     -   Ideal for storing preferences, scores, ... that don't need to be stored on the server (or should be able to survive page reloads without asking the server for them again)
 -   Can generally store more data than cookies (something along the lines of 5MB in total per domain, versus 4KB per cookie)
