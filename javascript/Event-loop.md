@@ -147,11 +147,11 @@ As said above, JavaScript runs in a single thread and the execution of a piece o
 
 While this prevents a lot of concurrency bugs, it also means that long-running synchronous code completely prevents the event loop from doing anything else:
 
--   A long synchronous operation on a webpage prevents any click events, responses from the server, ... from being processes. The worst case is an infinite synchronous loop, which freezes the entire page.
+-   A long synchronous operation on a webpage prevents any click events, responses from the server, ... from being processed. The worst case is an infinite synchronous loop, which freezes the entire page.
 -   A long synchronous operation on a Node.js server prevents the server from doing anything else, making it seem unresponsive. The worst case is an infinite synchronous loop, which makes the server appear to be down from the outside world, while the server itself and process managers still consider the server to be running.
 -   Basically, it is up to you to ensure that you don't block the event loop for long periods of time so that all kinds of tasks are able to run without having to wait for a long amount of time.
 
-The following code is an example of how synchronous code blocks callbacks:
+The following code is an example of how synchronous code blocks asynchronous callbacks:
 
 ```javascript
 const start = Date.now();

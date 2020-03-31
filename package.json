@@ -10,7 +10,7 @@
         "write-tocs-and-format": "remark --rc-path _config/remark-write-tocs-and-format.config.json . -o"
     },
     "devDependencies": {
-        "markdown-notes-tree": "^1.8.0",
+        "markdown-notes-tree": "^1.8.2",
         "remark-cli": "^7.0.1",
         "remark-toc": "^7.0.0",
         "remark-validate-links": "^9.2.0",
