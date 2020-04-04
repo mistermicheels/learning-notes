@@ -30,7 +30,7 @@ See:
     -   The idea is that outer layers act as "plugins" to inner layers
     -   This allows for changes in the outer layers (or the existence of multiple alternatives in the outer layers) without inner layers having to know about it
     -   See bottom-right part of above diagram: flow of control from Use Case Interactor to Presenter but dependency points in other direction
-        -   See Dependency Injection Principle from [SOLID](../oo-design/SOLID-principles.md)
+        -   See Dependency Inversion Principle from [SOLID](../oo-design/SOLID-principles.md)
 -   Flow of control starts in outer layer, gets down to innermost layers and then goes back to the outer layers
     -   See bottom-right part of above diagram: Controller and Presenter sit in same layer but talk to each other through the use cases layer
     -   Need to take care to enforce this, so for example a Controller will not call a database gateway directly

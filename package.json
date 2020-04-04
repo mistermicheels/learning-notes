@@ -3,11 +3,11 @@
     "version": "1.0.0",
     "description": "Contains script invocations and their dependencies",
     "scripts": {
-        "pre-commit": "npm run replace-tabs && npm run write-notes-trees && npm run validate-internal-links && npm run write-tocs-and-format",
+        "pre-commit": "npm run replace-tabs && npm run write-notes-trees && npm run write-tocs-and-format && npm run validate-internal-links",
         "replace-tabs": "replace-in-file --configFile=_config/replace-in-file.config.js",
         "write-notes-trees": "markdown-notes-tree --ignore CONTRIBUTING.md --linkToSubdirectoryReadme --notesBeforeDirectories",
-        "validate-internal-links": "remark --rc-path _config/remark-validate-internal-links.config.json --frail .",
-        "write-tocs-and-format": "remark --rc-path _config/remark-write-tocs-and-format.config.json . -o"
+        "write-tocs-and-format": "remark --rc-path _config/remark-write-tocs-and-format.config.json . -o",
+        "validate-internal-links": "remark --rc-path _config/remark-validate-internal-links.config.json --frail ."
     },
     "devDependencies": {
         "markdown-notes-tree": "^1.8.2",

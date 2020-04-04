@@ -11,7 +11,7 @@
     -   [**architectural-boundaries-details**](architecture-design/architectural-boundaries-details/README.md)
         -   [Boundaries and the database](architecture-design/architectural-boundaries-details/Boundaries-database.md)
         -   [Boundaries and duplication](architecture-design/architectural-boundaries-details/Boundaries-duplication.md)
-        -   [Boundaries and libraries/frameworks](architecture-design/architectural-boundaries-details/Boundaries-libraries-frameworks.md)
+        -   [Boundaries and third-party dependencies](architecture-design/architectural-boundaries-details/Boundaries-third-party-dependencies.md)
         -   [Boundaries and the web](architecture-design/architectural-boundaries-details/Boundaries-web.md)
         -   [Horizontal versus vertical separation](architecture-design/architectural-boundaries-details/Horizontal-vertical-separation.md)
         -   [Separation mechanisms](architecture-design/architectural-boundaries-details/Separation-mechanisms.md)

@@ -18,7 +18,7 @@ See:
 -   [Evolving boundaries](#evolving-boundaries)
 -   [Boundaries and the database](#boundaries-and-the-database)
 -   [Boundaries and the web](#boundaries-and-the-web)
--   [Boundaries and libraries/frameworks](#boundaries-and-librariesframeworks)
+-   [Boundaries and third-party dependencies](#boundaries-and-third-party-dependencies)
 -   [Boundaries and duplication](#boundaries-and-duplication)
 
 ## Architecture is about boundaries
@@ -116,9 +116,9 @@ See [Boundaries and the database](./architectural-boundaries-details/Boundaries-
 
 See [Boundaries and the web](./architectural-boundaries-details/Boundaries-web.md)
 
-## Boundaries and libraries/frameworks
+## Boundaries and third-party dependencies
 
-See [Boundaries and libraries/frameworks](./architectural-boundaries-details/Boundaries-libraries-frameworks.md)
+See [Boundaries and third-party dependencies](./architectural-boundaries-details/Boundaries-third-party-dependencies.md)
 
 ## Boundaries and duplication
 

@@ -1,4 +1,4 @@
-# Boundaries and libraries/frameworks
+# Boundaries and third-party dependencies
 
 See:
 
@@ -24,6 +24,7 @@ Consider creating a boundary around the external dependency that decouples the r
 
 -   The public interface of that boundary should be written in terms of what your system needs from the dependency
 -   Logic inside the boundary will be specific to the interaction with that particular dependency. 
+-   This also applies when the external dependency is another system!
 -   Benefits:
     -   If the API of the dependency changes or you replace it, the boundary protects you from having to change all code that used the dependency. As long as you can fulfill the contract specified by the public interface of the boundary, no code outside of the boundary has to be aware of the change.
         -   Especially useful if you consider the dependency to be a temporary solution that is sufficient for now but will most likely need to change in the future. The boundary allows you to avoid premature complexity by going for a simple solution, while keeping your options open regarding the upgrade to a more complex solution.
