@@ -25,4 +25,4 @@ Watch out for _false duplication_!
 
 ## Data duplication and bounded contexts
 
-See [Microservices]\(
+See [Microservices](../reference-architectures/Microservices.md)
