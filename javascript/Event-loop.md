@@ -228,4 +228,6 @@ Also note that task partitioning shouldn't be taken too far, as there is also so
 
 ### Recommendation: offloading
 
-For some kinds of long-running synchronous computations, task partitioning is very hard to achieve. In this case, you can spare the event loop (and potentially even make better use of the available CPU cores) by running those computations inside their own [child process](https://nodejs.org/api/child_process.html), [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), ... Do note that there is some overhead for creating these and communicating with them.
+For some kinds of long-running synchronous computations, task partitioning is very hard to achieve. In this case, you can spare the event loop (and potentially even make better use of the available CPU cores) by running those computations inside their own [child process](https://nodejs.org/api/child_process.html), [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), ... 
+
+Do note that there is some overhead for creating these and communicating with them. You can mitigate this overhead by maintaining a pool of reusable workers/processes (instead of creating new ones each time) and limiting the amount of communication that is needed.
