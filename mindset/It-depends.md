@@ -1,9 +1,14 @@
 # It depends
 
+See:
+
+-   [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)
+
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [Trade-offs](#trade-offs)
+    -   [Make trade-offs explicit](#make-trade-offs-explicit)
 -   [No perfect solutions!](#no-perfect-solutions)
 -   [Good solutions and flexibility](#good-solutions-and-flexibility)
 -   [Best practices](#best-practices)
@@ -32,6 +37,11 @@ Areas to take into account:
 -   usability
 
 Tradeoffs not only between these factors but also within these areas! E.g. performance for use case A vs performance for use case B
+
+### Make trade-offs explicit
+
+-   Explicitly list the tradeoffs you are making
+-   Designing two different solutions and looking at how they compare to each other can help you identify relevant tradeoffs
 
 ## No perfect solutions!
 

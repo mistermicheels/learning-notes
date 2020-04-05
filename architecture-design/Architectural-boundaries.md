@@ -83,6 +83,8 @@ When in doubt, keep it simple!
 
 Main conclusion: You have to make a tradeoff between the benefits and costs of each boundary instead of just blindly introducing boundaries and abstraction everywhere
 
+See also [Keep it simple](../mindset/Keep-it-simple.md)
+
 ## Evolving boundaries
 
 Deciding on boundaries requires careful consideration:

@@ -3,8 +3,10 @@
 See:
 
 -   [Hammock Driven Development - Rich Hickey](https://www.youtube.com/watch?v=f84n5oFoZBc) ([transcript](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/HammockDrivenDev.md))
+-   [The Top Idea in Your Mind](http://www.paulgraham.com/top.html)
 -   Imagine: How Creativity Works (book by Jonah Lehrer) ([summary](http://newbooksinbrief.com/2012/04/29/12-a-summary-of-imagine-how-creativity-works-by-jonah-lehrer/))
 -   [Inspired by Distraction: Mind Wandering Facilitates Creative Incubation](https://journals.sagepub.com/doi/abs/10.1177/0956797612446024)
+-   [Harnessing the Power of Shower Thoughts - Trusting your mind to work in the background](https://alexanderell.is/posts/trust-in-your-unconscious/)
 
 ## Contents
 
@@ -60,6 +62,8 @@ One important thing about the subconscious mind: it is subconscious. This means 
 
 You need to think hard enough, your really need to work on the problem, in order to get to the point where the problem seems important enough to your brain to keep on working on it in the background.
 
+Ideally, the problem becomes the "top idea" in your mind, the first topic that your subconscious starts working on when it gets the chance.
+
 ### Stop consciously thinking about the problem
 
 One approach: frustration
@@ -70,7 +74,7 @@ One approach: frustration
 
 More pleasant approach: relaxation
 
--   Lie in a hammock
+-   Take a nap
 -   Go for a walk or bike ride
 -   Take a nice bath or shower
 -   Drive along a route you know well
@@ -78,6 +82,8 @@ More pleasant approach: relaxation
     -   Something that keeps your conscious mind occupied (preventing it from thinking about your problem) but doesn’t use up all of your brain’s resources
     -   Research has shown that these kinds of undemanding tasks are very good at triggering your subconscious mind
 -   Sleep on it
+
+Note: "false relaxation", like mindlessly scrolling through stuff on your phone, will likely not work. This distracts you from the main problem, but also keeps providing new impulses for your mind to process. That way, you leave no room for the subconscious to really work its magic.
 
 ## Processing the results
 
