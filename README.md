@@ -67,6 +67,7 @@
     -   [Hammock-driven development](mindset/Hammock-driven-development.md)
     -   [It depends](mindset/It-depends.md)
     -   [Keep it simple](mindset/Keep-it-simple.md)
+    -   [Pragmatism and imperfectionism](mindset/Pragmatism-imperfectionism.md)
 -   [**processes-techniques**](processes-techniques/README.md)
     -   [Branch By Abstraction and application strangulation (Strangler pattern)](processes-techniques/Branch-by-abstraction-application-strangulation.md)
     -   [Code review and collaboration workflows](processes-techniques/Code-review-collaboration.md)

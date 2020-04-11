@@ -9,3 +9,4 @@
 -   [Hammock-driven development](Hammock-driven-development.md)
 -   [It depends](It-depends.md)
 -   [Keep it simple](Keep-it-simple.md)
+-   [Pragmatism and imperfectionism](Pragmatism-imperfectionism.md)

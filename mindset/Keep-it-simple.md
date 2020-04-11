@@ -104,15 +104,21 @@ See:
 ## Effort
 
 -   Pareto principle: you can likely get 80% of the benefits by only spending 20% of the effort
+    -   20% of the functionality can provide 80% of the value to your end users
+    -   20% of the testing can give you 80% of the confidence that your application works
     -   It's not the end of the world if some very rare situations lead to a transaction failing because of deadlock, suboptimal error message, ...
     -   It's not the end of the world if some exceptional cases require an additional action taken by some batch process or even a human
 -   Know when to stop optimizing!
-    -   The more you optimize, the lower the ROI of additional optimizations and the higher the benefit would be to spend the effort on other things instead
+    -   The more you optimize, the lower the ROI of additional optimizations and the higher the benefit would be of spending the effort on other things instead
     -   Applies to architecture, code quality, solution approaches, ...
     -   At some point, rather than to keep discussing and polishing, it makes sense to ask if you can all agree that it’s the current option is good enough
         -   Also goes for code reviews
+-   Not everything is a priority
+    -   Some things are not worth spending more time and energy on, even if you know they could be improved
+    -   Pick your battles: not every discussion is a hill you should be willing to die on.
 -   Ask for help when it makes sense
     -   If you're struggling with something, you're likely to find a colleague that can help you out
+    -   Asking for help is actually a good way to bond with your colleagues, as it shows you trust them and value their expertise
 -   Learning
     -   You don't have to know everything! 
     -   Keep learning, but accept that you will never come close to knowing everything, and neither will anyone else
@@ -125,4 +131,7 @@ See:
 -   Determining how simple something should be is a tradeoff
 -   You should probably not try to "simplify away" the unavoidable complexities in your domain (those complexities might even be the reason your system exists)
 -   The definition of "good enough" will likely be different based on how crucial the problem you are solving is to the system/domain
+    -   It is probably not a good idea to take a lot of shortcuts in the foundations of your codebase/architecture
+    -   A situation that occurs all the time in the domain probably deserves some extra effort
+-   Relaxing quality standards can help you move fast in the beginning, but too much technical debt can slow further development to a crawl and require an enormous amount of time and energy to fix later on
 -   As always, [It depends](./It-depends.md)
