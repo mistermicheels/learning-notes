@@ -64,6 +64,7 @@
         -   [Runtime type checking in TypeScript](javascript/typescript/Runtime-type-checking.md)
         -   [Type guards](javascript/typescript/Type-guards.md)
 -   [**mindset**](mindset/README.md)
+    -   [Concepts, not code](mindset/Concepts-not-code.md)
     -   [Hammock-driven development](mindset/Hammock-driven-development.md)
     -   [It depends](mindset/It-depends.md)
     -   [Keep it simple](mindset/Keep-it-simple.md)
