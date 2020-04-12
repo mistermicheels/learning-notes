@@ -58,7 +58,7 @@ console.log(Object.prototype.toString.apply(/aaa/g)); // [object RegExp]
 -   Look like actual types, even classes
 -   In reality, they are actually just built-in functions
 
-Example with `String` (note how it behaves differently whether it's called as constructor):
+Example with `String` (note how it behaves differently when it's called as constructor):
 
 ```javascript
 const test = "test";
@@ -162,6 +162,20 @@ Here, the line `objectB.counter++` is equivalent to `objectB.counter = objectB.c
 From that point on, `objectB` has its own  `counter` property shadowing the  `counter` property on  `objectA`.
 
 Shadowing is not only an issue with simple properties but also with methods (which are just properties with a function as value). Therefore, it is recommended to avoid creating different methods with the same name in a prototype chain.
+
+Property shadowing can also be caused by unexpected input from the outside and it can hide methods that are defined on the `Object` prototype itself. Example:
+
+```javascript
+const userInput = JSON.parse(`{ "hasOwnProperty": 1 }`);
+
+// TypeError: userInput.hasOwnProperty is not a function
+console.log(userInput.hasOwnProperty("propA")); 
+
+// explicitly call the function defined on Object.prototype
+console.log(Object.prototype.hasOwnProperty.call(userInput, "propA")); // false
+```
+
+You can mitigate the risk that this happens by checking user input and rejecting input that contains unexpected properties. It also helps to avoid calling methods provided through `Object.prototype` on the object itself (first approach in the above code) but instead explicitly use the function from `Object.prototype` (second approach in the code). There is actually a rule in ESLint ([no-prototype-builtins](https://eslint.org/docs/rules/no-prototype-builtins)) that enforces this.
 
 ### Prototype pollution
 
@@ -406,7 +420,7 @@ const instance = new Test(); // id() on Test.prototype is shadowed by id on inst
 console.log(instance.id()); // TypeError: instance.id is not a function
 ```
 
-If you ever need to keep a shared property at the level of the class, it's safer to set it directly on the class rather than on the `.prototype` of the class where the methods sit. Note: setting the propery directly on the class is also how TypeScript implements static class properties.
+If you ever need to keep a shared property at the level of the class, it's safer to set it directly on the class rather than on the `.prototype` of the class where the methods sit. Note: setting the property directly on the class is also how TypeScript implements static class properties.
 
 Working example putting properties directly on the class:
 
