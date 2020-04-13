@@ -11,3 +11,4 @@
 -   [It depends](It-depends.md)
 -   [Keep it simple](Keep-it-simple.md)
 -   [Pragmatism and imperfectionism](Pragmatism-imperfectionism.md)
+-   [Work-life balance](Work-life-balance.md)

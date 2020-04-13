@@ -115,6 +115,7 @@ See:
         -   Also goes for code reviews
 -   Not everything is a priority
     -   Some things are not worth spending more time and energy on, even if you know they could be improved
+    -   If you're feeling overwhelmed, it's time to take a look at what is really a priority, possibly together with your team, manager, ...
     -   Pick your battles: not every discussion is a hill you should be willing to die on.
 -   Ask for help when it makes sense
     -   If you're struggling with something, you're likely to find a colleague that can help you out

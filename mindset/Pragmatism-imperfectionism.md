@@ -17,6 +17,7 @@ See:
 -   [Imperfectionist mindset](#imperfectionist-mindset)
     -   [Be humble](#be-humble)
     -   [Own your mistakes](#own-your-mistakes)
+    -   [Focus on putting in the work rather than on the results](#focus-on-putting-in-the-work-rather-than-on-the-results)
     -   [Prefer incremental improvement over sudden perfection](#prefer-incremental-improvement-over-sudden-perfection)
     -   [Consider going for imperfect action now instead of possibly perfect action in the future](#consider-going-for-imperfect-action-now-instead-of-possibly-perfect-action-in-the-future)
     -   [Focus on solutions rather than problems](#focus-on-solutions-rather-than-problems)
@@ -70,6 +71,13 @@ See:
 -   Instead of ruminating about mistakes you have made, put that time and energy into fixing the situation or preventing the mistake from happening again
 -   People who admit their mistakes come across as more confident, reliable and relatable than those who pretend to be perfect
 
+### Focus on putting in the work rather than on the results
+
+-   Worrying about results steals time and energy that you could otherwise spend on putting in the actual work that is needed to get the results
+-   Reducing the pressure you put on yourself actually helps you perform your tasks more effectively
+-   Focusing less on results doesn't prevent you from getting the results you want, it just takes away the anxiety about not getting those results
+-   Note: This doesn't mean that there's no value in periodically evaluating whether your work generally gives you the kind of results you would expect to see. However, it does mean that there is no value in letting stress about results distract you from doing the work in the first place.
+
 ### Prefer incremental improvement over sudden perfection
 
 -   Focus on consistently making progress or adding value
@@ -95,7 +103,7 @@ See:
 ### Focus on solutions rather than problems
 
 -   Software development is all about problem solving
-    -   Your real value is in delivering solutions, not problems
+    -   Your real value is in delivering solutions
 -   Often, problems don't even need to be solved in order to make progress despite them
     -   A lot of problems are not showstoppers
     -   In a lot of situations, a workaround or partial solution is enough
@@ -103,3 +111,7 @@ See:
 -   Rather than focusing on the problem, focus on finding possible solutions or at least paths that lead towards possible solutions
     -   Problems that seem unfixable at first sight are likely to be fixable once you really think about it
 -   Looking at the big picture helps to find solutions or workarounds that may not be obvious if you focus too closely on the problem
+-   Note: All of this doesn't mean that there is no value in identifying problems!
+    -   Typically, you need to identify a problem before you can solve it
+    -   It can be very valuable to identify important problems that are limiting your success
+    -   However, once you've found a problem, start moving your focus to actually solving it rather than just getting stressed by its existence
