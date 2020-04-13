@@ -42,7 +42,6 @@ Divide the code into modules where classes outside of a module can only see the 
 Examples in Java:
 
 -   Making classes package protected (limitation: Java does not have real notion of nested packages)
-
 -   The [Java Platform Module System](../../java/Java-Platform-Module-System.md)
 
 If your language doesn't provide something like this, you may be able to set it up using linting rules or automated tests that analyze dependencies

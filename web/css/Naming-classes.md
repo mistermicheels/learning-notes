@@ -23,7 +23,6 @@ See:
 ## Object Oriented CSS
 
 -   Idea: separate CSS into reusable "objects" that can be used anywhere you need
-
 -   The way people use CSS today is heavily influenced by this approach
 
 Example CSS not using OOCSS approach:

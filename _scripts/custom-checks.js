@@ -2,9 +2,9 @@ const path = require("path");
 const fs = require("fs");
 
 try {
-    console.log("Checking if all notes have Contents heading");
+    console.log("Performing custom checks");
     check();
-    console.log("Confirmed that all notes have Contents heading");
+    console.log("Finished custom checks");
 } catch (error) {
     console.log(`Error: ${error.message}`);
     process.exit(1);
@@ -26,11 +26,8 @@ function checkInFolder(absolutePath) {
             checkInFolder(entryPath);
         } else if (!isDirectory && !shouldIgnoreFile(name)) {
             const contents = fs.readFileSync(entryPath, { encoding: "utf-8" });
-            const contentsLines = contents.split(/\r\n|\r|\n/);
-
-            if (!contentsLines.includes('## Contents')) {
-                throw new Error(`No 'Contents' heading found in file ${entryPath}`);
-            }
+            checkContentsHeadingPresent(contents, entryPath);
+            checkNoLooseLists(contents, entryPath);
         }
     }
 }
@@ -41,4 +38,21 @@ function shouldIgnoreDirectory(name) {
 
 function shouldIgnoreFile(name) {
     return !name.endsWith(".md") || name === "README.md" || name === 'CONTRIBUTING.md';
+}
+
+function checkContentsHeadingPresent(contents, filePath) {
+    const contentsLines = contents.split(/\r\n|\r|\n/);
+
+    if (!contentsLines.includes('## Contents')) {
+        throw new Error(`No 'Contents' heading found in file ${filePath}`);
+    }
+}
+
+function checkNoLooseLists(contents, filePath) {
+    const looseListRegex = /- +[^\r\n]+(\r\n\r\n|\r\r|\n\n)\s*-/;
+
+    if (looseListRegex.test(contents)) {
+        const firstMatch = looseListRegex.exec(contents)[0];
+        throw new Error(`Loose list found in file ${filePath}\nMatch: ${JSON.stringify(firstMatch)}`);
+    }
 }

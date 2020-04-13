@@ -159,13 +159,9 @@ Bugfixes on a release:
 ### Releasing straight from trunk
 
 -   Release straight from the trunk, without creating a new release branch. 
-
 -   Doable if commits on the trunk are really release-ready
-
 -   Often even no real version numbers. Instead, commit identifiers can be used.
-
 -   Seen in teams that release very often
-
 -   What if release contains bugs?
     -   Typically a fix-forward strategy where team fixes the bug on trunk as soon as possible and then push a new release including the fix
 

@@ -24,9 +24,7 @@ See:
 _Lambda expression_:
 
 -   General concept in programming that is a synonym for _anonymous function_
-
--   Is a function (a piece of code that accepts input, does something with it and potentially returns a result) that is not explicitly named. 
-
+-   Is a function (a piece of code that accepts input, does something with it and potentially returns a result) that is not explicitly named.
 -   These anonymous functions are very useful for passing them around to be used as input for other functions that operate on functions.
 
 Why the name lambda? Anonymous functions were first described in a paper by Alonzo Church, written in 1936, before electronic computers even existed. In that paper, the parameters for the anonymous functions were marked using the letter λ (lambda). He picked this letter because the classic work _Principia Mathematica_, a very important work in the field of mathematics released about 20 years earlier, used the ^ accent to mark function parameters, which kind of looked like an uppercase lambda (Λ).

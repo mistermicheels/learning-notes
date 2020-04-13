@@ -38,15 +38,10 @@ See:
 ### Tables, rows, relationships and schemas
 
 -   Tables (= _relations_)
-
     -   Each table is a set of columns, each of a certain type, that can hold data for the rows in the table
-
-        Each table has a subset of columns, the table’s _primary key (PK)_, that uniquely identifies each row in the table
-
+    -   Each table has a subset of columns, the table’s _primary key (PK)_, that uniquely identifies each row in the table
     -   There may also be other subsets of columns uniquely identifying each row in the table, known as alternate keys (AK).
-
 -   Relationships
-
     -   Possible to link rows in a table to rows in another table by including the column(s) of that other table’s primary key
         -   This is called a _foreign key_
         -   If defined correctly, database enforces that foreign key links to actual row in the other table
@@ -73,15 +68,12 @@ See [Normalization](./sql/Normalization.md)
 ## NoSQL
 
 -   Became popular in the early twenty-first century as an alternative to relational databases
-
 -   The term NoSQL encompasses lots of different data stores with different concepts, approaches, query languages, etc. that offer a solution to some problem for which relational databases are maybe not an ideal solution
     -   In order to achieve this, they generally need to make compromises in terms of features and the guarantees offered by the data store
     -   Depending on the application, it's possible that developers need to foresee some things on the application side that would just be handled by the database if they were using a relational database
     -   Developers used to working with a non-distributed relational database should be especially careful when working with distributed NoSQL databases as those may introduce the possibility for inconsistencies in areas where the developers take consistency for granted
-
 -   Typical selling point: specialized solution for particular use cases
     -   Example: graph databases: see below
-
 -   Typical selling point: horizontal scalability
     -   Vertical scaling: make your machines more powerful by adding CPU power, memory, faster disks, etc.
         -   Becomes expensive or practically impossible once you reach a certain point

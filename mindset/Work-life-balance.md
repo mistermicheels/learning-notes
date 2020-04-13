@@ -33,13 +33,9 @@ If you don't care about work one single bit, you'll probably won't do a very goo
 Caring too much is bad for both you and your company:
 
 -   It makes you feel overwhelmed and stressed
-
 -   It makes you more likely to get sick, burn out or quit
-
 -   It prevents you from getting the downtime you need in order to actually be productive at work
-
 -   It wastes energy on feeling stressed, disappointed or frustrated instead of allowing you to use that energy for actual work
-
 -   It prevents you from recognizing tasks that are not important and thus not an effective use of your time
 
 ### Caring just enough
@@ -154,11 +150,8 @@ But what if you _want_ to write code or improve your knowledge and skills in you
 Don't get intimidated by articles and blogs!
 
 -   The field is huge, nobody knows all there is to know about everything
-
 -   If you feel like you know nothing after reading some impressive article written by someone in a different subfield, remember that they probably don't have a lot of relevant knowledge regarding the stuff you are working on and know a lot about
-
 -   It's mostly about your ability to figure out things as you go
-
 -   You will always have some gaps in your knowledge. While it's good to be aware of them, it's not good to be intimidated by them.
 
 Don't get intimidated by job adverts!

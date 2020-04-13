@@ -1,8 +1,8 @@
 # The `this` keyword
 
--   See:
+See:
 
-    -   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+-   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
 
 ## Contents
 

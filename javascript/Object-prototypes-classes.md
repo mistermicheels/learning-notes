@@ -223,9 +223,7 @@ Some ways to avoid being vulnerable:
 
 -   If you need to write your own recursive merge, make sure to have it ignore `__proto__`
     -   Vulnerabilities in libraries like Lodash have already been patched
-
 -   Validate all user input, rejecting any input with unexpected properties
-
 -   An interesting way to avoid this kind of attack is to freeze the Object prototype. If you add `Object.freeze(Object.prototype);` on top of the example above, the vulnerability is gone. This works because the freeze prevents the prototype from being altered in any way.
 
 ## Functions and `.prototype`

@@ -40,16 +40,11 @@ Basically, this is how it works:
 Several possibilities:
 
 -   Interface that both old and new implementation implement
-
     -   Allows you to choose which of the implementations (old or new) to instantiate when a consumer requires an object conforming to that interface
-
 -   Actual class that delegates to old or new implementation as needed
-
     -   Could be based on some flag (built into the code or in a configuration file) that allows developers working on the new implementation to test it while others are not affected by it yet.
     -   Could use the new implementation for some calls and the old implementation for others.
-
 -   Actual layer in application’s architecture
-
     -   Example: if you are moving to a new persistence framework and you are using a layered architecture, you could already have an abstraction layer in the form of repositories that encapsulate all interaction with the database. This could allow you to make the change one repository at a time, while repositories you didn’t touch are still using the old persistence framework
 
 ### Why not real branches?

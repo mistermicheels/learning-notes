@@ -64,12 +64,9 @@ This type of coupling is the most obvious one: The fact that services communicat
 _Service template_: shared template that all services can build upon
 
 -   Contains general stuff like monitoring, logging, and authentication/authorization.
-
 -   Teams maintaining the services build their services upon this template
-
 -   Much easier to ensure compliance and manage upgrades to monitoring system etc. than if each service team would build their own version of this
     -   When the infrastructure team pushes an upgrade to the service template, the services pick it up the next time they go through the deployment pipeline
-
 -   This likely means all services will be built using the same language or limited set of languages. Although this takes away some of the freedom regarding technology, it also means that developers can more easily move between teams if necessary and that it's easier to create shared libraries or share knowledge between teams.
 
 Example general service templates: [DropWizard](https://www.dropwizard.io) and [Spring Boot](https://spring.io/projects/spring-boot)
@@ -105,7 +102,6 @@ Example: e-commerce system using a microservices architecture
 Some services may even be entirely focused on aggregating bits of data from other services!
 
 -   Can be useful for search, analysis, ...
-
 -   Example: functionality to view some general info about the most recent orders of customers, allowing to filter customers by some key attributes
     -   Can make sense to put this in separate Insights service
     -   Service gathers data from the Customer and Order services (could be push, through API calls or message queue, or pull)

@@ -145,14 +145,12 @@ JDK: one huge library with all functionality spread across a huge number of pack
 ## Adjusting your own applications
 
 -   You are not required to make your own applications modular (see the part about the unnamed module above)
-
 -   You may run into trouble with older applications that access internal classes that are no longer exported from the modules that contain them
     -   By default, Java 9 only gives you a warning about illegal access. However, it is recommended to run your applications with the `--illegal-access=deny`  flag which blocks all illegal access and will be the default in newer Java versions
     -   You can still allow your code to access some internal classes by using the `--add-exports` flag
         -   Syntax: `--add-exports module.name/package.name=module.to.export.it.to`
         -   Example, exporting to the unnamed module: `--add-exports java.sql.rowset/com.sun.rowset=ALL_UNNAMED`
     -   There is a similar `--add-opens` flag for reflective access
-
 -   Some modules in the Java SE platform are not accessible from the unnamed module by default:
     -   Modules: _java.activation, java.corba, java.transaction, java.xml.bind, java.xml.ws, java.xml.ws.annotation_
     -   These modules are deprecated and may be removed from the Java SE platform in the future

@@ -64,7 +64,6 @@ Implementations:
 -   SQL Server
     -   Implemented using DB-level locking (basically pessimistic locking)
     -   Obtains read lock on rows that you read, causing other transactions attempting to update the row to block until you commit or roll back your transaction
-
 -   PostgreSQL
     -   Transaction sees a snapshot of the database taken at the start of your transaction (this also prevents _Phantom Reads_)
     -   Does not guarantee that the data has not changed in the meantime

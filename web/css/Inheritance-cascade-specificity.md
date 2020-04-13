@@ -111,9 +111,7 @@ Important: the universal selector (`*`), combinators and the negation pseudo-cla
 Some examples:
 
 -   `h1.the-class`  is more specific than `h1`
-
 -   `.class-a > .class-b > class-c` is more specific than  `.class-b > class-c`
-
 -   `#the-id` is more specific than `.class-a > .class-b > class-c`
 
 Note: **inherited** property values can be seen as rules that are less specific than all of the above --> very easy to override. Can be useful to set some defaults at the level of the body, for example font family. It's possible to "increase the specificity" of inheritance by setting a property's value to `inherit` in a rule with a more specific selector.

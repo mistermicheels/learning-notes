@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "Contains script invocations and their dependencies",
     "scripts": {
-        "pre-commit": "npm run check-contents-heading-present && npm run replace-tabs && npm run write-notes-trees && npm run write-tocs-and-format && npm run validate-internal-links",
-        "check-contents-heading-present": "node ./_scripts/check-contents-heading-present.js",
+        "pre-commit": "npm run custom-checks && npm run replace-tabs && npm run write-notes-trees && npm run write-tocs-and-format && npm run validate-internal-links",
+        "custom-checks": "node ./_scripts/custom-checks.js",
         "replace-tabs": "replace-in-file --configFile=_scripts/replace-in-file.config.js",
         "write-notes-trees": "markdown-notes-tree --ignore CONTRIBUTING.md --linkToSubdirectoryReadme --notesBeforeDirectories",
         "write-tocs-and-format": "remark --rc-path _scripts/remark-write-tocs-and-format.config.json . -o",

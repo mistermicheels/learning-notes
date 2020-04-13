@@ -179,7 +179,6 @@ interface Person {
 -   No possibility for types to get out of sync
 -   [io-ts](https://github.com/gcanti/io-ts) is pretty powerful, supports recursive types etc.
 -   Requires you to define your types as io-ts runtime types, which does not work when you are defining classes
-
     -   One way to handle this could be to define an interface using io-ts and then make the class implement the interface. However, this means you need to make sure to update the io-ts type whenever you are adding properties to your class.
 -   Harder to share interfaces (e.g. between backend and frontend) because they are io-ts types rather than plain TypeScript interfaces
 
