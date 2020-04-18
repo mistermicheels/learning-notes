@@ -10,9 +10,11 @@
         "validate-internal-links": "remark --rc-path _scripts/remark-validate-internal-links.config.json --ignore-path .remarkignore --frail .",
         "custom-checks": "node ./_scripts/custom-checks.js",
         "write-website-data": "npm run pre-commit && node ./_scripts/write-website-data.js",
-        "build-website": "npm run write-website-data && cd _website && npm run build && cd .."
+        "build-website": "npm run write-website-data && cd _website && npm run build && cd ..",
+        "serve-built-website": "node ./_scripts/serve-built-website.js"
     },
     "devDependencies": {
+        "express": "^4.17.1",
         "fs-extra": "^9.0.0",
         "markdown-notes-tree": "^1.9.0",
         "remark-cli": "^8.0.0",

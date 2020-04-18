@@ -164,7 +164,7 @@ function stripTableOfContents(input) {
     // because this runs after pre-commit scripts, we know that each note has a Contents header with specific structure below it
 
     const contentsHeaderIndex = input.indexOf("## Contents");
-    const nextHeaderIndex = input.indexOf("##", contentsHeaderIndex + 1);
+    const nextHeaderIndex = input.indexOf("## ", contentsHeaderIndex + 1);
     return input.substring(0, contentsHeaderIndex) + input.substring(nextHeaderIndex);
 }
 
@@ -265,22 +265,39 @@ function getExternalLinkNodeReplacement(node, relativeFilePath) {
 
 function replaceTitleByYamlFrontmatter(input, relativePath) {
     // because this runs after pre-commit scripts, we know the first line of each note will be the title
+    // we also know that the TOC has been stripped by now
 
-    const regexResult = getEndOfLineRegex().exec(input);
-
-    if (!regexResult) {
-        throw new Error(`Problem with structure of file ${relativePath}`);
-    }
-
-    const endOfFirstLineIndex = regexResult.index;
-    const lineSeparator = regexResult[0];
-
-    const title = input.substring(2, endOfFirstLineIndex);
+    const titleLine = input.split(getEndOfLineRegex(), 1)[0];
+    const title = titleLine.substring(2);
+    const contentsAfterTitleLine = input.substring(titleLine.length);
 
     if (title.includes("`")) {
         throw new Error(`Problem with file ${relativePath}: code in note title is not supported`);
     }
 
-    const frontMatter = "---" + lineSeparator +  `title: ${title}` + lineSeparator + "---";
-    return frontMatter + input.substring(endOfFirstLineIndex);
+    const firstRealHeaderIndex = input.indexOf("## ");
+    const contentsFromFirstRealHeader = input.substring(firstRealHeaderIndex);
+    const firstRealHeaderLine = contentsFromFirstRealHeader.split(getEndOfLineRegex(), 1)[0];
+    const firstRealHeader = firstRealHeaderLine.substring(3);
+    
+    const lines = contentsFromFirstRealHeader.split(getEndOfLineRegex());
+    const linesAfterFirstRealHeader = lines.slice(2);
+    const firstTenTextLines = linesAfterFirstRealHeader.filter(line => !!line).slice(0, 10);
+    const startOfText = firstTenTextLines.map(line => line.trim().replace(/ +/g, " ")).join(" ");
+
+    let description = firstRealHeader + " | " + startOfText;
+    description = description.substring(0, 250) + " (truncated)";
+
+    const frontMatter = 
+        "---" + 
+        "\n" +
+        `title: ${title}` + 
+        "\n" +
+        `description: >-` + // https://yaml-multiline.info/
+        "\n" +
+        `    ${description}` + 
+        "\n" +
+        "---";
+
+    return frontMatter + contentsAfterTitleLine;
 }
