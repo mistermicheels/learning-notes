@@ -277,7 +277,7 @@ The `Class<T>` object is also very useful when using `reflection`. For example, 
     -   If you have a type variable T, you cannot do `new T(...)` or `new T[...] (array)`. 
     -   Reason: type erasure (you would be instantiating the erased value for T, not T itself).
     -   If you want to construct objects of type T or arrays of type T inside a generic method, you will have to ask the caller for the right object or array constructor or for a Class object.
-    -   While you cannot instantiate an array of type T, you can easily create an ArrayList<T>. This is because ArrayList is a generic type itself, while in order to create an array of type T we would need the exact type T at runtime.
+    -   While you cannot instantiate an array of type T, you can easily create an `ArrayList<T>`. This is because ArrayList is a generic type itself, while in order to create an array of type T we would need the exact type T at runtime.
 -   It’s impossible to create arrays of parameterized types
     -   You can declare arrays of a parameterized type (e.g. `AnimalWrapper<Dog>[]`)
     -   You cannot instantiate an array of a parameterized type. 

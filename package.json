@@ -6,15 +6,19 @@
         "pre-commit": "npm run replace-tabs && npm run write-notes-trees && npm run write-tocs-and-format && npm run validate-internal-links && npm run custom-checks",
         "replace-tabs": "replace-in-file --configFile=_scripts/replace-in-file.config.js",
         "write-notes-trees": "markdown-notes-tree --ignore CONTRIBUTING.md --linkToSubdirectoryReadme --notesBeforeDirectories",
-        "write-tocs-and-format": "remark --rc-path _scripts/remark-write-tocs-and-format.config.json . -o",
-        "validate-internal-links": "remark --rc-path _scripts/remark-validate-internal-links.config.json --frail .",
-        "custom-checks": "node ./_scripts/custom-checks.js"
+        "write-tocs-and-format": "remark --rc-path _scripts/remark-write-tocs-and-format.config.json --ignore-path .remarkignore . --output",
+        "validate-internal-links": "remark --rc-path _scripts/remark-validate-internal-links.config.json --ignore-path .remarkignore --frail .",
+        "custom-checks": "node ./_scripts/custom-checks.js",
+        "write-website-data": "npm run pre-commit && node ./_scripts/write-website-data.js",
+        "build-website": "npm run write-website-data && cd _website && npm run build && cd .."
     },
     "devDependencies": {
+        "fs-extra": "^9.0.0",
         "markdown-notes-tree": "^1.9.0",
-        "remark-cli": "^7.0.1",
+        "remark-cli": "^8.0.0",
         "remark-toc": "^7.0.0",
-        "remark-validate-links": "^9.2.0",
-        "replace-in-file": "^5.0.2"
+        "remark-validate-links": "^10.0.0",
+        "replace-in-file": "^5.0.2",
+        "unist-util-visit": "^2.0.2"
     }
 }

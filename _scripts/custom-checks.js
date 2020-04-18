@@ -1,4 +1,4 @@
-// these needs to run after markdown-notes-tree, that way we can make more assumptions about file contents
+// this needs to run after markdown-notes-tree, that way we can make more assumptions about file contents
 
 const path = require("path");
 const fs = require("fs");

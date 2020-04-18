@@ -55,7 +55,7 @@
     -   [Object prototypes and classes](javascript/Object-prototypes-classes.md)
     -   [Scope and closures](javascript/Scope-closures.md)
     -   [Spread syntax, rest parameters and destructuring](javascript/Spread-syntax-rest-parameters-destructuring.md)
-    -   [The `this` keyword](javascript/This-keyword.md)
+    -   [The this keyword](javascript/This-keyword.md)
     -   [**TypeScript**](javascript/typescript/README.md)
         -   [Compiler API](javascript/typescript/Compiler-API.md)
         -   [Conditional types](javascript/typescript/Conditional-types.md)

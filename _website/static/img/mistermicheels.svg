@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 135.46667 135.46667"
+   version="1.1"
+   id="svg8"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="mistermicheels - text to paths.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-33.454402"
+     inkscape:cy="195.02002"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g4612"
+     showgrid="false"
+     units="px"
+     width="512px"
+     inkscape:pagecheckerboard="true"
+     showguides="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-161.53333)">
+    <g
+       id="g4612"
+       transform="matrix(0.89293812,0,0,0.89293812,7.2516586,24.54571)">
+      <rect
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:11.08651352;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect817"
+         width="151.70891"
+         height="151.70891"
+         x="-8.1211214"
+         y="153.41222" />
+      <g
+         aria-label="M"
+         style="font-style:normal;font-weight:normal;font-size:70.46060181px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:-0.49129757px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.39130878;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         id="text4506">
+        <path
+           d="M 33.455796,259.91794 18.696227,211.82355 h -0.377375 q 0.796681,14.67571 0.796681,19.58158 v 28.51281 H 7.5007588 V 198.61541 H 25.195469 l 14.507986,46.8784 h 0.251583 l 15.388528,-46.8784 h 17.694711 v 61.30253 H 60.920335 v -29.01597 q 0,-2.0546 0.04193,-4.73816 0.08386,-2.68356 0.587028,-14.2564 h -0.377375 l -15.807834,48.01053 z"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:85.87385559px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';letter-spacing:-12.24526978px;word-spacing:-0.49129757px;fill:#ffffff;stroke:none;stroke-width:2.39130878;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="path818" />
+      </g>
+      <g
+         aria-label="M"
+         style="font-style:normal;font-weight:normal;font-size:70.46060181px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:-0.49129757px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.39130878;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         id="text4506-3">
+        <path
+           d="M 88.383426,259.91794 73.623857,211.82355 h -0.377375 q 0.796681,14.67571 0.796681,19.58158 v 28.51281 H 62.428389 v -61.30253 h 17.69471 l 14.507986,46.8784 h 0.251583 l 15.388532,-46.8784 h 17.69471 v 61.30253 h -12.11795 v -29.01597 q 0,-2.0546 0.0419,-4.73816 0.0839,-2.68356 0.58702,-14.2564 h -0.37737 l -15.80784,48.01053 z"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:85.87385559px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';letter-spacing:-12.24526978px;word-spacing:-0.49129757px;fill:#ffffff;stroke:none;stroke-width:2.39130878;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="path821" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,4 +1,4 @@
-# The `this` keyword
+# The this keyword
 
 See:
 

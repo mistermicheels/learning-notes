@@ -5,7 +5,7 @@ See:
 -   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
 -   [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
 -   [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
--   [Solved _by_ Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
+-   [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
 
 ## Contents
 
@@ -41,7 +41,7 @@ The  `flex` property can have up to 3 values:
 
 ## Alignment of flex items
 
-Alignment along the main axis: [`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) (set at the level of the container)
+Alignment along the main axis: [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) (set at the level of the container)
 
 -   `flex-start` (default): make items sit towards the start of the main axis
 -   `flex-end`: make items sit towards the endof the main axis
@@ -49,7 +49,7 @@ Alignment along the main axis: [`justify-content`](https://developer.mozilla.org
 -   `space-around`: evenly distribute items (same amount of spacing between adjacent items) and leave half of that spacing at the start and end of the main axis
 -   `space-around`: evenly distribute items (same amount of spacing between adjacent items), without any spacing at the start and end of the main axis
 
-Alingment along the cross axis: [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) (set at the level of the container, can override at the item level using [`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self))
+Alingment along the cross axis: [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) (set at the level of the container, can override at the item level using [align-self](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self))
 
 -   `stretch` (default): make items fill the parent along the cross axis
 -   `center`: center items along the cross axis

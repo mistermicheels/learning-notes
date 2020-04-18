@@ -64,11 +64,11 @@ Solution: make Subject into its own table
 
 **Subject table**
 
-| ID  | Name     |
-| --- | -------- |
-| 1   | MySQL    |
-| 2   | Database |
-| 3   | Design   |
+| ID | Name     |
+| -- | -------- |
+| 1  | MySQL    |
+| 2  | Database |
+| 3  | Design   |
 
 **Book - Subject table** (many-to-many relationship, needed because book can have multiple subjects and multiple books can share the same subject)
 
