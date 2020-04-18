@@ -1,3 +1,0 @@
-# prevent GitHub from using _hooks and _scripts in determining the repository language
-_hooks/* linguist-detectable=false
-_scripts/* linguist-detectable=false
