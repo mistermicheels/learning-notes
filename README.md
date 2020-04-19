@@ -71,7 +71,7 @@
     -   [Pragmatism and imperfectionism](mindset/Pragmatism-imperfectionism.md)
     -   [Work-life balance](mindset/Work-life-balance.md)
 -   [**Processes and techniques**](processes-techniques/README.md)
-    -   [Branch By Abstraction and application strangulation (Strangler pattern)](processes-techniques/Branch-by-abstraction-application-strangulation.md)
+    -   [Branch By Abstraction and application strangulation](processes-techniques/Branch-by-abstraction-application-strangulation.md)
     -   [Code review and collaboration workflows](processes-techniques/Code-review-collaboration.md)
     -   [Feature flags](processes-techniques/Feature-flags.md)
     -   [Trunk Based Development](processes-techniques/Trunk-Based-Development.md)

@@ -1,4 +1,4 @@
-# Branch By Abstraction and application strangulation (Strangler pattern)
+# Branch By Abstraction and application strangulation
 
 See:
 
