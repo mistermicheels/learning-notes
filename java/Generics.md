@@ -1,4 +1,8 @@
-# Generics
+---
+tree_title: Generics
+---
+
+# Generics (Java)
 
 See:
 

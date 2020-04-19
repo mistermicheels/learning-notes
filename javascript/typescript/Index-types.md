@@ -1,4 +1,8 @@
-# Index types
+---
+tree_title: Index types
+---
+
+# Index types (TypeScript)
 
 See:
 

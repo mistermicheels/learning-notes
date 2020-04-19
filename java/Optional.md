@@ -1,4 +1,8 @@
-# Optional type
+---
+tree_title: Optional type
+---
+
+# Optional type (Java)
 
 See:
 

@@ -1,4 +1,8 @@
-# Type guards
+---
+tree_title: Type guards
+---
+
+# Type guards (TypeScript)
 
 See:
 

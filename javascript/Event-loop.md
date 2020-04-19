@@ -1,4 +1,8 @@
-# Event loop
+---
+tree_title: Event loop
+---
+
+# Event loop (JavaScript)
 
 See:
 

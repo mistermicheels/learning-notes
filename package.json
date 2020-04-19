@@ -18,9 +18,11 @@
     },
     "devDependencies": {
         "express": "^4.17.1",
+        "front-matter": "^3.1.0",
         "fs-extra": "^9.0.0",
-        "markdown-notes-tree": "^1.9.0",
+        "markdown-notes-tree": "^1.10.0",
         "remark-cli": "^8.0.0",
+        "remark-frontmatter": "^2.0.0",
         "remark-toc": "^7.0.0",
         "remark-validate-links": "^10.0.0",
         "replace-in-file": "^5.0.2",

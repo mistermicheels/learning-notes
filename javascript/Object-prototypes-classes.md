@@ -1,4 +1,8 @@
-# Object prototypes and classes
+---
+tree_title: Object prototypes and classes
+---
+
+# Object prototypes and classes (JavaScript)
 
 See:
 

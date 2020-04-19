@@ -1,4 +1,8 @@
-# Spread syntax, rest parameters and destructuring
+---
+tree_title: Spread syntax, rest parameters and destructuring
+---
+
+# Spread syntax, rest parameters and destructuring (JavaScript)
 
 See:
 

@@ -1,4 +1,8 @@
-# Naming classes
+---
+tree_title: Naming classes
+---
+
+# Naming classes (CSS)
 
 See:
 

@@ -1,4 +1,8 @@
-# Browser compatibility
+---
+tree_title: Browser compatibility
+---
+
+# Browser compatibility (CSS)
 
 See:
 

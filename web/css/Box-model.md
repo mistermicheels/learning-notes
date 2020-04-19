@@ -1,4 +1,8 @@
-# Box model
+---
+tree_title: Box model
+---
+
+# Box model (CSS)
 
 See:
 

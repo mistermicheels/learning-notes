@@ -2,6 +2,7 @@
 
 const path = require("path");
 const fsExtra = require("fs-extra");
+const frontMatter = require("front-matter");
 const remark = require("remark");
 const visit = require('unist-util-visit');
 
@@ -154,9 +155,13 @@ function removeMarkdownExtension(url) {
 }
 
 function transformNoteContents(contents, relativePath) {
+    const parsedFrontMatter = frontMatter(contents);
+    const treeTitle = parsedFrontMatter.attributes.tree_title;
+    contents = parsedFrontMatter.body.trimLeft();
+
     contents = stripTableOfContents(contents);
-    contents = adjustInternalReferences(contents, relativePath);
-    contents = replaceTitleByYamlFrontmatter(contents, relativePath);
+    contents = adjustImagesAndLinks(contents, relativePath);
+    contents = replaceTitleByYamlFrontmatter(contents, treeTitle, relativePath);
     return contents;
 }
 
@@ -168,7 +173,7 @@ function stripTableOfContents(input) {
     return input.substring(0, contentsHeaderIndex) + input.substring(nextHeaderIndex);
 }
 
-function adjustInternalReferences(input, relativePath) {
+function adjustImagesAndLinks(input, relativePath) {
     let result;
 
     remark()
@@ -263,41 +268,49 @@ function getExternalLinkNodeReplacement(node, relativeFilePath) {
     };
 }
 
-function replaceTitleByYamlFrontmatter(input, relativePath) {
+function replaceTitleByYamlFrontmatter(input, treeTitle, relativePath) {
     // because this runs after pre-commit scripts, we know the first line of each note will be the title
-    // we also know that the TOC has been stripped by now
-
     const titleLine = input.split(getEndOfLineRegex(), 1)[0];
     const title = titleLine.substring(2);
-    const contentsAfterTitleLine = input.substring(titleLine.length);
 
     if (title.includes("`")) {
         throw new Error(`Problem with file ${relativePath}: code in note title is not supported`);
     }
 
-    const firstRealHeaderIndex = input.indexOf("## ");
-    const contentsFromFirstRealHeader = input.substring(firstRealHeaderIndex);
-    const firstRealHeaderLine = contentsFromFirstRealHeader.split(getEndOfLineRegex(), 1)[0];
-    const firstRealHeader = firstRealHeaderLine.substring(3);
-    
-    const lines = contentsFromFirstRealHeader.split(getEndOfLineRegex());
-    const linesAfterFirstRealHeader = lines.slice(2);
-    const firstTenTextLines = linesAfterFirstRealHeader.filter(line => !!line).slice(0, 10);
-    const startOfText = firstTenTextLines.map(line => line.trim().replace(/ +/g, " ")).join(" ");
+    const contentsAfterTitleLine = input.substring(titleLine.length);
+    const description = generateDescription(input);    
 
-    let description = firstRealHeader + " | " + startOfText;
-    description = description.substring(0, 250) + " (truncated)";
-
-    const frontMatter = 
-        "---" + 
-        "\n" +
+    let frontMatterContents =
         `title: ${title}` + 
         "\n" +
         `description: >-` + // https://yaml-multiline.info/
         "\n" +
-        `    ${description}` + 
-        "\n" +
-        "---";
+        `    ${description}`;
 
+    if (treeTitle) {
+        frontMatterContents = 
+            frontMatterContents +
+            "\n" +
+            `sidebar_label: ${treeTitle}`;
+    }
+
+    const frontMatter = "---" + "\n" + frontMatterContents + "\n" + "---";
     return frontMatter + contentsAfterTitleLine;
+}
+
+function generateDescription(input) {    
+    // we know that the TOC has been stripped by now
+
+    const firstRealHeaderIndex = input.indexOf("## ");
+    const contentsFromFirstRealHeader = input.substring(firstRealHeaderIndex);
+    const lines = contentsFromFirstRealHeader.split(getEndOfLineRegex());
+    const firstRealHeaderLine = lines[0];
+    const firstRealHeader = firstRealHeaderLine.substring(3);
+    
+    const linesAfterFirstRealHeader = lines.slice(1);
+    const firstTenTextLines = linesAfterFirstRealHeader.filter(line => !!line).slice(0, 10);
+    const startOfText = firstTenTextLines.map(line => line.trim().replace(/ +/g, " ")).join(" ");
+
+    const description = firstRealHeader + " | " + startOfText;
+    return description.substring(0, 250) + " (truncated)";
 }

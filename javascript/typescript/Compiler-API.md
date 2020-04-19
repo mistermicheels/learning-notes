@@ -1,4 +1,8 @@
-# Compiler API
+---
+tree_title: Compiler API
+---
+
+# Compiler API (TypeScript)
 
 ## Contents
 

@@ -1,4 +1,4 @@
-# ACID
+# ACID properties
 
 See:
 

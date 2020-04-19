@@ -1,4 +1,8 @@
-# Inheritance, the cascade and specificity
+---
+tree_title: Inheritance, the cascade and specificity
+---
+
+# Inheritance, the cascade and specificity (CSS)
 
 See:
 

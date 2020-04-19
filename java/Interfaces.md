@@ -1,4 +1,8 @@
-# Interfaces
+---
+tree_title: Interfaces
+---
+
+# Interfaces (Java)
 
 See:
 

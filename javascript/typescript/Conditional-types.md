@@ -1,4 +1,8 @@
-# Conditional types
+---
+tree_title: Conditional types
+---
+
+# Conditional types (TypeScript)
 
 See:
 

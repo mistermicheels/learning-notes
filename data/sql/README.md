@@ -6,7 +6,7 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
--   [ACID](ACID.md)
--   [Normalization](Normalization.md)
+-   [ACID properties](ACID.md)
+-   [Database normalization](Normalization.md)
 -   [Optimistic and pessimistic locking in SQL](Optimistic-pessimistic-locking-SQL.md)
 -   [Transaction isolation levels](Transaction-isolation-levels.md)

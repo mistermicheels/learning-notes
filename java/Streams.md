@@ -1,4 +1,8 @@
-# Streams
+---
+tree_title: Streams
+---
+
+# Streams (Java)
 
 See:
 

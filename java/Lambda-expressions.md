@@ -1,4 +1,8 @@
-# Lambda expressions
+---
+tree_title: Lambda expressions
+---
+
+# Lambda expressions (Java)
 
 See:
 

@@ -1,4 +1,8 @@
-# Locking
+---
+tree_title: Locking
+---
+
+# Locking (Java)
 
 See:
 

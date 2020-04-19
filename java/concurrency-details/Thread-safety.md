@@ -1,4 +1,8 @@
-# Thread safety
+---
+tree_title: Thread safety
+---
+
+# Thread safety (Java)
 
 See:
 

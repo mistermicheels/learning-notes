@@ -1,4 +1,8 @@
-# Responsive design
+---
+tree_title: Responsive design
+---
+
+# Responsive design (CSS)
 
 See:
 

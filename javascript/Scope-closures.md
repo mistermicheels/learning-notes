@@ -1,4 +1,8 @@
-# Scope and closures
+---
+tree_title: Scope and closures
+---
+
+# Scope and closures (JavaScript)
 
 See:
 

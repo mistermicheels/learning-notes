@@ -1,4 +1,8 @@
-# Equals
+---
+tree_title: Equals
+---
+
+# Equals (Java)
 
 See:
 

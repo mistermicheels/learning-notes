@@ -1,4 +1,8 @@
-# Exceptions
+---
+tree_title: Exceptions
+---
+
+# Exceptions (Java)
 
 See:
 

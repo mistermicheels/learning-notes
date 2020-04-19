@@ -1,4 +1,8 @@
-# Overloading, overriding and method hiding
+---
+tree_title: Overloading, overriding and method hiding
+---
+
+# Overloading, overriding and method hiding (Java)
 
 See:
 
