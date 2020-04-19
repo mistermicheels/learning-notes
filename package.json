@@ -12,7 +12,8 @@
         "write-website-data": "npm run pre-commit && node ./_scripts/write-website-data.js",
         "build-website": "npm run write-website-data && cd _website && npm run build && cd .. && npm run generate-sitemap",
         "generate-sitemap": "node ./_scripts/generate-sitemap.js",
-        "serve-built-website": "node ./_scripts/serve-built-website.js"
+        "serve-built-website": "node ./_scripts/serve-built-website.js",
+        "build-and-serve": "npm run build-website && npm run serve-built-website"
     },
     "devDependencies": {
         "express": "^4.17.1",

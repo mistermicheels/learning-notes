@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'mistermicheels/learning-notes',
   tagline: 'A collection of my notes regarding things I have learned over the years',
@@ -51,4 +53,5 @@ License</a>.`,
       },
     ],
   ],
+  plugins: [path.resolve(__dirname, './extended-favicon-plugin')],
 };
