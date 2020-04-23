@@ -49,6 +49,7 @@ Note that different implementations may behave in widely different ways, even if
 
 ### Read committed
 
+-   Typical default transaction isolation level
 -   Prevents dirty reads
 -   Can cause statements to block if they depend on data that another transaction has changed but not committed yet
 -   Identical SELECT statements within the same transaction might still return different data if other transactions have committed in the meantime

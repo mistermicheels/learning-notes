@@ -100,7 +100,7 @@ Example for scenario where users can edit item descriptions:
 
 ## Optimistic locking implementation using SQL
 
-(examples assume isolation level Read Committed)
+(examples assume isolation level Read Committed, which is the default level in several popular relational databases and even the lowest available level for some)
 
 ### WHERE
 
@@ -111,9 +111,10 @@ SET name = 'newNameA',
 WHERE id = 1 AND version = 1
 ```
 
-Application verifies number of updated rows and aborts if necessary.
+-   Version number is used to check for conflicts
+-   Application verifies number of updated rows (returned from DB), if that is 0 we know that a conflict has occurred and we can roll back the transaction
 
-Deadlocks possible if not always locking in same order!
+Note: DB-level locks are still acquired when performing the actual update! This can lead to DB deadlocks if you're not careful.
 
 ```sql
 --Transaction A                 -- Transaction B
@@ -134,6 +135,10 @@ WHERE id = 2 AND version = 1    WHERE id = 1 AND version = 1
 COMMIT TRANSACTION              COMMIT TRANSACTION
 ```
 
+The problem: the second update statement in transaction A depends on transaction B being committed or rolled back, while the second update statement in transaction B depends on transaction A being committed or rolled back!
+
+Solution: make sure to always lock rows in the same order (flexibility of optimistic locking makes this easy)
+
 ### OUTPUT/RETURNING or a separate SELECT query
 
 ```sql
@@ -143,7 +148,7 @@ WHERE id = 1
 RETURNING version
 ```
 
-Application verifies returned version and aborts if necessary.
+Application verifies returned version and rolls back transaction if necessary (we know there was a conflict if version has increased by more than 1 relative to the one we had).
 
 For databases not supporting the OUTPUT or RETURNING clause, a separate SELECT statement can be used. 
 
@@ -151,7 +156,9 @@ Note that, even without the RETURNING statement, the above query locks the row u
 
 ## Pessimistic locking implementation using SQL
 
-Shared lock:
+Pessimistic locking typically performed at row level, but similar locks can also be obtained for an entire table (if you are only interested in some specific rows, use row-level locking so you don’t unnecessarily limit concurrency)
+
+Shared lock on row (held until commit/rollback of the entire transaction):
 
 ```sql
 SELECT description
@@ -160,7 +167,7 @@ WHERE id = 1
 FOR SHARE
 ```
 
-Exclusive lock:
+Exclusive lock on row (held until commit/rollback of the entire transaction):
 
 ```sql
 SELECT description
@@ -173,7 +180,7 @@ FOR UPDATE
 
 A single object does not always correspond to a single row in the DB!
 
-Example: order containing order lines and order row contains some data based on data in order lines. What if users concurrently add order lines?
+Example: order containing order lines, 1 table for orders and 1 for order lines, the row for an order contains some data based on data in order lines. What if users concurrently add order lines?
 
 Some approaches:
 
@@ -192,7 +199,7 @@ Structure data and application in such a way that all updates are made using ato
 -   Tricky if relationships are involved
 -   Does not solve the problem of data being lost if multiple users concurrently edit the description for the same item!
 
-Could also be useful when validity of update depends on status of related object (linking items to a group, but only if the group has status “Active”), but only if checks for that are at the DB level. For example, items could be linked to a separate table holding IDs for active groups.
+Could also be useful when validity of update depends on status of related object , but only if checks for that are at the DB level. For example, let's say we can link items to a group, but only if the group has status “Active”. We can enforce this at the DB level if we link items to a separate table holding IDs for active groups. This way, if we have a transaction adding an item to a group and a concurrent transaction making that group inactive (thus removing it from the active groups table), the DB will not allow both transactions to succeed.
 
 ### Higher transaction isolation levels
 
