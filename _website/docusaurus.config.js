@@ -38,6 +38,10 @@ License</a>.`,
       theme: require('prism-react-renderer/themes/github'), // syntax highlighting
     },
     disableDarkMode: true,
+    gtag: {
+      trackingID: 'UA-130247825-2',
+      anonymizeIP: true,
+    },
   },
   presets: [
     [
