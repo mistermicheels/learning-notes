@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "description": "Contains script invocations and their dependencies",
     "scripts": {
-        "postinstall": "cd _website && npm ci && cd ..",
         "pre-commit": "npm run check-and-write-data",
         "check-and-write-data": "npm run _replace-tabs && npm run _write-notes-trees && npm run _write-tocs-and-format && npm run _validate-internal-links && npm run _custom-checks && npm run _write-website-data",
         "build-website": "npm run check-and-write-data && cd _website && npm run build && cd .. && npm run _generate-sitemap",
         "serve-built-website": "node ./_scripts/serve-built-website.js",
         "build-and-serve": "npm run build-website && npm run serve-built-website",
+        "build-website-ci": "npm ci && cd _website && npm ci && cd .. && npm run build-website",
         "_replace-tabs": "replace-in-file --configFile=_scripts/replace-in-file.config.js",
         "_write-notes-trees": "markdown-notes-tree --ignore CONTRIBUTING.md --linkToSubdirectoryReadme --notesBeforeDirectories",
         "_write-tocs-and-format": "remark --rc-path _scripts/remark-write-tocs-and-format.config.json --ignore-path .remarkignore . --output",
