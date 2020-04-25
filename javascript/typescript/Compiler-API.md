@@ -1,5 +1,6 @@
 ---
 tree_title: Compiler API
+description: An overview of how you can use the TypeScript Compiler API to process TypeScript code programmatically
 ---
 
 # Compiler API (TypeScript)

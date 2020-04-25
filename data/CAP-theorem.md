@@ -1,3 +1,7 @@
+---
+description: The CAP theorem and its implications for distributed data stores
+---
+
 # CAP theorem
 
 See:

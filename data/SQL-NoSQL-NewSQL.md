@@ -1,3 +1,7 @@
+---
+description: A very high-level overview of the data store landscape, covering relational databases (SQL), NoSQL and NewSQL data stores
+---
+
 # SQL, NoSQL, NewSQL
 
 See: 

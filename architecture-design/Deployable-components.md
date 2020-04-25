@@ -1,3 +1,7 @@
+---
+description: Some thoughts on defining deployable components and the dependencies between them 
+---
+
 # Deployable components
 
 See:

@@ -1,5 +1,6 @@
 ---
 tree_title: Flexbox
+description: The main idea of CSS Flexbox
 ---
 
 # Flexbox (CSS)

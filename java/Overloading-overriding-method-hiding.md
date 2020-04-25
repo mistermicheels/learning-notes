@@ -1,5 +1,6 @@
 ---
 tree_title: Overloading, overriding and method hiding
+description: An overview of how overloading, overriding and method hiding works in Java
 ---
 
 # Overloading, overriding and method hiding (Java)

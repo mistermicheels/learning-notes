@@ -1,5 +1,6 @@
 ---
 tree_title: Selectors
+description: An overview of CSS selectors and how to combine them
 ---
 
 # Selectors (CSS)

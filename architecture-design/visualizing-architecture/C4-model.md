@@ -1,3 +1,7 @@
+---
+description: A simple and clear way of visualizing a system's architecture
+---
+
 # C4 model
 
 See:

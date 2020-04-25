@@ -1,3 +1,7 @@
+---
+description: A short introduction to Sass and SCSS
+---
+
 # Sass/SCSS
 
 See:

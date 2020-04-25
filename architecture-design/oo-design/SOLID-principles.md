@@ -1,3 +1,7 @@
+---
+description: An overview of the SOLID principles for object-oriented design
+---
+
 # SOLID principles
 
 See:

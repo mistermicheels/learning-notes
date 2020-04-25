@@ -1,3 +1,7 @@
+---
+description: How to thrive in a world and workplace that are full of imperfections
+---
+
 # Pragmatism and imperfectionism
 
 See:

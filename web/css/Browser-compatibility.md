@@ -1,5 +1,6 @@
 ---
 tree_title: Browser compatibility
+description: Making sure your CSS works in different browsers 
 ---
 
 # Browser compatibility (CSS)

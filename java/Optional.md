@@ -1,5 +1,6 @@
 ---
 tree_title: Optional type
+description: How and when to use the Java Optional type
 ---
 
 # Optional type (Java)

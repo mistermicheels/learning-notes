@@ -1,3 +1,7 @@
+---
+description: These techniques allow breaking large changes into chunks of smaller changes that don't break the system
+---
+
 # Branch By Abstraction and application strangulation
 
 See:

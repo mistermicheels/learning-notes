@@ -1,3 +1,7 @@
+---
+description: How architectural boundaries apply to the use of databases
+---
+
 # Boundaries and the database
 
 See:

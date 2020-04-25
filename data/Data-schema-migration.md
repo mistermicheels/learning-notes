@@ -1,3 +1,7 @@
+---
+description: Some techniques for migrating the structure of your data
+---
+
 # Data schema migration
 
 See:

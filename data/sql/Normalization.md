@@ -1,3 +1,7 @@
+---
+description: An overview of database normalization for relational databases
+---
+
 # Database normalization
 
 See: 

@@ -1,3 +1,7 @@
+---
+description: A source-control branching model that focuses on collaborating through a single branch, the 'trunk'
+---
+
 # Trunk Based Development
 
 See:

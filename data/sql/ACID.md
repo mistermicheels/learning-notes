@@ -1,3 +1,7 @@
+---
+description: An overview of the ACID properties offered by relational databases
+---
+
 # ACID properties
 
 See:

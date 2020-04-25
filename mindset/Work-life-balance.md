@@ -1,3 +1,7 @@
+---
+description: How to improve your work-life balance and why it's beneficial to both you and your company
+---
+
 # Work-life balance
 
 See:

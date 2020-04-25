@@ -1,5 +1,6 @@
 ---
 tree_title: Type guards
+description: An overview of how to use TypeScript type guards, including creating your own custom ones
 ---
 
 # Type guards (TypeScript)

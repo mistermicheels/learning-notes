@@ -1,3 +1,7 @@
+---
+description: An overview of the transaction isolation levels offered by relational databases
+---
+
 # Transaction isolation levels
 
 See:

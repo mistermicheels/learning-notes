@@ -1,3 +1,7 @@
+---
+description: An overview of architectural fitness functions as a way to check if your architecture matches your needs
+---
+
 # Architectural fitness functions
 
 See:

@@ -1,3 +1,7 @@
+---
+description: A pattern for testing hard-to-test behavior
+---
+
 # Humble Object pattern
 
 See:

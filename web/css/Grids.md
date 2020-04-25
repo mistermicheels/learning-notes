@@ -1,5 +1,6 @@
 ---
 tree_title: Grids
+description: The main idea of CSS Grids
 ---
 
 # Grids (CSS)

@@ -1,5 +1,6 @@
 ---
 tree_title: Equals
+description: How and why to write custom equals methods in Java
 ---
 
 # Equals (Java)

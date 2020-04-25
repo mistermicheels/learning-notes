@@ -1,5 +1,6 @@
 ---
 tree_title: Threads
+description: Some details regarding Java threads
 ---
 
 # Threads (Java)

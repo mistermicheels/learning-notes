@@ -1,3 +1,7 @@
+---
+description: How and why to use locking with relational databases
+---
+
 # Optimistic and pessimistic locking in SQL
 
 See:

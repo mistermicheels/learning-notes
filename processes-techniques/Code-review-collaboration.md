@@ -1,3 +1,7 @@
+---
+description: Some ways to improve the quality of your team's code through code review and collaboration
+---
+
 # Code review and collaboration workflows
 
 See:

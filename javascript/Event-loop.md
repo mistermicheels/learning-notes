@@ -1,5 +1,6 @@
 ---
 tree_title: Event loop
+description: A high-level overview of how JavaScript handles concurrency using its Event Loop
 ---
 
 # Event loop (JavaScript)

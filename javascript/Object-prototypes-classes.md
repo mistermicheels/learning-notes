@@ -1,5 +1,6 @@
 ---
 tree_title: Object prototypes and classes
+description: JavaScript objects, the prototype chain, classes, encapsulation, ...
 ---
 
 # Object prototypes and classes (JavaScript)

@@ -1,5 +1,6 @@
 ---
 tree_title: Generics
+description: An overview of generics in Java
 ---
 
 # Generics (Java)

@@ -1,3 +1,7 @@
+---
+description: An overview of ways to add runtime type checking to TypeScript applications
+---
+
 # Runtime type checking in TypeScript
 
 ## Contents

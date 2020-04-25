@@ -1,3 +1,7 @@
+---
+description: Why duplication is not always bad and how architectural boundaries can create false duplication
+---
+
 # Boundaries and duplication
 
 See:

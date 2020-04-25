@@ -1,5 +1,6 @@
 ---
 tree_title: Lambda expressions
+description: The idea behind lambda expressions, how to use them, lambda expression scope, ...
 ---
 
 # Lambda expressions (Java)

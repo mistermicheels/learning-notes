@@ -1,5 +1,6 @@
 ---
 tree_title: Streams
+description: An overview of Java Streams and when/how to use them
 ---
 
 # Streams (Java)

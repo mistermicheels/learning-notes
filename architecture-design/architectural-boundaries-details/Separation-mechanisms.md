@@ -1,3 +1,7 @@
+---
+description: An overview of separation mechanisms to create boundaries in your system
+---
+
 # Separation mechanisms
 
 See:

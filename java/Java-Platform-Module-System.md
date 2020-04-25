@@ -1,3 +1,7 @@
+---
+description: An overview of the Java Platform Module System
+---
+
 # Java Platform Module System
 
 See:

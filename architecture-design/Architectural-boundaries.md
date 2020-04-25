@@ -1,3 +1,7 @@
+---
+description: The importance of boundaries in architecture, different kinds of boundaries, costs and evolution of boundaries, ...
+---
+
 # Architectural boundaries
 
 See:

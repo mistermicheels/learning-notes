@@ -1,5 +1,6 @@
 ---
 tree_title: Scope and closures
+description: Execution contexts, lexical scope, the scope chain, function scope vs. block scope, closures, ...
 ---
 
 # Scope and closures (JavaScript)

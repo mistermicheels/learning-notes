@@ -1,3 +1,7 @@
+---
+description: Some general best practices regarding exception handling
+---
+
 # Exception handling
 
 See:

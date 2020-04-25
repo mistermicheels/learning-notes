@@ -1,3 +1,7 @@
+---
+description: Why it's important to create boundaries around your dependencies
+---
+
 # Boundaries and third-party dependencies
 
 See:

@@ -1,3 +1,7 @@
+---
+description: Everything is a trade-off
+---
+
 # It depends
 
 See:

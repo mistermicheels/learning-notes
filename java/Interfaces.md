@@ -1,5 +1,6 @@
 ---
 tree_title: Interfaces
+description: An overview of interfaces in Java
 ---
 
 # Interfaces (Java)

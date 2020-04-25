@@ -1,5 +1,6 @@
 ---
 tree_title: Units
+description: An overview of the most important CSS units and some advice on when to use which
 ---
 
 # Units (CSS)

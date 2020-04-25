@@ -1,5 +1,6 @@
 ---
 tree_title: Positioning
+description: Positioning elements using CSS
 ---
 
 # Positioning (CSS)

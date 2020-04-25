@@ -1,3 +1,7 @@
+---
+description: A way to divide your system's code into different layers with different purposes
+---
+
 # Layered architecture
 
 See:

@@ -1,3 +1,7 @@
+---
+description: The benefits and drawbacks of horizontal and vertical boundaries
+---
+
 # Horizontal versus vertical separation
 
 See:

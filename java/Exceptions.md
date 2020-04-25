@@ -1,5 +1,6 @@
 ---
 tree_title: Exceptions
+description: The different kinds of exceptions in Java and some best practices for using them
 ---
 
 # Exceptions (Java)

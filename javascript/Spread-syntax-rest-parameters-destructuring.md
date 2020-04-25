@@ -1,5 +1,6 @@
 ---
 tree_title: Spread syntax, rest parameters and destructuring
+description: An overview of JavaScript spread syntax, rest parameters and destructuring
 ---
 
 # Spread syntax, rest parameters and destructuring (JavaScript)

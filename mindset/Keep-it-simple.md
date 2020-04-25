@@ -1,3 +1,7 @@
+---
+description: Some tips for reducing effort and improving results by avoiding needless complexity
+---
+
 # Keep it simple
 
 See:

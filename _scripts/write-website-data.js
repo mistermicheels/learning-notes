@@ -155,14 +155,34 @@ function removeMarkdownExtension(url) {
 }
 
 function transformNoteContents(contents, relativePath) {
-    const parsedFrontMatter = frontMatter(contents);
-    const treeTitle = parsedFrontMatter.attributes.tree_title;
-    contents = parsedFrontMatter.body.trimLeft();
+    const { treeTitle, description, bodyAfterFrontMatter } = parseFrontMatter(contents, relativePath);
 
-    contents = stripTableOfContents(contents);
-    contents = adjustImagesAndLinks(contents, relativePath);
-    contents = replaceTitleByYamlFrontmatter(contents, treeTitle, relativePath);
-    return contents;
+    let newContents = bodyAfterFrontMatter;
+    newContents = stripTableOfContents(newContents);
+    newContents = adjustImagesAndLinks(newContents, relativePath);
+    newContents = replaceTitleByYamlFrontmatterAndDescription(newContents, { description, treeTitle }, relativePath);
+    return newContents;
+}
+
+function parseFrontMatter(contents, relativePath) {
+    const parsedFrontMatter = frontMatter(contents);
+    const frontMatterAttributes = parsedFrontMatter.attributes;
+
+    if (!frontMatterAttributes.description) {
+        throw new Error(`Problem with ${relativePath}: front matter doesn't contain description.`);
+    }
+
+    const attributesKeys = Object.keys(frontMatterAttributes);
+
+    if (attributesKeys.some(key => key !== 'tree_title' && key !== 'description')) {
+        throw new Error(`Problem with ${relativePath}: unexpected attribute in front matter.`)
+    }
+    
+    return {
+        treeTitle: frontMatterAttributes.tree_title || undefined,
+        description: frontMatterAttributes.description,
+        bodyAfterFrontMatter: parsedFrontMatter.body.trimLeft()
+    }
 }
 
 function stripTableOfContents(input) {
@@ -268,8 +288,8 @@ function getExternalLinkNodeReplacement(node, relativeFilePath) {
     };
 }
 
-function replaceTitleByYamlFrontmatter(input, treeTitle, relativePath) {
-    // because this runs after pre-commit scripts, we know the first line of each note will be the title
+function replaceTitleByYamlFrontmatterAndDescription(input, { description, treeTitle = undefined }, relativePath) {
+    // because this runs after pre-commit scripts and front matter is already stripped, we know the first line will be the title
     const titleLine = input.split(getEndOfLineRegex(), 1)[0];
     const title = titleLine.substring(2);
 
@@ -278,14 +298,11 @@ function replaceTitleByYamlFrontmatter(input, treeTitle, relativePath) {
     }
 
     const contentsAfterTitleLine = input.substring(titleLine.length);
-    const description = generateDescription(input);    
 
     let frontMatterContents =
         `title: ${title}` + 
         "\n" +
-        `description: >-` + // https://yaml-multiline.info/
-        "\n" +
-        `    ${description}`;
+        `description: ${description}`;
 
     if (treeTitle) {
         frontMatterContents = 
@@ -295,22 +312,5 @@ function replaceTitleByYamlFrontmatter(input, treeTitle, relativePath) {
     }
 
     const frontMatter = "---" + "\n" + frontMatterContents + "\n" + "---";
-    return frontMatter + contentsAfterTitleLine;
-}
-
-function generateDescription(input) {    
-    // we know that the TOC has been stripped by now
-
-    const firstRealHeaderIndex = input.indexOf("## ");
-    const contentsFromFirstRealHeader = input.substring(firstRealHeaderIndex);
-    const lines = contentsFromFirstRealHeader.split(getEndOfLineRegex());
-    const firstRealHeaderLine = lines[0];
-    const firstRealHeader = firstRealHeaderLine.substring(3);
-    
-    const linesAfterFirstRealHeader = lines.slice(1);
-    const firstTenTextLines = linesAfterFirstRealHeader.filter(line => !!line).slice(0, 10);
-    const startOfText = firstTenTextLines.map(line => line.trim().replace(/ +/g, " ")).join(" ");
-
-    const description = firstRealHeader + " | " + startOfText;
-    return description.substring(0, 250) + " (truncated)";
+    return frontMatter + "\n\n" + description + contentsAfterTitleLine;
 }

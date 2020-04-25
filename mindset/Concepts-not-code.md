@@ -1,3 +1,7 @@
+---
+description: Why concepts are more powerful and important than code
+---
+
 # Concepts, not code
 
 See:

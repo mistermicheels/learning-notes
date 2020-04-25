@@ -1,3 +1,7 @@
+---
+description: A way to build flexibility into your codebase, allowing some features or alternate code paths to be toggled on or off at will
+---
+
 # Feature flags
 
 See:

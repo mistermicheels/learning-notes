@@ -1,3 +1,7 @@
+---
+description: Sometimes, the best thing you can do for your code is to stop thinking about it - at least consciously
+---
+
 # Hammock-driven development
 
 See:

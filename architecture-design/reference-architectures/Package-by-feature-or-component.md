@@ -1,3 +1,7 @@
+---
+description: A way to divide your system based on functional areas
+---
+
 # Package by feature or component
 
 See:

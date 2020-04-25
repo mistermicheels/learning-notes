@@ -1,3 +1,7 @@
+---
+description: How architectural boundaries apply to the web
+---
+
 # Boundaries and the web
 
 See:

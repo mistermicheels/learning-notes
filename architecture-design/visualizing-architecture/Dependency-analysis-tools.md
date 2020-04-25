@@ -1,3 +1,7 @@
+---
+description: An overview of using tools to analyze your codebase
+---
+
 # Dependency analysis tools
 
 ## Contents

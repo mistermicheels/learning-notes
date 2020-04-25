@@ -1,5 +1,6 @@
 ---
 tree_title: The this keyword
+description: An overview of how the this keyword works in JavaScript
 ---
 
 # The this keyword (JavaScript)
