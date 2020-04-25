@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  title: 'mistermicheels/learning-notes',
+  title: 'learning-notes (mistermicheels)',
   tagline: 'A collection of my notes regarding things I have learned over the years',
   url: 'https://learning-notes.mistermicheels.com',
   baseUrl: '/',
@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'learning-notes',
   themeConfig: {
     navbar: {
-      title: 'mistermicheels/learning-notes',
+      title: 'learning-notes (mistermicheels)',
       logo: {
         alt: 'mistermicheels logo',
         src: 'img/mistermicheels.svg',
@@ -19,6 +19,11 @@ module.exports = {
         {
           href: 'https://github.com/mistermicheels/learning-notes',
           label: 'GitHub',
+          position: 'left',
+        },
+        {
+          href: 'https://twitter.com/mistermicheels',
+          label: 'Twitter',
           position: 'left',
         },
         {
