@@ -1,6 +1,8 @@
 {
-    "plugins": [
-        "remark-frontmatter",
-        "remark-validate-links"
-    ]
+    "plugins": {
+        "remark-frontmatter": {},
+        "remark-validate-links": {
+            "repository": false
+        }
+    }
 }
