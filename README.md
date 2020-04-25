@@ -1,6 +1,7 @@
 # Learning notes
 
-This is a collection of my notes regarding things I have learned over the years.  You can read these notes at [learning-notes.mistermicheels.com](https://learning-notes.mistermicheels.com/).
+This is a collection of my notes regarding things I have learned over the years.  
+You can read these notes at [learning-notes.mistermicheels.com](https://learning-notes.mistermicheels.com/).
 
 If you prefer to read them on GitHub, the overview below might be useful.
 
