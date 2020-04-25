@@ -33,7 +33,6 @@ module.exports = {
       copyright: `This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="nofollow">Creative Commons Attribution 4.0 International
 License</a>.`,
     },
-    image: 'img/mistermicheels.png', // for meta tags
     prism: {
       theme: require('prism-react-renderer/themes/github'), // syntax highlighting
     },
