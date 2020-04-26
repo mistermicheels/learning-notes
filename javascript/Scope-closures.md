@@ -19,6 +19,7 @@ See:
     -   [Scope chain](#scope-chain)
 -   [Function scope versus block scope](#function-scope-versus-block-scope)
 -   [Closures](#closures)
+    -   [Closures and loops](#closures-and-loops)
 
 ## Execution contexts, lexical scope and the scope chain
 
@@ -232,23 +233,13 @@ for (let i = 0; i < 10; i++) {
 console.log(i); // ReferenceError: i is not defined
 ```
 
-Using `let` for a loop counter doesn't only prevent it from being accessible outside of the loop, it also makes sure that every iteration of the loop gets its own separate value for the counter. This is particularly useful if the loop contains some asynchronously executed code that depends on the value of the variable.
-
-```javascript
-// logs 10, 10, 10, 10, 10, 10, 10, 10, 10, 10
-for (var i = 0; i < 10; i++) {
-    setTimeout(() => console.log(i), 0);
-}
-
-// logs 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-for (let i = 0; i < 10; i++) {
-    setTimeout(() => console.log(i), 0);
-}
-```
+Using `let` for a loop counter doesn't only prevent it from being accessible outside of the loop, it also makes sure that every iteration of the loop gets its own block-scoped counter variable. This is particularly useful if the loop creates a function that depends on the value of the counter (see below).
 
 ## Closures
 
-A **closure** is a function combined with references to its outer scope. What makes closures really interesting in JavaScript is that an inner function can access variables defined in its outer function, _even if that outer function has already returned_
+A **closure** is a function combined with references to its outer scope. Whenever a function is _created_, JavaScript creates a closure for that function. We already saw closures at work in the examples above, as they are part of what makes the scope chain work.
+
+What makes closures really interesting in JavaScript is that an inner function can access variables defined in its outer function, _even if that outer function has already returned_
 
 Use case: function factories
 
@@ -291,4 +282,54 @@ counter.increase();
 counter.increase();
 counter.decrease();
 console.log(counter.getCurrent()); // 1
+```
+
+### Closures and loops
+
+When creating functions as part of a loop, you need to be especially careful about closures:
+
+```javascript
+// logs 10, 10, 10, 10, 10, 10, 10, 10, 10, 10
+for (var i = 0; i < 10; i++) {
+    setTimeout(() => console.log(i), 0);
+}
+```
+
+What happens here is that the function's closure allows it to access `i` , but by the time the function is executed the value of `i` is `10`.
+
+The same can happen with purely synchronous code:
+
+```javascript
+var functions = [];
+
+for (var i = 0; i < 10; i++) {
+    functions[i] = () => i;
+}
+
+console.log(functions[0]()); // 10
+console.log(functions[1]()); // 10
+```
+
+If you use ESLint, it can protect you from these kinds of confusing behavior using the [no-loop-func](https://eslint.org/docs/rules/no-loop-func) rule
+
+Modern solution: use `let`, which makes sure that every iteration of the loop gets its own block-scoped counter variable
+
+```javascript
+// logs 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+for (let i = 0; i < 10; i++) {
+    setTimeout(() => console.log(i), 0);
+}
+```
+
+Alternative solution: create an intermediate function that gets the counter as an argument rather than accessing it through the scope chain
+
+```javascript
+// logs 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+for (var i = 0; i < 10; i++) {
+    setTimeout(getLogger(i), 0);
+}
+
+function getLogger(i) {
+    return () => console.log(i);
+}
 ```
