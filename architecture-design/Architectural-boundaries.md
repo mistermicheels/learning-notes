@@ -38,18 +38,22 @@ Not only technical components but also components within the codebase itself!
 
 Boundaries separate parts of the system that shouldn’t know too much about each other
 
-Benefits of this separation: flexibility!
+Benefits of this separation: **flexibility**!
 
--   Lower coupling: Decouple components so changes in one component don't require changes in other components
--   Higher cohesion: Group together things that change at the same rate and for the same reasons (cohesion)
+-   **Lower coupling**: Decouple components so changes in one component don't require changes in other components
+-   **Higher cohesion**: Group together things that change at the same rate and for the same reasons (cohesion)
     -   Manifestation of the Single Responsibility Principle (from the [SOLID principles](./oo-design/SOLID-principles.md)), but this time at the architectural level
--   Ability to delay choices until last possible moment
--   Example: Separating main business logic from persistence logic
-    -   If the business logic doesn’t have any idea about the database we use (or potentially even the fact that we use a database), we have the flexibility to change the database that our system depends on without having to make any kind of changes to the main business logic
-    -   If we need to make changes to the main business logic that do not influence the kind of data that needs to be persisted, we can make those changes without the persistence code having to know anything about them
-    -   You could potentially build all of the business logic without connecting to a database, simply writing code against some persistence interfaces describing what kind of data you will need to store and retrieve, and thus delay the decision of which kind of database to use until you have a better idea of what you need from your persistence solution
--   Example: Separating different functional areas from each other
-    -   Scaling! Can allow different functional parts of the system to be developed by different teams while keeping the required amount of coordination between teams manageable
+-   Ability to **delay choices** until last possible moment
+
+Example: Separating main business logic from persistence logic
+
+-   If the business logic doesn’t have any idea about the database we use (or potentially even the fact that we use a database), we have the flexibility to change the database that our system depends on without having to make any kind of changes to the main business logic
+-   If we need to make changes to the main business logic that do not influence the kind of data that needs to be persisted, we can make those changes without the persistence code having to know anything about them
+-   You could potentially build all of the business logic without connecting to a database, simply writing code against some persistence interfaces describing what kind of data you will need to store and retrieve, and thus delay the decision of which kind of database to use until you have a better idea of what you need from your persistence solution
+
+Example: Separating different functional areas from each other
+
+-   Low coupling and high cohesion helps to scale the team! Can allow different functional parts of the system to be developed by different teams while keeping the required amount of coordination between teams manageable
 
 Flexibility provided by boundaries is important, especially for maintenance (typically the most risky and expensive part). Often, the first version of a system making it to production is only the start, and most of the work will happen after that. Additional requirements will be added, existing functionality will need to be changed, and so on. Adequate boundaries will provide the necessary flexibility to make this kind of maintenance possible, allowing the system to grow without exponentially increasing the work needed to add or adjust a piece of functionality.
 

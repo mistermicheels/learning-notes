@@ -26,19 +26,24 @@ See:
 -   Layers encapsulate as much of their behavior as possible in order to isolate layers from changes inside other layers
 -   Request passes through layers from top to bottom and then back up
     -   Each layer can depend one or a few layers below it but should not know anything about any layer above it
--   Typical layers (bottom-up):
-    -   Database layer: the actual database
-    -   Persistence layer: takes care of talking to the database
-        -   Provides interfaces for retrieving and saving data (`getUser(id: string)`, `saveUser(user: User)`) 
-        -   Could return simple data transfer objects or instances of business entity classes that actually encapsulate business logic
-            -   Try to return something that makes sense from the point of view of the domain, rather than just the structure of database rows (this way, all stuff specific to the kind of database we use is encapsulated in this layer and also easy to change)
-    -   Business layer: contains business logic to work with entities
-        -   If persistence layer returns data transfer objects without actual behavior, all business logic will sit here
-        -   If persistance layer returns instances of classes encapsulating business logic, the business layer will call methods on those instances as needed and coordinate across multiple instances of potentially multiple classes as needed
-    -   Presentation layer: contains code related to interaction with the user
-        -   APIs are exposed here
-        -   Server-side rendering would also sit here
-    -   Note: a layered architecture could have more layers than these if it makes sense
+
+Typical layers (bottom-up):
+
+-   Database layer: the actual database
+-   Persistence layer: takes care of talking to the database
+    -   Provides interfaces for retrieving and saving data (`getUser(id: string)`, `saveUser(user: User)`) 
+    -   Could return simple data transfer objects or instances of business entity classes that actually encapsulate business logic
+        -   Try to return something that makes sense from the point of view of the domain, rather than just the structure of database rows (this way, all stuff specific to the kind of database we use is encapsulated in this layer and also easy to change)
+-   Business layer: contains business logic to work with entities
+    -   If persistence layer returns data transfer objects without actual behavior, all business logic will sit here
+    -   If persistence layer returns instances of classes encapsulating business logic, the business layer will call methods on those instances as needed and coordinate across multiple instances of potentially multiple classes as needed
+-   Presentation layer: contains code related to interaction with the user
+    -   APIs are exposed here
+    -   Server-side rendering would also sit here
+-   Note: a layered architecture could have more layers than these if it makes sense
+
+Benefits/drawbacks:
+
 -   Easy to get started with this kind of architecture
 -   Easy to make technical changes (e.g., swapping out the database) as changes will be confined to a single layer (and if that layer's interface changes, it will likely only affect the layer above it)
 -   Functional changes are likely to require changes to several layers
@@ -62,9 +67,9 @@ Sometimes, it makes sense to mark a layer as **open**:
 
 -   Requests may or may not bypass the layer
 -   Layered architecture with open layers is sometimes also called a _relaxed_ layered architecture
--   Example: services layer with logging, auditing functionality
-    -   We want this to be called by business layer, not by presentation layer -> put it below business layer
-    -   However, it does not make sense that business layer would pass through services layer to get entities -> business layer should be allowed to bypass services layer
+-   Example: creating a services layer with logging, auditing functionality
+    -   We want this to be called by business layer, not by presentation layer -> put the services layer between business layer and persistence layer
+    -   However, it does not make sense that business layer would need to pass through services layer to get entities -> business layer should be allowed to bypass services layer
 
 ![Layered architecture](_img/Layered-architecture/open-closed-layers.png)
 
