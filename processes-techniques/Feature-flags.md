@@ -178,17 +178,20 @@ Benefits:
 
 ## Where to put toggle points
 
--   Option A: at edges of system
-    -   Point where API requests enter the system is typically the point where we have the most knowledge about the actual user making the call, which is vital for dynamic flags
-    -   Keeping toggling logic out of the core can help with maintainability
-    -   Toggle points could be put at the level of the user interface, for example deciding whether or not to show a button triggering certain functionality
-        -   In this case, an unfinished feature could already be exposed as an API in the back end, but users will never call that API as long as the button for triggering the feature is not shown.
--   Option B: in the core of the system, close to the functionality they toggle
-    -   Could be the case for technical flags toggling how something is implemented internally
-    -   This means that the core of your system needs to know about the feature flags or at least the fact that different modes of operation are possible
-        -   Could make maintenance and testing of the core a bit more challenging
-    -   The core doesn’t always have the necessary context (for example, full info about the current user) to make the decision
-        -   Possible to make the actual on/off decision at the edge of the system and then pass it down to the core
+Option A: at edges of system
+
+-   Point where API requests enter the system is typically the point where we have the most knowledge about the actual user making the call, which is vital for dynamic flags
+-   Keeping toggling logic out of the core can help with maintainability
+-   Toggle points could be put at the level of the user interface, for example deciding whether or not to show a button triggering certain functionality
+    -   In this case, an unfinished feature could already be exposed as an API in the back end, but users will never call that API as long as the button for triggering the feature is not shown.
+
+Option B: in the core of the system, close to the functionality they toggle
+
+-   Could be the case for technical flags toggling how something is implemented internally
+-   This means that the core of your system needs to know about the feature flags or at least the fact that different modes of operation are possible
+    -   Could make maintenance and testing of the core a bit more challenging
+-   The core doesn’t always have the necessary context (for example, full info about the current user) to make the decision
+    -   Possible to make the actual on/off decision at the edge of the system and then pass it down to the core
 
 ## Feature flag configuration
 

@@ -76,16 +76,20 @@ See [Normalization](./sql/Normalization.md)
     -   In order to achieve this, they generally need to make compromises in terms of features and the guarantees offered by the data store
     -   Depending on the application, it's possible that developers need to foresee some things on the application side that would just be handled by the database if they were using a relational database
     -   Developers used to working with a non-distributed relational database should be especially careful when working with distributed NoSQL databases as those may introduce the possibility for inconsistencies in areas where the developers take consistency for granted
--   Typical selling point: specialized solution for particular use cases
-    -   Example: graph databases: see below
--   Typical selling point: horizontal scalability
-    -   Vertical scaling: make your machines more powerful by adding CPU power, memory, faster disks, etc.
-        -   Becomes expensive or practically impossible once you reach a certain point
-    -   Horizontal scaling: add more machines and distribute the load between them
-        -   Becomes cheaper than vertical scaling one certain scale is reached
-        -   Allows you to keep on scaling up further by adding additional machines
-    -   NoSQL databases tend to be built for horizontal scaling, while relational databases are typically not very good at it
-    -   See also [CAP theorem](./CAP-theorem.md)
+
+Typical selling point: specialized solution for particular use cases
+
+-   Example: graph databases: see below
+
+Typical selling point: horizontal scalability
+
+-   Vertical scaling: make your machines more powerful by adding CPU power, memory, faster disks, etc.
+    -   Becomes expensive or practically impossible once you reach a certain point
+-   Horizontal scaling: add more machines and distribute the load between them
+    -   Becomes cheaper than vertical scaling one certain scale is reached
+    -   Allows you to keep on scaling up further by adding additional machines
+-   NoSQL databases tend to be built for horizontal scaling, while relational databases are typically not very good at it
+-   See also [CAP theorem](./CAP-theorem.md)
 
 ### Transactions
 

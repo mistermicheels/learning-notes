@@ -47,6 +47,9 @@ See:
 -   Monitoring and logging typically first-class architectural concepts
     -   Several services, each of which might be scaled across several instances -> large number of processes to watch
     -   This means having a good monitoring and logging setup is essential in keeping the system running smoothly
+
+Benefits/drawbacks:
+
 -   Can help with scaling the development organization into several teams that can (to a large extent) work independently of each other
     -   Apart from decisions impacting the communication between services, different teams can work independently. This helps to scale the development organization, as communication is way more efficient within a small, focused team than within a large team with large scope.
     -   Services can be developed and deployed independently

@@ -49,31 +49,38 @@ See:
 
 ## The different layers
 
--   Enterprise Business Rules: Entities
-    -   Represent core business concepts
-    -   Encapsulate critical business data and critical business rules
-        -   Critical business rules: application-independent business rules that would still be valid for a different application or even if there was no application at all
-        -   Example critical business rule: calculating the interest rate for a loan
-    -   Independent of everything else
-    -   Do not confuse with "Entity" concept from several ORMs! Entities should be completely independent from database and database frameworks in Clean Architecture
--   Application Business Rules: Use Cases
-    -   Represent the use cases of the system
-    -   Coordinate the entities
-    -   Encapsulate application-specific business logic (what our system needs to do with the entities)
-    -   Should only depend on entities
-        -   Still independent of UI and database
-        -   Should be able to test use cases without any frameworks
--   Interface Adapters: Controllers, Presenters, Gateways, ...
-    -   Main idea: converting between format most convenient for use cases and entities and format most convenient for some external part, like the web or the database
-        -   Outward: controller for a web API could for example combine data from different entities or include only part of an entity's data to return from the API
-        -   Inward: controller takes input and puts into format so uniform that nobody can know if it came from the web, from a CLI, from a SOAP request, ...
-    -   Controllers and Presenters: triggering use cases and presenting the result
-    -   Gateways: example is database gateway for interacting with the database
-        -   All database-specific logic sits in this layer, there should be no SQL etc. outside of this layer
-    -   MVC logic of a user interface would fully sit in this layer
--   Frameworks and Drivers: DB, UI, devices, ...
-    -   Frameworks and tools such as the database itself, a web framework, ....
-    -   Typically doesn't contain much more than glue code
+Enterprise Business Rules: Entities
+
+-   Represent core business concepts
+-   Encapsulate critical business data and critical business rules
+    -   Critical business rules: application-independent business rules that would still be valid for a different application or even if there was no application at all
+    -   Example critical business rule: calculating the interest rate for a loan
+-   Independent of everything else
+-   Do not confuse with "Entity" concept from several ORMs! Entities should be completely independent from database and database frameworks in Clean Architecture
+
+Application Business Rules: Use Cases
+
+-   Represent the use cases of the system
+-   Coordinate the entities
+-   Encapsulate application-specific business logic (what our system needs to do with the entities)
+-   Should only depend on entities
+    -   Still independent of UI and database
+    -   Should be able to test use cases without any frameworks
+
+Interface Adapters: Controllers, Presenters, Gateways, ...
+
+-   Main idea: converting between format most convenient for use cases and entities and format most convenient for some external part, like the web or the database
+    -   Outward: controller for a web API could for example combine data from different entities or include only part of an entity's data to return from the API
+    -   Inward: controller takes input and puts into format so uniform that nobody can know if it came from the web, from a CLI, from a SOAP request, ...
+-   Controllers and Presenters: triggering use cases and presenting the result
+-   Gateways: example is database gateway for interacting with the database
+    -   All database-specific logic sits in this layer, there should be no SQL etc. outside of this layer
+-   MVC logic of a user interface would fully sit in this layer
+
+Frameworks and Drivers: DB, UI, devices, ...
+
+-   Frameworks and tools such as the database itself, a web framework, ....
+-   Typically doesn't contain much more than glue code
 
 Note: in practice, you could have more layers. However, the dependency rule still applies: code dependencies should always point from inner layers to outer layers.
 

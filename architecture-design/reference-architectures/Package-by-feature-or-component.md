@@ -41,13 +41,18 @@ See:
         -   Alternatively, integrate dependency checking rules into automated tests or linting
 -   Top-level structure shows functional areas of the application rather than technical layers
 -   Within feature/component, likely to have some kind of layered structure, may or may not be the same across all features/components
+
+Benefits/drawbacks:
+
 -   Good way to divide codebase into different functional areas that different teams could potentially take ownership of
     -   "Modular monolith"
     -   Can be a good stepping stone towards microservices
 -   Finding a sensible way to divide the system into clearly separated features/components could be challenging or feel artificial for some applications
--   Note: probably still some cross-cutting concerns that apply to several features/components
-    -   Can just put these next to the features/components structure
-    -   Not all code has to be divided into features/components
+
+Note: probably still some cross-cutting concerns that apply to several features/components
+
+-   Can just put these next to the features/components structure
+-   Not all code has to be divided into features/components
 
 ## Testing
 

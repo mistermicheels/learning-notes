@@ -31,9 +31,14 @@ See:
 
 ### Single-threaded
 
-A JavaScript program typically executes inside a _single thread_ (let's ignore some less common cases where code spawns [child processes](https://nodejs.org/api/child_process.html), [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [Worker Threads](https://nodejs.org/api/worker_threads.html) or similar). The fact that the code executes inside a single thread means that, at any point in time, at most one code path is executing. However, this does not prevent JavaScript from making it seem like multiple things are going on at the same time. For example, while a part of the JavaScript code is getting some data from the backend to update the page with, another part of the code might be creating some visual effects whenever the user hovers over a button. JavaScript is able to accomplish this using a combination of asynchronous calls and the _Event Loop_. 
+A JavaScript program typically executes inside a _single thread_ (let's ignore some less common cases where code spawns [child processes](https://nodejs.org/api/child_process.html), [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [Worker Threads](https://nodejs.org/api/worker_threads.html) or similar)
 
-When making asynchronous calls, JavaScript code tells the JavaScript engine something like "ok, I'm done for now, but please perform this task for me and pass the resulting data to this function I'm giving you". The task in question could be something like retrieving data from a URL. When the engine has retrieved the data, it can then execute the program starting from the function it received. But while the engine was waiting for the data, other pieces of JavaScript that are triggered by other events can already be run. 
+-   This means that, at any point in time, at most one code path is executing. 
+-   This does not prevent JavaScript from making it seem like multiple things are going on at the same time!
+    -   Example: while a part of the JavaScript code is getting some data from the backend to update the page with, another part of the code might be creating some visual effects whenever the user hovers over a button
+    -   JavaScript is able to accomplish this using a combination of _asynchronous calls_ and the _Event Loop_
+
+When making _asynchronous calls_, JavaScript code tells the JavaScript engine something like "ok, I'm done for now, but please perform this task for me and pass the resulting data to this function I'm giving you". The task in question could be something like retrieving data from a URL. When the engine has retrieved the data, it can then execute the program starting from the function it received. But while the engine was waiting for the data, other pieces of JavaScript that are triggered by other events can already be run. 
 
 The part of the engine responsible for determining what code to run when is the _Event Loop_, which in essence constantly checks if there is something ready to be executed and also determines what to execute first in case there are multiple candidates. See also [The Event Loop](#the-event-loop).
 
@@ -225,9 +230,17 @@ Imagine that you have a Node.js server that accepts two types of requests:
 
 Let's assume that every second the server receives 100 requests of type A and 1 request of type B. If 50 requests of type A come in just after a request of type B, all of those relatively fast requests needs to wait for 500ms before they can even start to be processed (making it seem to the client like they also took 500ms). One large synchronous request can have an enormous impact on the waiting time of lots of smaller requests.
 
-You can solve this situation using _task partitioning_. The idea is that you minimize the variation in task times by chopping up large tasks into smaller ones. Let's say that, in the above example, we rewrite the code for requests of type B. Instead of performing all of the computations in one big synchronous chunk, we let the code peform a small part of the computations (maybe a few ms worth of computation) and then call `setTimeout` with a delay of 0 and a callback that performs the next chunk of computation (which is put at the end of the relevant queue). This way, all tasks in the event loop take at most a few ms, making the server appear to be a lot faster and more responsive to clients issuing requests of type A.
+You can solve this situation using _task partitioning_.
 
-Note that, depending on how asynchronous operations are handed by the engine, you should also be careful about long-running asynchronous tasks. An example are workers in the Node.js worker pool that are asked to read the complete contents of some potentially huge files. You can apply task partitioning here by manually specifying which part of the file to read or using a streaming API to read the files.
+-   Basic idea: minimize the variation in task times by chopping up large tasks into smaller ones
+-   Application to example above:
+    -   Rewrite the code for requests of type B: Instead of performing all of the computations in one big synchronous chunk, we let the code peform a small part of the computations (maybe a few ms worth of computation) and then call `setTimeout` with a delay of 0 and a callback that performs the next chunk of computation (which is put at the end of the relevant queue). 
+    -   This way, all tasks in the event loop take at most a few ms, making the server appear to be a lot faster and more responsive to clients issuing requests of type A.
+
+Note: depending on how asynchronous operations are handed by the engine, you should also be careful about long-running asynchronous tasks
+
+-   Example: workers in the Node.js worker pool that are asked to read the complete contents of some potentially huge files can end end up blocking the worker pool
+-   You can apply task partitioning here by manually specifying which part of the file to read or using a streaming API to read the files.
 
 Also note that task partitioning shouldn't be taken too far, as there is also some overhead involved in the creation of a whole lot of tasks vs. a single long-running task.
 
