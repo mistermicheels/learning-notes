@@ -33,7 +33,12 @@ function removeOldData() {
 
 function writeData() {
     fsExtra.copySync(websiteStaticDocsPath, websiteDocsPath);
-    const sidebarItemsForNotes = writeDataForDirectoryAndReturnSidebarItems("");
+    writeSidebarsFile();
+    writeDocsAndImagesForDirectory("");
+}
+
+function writeSidebarsFile() {
+    const sidebarItemsForNotes = getSidebarItemsForDirectory("");
 
     const sidebars = { 
         docs: [
@@ -50,29 +55,18 @@ function writeData() {
     fsExtra.outputFileSync(websiteSidebarsFilePath, sidebarsFileContents, { encoding: "utf-8" });
 }
 
-/**
- * writes notes to docs, writes images to static images from notes, returns sidebar fragments.
- * this combines writing data and returning data, not ideal but probably better than traversing everything twice.
- */
-function writeDataForDirectoryAndReturnSidebarItems(relativePath) {
+function getSidebarItemsForDirectory(relativePath) {
     const entries = getSortedFileAndDirectoryEntries(relativePath);
     const sidebarItems = [];
 
     for (const entry of entries) {
-        const name = entry.name;
-        const isDirectory = entry.isDirectory();
-        const relativeEntryPath = path.join(relativePath, name);
+        const relativeEntryPath = path.join(relativePath, entry.name);
 
-        if (isDirectory) {
-            if (isImagesDirectory(name)) {
-                writeDataForImagesDirectory(relativeEntryPath);
-            } else if (isNotesDirectory(name)) {
-                const title = getTitleForDirectory(relativeEntryPath);
-                const directorySidebarItems = writeDataForDirectoryAndReturnSidebarItems(relativeEntryPath);
-                sidebarItems.push({ type: "category", label: title, items: directorySidebarItems });
-            }
-        } else if (isNoteFile(name)) {
-            writeDataForNote(relativeEntryPath);
+        if (entry.isDirectory() && isNotesDirectory(entry.name)) {
+            const title = getTitleForDirectory(relativeEntryPath);
+            const directorySidebarItems = getSidebarItemsForDirectory(relativeEntryPath);
+            sidebarItems.push({ type: "category", label: title, items: directorySidebarItems });
+        } else if (isNoteFile(entry.name)) {
             const docId = normalizeUrl(removeMarkdownExtension(relativeEntryPath));
             sidebarItems.push(docId);
         }
@@ -87,26 +81,6 @@ function getSortedFileAndDirectoryEntries(relativePath) {
     const directories = entries.filter(entry => entry.isDirectory());
     const files = entries.filter(entry => !entry.isDirectory());    
     return [...files, ...directories];
-}
-
-function isImagesDirectory(name) {
-    return name === "_img";
-}
-
-function writeDataForImagesDirectory(relativePath) {
-    const absolutePath = getAbsolutePath(relativePath);    
-    const subdirectoryNames = fsExtra.readdirSync(absolutePath);
-
-    for (const subdirectoryName of subdirectoryNames) {
-        const relativeSourcePath = path.join(relativePath, subdirectoryName);
-        const absoluteSourcePath = getAbsolutePath(relativeSourcePath);
-
-        const relativePathWithoutImg = path.join(relativePath, "..", subdirectoryName);
-        let absoluteTargetPath = path.join(websiteImagesFromNotesPath, relativePathWithoutImg);
-        absoluteTargetPath = absoluteTargetPath.toLowerCase();
-
-        fsExtra.copySync(absoluteSourcePath, absoluteTargetPath);
-    }
 }
 
 function isNotesDirectory(name) {
@@ -138,14 +112,6 @@ function isNoteFile(name) {
     return name.endsWith(".md") && name !== "README.md" && name !== 'CONTRIBUTING.md';
 }
 
-function writeDataForNote(relativePath) {
-    const absoluteEntryPath = getAbsolutePath(relativePath);
-    const contents = fsExtra.readFileSync(absoluteEntryPath, { encoding: "utf-8" });
-    const newContents = transformNoteContents(contents, relativePath);
-    const absoluteTargetPath = path.join(websiteDocsPath, relativePath.toLowerCase());
-    fsExtra.outputFileSync(absoluteTargetPath, newContents, { encoding: "utf-8" });
-}
-
 function normalizeUrl(url) {
     return url.replace(/\\/g, "/").toLowerCase();
 }
@@ -154,8 +120,54 @@ function removeMarkdownExtension(url) {
     return url.replace(".md", "");
 }
 
+function writeDocsAndImagesForDirectory(relativePath) {
+    const entries = getSortedFileAndDirectoryEntries(relativePath);
+
+    for (const entry of entries) {
+        const relativeEntryPath = path.join(relativePath, entry.name);
+
+        if (entry.isDirectory()) {
+            if (isImagesDirectory(entry.name)) {
+                writeDataForImagesDirectory(relativeEntryPath);
+            } else if (isNotesDirectory(entry.name)) {
+                writeDocsAndImagesForDirectory(relativeEntryPath);
+            }
+        } else if (isNoteFile(entry.name)) {
+            writeDataForNote(relativeEntryPath);
+        }
+    }
+}
+
+function isImagesDirectory(name) {
+    return name === "_img";
+}
+
+function writeDataForImagesDirectory(relativePath) {
+    const absolutePath = getAbsolutePath(relativePath);    
+    const subdirectoryNames = fsExtra.readdirSync(absolutePath);
+
+    for (const subdirectoryName of subdirectoryNames) {
+        const relativeSourcePath = path.join(relativePath, subdirectoryName);
+        const absoluteSourcePath = getAbsolutePath(relativeSourcePath);
+
+        const relativePathWithoutImg = path.join(relativePath, "..", subdirectoryName);
+        let absoluteTargetPath = path.join(websiteImagesFromNotesPath, relativePathWithoutImg);
+        absoluteTargetPath = absoluteTargetPath.toLowerCase();
+
+        fsExtra.copySync(absoluteSourcePath, absoluteTargetPath);
+    }
+}
+
+function writeDataForNote(relativePath) {
+    const absoluteEntryPath = getAbsolutePath(relativePath);
+    const contents = fsExtra.readFileSync(absoluteEntryPath, { encoding: "utf-8" });
+    const newContents = transformNoteContents(contents, relativePath);
+    const absoluteTargetPath = path.join(websiteDocsPath, relativePath.toLowerCase());
+    fsExtra.outputFileSync(absoluteTargetPath, newContents, { encoding: "utf-8" });
+}
+
 function transformNoteContents(contents, relativePath) {
-    const { treeTitle, description, bodyAfterFrontMatter } = parseFrontMatter(contents, relativePath);
+    const { bodyAfterFrontMatter, description, treeTitle } = parseFrontMatter(contents, relativePath);
 
     let newContents = bodyAfterFrontMatter;
     newContents = stripTableOfContents(newContents);
@@ -179,9 +191,9 @@ function parseFrontMatter(contents, relativePath) {
     }
     
     return {
-        treeTitle: frontMatterAttributes.tree_title || undefined,
+        bodyAfterFrontMatter: parsedFrontMatter.body.trimLeft(),
         description: frontMatterAttributes.description,
-        bodyAfterFrontMatter: parsedFrontMatter.body.trimLeft()
+        treeTitle: frontMatterAttributes.tree_title || undefined
     }
 }
 
