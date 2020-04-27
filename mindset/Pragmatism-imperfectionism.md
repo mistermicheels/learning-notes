@@ -13,6 +13,7 @@ See:
 -   [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
 -   [Quantity Always Trumps Quality](https://blog.codinghorror.com/quantity-always-trumps-quality/)
 -   [Favourite Diff](https://essays.jwatzman.org/essays/favourite-diff.html)
+-   [The next career step for Senior Software Engineers (that isn’t management)](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/)
 -   [Releasing software to the fleet far too quickly broke stuff](http://rachelbythebay.com/w/2020/04/23/rel/) ([comments on Hacker News](https://news.ycombinator.com/item?id=22962830))
 
 ## Contents
@@ -122,7 +123,8 @@ See:
 -   Note: All of this doesn't mean that there is no value in identifying problems!
     -   Typically, you need to identify a problem before you can solve it
     -   It can be very valuable to identify the main problems that are limiting your success
-    -   Try to be a [Finder](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/), someone who identifies important problems and can also recognize if the team is solving the wrong problem because it's just a symptom of another more fundamental problem
+    -   Try to be a _Finder_, someone who identifies important problems and can also recognize if the team is solving the wrong problem because it's just a symptom of another more fundamental problem
+        -   See [The next career step for Senior Software Engineers (that isn’t management)](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/)
     -   However, once you've found a problem, start moving your focus to actually solving it rather than just getting stressed by its existence
 
 ### Make success easier than failure

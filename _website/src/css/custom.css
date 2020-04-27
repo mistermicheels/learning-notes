@@ -27,3 +27,9 @@
 .menu__link.menu__link--sublist {
   font-weight: bolder;
 }
+
+a + .badge.badge--secondary {
+  color: #3578e5;
+  color: var(--ifm-link-color);
+  font-weight: normal;
+}
