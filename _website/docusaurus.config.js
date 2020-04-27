@@ -46,6 +46,10 @@ License</a>.`,
       trackingID: 'UA-130247825-2',
       anonymizeIP: true,
     },
+    algolia: {
+      apiKey: 'e85182cad56736f15db2007a1edb6ab7',
+      indexName: 'mistermicheels_learning-notes',
+    },
   },
   presets: [
     [
