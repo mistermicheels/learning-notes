@@ -296,7 +296,7 @@ function getExternalLinkNodeReplacement(node, relativeFilePath) {
 
     return {
         type: "html",
-        value: `<a href="${ node.url }" target="_blank" rel="nofollow noopener noreferrer">${linkText}</a> <span class="badge badge--secondary">external</span>`
+        value: `<a href="${ node.url }" target="_blank" rel="nofollow noopener noreferrer">${linkText}</a> <i class="fas fa-external-link-alt"></i>`
     };
 }
 
