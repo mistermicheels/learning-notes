@@ -172,7 +172,7 @@ function transformNoteContents(contents, relativePath) {
     let newContents = bodyAfterFrontMatter;
     newContents = stripTableOfContents(newContents);
     newContents = adjustImagesAndLinks(newContents, relativePath);
-    newContents = replaceTitleByYamlFrontmatterAndDescription(newContents, { description, treeTitle }, relativePath);
+    newContents = replaceTitleByYamlFrontMatterAndDescription(newContents, { description, treeTitle }, relativePath);
     return newContents;
 }
 
@@ -300,7 +300,7 @@ function getExternalLinkNodeReplacement(node, relativeFilePath) {
     };
 }
 
-function replaceTitleByYamlFrontmatterAndDescription(input, { description, treeTitle = undefined }, relativePath) {
+function replaceTitleByYamlFrontMatterAndDescription(input, { description, treeTitle = undefined }, relativePath) {
     // because this runs after pre-commit scripts and front matter is already stripped, we know the first line will be the title
     const titleLine = input.split(getEndOfLineRegex(), 1)[0];
     const title = titleLine.substring(2);
@@ -324,5 +324,5 @@ function replaceTitleByYamlFrontmatterAndDescription(input, { description, treeT
     }
 
     const frontMatter = "---" + "\n" + frontMatterContents + "\n" + "---";
-    return frontMatter + "\n\n" + description + contentsAfterTitleLine;
+    return frontMatter + "\n\n" + `_${description}_` + contentsAfterTitleLine;
 }
