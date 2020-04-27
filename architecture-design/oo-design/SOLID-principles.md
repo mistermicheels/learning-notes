@@ -9,6 +9,7 @@ See:
 -   Clean Architure (book by Robert C. Martin)
 -   [SOLID](https://en.wikipedia.org/wiki/SOLID)
 -   [Functional S.O.L.I.D. Explained In 5 Examples](https://codemanship.wordpress.com/2019/03/15/functional-s-o-l-i-d-explained-in-5-examples/)
+-   [OCP vs YAGNI](https://enterprisecraftsmanship.com/posts/ocp-vs-yagni/)
 
 ## Contents
 
@@ -61,7 +62,12 @@ Application of SRP: separate report generation and presentation
 
 Origin: C++, needed to explicitly design class to allow others to inherit from it and override its methods
 
-Basic idea (still relevant, especially for creating library code): allow changing the code's behavior by adding new code rather than having to change existing code
+Basic idea: allow changing the code's behavior by adding new code rather than having to change existing code
+
+Still relevant, especially for creating library code!
+
+-   If others are going to use your code as a dependency, they will likely want some extension points where they can add or replace behavior without having to touch your code
+-   If the code you are writing will only be used from within your own codebase, changing existing code is much less of a problem and you might want to avoid unneeded complexity and follow the YAGNI (You Aren’t Gonna Need It) principle instead. It might still make sense to foresee extension points in order to lower coupling and increase cohesion, but you could add those on an as-needed bais
 
 What extension could mean here:
 
