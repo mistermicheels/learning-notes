@@ -13,6 +13,7 @@ See:
 -   [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
 -   [Quantity Always Trumps Quality](https://blog.codinghorror.com/quantity-always-trumps-quality/)
 -   [Favourite Diff](https://essays.jwatzman.org/essays/favourite-diff.html)
+-   [Releasing software to the fleet far too quickly broke stuff](http://rachelbythebay.com/w/2020/04/23/rel/) ([comments on Hacker News](https://news.ycombinator.com/item?id=22962830))
 
 ## Contents
 
@@ -25,6 +26,7 @@ See:
     -   [Prefer incremental improvement over sudden perfection](#prefer-incremental-improvement-over-sudden-perfection)
     -   [Consider going for imperfect action now instead of possibly perfect action in the future](#consider-going-for-imperfect-action-now-instead-of-possibly-perfect-action-in-the-future)
     -   [Focus on solutions rather than problems](#focus-on-solutions-rather-than-problems)
+    -   [Make success easier than failure](#make-success-easier-than-failure)
 
 ## Pragmatism
 
@@ -115,7 +117,28 @@ See:
 -   Rather than focusing on the problem, focus on finding possible solutions or at least paths that lead towards possible solutions
     -   Problems that seem unfixable at first sight are likely to be fixable once you really think about it
 -   Looking at the big picture helps to find solutions or workarounds that may not be obvious if you focus too closely on the problem
+-   Note: All of this doesn't mean that you should start solving before you understand what the actual problem is!
+    -   See also [Keep it simple](./Keep-it-simple.md)
 -   Note: All of this doesn't mean that there is no value in identifying problems!
     -   Typically, you need to identify a problem before you can solve it
-    -   It can be very valuable to identify important problems that are limiting your success
+    -   It can be very valuable to identify the main problems that are limiting your success
+    -   Try to be a [Finder](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/), someone who identifies important problems and can also recognize if the team is solving the wrong problem because it's just a symptom of another more fundamental problem
     -   However, once you've found a problem, start moving your focus to actually solving it rather than just getting stressed by its existence
+
+### Make success easier than failure
+
+-   All humans tend to get lazy and take the easiest route
+    -   This is especially true if they're under some kind of time pressure
+-   Use this to your advantage by making success easier than failure
+    -   Make it so easy to do the right thing that it would actually be _more_ work to do the wrong thing
+    -   If you want to create substantial and persistent change in the way people do things, you need to make sure that the "right way" to do something is also the easiest way for people to achieve their goals. Instead of forcing people to do something, you need to make them _want_ to do it. Otherwise, they will always find their way around it.
+        -   Making the "right way" easier is often about tooling, but training can also have a large impact
+-   Example: productivity
+    -   Chop up your tasks until they're so small and well-defined that it's easier (and more fun) to start and complete them than to find excuses for avoiding them
+-   Example: enforcing coding standards
+    -   Writing up a document with coding standards and then expecting the team to follow them through sheer discipline is not the ideal approach
+    -   Automated formatting checks and linting make it easy to recognize and fix deviations from the standards
+    -   Even better if everyone in the team has their IDE set up so all code is automatically formatted according to the standards whenever a file is saved
+-   Example: architectural governance
+    -   Want teams to do incremental rollouts instead of immediately applying new code to all instances or users? Foresee a deployment pipeline where that is the default behavior and where you need to jump through a few hoops to bypass the mechanism.
+    -   Want developers to respect certain boundaries in your modular monolith? Enforce the boundaries programmatically and require thorough reviewing of any changes to the enforced rules.
