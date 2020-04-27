@@ -24,6 +24,10 @@ async function generateSitemap() {
     const sitemap = sitemapBuffer.toString();
     const sitemapPath = path.join(process.cwd(), "_website", "build", "sitemap.xml");
     fsExtra.outputFileSync(sitemapPath, sitemap, { encoding: "utf-8" });
+
+    const robotsTxtPath = path.join(process.cwd(), "_website", "build", "robots.txt");
+    const robotsTxtContents = "Sitemap: https://learning-notes.mistermicheels.com/sitemap.xml";
+    fsExtra.outputFileSync(robotsTxtPath, robotsTxtContents, { encoding: "utf-8" });
 }
 
 function getAllPageSuffixes() {
