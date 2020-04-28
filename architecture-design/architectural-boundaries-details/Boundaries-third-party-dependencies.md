@@ -7,7 +7,7 @@ description: Why it's important to create boundaries around your dependencies
 See:
 
 -   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures))
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
 -   [Our Software Dependency Problem](https://research.swtch.com/deps)
 
 ## Contents

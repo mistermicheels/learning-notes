@@ -6,7 +6,7 @@ description: A high-level overview of what a Microservices architecture means an
 
 See:
 
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](https://www.slideshare.net/thekua/building-evolutionary-architectures), [summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
 -   Clean Architecture (book by Robert C. Martin)
 -   [Learning the hard way: Microservices](https://itnext.io/microservices-c8b5dbdd58b8)
 -   [Should that be a Microservice? Keep These Six Factors in Mind](https://content.pivotal.io/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind)
