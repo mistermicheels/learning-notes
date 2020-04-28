@@ -28,7 +28,7 @@
   font-weight: bolder;
 }
 
-a + .fas.fa-external-link-alt {
+a i.fas.fa-external-link-alt {
   color: #3578e5;
   color: var(--ifm-link-color);
 }
