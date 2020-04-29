@@ -237,7 +237,7 @@ function remarkAdjustImagesAndLinks({ relativePath }) {
                 const isInternalLink = !node.url.startsWith("http");
                 
                 if (isInternalLink) {
-                    replacement = getInternalLinkNodeReplacement(node);
+                    replacement = getInternalLinkNodeReplacement(node, relativePath);
                 } else {
                     replacement = getExternalLinkNodeReplacement(node, relativePath);
                 }
@@ -265,12 +265,10 @@ function getImageNodeReplacement(node, relativeFilePath) {
     };
 }
 
-function getInternalLinkNodeReplacement(node) {
-    let newUrl = normalizeUrl(removeMarkdownExtension(node.url));
-
-    if (!node.url.startsWith(".")) {
-        newUrl = "./" + newUrl;
-    }
+function getInternalLinkNodeReplacement(node, relativePath) {
+    const folderPath = path.dirname(relativePath);
+    const urlRelativeToRoot = path.join(folderPath, node.url);
+    const newUrl = "/" + normalizeUrl(removeMarkdownExtension(urlRelativeToRoot));
 
     return { 
         ...node, 
