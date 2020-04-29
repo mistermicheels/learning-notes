@@ -36,8 +36,7 @@ function getAllPageSuffixes() {
     
     const sidebarItems = sidebars.docs;
 
-    const allDocIds = getDocIds(sidebarItems);
-    return ["", "404.html", ...allDocIds];
+    return getDocIds(sidebarItems);
 }
 
 function getDocIds(sidebarItems) {
@@ -57,8 +56,11 @@ function getDocIds(sidebarItems) {
 async function getSitemap(allPageSuffixes) {
     const smStream = new SitemapStream({ hostname: 'https://learning-notes.mistermicheels.com/' });
 
+    smStream.write({ url: `/`});
+
     for (const pageSuffix of allPageSuffixes) {
-        smStream.write({ url: `/${pageSuffix}`});
+        // the slash at the end is important, links without the slash at the end get redirected
+        smStream.write({ url: `/${pageSuffix}/`});        
     }
 
     smStream.end();

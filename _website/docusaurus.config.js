@@ -5,7 +5,7 @@ module.exports = {
   tagline: 'A collection of my notes regarding things I have learned over the years',
   url: 'https://learning-notes.mistermicheels.com',
   baseUrl: '/',
-  favicon: 'img/favicon.ico',
+  favicon: 'favicon.ico',
   organizationName: 'mistermicheels',
   projectName: 'learning-notes',
   themeConfig: {
