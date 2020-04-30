@@ -9,4 +9,4 @@ Some goals I had when creating these notes:
 
 In order for those goals to be achieved, it's important that I am the only one writing these notes. Therefore, I will not accept any contributions to the repository (with the exception of minor spelling, grammar and attribution fixes).
 
-If you want to build upon my work, feel free to fork [the repository](https://github.com/mistermicheels/learning-notes) or use the text in any other way while providing proper attribution (a link to this website or [the repository](https://github.com/mistermicheels/learning-notes) is sufficient).
+If you want to build upon my work, feel free to fork <a href="https://github.com/mistermicheels/learning-notes" target="_blank" rel="nofollow noopener noreferrer">the repository <i class="fas fa-external-link-alt"></i></a> or use the text in any other way while providing proper attribution (a link to this website or the repository is sufficient).
