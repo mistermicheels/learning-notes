@@ -112,8 +112,12 @@ function isNoteFile(name) {
     return name.endsWith(".md") && name !== "README.md" && name !== 'CONTRIBUTING.md';
 }
 
-function normalizeUrl(url) {
-    return url.replace(/\\/g, "/").toLowerCase();
+function normalizeUrl(url, { keepCase = false } = {}) {
+    if (keepCase) {
+        return url.replace(/\\/g, "/");
+    } else {
+        return url.replace(/\\/g, "/").toLowerCase();
+    }
 }
 
 function removeMarkdownExtension(url) {
@@ -173,6 +177,7 @@ function transformNoteContents(contents, relativePath) {
     newContents = stripTableOfContents(newContents);
     newContents = adjustImagesAndLinks(newContents, relativePath);
     newContents = replaceTitleByYamlFrontMatterAndDescription(newContents, { description, treeTitle }, relativePath);
+    newContents = addGitHubFooter(newContents, relativePath);
     return newContents;
 }
 
@@ -294,8 +299,12 @@ function getExternalLinkNodeReplacement(node, relativeFilePath) {
 
     return {
         type: "html",
-        value: `<a href="${ node.url }" target="_blank" rel="nofollow noopener noreferrer">${linkText} <i class="fas fa-external-link-alt"></i></a>`
+        value: getExternalLinkHtml(node.url, linkText)
     };
+}
+
+function getExternalLinkHtml(url, linkText) {
+    return `<a href="${ url }" target="_blank" rel="nofollow noopener noreferrer">${linkText} <i class="fas fa-external-link-alt"></i></a>`;
 }
 
 function replaceTitleByYamlFrontMatterAndDescription(input, { description, treeTitle = undefined }, relativePath) {
@@ -323,4 +332,12 @@ function replaceTitleByYamlFrontMatterAndDescription(input, { description, treeT
 
     const frontMatter = "---" + "\n" + frontMatterContents + "\n" + "---";
     return frontMatter + "\n\n" + `_${description}_` + contentsAfterTitleLine;
+}
+
+function addGitHubFooter(input, relativePath) {
+    const gitHubUrlPrefix = "https://github.com/mistermicheels/learning-notes/blob/master/";
+    const gitHubUrl = normalizeUrl(`${gitHubUrlPrefix}${relativePath}`, { keepCase: true });
+    const gitHubLink = getExternalLinkHtml(gitHubUrl, "View this note on GitHub");
+    const footerLine = `<div class="github-footer"><i class="fab fa-github"></i> ${gitHubLink}</div>`;
+    return input + "\n" + footerLine + "\n";
 }

@@ -32,3 +32,8 @@ a i.fas.fa-external-link-alt {
   color: #3578e5;
   color: var(--ifm-link-color);
 }
+
+.github-footer {
+  font-weight: bold;
+  margin-top: 60px;
+}
