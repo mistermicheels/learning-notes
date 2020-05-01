@@ -19,6 +19,7 @@ See:
 -   [Jonathan Blow on solving hard problems](https://www.youtube.com/watch?v=6XAu4EPQRmY) ([transcript](https://old.reddit.com/r/programming/comments/bx8p52/jonathan_blow_on_solving_hard_problems/eq4rl7j/))
 -   [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle)
 -   [The Danger of “Simplicity”](https://asthasr.github.io/posts/danger-of-simplicity/)
+-   [I could do that in a weekend!](https://danluu.com/sounds-easy/)
 
 ## Contents
 
@@ -138,5 +139,6 @@ See:
 -   The definition of "good enough" will likely be different based on how crucial the problem you are solving is to the system/domain
     -   It is probably not a good idea to take a lot of shortcuts in the foundations of your codebase/architecture
     -   A situation that occurs all the time in the domain probably deserves some extra effort
+-   If you want to build a reliable system, you might have to spend more time on proper error handling than on development of the actual happy path!
 -   Relaxing quality standards can help you move fast in the beginning, but too much technical debt can slow further development to a crawl and require an enormous amount of time and energy to fix later on
 -   As always, [It depends](./It-depends.md)

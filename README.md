@@ -80,6 +80,8 @@ If you prefer to read them on GitHub, the overview below might be useful.
     -   [Code review and collaboration workflows](processes-techniques/Code-review-collaboration.md)
     -   [Feature flags](processes-techniques/Feature-flags.md)
     -   [Trunk Based Development](processes-techniques/Trunk-Based-Development.md)
+-   [**Soft skills**](soft-skills/README.md)
+    -   [Expectation management](soft-skills/Expectation-management.md)
 -   [**Web**](web/README.md)
     -   [Cookies and Web Storage](web/Cookies-web-storage.md)
     -   [**CSS**](web/css/README.md)

@@ -51,6 +51,7 @@ Caring too much is bad for both you and your company:
     -   Not all issues are things you can do something about
     -   For some things, it might even make more sense to ignore them completely, either permanently or temporarily
 -   Don't waste time and energy on unimportant details that will likely go unnoticed or sort themselves out
+-   Set proper boundaries and adjust people's expectations of you to what you think is reasonable (see [Expectation management](../soft-skills/Expectation-management.md))
 -   If you find yourself getting overwhelmed, take a step back to see the bigger picture:
     -   What tasks are giving you stress?
     -   What tasks are actually a priority?

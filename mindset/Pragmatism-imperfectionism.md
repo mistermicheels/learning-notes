@@ -56,7 +56,7 @@ See:
     -   There will be technical debt and not all of it will ever get fixed
     -   There will be things that don't make sense given the current situation but are impossible or impractical to change
 -   Don't expect perfection from your **process**
-    -   There will be communication overhead
+    -   There will be communication overhead and misunderstandings
     -   There will be unclear and changing requirements
     -   There will be situations where team members are blocking each other
     -   There will be situations where team members unknowingly perform duplicate or conflicting work
@@ -67,7 +67,8 @@ See:
 ### Be humble
 
 -   Realize that you are imperfect, just like everyone around you
--   See also the previous section
+    -   See also the previous section
+-   Be open to feedback from others, as it is likely that you can learn something from them or they have noticed something you missed
 
 ### Own your mistakes
 
