@@ -10,13 +10,14 @@ See:
 
 ## Contents
 
--   [Basic idea](#basic-idea)
+-   [Learning](#learning)
     -   [Concepts are universal and timeless](#concepts-are-universal-and-timeless)
     -   [Compounding](#compounding)
--   [Understanding a system](#understanding-a-system)
--   [Learning new technologies](#learning-new-technologies)
+    -   [Learning new technologies](#learning-new-technologies)
+-   [Understanding systems](#understanding-systems)
+-   [Building systems](#building-systems)
 
-## Basic idea
+## Learning
 
 Whenever you want to learn something new, focus on the general concepts rather than specific implementations!
 
@@ -39,22 +40,7 @@ There is a huge compounding effect when learning concepts:
 -   Finding similar concepts in different places helps to reinforce or refine your understanding of these concepts
 -   All of these concepts sit together in your mental toolbox for problem solving
 
-## Understanding a system
-
--   Getting to know a new codebase:
-    -   Learning the concepts the code is built upon allows you to quickly understand how the system works at a high level
-    -   Understanding those concepts makes it orders of magnitude easier to make sense of any specific code that you encounter later on
-    -   If you want to go through all of the existing code, knowing the concepts beforehand makes this a lot more efficient.
-    -   Often, going through all of the existing code would be extremely time-consuming and not that effective. Instead, focus on learning the concepts behind the code.
--   Keeping up with new code:
-    -   Especially in large teams, it is impossible to be familiar with all of the new code that is written
-    -   Instead, strive to be familiar with the concepts behind the new code that is written
--   Understanding the rest of the system in case the code you work on is only part of it:
-    -   You will probably not touch or even be able to see the code for other parts of the system
-    -   Instead, focus on knowing the concept used by the system as a whole
-    -   Ideally, also understand the main concepts used by each of the system's building blocks, or at least the high-level functionality they provide and the concepts they use in communicating with other parts of the system
-
-## Learning new technologies
+### Learning new technologies
 
 The problem with learning new technologies:
 
@@ -81,3 +67,24 @@ Discovering new technologies and their concepts:
 
 -   Check some tech news websites, newsletters or conference schedules
 -   When you find something interesting, look at the technology's website, read conference talk descriptions (no need to actually watch the talk) or potentially watch short lightning talks about it
+
+## Understanding systems
+
+-   Getting to know a new codebase:
+    -   Learning the concepts the code is built upon allows you to quickly understand how the system works at a high level
+    -   Understanding those concepts makes it orders of magnitude easier to make sense of any specific code that you encounter later on
+    -   If you want to go through all of the existing code, knowing the concepts beforehand makes this a lot more efficient.
+    -   Often, going through all of the existing code would be extremely time-consuming and not that effective. Instead, focus on learning the concepts behind the code.
+-   Keeping up with new code:
+    -   Especially in large teams, it is impossible to be familiar with all of the new code that is written
+    -   Instead, strive to be familiar with the concepts behind the new code that is written
+-   Understanding the rest of the system in case the code you work on is only part of it:
+    -   You will probably not touch or even be able to see the code for other parts of the system
+    -   Instead, focus on knowing the concept used by the system as a whole
+    -   Ideally, also understand the main concepts used by each of the system's building blocks, or at least the high-level functionality they provide and the concepts they use in communicating with other parts of the system
+
+## Building systems
+
+-   Instead of just diving in and churning out code, make sure that the concepts that the system will use make sense
+-   No matter how well-designed your system is, if the concepts it uses don't match the problem domain well then it could be completely useless
+-   No matter how clean the code is, if the concepts your system uses under the hood don't fit the purpose then it's probably going to be unnecessarily awkward and complex to develop and maintain the system
