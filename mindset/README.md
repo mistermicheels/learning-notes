@@ -6,6 +6,7 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
+-   [Ask the dumb questions](Ask-dumb-questions.md)
 -   [Concepts, not code](Concepts-not-code.md)
 -   [Hammock-driven development](Hammock-driven-development.md)
 -   [It depends](It-depends.md)

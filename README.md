@@ -69,6 +69,7 @@ If you prefer to read them on GitHub, the overview below might be useful.
         -   [Runtime type checking in TypeScript](javascript/typescript/Runtime-type-checking.md)
         -   [Type guards](javascript/typescript/Type-guards.md)
 -   [**Mindset**](mindset/README.md)
+    -   [Ask the dumb questions](mindset/Ask-dumb-questions.md)
     -   [Concepts, not code](mindset/Concepts-not-code.md)
     -   [Hammock-driven development](mindset/Hammock-driven-development.md)
     -   [It depends](mindset/It-depends.md)

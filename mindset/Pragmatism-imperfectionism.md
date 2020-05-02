@@ -12,6 +12,7 @@ See:
 -   How to Be an Imperfectionist (book by Stephen Guise)
 -   [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
 -   [Quantity Always Trumps Quality](https://blog.codinghorror.com/quantity-always-trumps-quality/)
+-   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
 -   [Favourite Diff](https://essays.jwatzman.org/essays/favourite-diff.html)
 -   [The next career step for Senior Software Engineers (that isn’t management)](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/)
 -   [Releasing software to the fleet far too quickly broke stuff](http://rachelbythebay.com/w/2020/04/23/rel/) ([comments on Hacker News](https://news.ycombinator.com/item?id=22962830))
@@ -106,6 +107,7 @@ See:
     -   "Great is the enemy of good"
     -   Good code shipped today is often better than perfect code shipped next week
 -   Often, the experience you gain from taking action teaches you a lot more about what works well and what doesn't than just theorizing about what would be the best approach. See also [Quantity Always Trumps Quality](https://blog.codinghorror.com/quantity-always-trumps-quality/)
+    -   For creative problem solving, it might help to separate the process of creation from the process of analyzing what you created and improving. _"You can’t write and edit, or sculpt and polish, or make and analyze at the same time. If you do, the editor stops the creator. While you invent, don’t select. While you sketch, don’t inspect. While you write the first draft, don’t reflect."_ ([source](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/))
 -   Definitely don't wait for perfect circumstances, as they will likely never come
 
 ### Focus on solutions rather than problems
