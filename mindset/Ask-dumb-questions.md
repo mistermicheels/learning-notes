@@ -7,6 +7,7 @@ description: Why you shouldn't be afraid of asking the "dumb" questions
 See:
 
 -   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
+-   [The five keys to a successful Google team](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
 
 ## Contents
 
@@ -22,18 +23,18 @@ See:
     -   It's possible that others have the same question but don't dare to ask it
     -   It's possible that the question touches something relevant that didn't occur to anyone else before
 -   Something that's obvious to one person might be not that obvious at all to others
--   Even if the answer to a question is obvious to you and to the rest of the team, asking the question is the only way to actually confirm that it's obvious to everybody
 
 The value of asking "dumb" questions:
 
--   Helps validating that you're talking about the same thing
+-   Helps validating that you're talking about the same thing and that 
 -   Helps making implicit assumptions explicit and validating whether they are realistic
 -   Helps finding edge cases or holes in the logic
 -   Helps understanding the real reason you're doing something
 -   Helps making sure you are solving the real problem
 -   Helps finding alternative approaches
-
-People asking the right questions can be very valuable in guiding the discussion towards good solutions, even if those people they don't provide any potential solutions themselves
+-   People asking the right questions can be very valuable in guiding the discussion towards good solutions, even if those people they don't provide any potential solutions themselves
+-   Even if the answer to a question seems obvious to you and to the rest of the team, asking the question is the only way to confirm that it's indeed obvious to everybody
+-   Even if you are somehow the only one who is out of the loop, the team is way better off with you asking dumb questions and getting the info you need than with you continuing without asking for clarification
 
 ## Some questions to ask
 

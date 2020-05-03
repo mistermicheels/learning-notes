@@ -10,6 +10,7 @@
 -   [Concepts, not code](Concepts-not-code.md)
 -   [Hammock-driven development](Hammock-driven-development.md)
 -   [It depends](It-depends.md)
+-   [It's about people](Its-about-people.md)
 -   [Keep it simple](Keep-it-simple.md)
 -   [Pragmatism and imperfectionism](Pragmatism-imperfectionism.md)
 -   [Work-life balance](Work-life-balance.md)
