@@ -70,6 +70,7 @@ In a psychologically safe team, you can have a meeting full of passionate and he
 -   Share credit whenever you can. When you accomplish something, make sure to mention who else helped or contributed to the success.
 -   Avoid putting unnecessary pressure on your team mates when you're under pressure yourself
     -   However, don't be afraid to ask the team if there's anyone who can help share the load
+-   "No matter how correct you are, you won't get anywhere by making the other person feel stupid." ([source](https://news.ycombinator.com/item?id=23100530))
 
 ## Dealing with customers
 
