@@ -70,6 +70,8 @@ See:
 -   Realize that you are imperfect, just like everyone around you
     -   See also the previous section
 -   Be open to feedback from others, as it is likely that you can learn something from them or they have noticed something you missed
+-   Embrace the fact that you can learn a lot from the people around you
+    -   There's no need to be the "smartest person in the room"
 
 ### Own your mistakes
 
