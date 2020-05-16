@@ -8,7 +8,7 @@ See:
 
 -   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
 -   [The Java Platform Module System](https://dzone.com/articles/the-java-platform-module-system)
--   [Java Platform Module System Cheat Sheet](https://jrebel.com/wp-content/uploads/java-9-modules-cheat-sheet.pdf)
+-   [Java Platform Module System Cheat Sheet](https://www.jrebel.com/blog/java-9-modules-cheat-sheet)
 -   [What's the difference between requires and requires transitive statements in Java 9?](https://stackoverflow.com/questions/46502453/whats-the-difference-between-requires-and-requires-transitive-statements-in-jav)
 -   Java 9, OSGi and the Future of Modularity [part 1](https://www.infoq.com/articles/java9-osgi-future-modularity/) [part 2](https://www.infoq.com/articles/java9-osgi-future-modularity-part-2/)
 

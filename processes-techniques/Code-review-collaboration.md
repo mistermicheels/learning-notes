@@ -11,7 +11,6 @@ See:
 -   [Mob Programming, A Whole Team Approach - Woody Zuill](https://vimeo.com/131643015)
 -   [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
 -   [Pairing, Are You Doing it Wrong?](https://www.thoughtworks.com/insights/blog/pairing-are-you-doing-it-wrong)
--   [What should a developer do while waiting for a pull request review?](https://dev.to/itsjoekent/what-should-a-developer-do-while-waiting-for-a-pull-request-review)
 -   [The Art of Pull Requests](https://hackernoon.com/the-art-of-pull-requests-6f0f099850f9)
 
 ## Contents

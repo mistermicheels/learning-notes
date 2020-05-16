@@ -37,9 +37,9 @@ Normal forms from least normalized to most normalized (see below for ones in bol
 -   **2NF**: [Second normal form](https://en.wikipedia.org/wiki/Second_normal_form)
 -   **3NF**: [Third normal form](https://en.wikipedia.org/wiki/Third_normal_form)
 -   EKNF: [Elementary key normal form](https://en.wikipedia.org/wiki/Elementary_key_normal_form)
--   BCNF: [Boyce–Codd normal form](https://en.wikipedia.org/wiki/Boyce–Codd_normal_form)
+-   BCNF: [Boyce–Codd normal form](https://en.wikipedia.org/wiki/Boyce%E2%80%93Codd_normal_form)
 -   4NF: [Fourth normal form](https://en.wikipedia.org/wiki/Fourth_normal_form)
--   ETNF: [Essential tuple normal form](https://en.wikipedia.org/w/index.php?title=Essential_tuple_normal_form&action=edit&redlink=1)
+-   ETNF: Essential tuple normal form
 -   5NF: [Fifth normal form](https://en.wikipedia.org/wiki/Fifth_normal_form)
 -   DKNF: [Domain-key normal form](https://en.wikipedia.org/wiki/Domain-key_normal_form)
 -   6NF: [Sixth normal form](https://en.wikipedia.org/wiki/Sixth_normal_form)

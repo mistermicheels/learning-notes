@@ -23,7 +23,7 @@ See:
 
 ![Clean Architecture](_img/Clean-Architecture/clean-architecture.jpg)
 
-([image source](https://codeiwrote.net/2019-06-18-Part-2/))
+([image source](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
 
 -   Inspired by Hexagonal Architecture (Ports and Adapters) etc.
 -   Divides the systems into different layers
