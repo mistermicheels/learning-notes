@@ -8,6 +8,7 @@
 
 -   [Ask the dumb questions](Ask-dumb-questions.md)
 -   [Concepts, not code](Concepts-not-code.md)
+-   [Fail fast](Fail-fast.md)
 -   [Hammock-driven development](Hammock-driven-development.md)
 -   [It depends](It-depends.md)
 -   [It's about people](Its-about-people.md)

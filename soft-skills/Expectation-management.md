@@ -57,6 +57,7 @@ Benefits:
 -   No stress from working on something while knowing that you'll never be able to meet the expectations 
 -   By telling others what they can expect, you can also take away some stress and uncertainty at the other side of the table
 -   The sooner you communicate that something is going wrong, the easier it is to find a solution, find alternatives or adjust the plan (and potentially also other plans further down the line or higher up the management chain)
+    -   See also [Fail fast](../mindset/Fail-fast.md)
 -   Adjusted expectations can make a huge difference in how others view your performance
 
 ### Underpromise, overdeliver
