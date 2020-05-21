@@ -7,6 +7,7 @@ description: Some techniques for migrating the structure of your data
 See:
 
 -   [Feature Flag Best Practices ebook](https://try.split.io/oreilly-feature-flag-best-practices)
+-   [Online migrations at scale](https://stripe.com/blog/online-migrations)
 
 ## Contents
 

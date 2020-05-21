@@ -9,6 +9,7 @@ See:
 -   [PostgreSQL Transaction Isolation](https://www.postgresql.org/docs/current/static/transaction-iso.html)
 -   [SQL Server SET TRANSACTION ISOLATION LEVEL](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?view=sql-server-2017)
 -   [SQL Server Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017)
+-   [Hermitage: Testing transaction isolation levels](https://github.com/ept/hermitage)
 
 ## Contents
 
@@ -71,9 +72,12 @@ Implementations:
     -   Obtains read lock on rows that you read, causing other transactions attempting to update the row to block until you commit or roll back your transaction
 -   PostgreSQL
     -   Transaction sees a snapshot of the database taken at the start of your transaction (this also prevents _Phantom Reads_)
+        -   No read locks needed
+        -   All data within the snapshot is consistent with each other
     -   Does not guarantee that the data has not changed in the meantime
         -   Still allows other transactions to change the data
-        -   Fails if your transaction tries to update the data after another transaction has changed it (basically optimistic locking)
+        -   Snapshot might get stale if other transactions are changing the data while your transaction is running
+        -   Protection mechanism: PostgreSQL fails your transaction if it tries to update data after another transaction has also changed it (basically optimistic locking)
     -   Note: SQL Server also offers a Snapshot isolation level which behaves similarly to the PostgreSQL Repeatable Read isolation level
 
 ### Serializable

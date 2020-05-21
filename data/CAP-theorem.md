@@ -8,6 +8,7 @@ See:
 
 -   [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 -   Designing Data-Intensive Applications (book by Martin Kleppmann)
+-   [Consistency Models](https://jepsen.io/consistency)
 
 ## Contents
 
@@ -36,8 +37,9 @@ Implications:
     -   Every distributed system has to assume the possibility of network failures, so actually the trade-off is between consistency and availability
     -   When the network is working correctly, you can still have both consistency and availability at the same time (you don't have to abandon 1 out of the 3 at all times)
 -   Notion of consistency is limited and can be confusing
-    -   Consistency as defined in CAP theorem is actually linearizability (basically, making it appear as if there is only a single copy of the data)
+    -   Consistency as defined in CAP theorem is actually linearizability (preventing a read from returning a value that's different from the last written value, basically making it seem like there is only one copy of the data rather than multiple copies which might not have caught up with each other)
     -   There are also other consistency models in the distributed systems research, plus other uses of the term _consistency_ in the data store world
+        -   For an overview (not necessarily complete) of consistency models for distributed systems, take a look at [Consistency Models](https://jepsen.io/consistency)
 -   Only takes into account network partitions (nodes that are alive but disconnected from each other)
     -   Ignores dead nodes, etc.
 
