@@ -146,6 +146,10 @@ See:
     -   Writing up a document with coding standards and then expecting the team to follow them through sheer discipline is not the ideal approach
     -   Automated formatting checks and linting make it easy to recognize and fix deviations from the standards
     -   Even better if everyone in the team has their IDE set up so all code is automatically formatted according to the standards whenever a file is saved
+-   Example: making people write better PR descriptions
+    -   Can make success easier than failure by setting up a PR template where people just need to fill in the blanks
+        -   Can include description of changes, how to test things, ...
+        -   Can also include a checklist (written/adjusted relevant tests, ensured backwards API compatibility, ...) that we want developers to go through before committing their PR
 -   Example: architectural governance
     -   Want teams to do incremental rollouts instead of immediately applying new code to all instances or users? Foresee a deployment pipeline where that is the default behavior and where you need to jump through a few hoops to bypass the mechanism.
     -   Want developers to respect certain boundaries in your modular monolith? Enforce the boundaries programmatically and require thorough reviewing of any changes to the enforced rules.

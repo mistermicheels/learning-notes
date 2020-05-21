@@ -9,6 +9,7 @@ See:
 -   Clean Architecture (book by Robert C. Martin)
 -   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
 -   [Our Software Dependency Problem](https://research.swtch.com/deps)
+-   [Is it common practice to validate responses from 3rd party APIs?](https://softwareengineering.stackexchange.com/questions/410248/is-it-common-practice-to-validate-responses-from-3rd-party-apis)
 
 ## Contents
 
@@ -29,10 +30,13 @@ Consider creating a boundary around the external dependency that decouples the r
 -   The public interface of that boundary should be written in terms of what your system needs from the dependency
 -   Logic inside the boundary will be specific to the interaction with that particular dependency. 
 -   This also applies when the external dependency is another system!
--   Benefits:
-    -   If the API of the dependency changes or you replace it, the boundary protects you from having to change all code that used the dependency. As long as you can fulfill the contract specified by the public interface of the boundary, no code outside of the boundary has to be aware of the change.
-        -   Especially useful if you consider the dependency to be a temporary solution that is sufficient for now but will most likely need to change in the future. The boundary allows you to avoid premature complexity by going for a simple solution, while keeping your options open regarding the upgrade to a more complex solution.
-    -   You can also use the boundary to create some automated tests for the specific functionality that your system needs to get from the boundary. By testing against the boundary, you don’t have to change your tests in order to be able to test a new version of the dependency or even a replacement.
+    -   In that case, it often makes sense to set up some kind of validation for the responses from that system
+
+Benefits:
+
+-   If the API of the dependency changes or you replace it, the boundary protects you from having to change all code that used the dependency. As long as you can fulfill the contract specified by the public interface of the boundary, no code outside of the boundary has to be aware of the change.
+    -   Especially useful if you consider the dependency to be a temporary solution that is sufficient for now but will most likely need to change in the future. The boundary allows you to avoid premature complexity by going for a simple solution, while keeping your options open regarding the upgrade to a more complex solution.
+-   You can also use the boundary to create some automated tests for the specific functionality that your system needs to get from the boundary. By testing against the boundary, you don’t have to change your tests in order to be able to test a new version of the dependency or even a replacement.
 
 Be extra careful when dealing with frameworks!
 
