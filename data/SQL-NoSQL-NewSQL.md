@@ -79,7 +79,7 @@ See [Normalization](./sql/Normalization.md)
 
 Typical selling point: specialized solution for particular use cases
 
--   Example: graph databases: see below
+-   Example: graph databases (see below)
 
 Typical selling point: horizontal scalability
 
@@ -119,13 +119,14 @@ Fit:
 
 -   Can be a good fit for data that has a hierarchical structure (looks like a tree), as you can just put the entire structure in a document
 -   Works well for one-to-one and one-to-many relationships
--   Many-to-many relationships can be hard to model
+-   Many-to-one and many-to-many relationships can be hard to model and query
     -   Example: you want to store information on actors, movies and which actors played in which movies
     -   One option: include the data regarding actors inside the documents for the movies or vice versa
         -   This is _denormalization_ (see also [Normalization](./sql/Normalization.md)) and will lead to duplicate data and the possibility for inconsistencies
     -   Other option: have documents for actors, documents for movies, and storing references to movies inside actors
         -   Similar to the concept of foreign keys in relational databases
         -   Problem: document stores often do not offer real foreign key constraints, so there is nothing on the database level preventing you from deleting an actor that a movie still refers to
+        -   Problem: performing queries that combine data from different documents is often not easy or efficient (you might even need to put all of the logic for this in application code, requiring multiple requests to the DB)
 
 Schemaless?:
 

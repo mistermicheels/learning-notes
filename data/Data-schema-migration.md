@@ -29,6 +29,8 @@ Simple approach but not doable if system needs to keep running!
 -   Retire old code
 -   Migrate DB schema
 
+Note: In case of schemaless databases, you can have data with different structures sitting together. This means you're not forced to migrate the structure of your existing data at all. However, your code must be able to deal with the different structures. This is basically a code-first migration where the last step can be delayed for as long as you like, or even doesn't need to happen at all. You basically need to make a tradeoff between the cost and risk associated with migrating the data versus the cost and risk associated with having data with different structures sitting together and thus making code maintenance harder.
+
 ## Data First
 
 -   Migrate DB schema in a way that is compatible with both old and new code

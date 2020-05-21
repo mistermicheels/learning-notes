@@ -54,6 +54,8 @@ class InMemoryUserRepository implements UserRepository {
 }
 ```
 
+The _Repository_ pattern also makes it easy to implement _caching_. Ideally, the repository takes care of caching values and invalidating the cache as needed, without other code even being aware that there is any caching at all.
+
 ## Separation at the database level
 
 For larger systems, it can make sense to separate different parts of the application down to the database level. Each part uses different tables or a different database, with no links between data belonging to different parts. This kind of separation is considered good practice when setting up a microservices architecture. You can also do this in monolithic applications, potentially as a stepping stone towards a feature microservices architecture.

@@ -43,6 +43,7 @@ Benefits of this separation: **flexibility**!
 -   **Lower coupling**: Decouple components so changes in one component don't require changes in other components
 -   **Higher cohesion**: Group together things that change at the same rate and for the same reasons (cohesion)
     -   Manifestation of the Single Responsibility Principle (from the [SOLID principles](./oo-design/SOLID-principles.md)), but this time at the architectural level
+-   Low coupling and higher cohesion are basically about **encapsulating volatility**. When one part of your system needs to change, you want to prevent others from having to change as wel. In particular, you don't want change in the more volatile parts of your system force change in the more stable parts of your system.
 -   Ability to **delay choices** until last possible moment
 
 Example: Separating main business logic from persistence logic
