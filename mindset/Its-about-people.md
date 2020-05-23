@@ -82,14 +82,15 @@ In a psychologically safe team, you can have a meeting full of passionate and he
 
 ## Code
 
-Write code for people, not for computers!
+Write code for people, not for computers
 
 -   The code you write will likely be read tons of times later on (both by you and other developers)
 -   When adding new code, people often actually spend more time looking at older code than writing the new code itself
     -   You want to properly understand how the new code fits in with the rest of the system, avoid reinventing the wheel or creating bad duplication, stay consistent with other parts of the codebase where it makes sense, ...
 -   The computer itself doesn't care if your code is an unreadable mess or not
+    -   Quote from Martin Fowler: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
 -   Often, a readable piece of decently performant code adds way more value to the codebase than a hard-to-read piece of heavily optimized code
 
-Quote from Martin Fowler:
+People are also the reason why consistency, coding standards, automation, ... are so important
 
-> Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+-   It's about making it easier to collaborate on the codebase and maintain it, not wasting people's time and energy on things that computers are better at, preventing human errors, ...
