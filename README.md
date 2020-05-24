@@ -10,6 +10,7 @@ If you prefer to read them on GitHub, the overview below might be useful.
 -   [**Architecture and design**](architecture-design/README.md)
     -   [Architectural boundaries](architecture-design/Architectural-boundaries.md)
     -   [Architectural fitness functions](architecture-design/Architectural-fitness-functions.md)
+    -   [Deletes](architecture-design/Deletes.md)
     -   [Deployable components](architecture-design/Deployable-components.md)
     -   [Exception handling](architecture-design/Exception-handling.md)
     -   [Humble Object pattern](architecture-design/Humble-Object-pattern.md)

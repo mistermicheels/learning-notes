@@ -91,6 +91,15 @@ Write code for people, not for computers
     -   Quote from Martin Fowler: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
 -   Often, a readable piece of decently performant code adds way more value to the codebase than a hard-to-read piece of heavily optimized code
 
+Some tips:
+
+-   Be explicit
+    -   Use names that make it immediately clear what value a variable holds or what a function does
+    -   Don't aim for the shortest possible code, instead aim for code that explicitly walks the reader through what it is doing
+    -   Use a folder structure that makes it immediately what functionality sits where
+-   Don't try to be too clever
+-   See also [Keep it simple - Code](./Keep-it-simple.md#code)
+
 People are also the reason why consistency, coding standards, automation, ... are so important
 
 -   It's about making it easier to collaborate on the codebase and maintain it, not wasting people's time and energy on things that computers are better at, preventing human errors, ...
