@@ -1,6 +1,16 @@
-/* default docusaurus behavior (slightly more specific selector than default rule) */
+/* default docusaurus behavior (slightly more specific selectors than default rules) */
+
 .menu .menu__list .menu__list-item.menu__list-item--collapsed .menu__list {
-    height: 0;
-    overflow: hidden;
-  }
-  
+  height: 0;
+  overflow: hidden;
+}
+
+/* collapse icon */
+.menu .menu__list .menu__link.menu__link--sublist:after {
+    visibility: visible;
+}
+
+/* expand icon */
+.menu .menu__list .menu__list-item.menu__list-item--collapsed .menu__link--sublist:after {
+    visibility: visible;
+}
