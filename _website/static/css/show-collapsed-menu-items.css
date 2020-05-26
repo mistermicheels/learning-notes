@@ -1,0 +1,6 @@
+/* override default docusaurus behavior (slightly more specific selector than default rule) */
+.menu .menu__list .menu__list-item.menu__list-item--collapsed .menu__list {
+    height: unset;
+    overflow: unset;
+  }
+  
