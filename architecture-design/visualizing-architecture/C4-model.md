@@ -4,11 +4,6 @@ description: A simple and clear way of visualizing a system's architecture
 
 # C4 model
 
-See:
-
--   [The C4 model for visualising software architecture](https://c4model.com/)
--   [Structurizr](https://structurizr.com/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -23,6 +18,7 @@ See:
     -   [Dynamic diagram](#dynamic-diagram)
     -   [Deployment diagram](#deployment-diagram)
 -   [Some details](#some-details)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -153,3 +149,8 @@ Diagrams that can be useful to show other aspects than the core diagrams
         -   a JAR fie might contain several components
         -   a single component could also be implemented using code from several JAR files!
     -   likely to be neither a container nor a component!
+
+## Resources
+
+-   [The C4 model for visualising software architecture](https://c4model.com/)
+-   [Structurizr](https://structurizr.com/)

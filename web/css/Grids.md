@@ -5,15 +5,11 @@ description: The main idea of CSS Grids
 
 # Grids (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [Use cases](#use-cases)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -36,3 +32,8 @@ Example (with indication of rows and columns as shown by [Firefox Grid Inspector
 ![Grid layout example](./_img/Grids/grid-layout-example.png)
 
 ([image source](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids))
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)

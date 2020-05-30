@@ -4,14 +4,6 @@ description: What to consider when deleting things
 
 # Deletes
 
-See:
-
--   [What Are Soft Deletes, and How Are They Implemented?](https://www.brentozar.com/archive/2020/02/what-are-soft-deletes-and-how-are-they-implemented/)
--   [Soft-deletion is actually pretty hard](https://medium.com/galvanize/soft-deletion-is-actually-pretty-hard-cb434e24825c)
--   [Are soft deletes a good idea?](https://stackoverflow.com/questions/2549839/are-soft-deletes-a-good-idea)
--   [Physical vs. logical / soft delete of database record?](https://stackoverflow.com/questions/378331/physical-vs-logical-soft-delete-of-database-record)
--   Monolith to Microservices (book by Sam Newman) ([relevant excerpt](https://www.oreilly.com/library/view/monolith-to-microservices/9781492047834/ch04.html))
-
 ## Contents
 
 -   [Hard deletes vs soft deletes](#hard-deletes-vs-soft-deletes)
@@ -21,6 +13,7 @@ See:
     -   [Checking whether deletion is allowed](#checking-whether-deletion-is-allowed)
     -   [Cleaning up references](#cleaning-up-references)
     -   [Dealing with references to missing objects](#dealing-with-references-to-missing-objects)
+-   [Resources](#resources)
 
 ## Hard deletes vs soft deletes
 
@@ -145,3 +138,11 @@ If you don't have real foreign keys, it's pretty much impossible to guarantee th
 Recommended approach: tolerate absence of referenced entity, or at least fail gracefully
 
 In case of soft deletes, you need to consider what to do if an object refers to a soft-deleted object
+
+## Resources
+
+-   [What Are Soft Deletes, and How Are They Implemented?](https://www.brentozar.com/archive/2020/02/what-are-soft-deletes-and-how-are-they-implemented/)
+-   [Soft-deletion is actually pretty hard](https://medium.com/galvanize/soft-deletion-is-actually-pretty-hard-cb434e24825c)
+-   [Are soft deletes a good idea?](https://stackoverflow.com/questions/2549839/are-soft-deletes-a-good-idea)
+-   [Physical vs. logical / soft delete of database record?](https://stackoverflow.com/questions/378331/physical-vs-logical-soft-delete-of-database-record)
+-   Monolith to Microservices (book by Sam Newman) ([relevant excerpt](https://www.oreilly.com/library/view/monolith-to-microservices/9781492047834/ch04.html))

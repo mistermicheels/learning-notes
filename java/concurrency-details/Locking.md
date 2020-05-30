@@ -5,16 +5,13 @@ description: Some details regarding locking as a low-level concurrency tool in J
 
 # Locking (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-
 ## Contents
 
 -   [A word of caution](#a-word-of-caution)
 -   [Locks](#locks)
 -   [The `synchronized` keyword](#the-synchronized-keyword)
 -   [Using locks to coordinate between threads](#using-locks-to-coordinate-between-threads)
+-   [Resources](#resources)
 
 ## A word of caution
 
@@ -139,3 +136,7 @@ Some important remarks:
 
 -   The call to `wait()` should happen inside a while loop checking for the condition. This is a best practice and it prevents issues if more than one thread was waiting inside the `take()` method or a method other than `add()` calls `notifyAll()`
 -   There is also a method `notify()` that only unblocks one waiting thread. This might be more efficient, but it can lead to issues it the waiting thread that is unblocked finds that it still wants to wait. In that case, that thread is just blocked again, while there might also be other blocked threads that can actually continue at this point. Typically, it's a better idea to just call `notifyAll()`.
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)

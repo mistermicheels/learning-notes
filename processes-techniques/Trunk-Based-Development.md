@@ -4,15 +4,6 @@ description: A source-control branching model that focuses on collaborating thro
 
 # Trunk Based Development
 
-See:
-
--   [Trunk Based Development](https://trunkbaseddevelopment.com/)
--   [Long-Running Branches Considered Harmful](https://blog.newrelic.com/culture/long-running-branches-considered-harmful/)
--   [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
--   [SemanticConflict](https://martinfowler.com/bliki/SemanticConflict.html)
--   [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
--   [Branch By Abstraction](https://www.branchbyabstraction.com/)
-
 ## Contents
 
 -   [What is Trunk Based Development?](#what-is-trunk-based-development)
@@ -34,6 +25,7 @@ See:
     -   [Creating a release branch only when needed](#creating-a-release-branch-only-when-needed)
 -   [Dealing with larger changes](#dealing-with-larger-changes)
 -   [Some good practices when applying Trunk Based Development](#some-good-practices-when-applying-trunk-based-development)
+-   [Resources](#resources)
 
 ## What is Trunk Based Development?
 
@@ -204,3 +196,12 @@ Strategies:
     -   Example: When building a feature entails introducing a new dependency, this dependency could be introduced separately through a new commit that the developer explicitly notifies the team of
     -   Example: First create and commit interfaces, then work on implementation while others can already code against the interfaces
 -   _Thin Vertical Slices_: Stories or tasks from the backlog can ideally be implemented completely by a single developer or pair of developers in a short amount of time and small number of commits. They cut across the whole stack and they do not need to be passed around between developers with specialized knowledge in order to get completed.
+
+## Resources
+
+-   [Trunk Based Development](https://trunkbaseddevelopment.com/)
+-   [Long-Running Branches Considered Harmful](https://blog.newrelic.com/culture/long-running-branches-considered-harmful/)
+-   [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
+-   [SemanticConflict](https://martinfowler.com/bliki/SemanticConflict.html)
+-   [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
+-   [Branch By Abstraction](https://www.branchbyabstraction.com/)

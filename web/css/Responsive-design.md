@@ -5,11 +5,6 @@ description: Making your site look good on any device and screen
 
 # Responsive design (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Responsive design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -17,6 +12,7 @@ See:
 -   [Media queries](#media-queries)
 -   [Flexbox and Grids](#flexbox-and-grids)
 -   [Testing your design](#testing-your-design)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -69,3 +65,8 @@ In general, [Flexbox](./Flexbox.md) and [Grids](./Grids.md) are good tools for b
 Useful tool: Chrome DevTools Device Mode
 
 See [Simulate Mobile Devices with Device Mode in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/device-mode)
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Responsive design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)

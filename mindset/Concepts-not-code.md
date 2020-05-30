@@ -4,10 +4,6 @@ description: Why concepts are more powerful and important than code
 
 # Concepts, not code
 
-See:
-
--   [On learning new technologies: why breadth beats depth](https://codewithoutrules.com/2019/03/29/learn-new-technologies/)
-
 ## Contents
 
 -   [Learning](#learning)
@@ -16,6 +12,7 @@ See:
     -   [Learning new technologies](#learning-new-technologies)
 -   [Understanding systems](#understanding-systems)
 -   [Building systems](#building-systems)
+-   [Resources](#resources)
 
 ## Learning
 
@@ -88,3 +85,7 @@ Discovering new technologies and their concepts:
 -   Instead of just diving in and churning out code, make sure that the concepts that the system will use make sense
 -   No matter how well-designed your system is, if the concepts it uses don't match the problem domain well then it could be completely useless
 -   No matter how clean the code is, if the concepts your system uses under the hood don't fit the purpose then it's probably going to be unnecessarily awkward and complex to develop and maintain the system
+
+## Resources
+
+-   [On learning new technologies: why breadth beats depth](https://codewithoutrules.com/2019/03/29/learn-new-technologies/)

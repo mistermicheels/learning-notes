@@ -4,12 +4,6 @@ description: A short introduction to Sass and SCSS
 
 # Sass/SCSS
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Sass](https://sass-lang.com/)
--   [What's the difference between SCSS and Sass?](https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -20,6 +14,7 @@ See:
     -   [Inheritance](#inheritance)
         -   [Same example but using mixins](#same-example-but-using-mixins)
         -   [Example where inheritance can be confusing](#example-where-inheritance-can-be-confusing)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -284,3 +279,9 @@ Resulting CSS (actually makes the element green):
     color: green;
 }
 ```
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Sass](https://sass-lang.com/)
+-   [What's the difference between SCSS and Sass?](https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass)

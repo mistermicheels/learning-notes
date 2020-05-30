@@ -4,19 +4,12 @@ description: What are Cookies and Web Storage? What do they have in common? What
 
 # Cookies and Web Storage
 
-See:
-
--   [HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
--   [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
--   [What is the difference between localStorage, sessionStorage, session and cookies?](https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
--   [Could someone explain the life of a sessionStorage object?](https://stackoverflow.com/questions/8945744/could-someone-explain-the-life-of-a-sessionstorage-object)
--   [In HTML5, is the localStorage object isolated per page/domain?](https://stackoverflow.com/questions/4201239/in-html5-is-the-localstorage-object-isolated-per-page-domain)
-
 ## Contents
 
 -   [What they have in common](#what-they-have-in-common)
 -   [Cookies](#cookies)
 -   [Web Storage](#web-storage)
+-   [Resources](#resources)
 
 ## What they have in common
 
@@ -54,3 +47,11 @@ See:
         -   In some browsers, duplicating a tab gives the new tab its own separate `sessionStorage`, but the data from the original tab's `sessionStorage` is initially copied into it
     -   `localStorage`: stays until cleared through JavaScript or the user clearing browser data
 -   Interesting feature: `StorageEvent` fired when storage is changed, could be used within your web application to trigger certain things or even as a mechanism to communicate between different instances of your web application (in different windows or tabs) within the same browser
+
+## Resources
+
+-   [HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+-   [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+-   [What is the difference between localStorage, sessionStorage, session and cookies?](https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
+-   [Could someone explain the life of a sessionStorage object?](https://stackoverflow.com/questions/8945744/could-someone-explain-the-life-of-a-sessionstorage-object)
+-   [In HTML5, is the localStorage object isolated per page/domain?](https://stackoverflow.com/questions/4201239/in-html5-is-the-localstorage-object-isolated-per-page-domain)

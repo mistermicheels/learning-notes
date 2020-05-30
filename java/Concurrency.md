@@ -5,11 +5,6 @@ description: An overview of concurrent programming in Java
 
 # Concurrency (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
-
 ## Contents
 
 -   [Concurrent execution basics](#concurrent-execution-basics)
@@ -24,6 +19,7 @@ See:
 -   [Thread safety](#thread-safety)
 -   [Threads](#threads)
 -   [Locking](#locking)
+-   [Resources](#resources)
 
 ## Concurrent execution basics
 
@@ -317,3 +313,8 @@ See [Threads](./concurrency-details/Threads.md)
 See [Locking](./concurrency-details/Locking.md)
 
 Note that locking is a low-level concurrency tool and that code using locks is hard to get right! You are likely better off using other tools.
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)

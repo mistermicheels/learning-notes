@@ -4,16 +4,10 @@ description: Why it's important to create boundaries around your dependencies
 
 # Boundaries and third-party dependencies
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
--   [Our Software Dependency Problem](https://research.swtch.com/deps)
--   [Is it common practice to validate responses from 3rd party APIs?](https://softwareengineering.stackexchange.com/questions/410248/is-it-common-practice-to-validate-responses-from-3rd-party-apis)
-
 ## Contents
 
 -   [Main idea](#main-idea)
+-   [Resources](#resources)
 
 ## Main idea
 
@@ -42,3 +36,10 @@ Be extra careful when dealing with frameworks!
 
 -   Frameworks tend to dictate the structure of your application and may even ask you to base your domain objects on the abstractions they provide. If you allow this, it will be very difficult to get the framework out afterwards. 
 -   Could help to let the framework operate on some kind of separate representation of your domain objects instead of the domain objects themselves. Your boundary could then take care of performing the necessary translations between that separate representation and the actual domain objects.
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+-   [Our Software Dependency Problem](https://research.swtch.com/deps)
+-   [Is it common practice to validate responses from 3rd party APIs?](https://softwareengineering.stackexchange.com/questions/410248/is-it-common-practice-to-validate-responses-from-3rd-party-apis)

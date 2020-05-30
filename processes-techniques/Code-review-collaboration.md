@@ -4,15 +4,6 @@ description: Some ways to improve the quality of your team's code through code r
 
 # Code review and collaboration workflows
 
-See:
-
--   [4 Types Of Code Reviews Any Professional Developer Should Know About](https://dzone.com/articles/4-types-of-code-reviews-any-professional-developer)
--   [Pairing with Junior Developers](https://madeintandem.com/blog/2015-1-pairing-with-junior-developers/)
--   [Mob Programming, A Whole Team Approach - Woody Zuill](https://vimeo.com/131643015)
--   [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
--   [Pairing, Are You Doing it Wrong?](https://www.thoughtworks.com/insights/blog/pairing-are-you-doing-it-wrong)
--   [The Art of Pull Requests](https://hackernoon.com/the-art-of-pull-requests-6f0f099850f9)
-
 ## Contents
 
 -   [Instant review (pair programming)](#instant-review-pair-programming)
@@ -26,6 +17,7 @@ See:
     -   [Asynchronous review and pairing](#asynchronous-review-and-pairing)
 -   [Review after the fact](#review-after-the-fact)
 -   [Automated review](#automated-review)
+-   [Resources](#resources)
 
 ## Instant review (pair programming)
 
@@ -186,3 +178,12 @@ When applying the pairing strategies described in the section on synchronous rev
     -   Linter enforcing a certain coding style and forbidding some bad practices
     -   Script that automatically checks dependencies for security vulnerabilities and licensing issues, …
 -   Great addition to any reviewing process, allows reviewers to focus on things that really need a human judgement
+
+## Resources
+
+-   [4 Types Of Code Reviews Any Professional Developer Should Know About](https://dzone.com/articles/4-types-of-code-reviews-any-professional-developer)
+-   [Pairing with Junior Developers](https://madeintandem.com/blog/2015-1-pairing-with-junior-developers/)
+-   [Mob Programming, A Whole Team Approach - Woody Zuill](https://vimeo.com/131643015)
+-   [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
+-   [Pairing, Are You Doing it Wrong?](https://www.thoughtworks.com/insights/blog/pairing-are-you-doing-it-wrong)
+-   [The Art of Pull Requests](https://hackernoon.com/the-art-of-pull-requests-6f0f099850f9)

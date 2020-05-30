@@ -4,14 +4,6 @@ description: These techniques allow breaking large changes into chunks of smalle
 
 # Branch By Abstraction and application strangulation
 
-See:
-
--   [Introducing Branch By Abstraction](https://paulhammant.com/blog/branch_by_abstraction.html)
--   [Branch By Abstraction](https://trunkbaseddevelopment.com/branch-by-abstraction/)
--   [BranchByAbstraction](https://martinfowler.com/bliki/BranchByAbstraction.html)
--   [Make Large Scale Changes Incrementally with Branch By Abstraction](https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/)
--   [Application strangulation](https://trunkbaseddevelopment.com/strangulation/)
-
 ## Contents
 
 -   [Branch by abstraction](#branch-by-abstraction)
@@ -22,6 +14,7 @@ See:
 -   [Application strangulation (also known as Strangler pattern)](#application-strangulation-also-known-as-strangler-pattern)
     -   [Basic idea](#basic-idea-1)
     -   [Real-world example](#real-world-example-1)
+-   [Resources](#resources)
 
 ## Branch by abstraction
 
@@ -126,3 +119,11 @@ The migration of existing data itself also made use of the fact that both applic
 Finally, when everything was working with the new API as primary, the team got rid of the proxy and the old API in order to complete the migration.
 
 Note that, during the period in which both APIs were running next to each other, calls for both reads and writes were being forwarded to each API and the results were compared. This is very similar to the _Duplicate Writes_ and _Dark Reads_ in Expand-Contract data migrations (see [Data schema migration](../data/Data-schema-migration.md))
+
+## Resources
+
+-   [Introducing Branch By Abstraction](https://paulhammant.com/blog/branch_by_abstraction.html)
+-   [Branch By Abstraction](https://trunkbaseddevelopment.com/branch-by-abstraction/)
+-   [BranchByAbstraction](https://martinfowler.com/bliki/BranchByAbstraction.html)
+-   [Make Large Scale Changes Incrementally with Branch By Abstraction](https://continuousdelivery.com/2011/05/make-large-scale-changes-incrementally-with-branch-by-abstraction/)
+-   [Application strangulation](https://trunkbaseddevelopment.com/strangulation/)

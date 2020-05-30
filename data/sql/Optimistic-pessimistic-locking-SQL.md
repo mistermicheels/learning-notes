@@ -4,13 +4,6 @@ description: How and why to use locking with relational databases
 
 # Optimistic and pessimistic locking in SQL
 
-See:
-
--   [Concurrency Control](https://en.wikipedia.org/wiki/Concurrency_control)
--   [PostgreSQL Returning Data From Modified Rows](https://www.postgresql.org/docs/current/static/dml-returning.html)
--   [PostgreSQL Explicit Locking](https://www.postgresql.org/docs/current/static/explicit-locking.html)
--   [SQL Server Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017)
-
 ## Contents
 
 -   [Why locking?](#why-locking)
@@ -25,6 +18,7 @@ See:
 -   [Alternatives](#alternatives)
     -   [Atomic updates and database-level restrictions](#atomic-updates-and-database-level-restrictions)
     -   [Higher transaction isolation levels](#higher-transaction-isolation-levels)
+-   [Resources](#resources)
 
 ## Why locking?
 
@@ -217,3 +211,10 @@ See [Transaction isolation levels](Transaction-isolation-levels.md)
 -   Behavior varies widely between database vendors and sometimes even between different versions of the same database
     -   Probably not the best option for applications that need to support multiple databases
 -   Does not solve the problem of lost updates in the example with multiple users concurrently editing the same item’s description
+
+## Resources
+
+-   [Concurrency Control](https://en.wikipedia.org/wiki/Concurrency_control)
+-   [PostgreSQL Returning Data From Modified Rows](https://www.postgresql.org/docs/current/static/dml-returning.html)
+-   [PostgreSQL Explicit Locking](https://www.postgresql.org/docs/current/static/explicit-locking.html)
+-   [SQL Server Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017)

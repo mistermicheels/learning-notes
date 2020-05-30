@@ -5,16 +5,11 @@ description: An overview of the most important CSS units and some advice on when
 
 # Units (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [CSS values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
--   [CSS units for font-size: px | em | rem](https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97)
-
 ## Contents
 
 -   [Types of units](#types-of-units)
 -   [When to use what](#when-to-use-what)
+-   [Resources](#resources)
 
 ## Types of units
 
@@ -45,3 +40,9 @@ Good practice (but not necessarily best in all cases):
 -   Borders: `px` (visually, it often doesn't make sense for border thickness to scale with font size)
 -   Width and height: `%` or `vh`
 -   Top, bottom, left, right: `%`
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [CSS values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+-   [CSS units for font-size: px | em | rem](https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97)

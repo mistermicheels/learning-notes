@@ -4,17 +4,12 @@ description: A way to divide your system's code into different layers with diffe
 
 # Layered architecture
 
-See:
-
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
--   [Layered Architecture](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html)
--   [Layered Architecture](https://herbertograca.com/2017/08/03/layered-architecture/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [Open/closed layers](#openclosed-layers)
 -   [Typical antipattern: lasagna architecture](#typical-antipattern-lasagna-architecture)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -86,3 +81,9 @@ Some symptoms:
     -   In any layered architecture, this will likely be true for a minority of the requests, but it becomes a problem if this is the case for a majority of the requests
 
 Making some layers open could help solve this
+
+## Resources
+
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+-   [Layered Architecture](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html)
+-   [Layered Architecture](https://herbertograca.com/2017/08/03/layered-architecture/)

@@ -5,13 +5,6 @@ description: The main idea of CSS Flexbox
 
 # Flexbox (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
--   [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
--   [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -19,6 +12,7 @@ See:
 -   [Alignment of flex items](#alignment-of-flex-items)
 -   [Wrapping](#wrapping)
 -   [Use cases](#use-cases)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -73,3 +67,10 @@ Some use cases for Flexbox:
 -   Make an element take up all of the vertical space that is not yet taken up by other elements
 -   Make the children of a container scale along with the size of the container
 -   Show the children of a container side-by-side and make them have the same height, even if their content doesn't take up the same height
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+-   [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
+-   [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)

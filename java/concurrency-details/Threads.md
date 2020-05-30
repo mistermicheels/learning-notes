@@ -5,15 +5,12 @@ description: Some details regarding Java threads
 
 # Threads (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-
 ## Contents
 
 -   [Java threads basics](#java-threads-basics)
 -   [Thread interruption](#thread-interruption)
 -   [Daemon threads](#daemon-threads)
+-   [Resources](#resources)
 
 ## Java threads basics
 
@@ -75,3 +72,7 @@ Thread thread = new Thread(task);
 thread.setDaemon(true);
 thread.start();
 ```
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)

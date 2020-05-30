@@ -5,14 +5,6 @@ description: The different kinds of exceptions in Java and some best practices f
 
 # Exceptions (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   Clean Code (book by Robert C. Martin)
--   [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
--   [When to choose checked and unchecked exceptions](https://stackoverflow.com/questions/27578/when-to-choose-checked-and-unchecked-exceptions)
--   [Project Lombok @SneakyThrows (throwing checked exceptions as unchecked)](https://projectlombok.org/features/SneakyThrows)
-
 ## Contents
 
 -   [Basics](#basics)
@@ -24,6 +16,7 @@ See:
 -   [Rethrowing and chaining](#rethrowing-and-chaining)
 -   [Dealing with `NullPointerException`](#dealing-with-nullpointerexception)
 -   [Turning checked exceptions into unchecked exceptions](#turning-checked-exceptions-into-unchecked-exceptions)
+-   [Resources](#resources)
 
 ## Basics
 
@@ -337,3 +330,11 @@ thread.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 
 thread.start(); // Caught IOException
 ```
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   Clean Code (book by Robert C. Martin)
+-   [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
+-   [When to choose checked and unchecked exceptions](https://stackoverflow.com/questions/27578/when-to-choose-checked-and-unchecked-exceptions)
+-   [Project Lombok @SneakyThrows (throwing checked exceptions as unchecked)](https://projectlombok.org/features/SneakyThrows)

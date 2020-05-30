@@ -5,10 +5,6 @@ description: An overview of how to use TypeScript type guards, including creatin
 
 # Type guards (TypeScript)
 
-See:
-
--   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -17,6 +13,7 @@ See:
     -   [`instanceof` type guards](#instanceof-type-guards)
     -   [Type guards based on common property](#type-guards-based-on-common-property)
 -   [User-defined type guards](#user-defined-type-guards)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -179,3 +176,7 @@ function test(input: object) {
     }
 }
 ```
+
+## Resources
+
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)

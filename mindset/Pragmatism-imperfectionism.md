@@ -4,20 +4,6 @@ description: How to thrive in a world and workplace that are full of imperfectio
 
 # Pragmatism and imperfectionism
 
-See:
-
--   [Pragmatic Software Development](https://medium.com/gsoft-tech/pragmatic-software-development-59d12790e422)
--   [3 Ways Owning Your Mistakes Will Make You Powerful](https://www.entrepreneur.com/article/232417)
--   [Why you need to own your mistakes](https://www.klipfolio.com/blog/own-your-mistakes)
--   How to Be an Imperfectionist (book by Stephen Guise)
--   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
--   [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
--   [Quantity Always Trumps Quality](https://blog.codinghorror.com/quantity-always-trumps-quality/)
--   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
--   [Favourite Diff](https://essays.jwatzman.org/essays/favourite-diff.html)
--   [The next career step for Senior Software Engineers (that isn’t management)](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/)
--   [Releasing software to the fleet far too quickly broke stuff](http://rachelbythebay.com/w/2020/04/23/rel/) ([comments on Hacker News](https://news.ycombinator.com/item?id=22962830))
-
 ## Contents
 
 -   [Pragmatism](#pragmatism)
@@ -31,6 +17,7 @@ See:
     -   [Consider going for imperfect action now instead of possibly perfect action in the future](#consider-going-for-imperfect-action-now-instead-of-possibly-perfect-action-in-the-future)
     -   [Focus on solutions rather than problems](#focus-on-solutions-rather-than-problems)
     -   [Make success easier than failure](#make-success-easier-than-failure)
+-   [Resources](#resources)
 
 ## Pragmatism
 
@@ -162,3 +149,17 @@ See:
 -   Example: architectural governance
     -   Want teams to do incremental rollouts instead of immediately applying new code to all instances or users? Foresee a deployment pipeline where that is the default behavior and where you need to jump through a few hoops to bypass the mechanism.
     -   Want developers to respect certain boundaries in your modular monolith? Enforce the boundaries programmatically and require thorough reviewing of any changes to the enforced rules.
+
+## Resources
+
+-   [Pragmatic Software Development](https://medium.com/gsoft-tech/pragmatic-software-development-59d12790e422)
+-   [3 Ways Owning Your Mistakes Will Make You Powerful](https://www.entrepreneur.com/article/232417)
+-   [Why you need to own your mistakes](https://www.klipfolio.com/blog/own-your-mistakes)
+-   How to Be an Imperfectionist (book by Stephen Guise)
+-   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
+-   [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
+-   [Quantity Always Trumps Quality](https://blog.codinghorror.com/quantity-always-trumps-quality/)
+-   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
+-   [Favourite Diff](https://essays.jwatzman.org/essays/favourite-diff.html)
+-   [The next career step for Senior Software Engineers (that isn’t management)](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/)
+-   [Releasing software to the fleet far too quickly broke stuff](http://rachelbythebay.com/w/2020/04/23/rel/) ([comments on Hacker News](https://news.ycombinator.com/item?id=22962830))

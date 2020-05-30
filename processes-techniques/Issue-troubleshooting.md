@@ -4,12 +4,6 @@ description: Some tips for troubleshooting issues in your system
 
 # Issue troubleshooting
 
-See:
-
--   [The case of the missing DNS packets: a Google Cloud support story](https://cloud.google.com/blog/topics/inside-google-cloud/google-cloud-support-engineer-solves-a-tough-dns-case)
--   [How to debug in production](https://dev.to/tamasrev/how-to-debug-in-production-4f8)
--   [10 Tips For Debugging in Production](https://dev.to/molly_struve/10-tips-for-debugging-in-production-ko1)
-
 ## Contents
 
 -   [General tips](#general-tips)
@@ -17,6 +11,7 @@ See:
     -   [What if you can't reproduce locally?](#what-if-you-cant-reproduce-locally)
 -   [After fixing the issue](#after-fixing-the-issue)
     -   [What if you couldn't fix the issue?](#what-if-you-couldnt-fix-the-issue)
+-   [Resources](#resources)
 
 ## General tips
 
@@ -89,3 +84,9 @@ If the error is caused by the system getting into a certain state but you can't 
 
 -   If the issue is gone for now but you haven't been able to pinpoint what caused it, it could be helpful to set up something that allows you to detect the issue earlier on if it happens again
 -   If the issue is still there, it could make sense to build a workaround for it
+
+## Resources
+
+-   [The case of the missing DNS packets: a Google Cloud support story](https://cloud.google.com/blog/topics/inside-google-cloud/google-cloud-support-engineer-solves-a-tough-dns-case)
+-   [How to debug in production](https://dev.to/tamasrev/how-to-debug-in-production-4f8)
+-   [10 Tips For Debugging in Production](https://dev.to/molly_struve/10-tips-for-debugging-in-production-ko1)

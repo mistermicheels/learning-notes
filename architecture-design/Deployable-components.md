@@ -4,11 +4,6 @@ description: Some thoughts on defining deployable components and the dependencie
 
 # Deployable components
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   [Clean Architecture – Components and Component Cohesion](https://www.codingblocks.net/podcast/clean-architecture-components-and-component-cohesion/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -20,6 +15,7 @@ See:
         -   [Stable Dependencies Principle](#stable-dependencies-principle)
         -   [Stable Abstractions Principle](#stable-abstractions-principle)
 -   [Evolving the component structure](#evolving-the-component-structure)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -158,3 +154,8 @@ What typically works:
 -   Want to keep changes as localized as possible, so start paying attention to CCP
 -   As application continues to grow, more concern over creating reusable elements -> CRP
 -   As cycles appear, apply ADP, changing dependency directions or creating new components
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   [Clean Architecture – Components and Component Cohesion](https://www.codingblocks.net/podcast/clean-architecture-components-and-component-cohesion/)

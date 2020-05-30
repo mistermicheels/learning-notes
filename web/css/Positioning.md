@@ -5,12 +5,6 @@ description: Positioning elements using CSS
 
 # Positioning (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
--   [Layout and the containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -22,6 +16,7 @@ See:
     -   [Sticky positioning](#sticky-positioning)
 -   [An element's containing block](#an-elements-containing-block)
 -   [Extra: z-index](#extra-z-index)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -95,3 +90,9 @@ Note: the containing block for the root element (the `<html>` tag) is called the
     -   This is also important for making elements clickable! If multiple elements overlap beneath the mouse pointer, the one receiving the click event will be the one that sits on top of the others
 -   Property `z-index` accepts unitless values (default is 0)
 -   Higher values are considered to be on top of lower values
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
+-   [Layout and the containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block)

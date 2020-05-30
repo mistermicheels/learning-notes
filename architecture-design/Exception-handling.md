@@ -4,16 +4,12 @@ description: Some general best practices regarding exception handling
 
 # Exception handling
 
-See:
-
--   Clean Code (book by Robert C. Martin)
--   [Exceptions: Why throw early? Why catch late?](https://softwareengineering.stackexchange.com/questions/231057/exceptions-why-throw-early-why-catch-late)
-
 ## Contents
 
 -   [Throw early, catch late](#throw-early-catch-late)
 -   [Providing context with exceptions](#providing-context-with-exceptions)
 -   [Client-first design for exception classes](#client-first-design-for-exception-classes)
+-   [Resources](#resources)
 
 ## Throw early, catch late
 
@@ -50,3 +46,8 @@ public void open() {
     }
 }
 ```
+
+## Resources
+
+-   Clean Code (book by Robert C. Martin)
+-   [Exceptions: Why throw early? Why catch late?](https://softwareengineering.stackexchange.com/questions/231057/exceptions-why-throw-early-why-catch-late)

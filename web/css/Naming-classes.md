@@ -5,16 +5,12 @@ description: Some ideas/patterns for naming your CSS classes
 
 # Naming classes (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Organizing your CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing)
-
 ## Contents
 
 -   [Some general tips](#some-general-tips)
 -   [Object Oriented CSS](#object-oriented-css)
 -   [Block Element Modifier (BEM)](#block-element-modifier-bem)
+-   [Resources](#resources)
 
 ## Some general tips
 
@@ -128,3 +124,8 @@ BEM example (from [Get BEM](http://getbem.com/naming/)):
 .form__submit { }
 .form__submit--disabled { }
 ```
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Organizing your CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing)

@@ -4,14 +4,6 @@ description: Sometimes, the best thing you can do for your code is to stop think
 
 # Hammock-driven development
 
-See:
-
--   [Hammock Driven Development - Rich Hickey](https://www.youtube.com/watch?v=f84n5oFoZBc) ([transcript](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/HammockDrivenDev.md))
--   [The Top Idea in Your Mind](http://www.paulgraham.com/top.html)
--   Imagine: How Creativity Works (book by Jonah Lehrer) ([summary](http://newbooksinbrief.com/2012/04/29/12-a-summary-of-imagine-how-creativity-works-by-jonah-lehrer/))
--   [Inspired by Distraction: Mind Wandering Facilitates Creative Incubation](https://journals.sagepub.com/doi/abs/10.1177/0956797612446024)
--   [Harnessing the Power of Shower Thoughts - Trusting your mind to work in the background](https://alexanderell.is/posts/trust-in-your-unconscious/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -22,6 +14,7 @@ See:
     -   [Stop consciously thinking about the problem](#stop-consciously-thinking-about-the-problem)
 -   [Processing the results](#processing-the-results)
 -   [Bonus: the power of interactions and the outsider effect](#bonus-the-power-of-interactions-and-the-outsider-effect)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -108,3 +101,11 @@ Note: "false relaxation", like mindlessly scrolling through stuff on your phone,
         -   They tend to choose approaches that are different from the ones experts think of
         -   Easy to think outside the box if you have no idea what the box looks like
         -   This is called the "outsider effect"
+
+## Resources
+
+-   [Hammock Driven Development - Rich Hickey](https://www.youtube.com/watch?v=f84n5oFoZBc) ([transcript](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/HammockDrivenDev.md))
+-   [The Top Idea in Your Mind](http://www.paulgraham.com/top.html)
+-   Imagine: How Creativity Works (book by Jonah Lehrer) ([summary](http://newbooksinbrief.com/2012/04/29/12-a-summary-of-imagine-how-creativity-works-by-jonah-lehrer/))
+-   [Inspired by Distraction: Mind Wandering Facilitates Creative Incubation](https://journals.sagepub.com/doi/abs/10.1177/0956797612446024)
+-   [Harnessing the Power of Shower Thoughts - Trusting your mind to work in the background](https://alexanderell.is/posts/trust-in-your-unconscious/)

@@ -4,15 +4,11 @@ description: How architectural boundaries apply to the use of databases
 
 # Boundaries and the database
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
-
 ## Contents
 
 -   [Boundaries between the domain and the database](#boundaries-between-the-domain-and-the-database)
 -   [Separation at the database level](#separation-at-the-database-level)
+-   [Resources](#resources)
 
 ## Boundaries between the domain and the database
 
@@ -65,3 +61,8 @@ Separation at the database level makes it easier to reason about separate parts 
 When drawing boundaries down to the database level, some data that is relevant to two parts of the system might exist on both sides of the boundary between them
 
 See also [Microservices](../reference-architectures/Microservices.md)
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))

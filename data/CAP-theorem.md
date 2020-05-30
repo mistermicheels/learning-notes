@@ -4,18 +4,13 @@ description: The CAP theorem and its implications for distributed data stores
 
 # CAP theorem
 
-See:
-
--   [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
--   Designing Data-Intensive Applications (book by Martin Kleppmann)
--   [Consistency Models](https://jepsen.io/consistency)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [Criticism](#criticism)
 -   [CAP consistency vs. ACID consistency](#cap-consistency-vs-acid-consistency)
     -   [SQL Server example](#sql-server-example)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -64,3 +59,9 @@ See:
 -   [Offload read-only workload to secondary replica of an Always On availability group](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups?view=sql-server-2017)
 
 When setting up a high-availability cluster for Microsoft SQL Server, you have the choice between the availability modes _synchronous commit_ and _asynchronous commit_. Synchronous commit waits to return for a transaction until it has effectively been synchronized to the other instances (secondary replicas). Asynchronous commit, on the other hand, does not wait for the secondary replicas to catch up. If asynchronous commit is used and the cluster is configured to allow reads to go directly to the secondary replicas, it is possible that reads return stale data.
+
+## Resources
+
+-   [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+-   Designing Data-Intensive Applications (book by Martin Kleppmann)
+-   [Consistency Models](https://jepsen.io/consistency)

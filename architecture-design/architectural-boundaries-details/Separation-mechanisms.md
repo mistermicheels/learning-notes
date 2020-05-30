@@ -4,11 +4,6 @@ description: An overview of separation mechanisms to create boundaries in your s
 
 # Separation mechanisms
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
-
 ## Contents
 
 -   [Source-level boundaries](#source-level-boundaries)
@@ -20,6 +15,7 @@ See:
 -   [Dynamically-linked deployable components](#dynamically-linked-deployable-components)
 -   [Local processes](#local-processes)
 -   [Services](#services)
+-   [Resources](#resources)
 
 ## Source-level boundaries
 
@@ -107,3 +103,8 @@ See also [Deployable components](../Deployable-components.md)
     -   These dependencies should be carefully managed
 
 See also [Microservices](../reference-architectures/Microservices.md)
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))

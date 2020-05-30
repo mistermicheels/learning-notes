@@ -4,12 +4,6 @@ description: A way to build flexibility into your codebase, allowing some featur
 
 # Feature flags
 
-See:
-
--   [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
--   [Effective Feature Management ebook](https://launchdarkly.com/effective-feature-management-ebook/)
--   [Feature Flag Best Practices ebook](https://try.split.io/oreilly-feature-flag-best-practices)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -29,6 +23,7 @@ See:
 -   [Feature flags and database changes](#feature-flags-and-database-changes)
 -   [Managing the number of flags](#managing-the-number-of-flags)
 -   [General best practices](#general-best-practices)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -275,3 +270,9 @@ Existing flags:
 -   _Integrate monitoring with feature flagging_:
     -   Feature flags can have an effect on business metrics like conversion rates, but also on technical metrics like CPU use. Take care to make sure that you can link changes in these metrics to changes in feature flags so you can properly analyze the effect of a flag. 
     -   It may make sense to store some feature flag information with analytics events
+
+## Resources
+
+-   [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
+-   [Effective Feature Management ebook](https://launchdarkly.com/effective-feature-management-ebook/)
+-   [Feature Flag Best Practices ebook](https://try.split.io/oreilly-feature-flag-best-practices)

@@ -5,11 +5,6 @@ description: An overview of CSS selectors and how to combine them
 
 # Selectors (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
-
 ## Contents
 
 -   [Selector types](#selector-types)
@@ -27,6 +22,7 @@ See:
     -   [Child combinator](#child-combinator)
     -   [Adjacent sibling combinator](#adjacent-sibling-combinator)
     -   [General sibling combinator](#general-sibling-combinator)
+-   [Resources](#resources)
 
 ## Selector types
 
@@ -210,3 +206,8 @@ img ~ p {
   color: red;
 }
 ```
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)

@@ -5,13 +5,6 @@ description: An overview of Java Streams and when/how to use them
 
 # Streams (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
--   [Think Twice Before Using Java 8 Parallel Streams](https://dzone.com/articles/think-twice-using-java-8)
--   [3 Reasons why You Shouldn’t Replace Your for-loops by Stream.forEach()](https://blog.jooq.org/2015/12/08/3-reasons-why-you-shouldnt-replace-your-for-loops-by-stream-foreach/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -25,6 +18,7 @@ See:
 -   [Parallel streams](#parallel-streams)
     -   [Avoid blocking operations in parallel streams](#avoid-blocking-operations-in-parallel-streams)
 -   [Drawbacks of using streams](#drawbacks-of-using-streams)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -484,3 +478,10 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
     at misc.Main.main(Main.java:20)
 */
 ```
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Be Aware of ForkJoinPool#commonPool()](https://dzone.com/articles/be-aware-of-forkjoinpoolcommonpool)
+-   [Think Twice Before Using Java 8 Parallel Streams](https://dzone.com/articles/think-twice-using-java-8)
+-   [3 Reasons why You Shouldn’t Replace Your for-loops by Stream.forEach()](https://blog.jooq.org/2015/12/08/3-reasons-why-you-shouldnt-replace-your-for-loops-by-stream-foreach/)

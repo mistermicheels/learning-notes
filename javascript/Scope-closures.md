@@ -5,13 +5,6 @@ description: Execution contexts, lexical scope, the scope chain, function scope 
 
 # Scope and closures (JavaScript)
 
-See:
-
--   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
--   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
--   [Hoisting in Modern JavaScript — let, const, and var](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda)
--   [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-
 ## Contents
 
 -   [Execution contexts, lexical scope and the scope chain](#execution-contexts-lexical-scope-and-the-scope-chain)
@@ -20,6 +13,7 @@ See:
 -   [Function scope versus block scope](#function-scope-versus-block-scope)
 -   [Closures](#closures)
     -   [Closures and loops](#closures-and-loops)
+-   [Resources](#resources)
 
 ## Execution contexts, lexical scope and the scope chain
 
@@ -333,3 +327,10 @@ function getLogger(i) {
     return () => console.log(i);
 }
 ```
+
+## Resources
+
+-   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+-   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
+-   [Hoisting in Modern JavaScript — let, const, and var](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda)
+-   [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)

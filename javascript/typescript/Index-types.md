@@ -5,10 +5,6 @@ description: Some examples of TypeScript index types and how to use them
 
 # Index types (TypeScript)
 
-See:
-
--   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
-
 ## Contents
 
 -   [Index operators](#index-operators)
@@ -17,6 +13,7 @@ See:
         -   [`Readonly` and `Partial`](#readonly-and-partial)
         -   [`Pick`](#pick)
     -   [Use case: dictionaries with enum keys](#use-case-dictionaries-with-enum-keys)
+-   [Resources](#resources)
 
 ## Index operators
 
@@ -166,3 +163,7 @@ const testSomeKeys: DictionaryWithSomeKeys = {
   Second: 2
 }
 ```
+
+## Resources
+
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)

@@ -4,13 +4,6 @@ description: An overview of the SOLID principles for object-oriented design
 
 # SOLID principles
 
-See:
-
--   Clean Architure (book by Robert C. Martin)
--   [SOLID](https://en.wikipedia.org/wiki/SOLID)
--   [Functional S.O.L.I.D. Explained In 5 Examples](https://codemanship.wordpress.com/2019/03/15/functional-s-o-l-i-d-explained-in-5-examples/)
--   [OCP vs YAGNI](https://enterprisecraftsmanship.com/posts/ocp-vs-yagni/)
-
 ## Contents
 
 -   [Single responsibility principle (SRP)](#single-responsibility-principle-srp)
@@ -24,6 +17,7 @@ See:
 -   [Dependency inversion principle (DIP)](#dependency-inversion-principle-dip)
     -   [Example](#example-3)
     -   [Related: Observer pattern](#related-observer-pattern)
+-   [Resources](#resources)
 
 ## Single responsibility principle (SRP)
 
@@ -203,3 +197,10 @@ Flow of control still from general part (business logic) to specific part (prese
 Allows a general class to trigger methods on specific classes by letting the specific classes subscribe to the general class. When using this pattern, the general class does not know about the specific classes. All it knows about is an `Observer` interface that the specific classes implement.
 
 ![Observer](_img/SOLID-principles/Observer.png)
+
+## Resources
+
+-   Clean Architure (book by Robert C. Martin)
+-   [SOLID](https://en.wikipedia.org/wiki/SOLID)
+-   [Functional S.O.L.I.D. Explained In 5 Examples](https://codemanship.wordpress.com/2019/03/15/functional-s-o-l-i-d-explained-in-5-examples/)
+-   [OCP vs YAGNI](https://enterprisecraftsmanship.com/posts/ocp-vs-yagni/)

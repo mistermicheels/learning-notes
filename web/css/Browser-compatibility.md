@@ -5,11 +5,6 @@ description: Making sure your CSS works in different browsers
 
 # Browser compatibility (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Supporting older browsers](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Supporting_Older_Browsers)
-
 ## Contents
 
 -   [Eliminating inconsistencies](#eliminating-inconsistencies)
@@ -17,6 +12,7 @@ See:
 -   [Support queries](#support-queries)
 -   [Vendor prefixes](#vendor-prefixes)
 -   [Polyfills](#polyfills)
+-   [Resources](#resources)
 
 ## Eliminating inconsistencies
 
@@ -81,3 +77,8 @@ Polyfill = JavaScript that enables certain features in browsers that would not s
 Can be useful, but polyfills come at a cost (loading + execution time)
 
 Also, it is pretty much impossible to create a CSS polyfill that is not either big, slow or doesn't behave the way it should in all cases. See [The Dark Side of Polyfilling CSS](https://philipwalton.com/articles/the-dark-side-of-polyfilling-css/).
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Supporting older browsers](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Supporting_Older_Browsers)

@@ -4,17 +4,11 @@ description: Why duplication is not always bad and how architectural boundaries 
 
 # Boundaries and duplication
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
--   [AHA Programming](https://kentcdodds.com/blog/aha-programming)
--   [The Wrong Abstraction](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
-
 ## Contents
 
 -   [False duplication](#false-duplication)
 -   [Data duplication and bounded contexts](#data-duplication-and-bounded-contexts)
+-   [Resources](#resources)
 
 ## False duplication
 
@@ -43,3 +37,10 @@ Advice:
 ## Data duplication and bounded contexts
 
 See [Microservices](../reference-architectures/Microservices.md)
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+-   [AHA Programming](https://kentcdodds.com/blog/aha-programming)
+-   [The Wrong Abstraction](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)

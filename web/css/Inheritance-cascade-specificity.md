@@ -5,14 +5,6 @@ description: An overview of how CSS rules with their selectors actually affect H
 
 # Inheritance, the cascade and specificity (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [Cascade and inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
--   [The CSS Cascade](https://wattenberger.com/blog/css-cascade)
-
-All of these determine how CSS rules with their selectors actually affect the HTML elements
-
 ## Contents
 
 -   [Inheritance](#inheritance)
@@ -22,6 +14,7 @@ All of these determine how CSS rules with their selectors actually affect the HT
     -   [Origin](#origin)
     -   [Specificity](#specificity)
     -   [Source order](#source-order)
+-   [Resources](#resources)
 
 ## Inheritance
 
@@ -126,3 +119,11 @@ Note: **inherited** property values can be seen as rules that are less specific 
 In case of a tie regarding importance and specificity, the winning rule will be the one that was defined/loaded last. This can matter if the exact same selector is used for multiple rules, but also when an element is matched by two selectors that are equally specific.
 
 When using a CSS reset stylesheet (see above), any custom CSS rules can be loaded after the CSS reset stylesheet and override styles as necessary, starting from the "clean slate" created by the CSS reset stylesheet.
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [Cascade and inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+-   [The CSS Cascade](https://wattenberger.com/blog/css-cascade)
+
+All of these determine how CSS rules with their selectors actually affect the HTML elements

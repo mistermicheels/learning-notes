@@ -4,10 +4,6 @@ description: An overview of architectural fitness functions as a way to check if
 
 # Architectural fitness functions
 
-See:
-
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -22,6 +18,7 @@ See:
     -   [Holistic and triggered](#holistic-and-triggered)
     -   [Atomic and continuous](#atomic-and-continuous)
     -   [Holistic and continuous](#holistic-and-continuous)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -149,3 +146,7 @@ Example: Netflix's [Chaos Monkey](https://github.com/netflix/chaosmonkey)
 -   designed to test resilience to instance failures
 -   runs in production and randomly terminates instances
 -   forces teams to build resilient services while still taking into account other architectural goals
+
+## Resources
+
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))

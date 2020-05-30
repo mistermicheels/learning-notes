@@ -5,10 +5,6 @@ description: An overview of how TypeScript deals with null, undefined and option
 
 # Nullable types and optional parameters/properties (TypeScript)
 
-See:
-
--   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
-
 ## Contents
 
 -   [Nullable types](#nullable-types)
@@ -16,6 +12,7 @@ See:
 -   [Non-null assertion operator](#non-null-assertion-operator)
 -   [Optional parameters](#optional-parameters)
 -   [Optional properties](#optional-properties)
+-   [Resources](#resources)
 
 ## Nullable types
 
@@ -168,3 +165,7 @@ test.b = 12;
 test.b = undefined; 
 test.b = null; // error
 ```
+
+## Resources
+
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)

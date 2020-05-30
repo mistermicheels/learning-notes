@@ -4,16 +4,12 @@ description: How architectural boundaries apply to the web
 
 # Boundaries and the web
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
-
 ## Contents
 
 -   [Decoupling the domain from the web](#decoupling-the-domain-from-the-web)
 -   [Different representations of objects](#different-representations-of-objects)
 -   [Micro frontends](#micro-frontends)
+-   [Resources](#resources)
 
 ## Decoupling the domain from the web
 
@@ -39,3 +35,8 @@ Different parts of the system have different goals -> they may also need differe
 Even in a microservices architecture, it is typical to have a backend consisting of several microservices but a single monolithic frontend on top of it
 
 An alternative are micro frontends, where the frontend is stitched together from multiple independently maintained parts. See [Microservices](../reference-architectures/Microservices.md).
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))

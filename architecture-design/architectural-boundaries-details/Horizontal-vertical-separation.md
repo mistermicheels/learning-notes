@@ -4,17 +4,12 @@ description: The benefits and drawbacks of horizontal and vertical boundaries
 
 # Horizontal versus vertical separation
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
--   [Conway’s Corollary](http://www.ianbicking.org/blog/2015/08/conways-corollary.html)
-
 ## Contents
 
 -   [Horizontal slicing](#horizontal-slicing)
 -   [Vertical slicing](#vertical-slicing)
 -   [Conway's Law](#conways-law)
+-   [Resources](#resources)
 
 ## Horizontal slicing
 
@@ -43,3 +38,9 @@ Such designs actually make sense as well: if changes within a single part of the
 Consequence: if there is a mismatch between the team structure within your organization and the architecture of the application you’re working on, building the application is likely to be a struggle
 
 You can use Conway’s Law to your advantage by structuring your application (and thus your teams) in such a way that changes to the system are pretty likely to be confined to a single part of the application. In practice, it seems that vertical slicing is typically the best way to do that.
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+-   [Conway’s Corollary](http://www.ianbicking.org/blog/2015/08/conways-corollary.html)

@@ -5,15 +5,6 @@ description: The idea behind lambda expressions, how to use them, lambda express
 
 # Lambda expressions (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   [Anonymous function](https://en.wikipedia.org/wiki/Anonymous_function)
--   [Package java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
--   [Java 8 Functional interfaces (not the ones listed in java.util.function)](https://stackoverflow.com/questions/42942351/do-you-have-a-list-of-java-8-functional-interfaces-not-the-ones-listed-in-java)
--   [Java 8 Lambdas vs Anonymous classes](https://stackoverflow.com/questions/22637900/java8-lambdas-vs-anonymous-classes)
--   [Access method of outer anonymous class from inner anonymous class](https://stackoverflow.com/questions/53211917/access-method-of-outer-anonymous-class-from-inner-anonymous-class)
-
 ## Contents
 
 -   [Lambda expressions in general](#lambda-expressions-in-general)
@@ -23,6 +14,7 @@ See:
 -   [Java as a (somewhat) functional language](#java-as-a-somewhat-functional-language)
 -   [Alternatives: local and anonymous classes](#alternatives-local-and-anonymous-classes)
 -   [Functional interfaces and instantiation](#functional-interfaces-and-instantiation)
+-   [Resources](#resources)
 
 ## Lambda expressions in general
 
@@ -412,3 +404,12 @@ Predicate<String> pred2 = new Predicate<String>() {
 System.out.println(pred1.getClass()); // class misc.Main$$Lambda$1/834600351
 System.out.println(pred2.getClass()); // class misc.Main$4
 ```
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Anonymous function](https://en.wikipedia.org/wiki/Anonymous_function)
+-   [Package java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
+-   [Java 8 Functional interfaces (not the ones listed in java.util.function)](https://stackoverflow.com/questions/42942351/do-you-have-a-list-of-java-8-functional-interfaces-not-the-ones-listed-in-java)
+-   [Java 8 Lambdas vs Anonymous classes](https://stackoverflow.com/questions/22637900/java8-lambdas-vs-anonymous-classes)
+-   [Access method of outer anonymous class from inner anonymous class](https://stackoverflow.com/questions/53211917/access-method-of-outer-anonymous-class-from-inner-anonymous-class)

@@ -4,15 +4,6 @@ description: How to manage expectations and why it's important
 
 # Expectation management
 
-See:
-
--   [Managing Expectations: The Most Underrated Leadership Skill](https://www.inc.com/janine-popick/3-practical-tips-for-managing-expectations.html)
--   [Expectation Management](http://sourcesofinsight.com/expectation-management/)
--   [The 5 Golden Rules Of Expectation Management And Why You Can’t Ignore Them](https://yaro.blog/8750/expectation-management/)
--   [My FOSS Story](https://blog.burntsushi.net/foss/) (see the part on setting boundaries)
--   [What Does It Mean to Manage Up?](https://www.tinypulse.com/blog/what-does-it-mean-to-manage-up)
--   [The Problem with “Underpromise, Overdeliver”](https://www.pluralsight.com/blog/teams/the-problem-with--underpromise--overdeliver-)
-
 ## Contents
 
 -   [Managing others' expectations of you](#managing-others-expectations-of-you)
@@ -21,6 +12,7 @@ See:
     -   [Underpromise, overdeliver](#underpromise-overdeliver)
 -   [Managing your expectations of others](#managing-your-expectations-of-others)
 -   [Managing your expectations of yourself](#managing-your-expectations-of-yourself)
+-   [Resources](#resources)
 
 ## Managing others' expectations of you
 
@@ -90,3 +82,12 @@ Benefits:
 -   Ask yourself (and your boss): "What are reasonable expectations for someone in my position?"
 -   Remember that, even if you are generally competent at your job, it's expected that there will be specific situations where you make mistakes
 -   See also [Pragmatism and imperfectionism](../mindset/Pragmatism-imperfectionism.md)
+
+## Resources
+
+-   [Managing Expectations: The Most Underrated Leadership Skill](https://www.inc.com/janine-popick/3-practical-tips-for-managing-expectations.html)
+-   [Expectation Management](http://sourcesofinsight.com/expectation-management/)
+-   [The 5 Golden Rules Of Expectation Management And Why You Can’t Ignore Them](https://yaro.blog/8750/expectation-management/)
+-   [My FOSS Story](https://blog.burntsushi.net/foss/) (see the part on setting boundaries)
+-   [What Does It Mean to Manage Up?](https://www.tinypulse.com/blog/what-does-it-mean-to-manage-up)
+-   [The Problem with “Underpromise, Overdeliver”](https://www.pluralsight.com/blog/teams/the-problem-with--underpromise--overdeliver-)

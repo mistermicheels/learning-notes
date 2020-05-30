@@ -4,20 +4,12 @@ description: The Clean Architecture as proposed by Robert C. Martin
 
 # Clean Architecture
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   [clean-architecture-example](https://github.com/mattia-battiston/clean-architecture-example)
--   [Uncle Bob's clean architecture - An entity/model class for each layer?](https://softwareengineering.stackexchange.com/questions/303478/uncle-bobs-clean-architecture-an-entity-model-class-for-each-layer)
--   [Implementing Clean Architecture - Of controllers and presenters](http://www.plainionist.net/Implementing-Clean-Architecture-Controller-Presenter/)
--   [Clean Architecture: May the Controller talk to the Presenter directly?](https://softwareengineering.stackexchange.com/questions/388379/clean-architecture-may-the-controller-talk-to-the-presenter-directly)
--   [Implementing Clean Architecture - Make it scream](http://www.plainionist.net/Implementing-Clean-Architecture-Scream/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [The different layers](#the-different-layers)
 -   [Boundaries between the layers](#boundaries-between-the-layers)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -106,3 +98,12 @@ Note: in practice, you could have more layers. However, the dependency rule stil
 -   The View is created from View Model created by the Presenter
     -   View Model contains as much data as possible so minimal logic is required in the view
     -   See also [Humble Object pattern](../Humble-Object-pattern.md)
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   [clean-architecture-example](https://github.com/mattia-battiston/clean-architecture-example)
+-   [Uncle Bob's clean architecture - An entity/model class for each layer?](https://softwareengineering.stackexchange.com/questions/303478/uncle-bobs-clean-architecture-an-entity-model-class-for-each-layer)
+-   [Implementing Clean Architecture - Of controllers and presenters](http://www.plainionist.net/Implementing-Clean-Architecture-Controller-Presenter/)
+-   [Clean Architecture: May the Controller talk to the Presenter directly?](https://softwareengineering.stackexchange.com/questions/388379/clean-architecture-may-the-controller-talk-to-the-presenter-directly)
+-   [Implementing Clean Architecture - Make it scream](http://www.plainionist.net/Implementing-Clean-Architecture-Scream/)

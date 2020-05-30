@@ -5,11 +5,6 @@ description: How and when to use the Java Optional type
 
 # Optional type (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   [Why should Java 8's Optional not be used in arguments](https://stackoverflow.com/a/39005452)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -17,6 +12,7 @@ See:
 -   [How not to use Optional values](#how-not-to-use-optional-values)
 -   [Creating Optional values](#creating-optional-values)
 -   [Turning an Optional into a Stream](#turning-an-optional-into-a-stream)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -104,3 +100,8 @@ idsStream
         .map(Users::lookup) // Users.lookUp returns a User object or null
         .flatMap(Stream::ofNullable)
 ```
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Why should Java 8's Optional not be used in arguments](https://stackoverflow.com/a/39005452)

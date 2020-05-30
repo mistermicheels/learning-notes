@@ -5,18 +5,6 @@ description: JavaScript objects, the prototype chain, classes, encapsulation, ..
 
 # Object prototypes and classes (JavaScript)
 
-See:
-
--   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
--   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
--   [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
--   [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
--   [Prototype pollution attacks in NodeJS applications](https://www.youtube.com/watch?v=LUsiFV3dsK8&feature=emb_logo)
--   [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)
--   [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript)
--   [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes)
--   [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d)
-
 ## Contents
 
 -   [JavaScript objects](#javascript-objects)
@@ -29,6 +17,7 @@ See:
 -   [Object-oriented design vs. delegation-oriented design](#object-oriented-design-vs-delegation-oriented-design)
 -   [Classes](#classes)
 -   [Encapsulation](#encapsulation)
+-   [Resources](#resources)
 
 ## JavaScript objects
 
@@ -533,3 +522,15 @@ class A {
 const instance = new A("theName");
 instance._name = "test"; // as per convention, you should not do this
 ```
+
+## Resources
+
+-   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+-   [The Complete JavaScript Course](https://www.udemy.com/course/the-complete-javascript-course/)
+-   [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+-   [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+-   [Prototype pollution attacks in NodeJS applications](https://www.youtube.com/watch?v=LUsiFV3dsK8&feature=emb_logo)
+-   [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)
+-   [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript)
+-   [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes)
+-   [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d)

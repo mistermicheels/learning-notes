@@ -4,15 +4,11 @@ description: Why you shouldn't be afraid of asking the "dumb" questions
 
 # Ask the dumb questions
 
-See:
-
--   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
--   [The five keys to a successful Google team](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [Some questions to ask](#some-questions-to-ask)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -53,3 +49,8 @@ The value of asking "dumb" questions:
 -   Can we find an alternative that is simpler?
 -   What would we actually accomplish by doing this?
 -   Do we actually need to take any action at all?
+
+## Resources
+
+-   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
+-   [The five keys to a successful Google team](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)

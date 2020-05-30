@@ -4,14 +4,6 @@ description: A very high-level overview of the data store landscape, covering re
 
 # SQL, NoSQL, NewSQL
 
-See: 
-
--   [Relational database](https://en.wikipedia.org/wiki/Relational_database)
--   [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
--   [Living Without Transactions](https://stackoverflow.com/a/39210371)
--   [Patterns for Schema Changes in Document Databases](https://stackoverflow.com/questions/5029580/patterns-for-schema-changes-in-document-databases)
--   [NewSQL](https://en.wikipedia.org/wiki/NewSQL)
-
 ## Contents
 
 -   [Relational databases (SQL)](#relational-databases-sql)
@@ -29,6 +21,7 @@ See:
 -   [NewSQL](#newsql)
 -   [Which one to use?](#which-one-to-use)
 -   [Hosted data stores](#hosted-data-stores)
+-   [Resources](#resources)
 
 ## Relational databases (SQL)
 
@@ -209,3 +202,11 @@ NewSQL systems are a class of relational database management systems that aim at
 ## Hosted data stores
 
 When you are evaluating data stores for your project, it is a good idea to also consider the hosted data stores that are offered by cloud providers like AWS or Microsoft Azure. These hosted data stores include SQL, NoSQL and NewSQL data stores and using them could save you the headaches involved in managing your own data store or data store cluster. However, you should be careful regarding the amount of vendor lock-in this generates.
+
+## Resources
+
+-   [Relational database](https://en.wikipedia.org/wiki/Relational_database)
+-   [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
+-   [Living Without Transactions](https://stackoverflow.com/a/39210371)
+-   [Patterns for Schema Changes in Document Databases](https://stackoverflow.com/questions/5029580/patterns-for-schema-changes-in-document-databases)
+-   [NewSQL](https://en.wikipedia.org/wiki/NewSQL)

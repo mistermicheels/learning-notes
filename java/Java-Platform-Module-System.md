@@ -4,14 +4,6 @@ description: An overview of the Java Platform Module System
 
 # Java Platform Module System
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   [The Java Platform Module System](https://dzone.com/articles/the-java-platform-module-system)
--   [Java Platform Module System Cheat Sheet](https://www.jrebel.com/blog/java-9-modules-cheat-sheet)
--   [What's the difference between requires and requires transitive statements in Java 9?](https://stackoverflow.com/questions/46502453/whats-the-difference-between-requires-and-requires-transitive-statements-in-jav)
--   Java 9, OSGi and the Future of Modularity [part 1](https://www.infoq.com/articles/java9-osgi-future-modularity/) [part 2](https://www.infoq.com/articles/java9-osgi-future-modularity-part-2/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -23,6 +15,7 @@ See:
     -   [Modular JDK](#modular-jdk)
 -   [Adjusting your own applications](#adjusting-your-own-applications)
 -   [Alternative for modularizing applications: OSGi](#alternative-for-modularizing-applications-osgi)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -175,3 +168,11 @@ Things that OSGi supports that the Java Platform Module System does not offer:
 -   Potentially cyclic dependencies between modules
 
 Because of these kinds of advantages, OSGi could be a better choice for modularizing your own applications (while still getting the benefits of the modularized Java JDK as well)
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [The Java Platform Module System](https://dzone.com/articles/the-java-platform-module-system)
+-   [Java Platform Module System Cheat Sheet](https://www.jrebel.com/blog/java-9-modules-cheat-sheet)
+-   [What's the difference between requires and requires transitive statements in Java 9?](https://stackoverflow.com/questions/46502453/whats-the-difference-between-requires-and-requires-transitive-statements-in-jav)
+-   Java 9, OSGi and the Future of Modularity [part 1](https://www.infoq.com/articles/java9-osgi-future-modularity/) [part 2](https://www.infoq.com/articles/java9-osgi-future-modularity-part-2/)

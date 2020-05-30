@@ -5,10 +5,6 @@ description: Concurrency issues in Java and how to prevent them
 
 # Thread safety (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-
 ## Contents
 
 -   [Concurrency issues](#concurrency-issues)
@@ -19,6 +15,7 @@ See:
     -   [Thread-safe collections](#thread-safe-collections)
     -   [Atomic counters and accumulators](#atomic-counters-and-accumulators)
     -   [Thread-local variables](#thread-local-variables)
+-   [Resources](#resources)
 
 ## Concurrency issues
 
@@ -252,3 +249,7 @@ String amountString = currencyFormat.get().format(total)
 ```
 
 The first time a thread calls the `get()` method, an instance is created based on the lambda expression supplied to `withInitial()`. From then on, that same instance will always be returned whenever that specific thread calls `get()`.
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)

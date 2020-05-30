@@ -4,13 +4,6 @@ description: An overview of the transaction isolation levels offered by relation
 
 # Transaction isolation levels
 
-See:
-
--   [PostgreSQL Transaction Isolation](https://www.postgresql.org/docs/current/static/transaction-iso.html)
--   [SQL Server SET TRANSACTION ISOLATION LEVEL](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?view=sql-server-2017)
--   [SQL Server Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017)
--   [Hermitage: Testing transaction isolation levels](https://github.com/ept/hermitage)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -20,6 +13,7 @@ See:
     -   [Read committed](#read-committed)
     -   [Repeatable read](#repeatable-read)
     -   [Serializable](#serializable)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -98,3 +92,10 @@ Implementations:
     -   Checks for all situations that prevent the results of the executed transactions to match some sequential order of execution. If such a situation is detected, the transaction fails.
     -   Even the results of SELECT queries are not guaranteed to be valid until the transaction is successfully committed
         -   As an alternative, a Serializable Read-only Deferrable transaction can be used. In that case, SELECT statements block until they can return a result that is guaranteed to be valid.
+
+## Resources
+
+-   [PostgreSQL Transaction Isolation](https://www.postgresql.org/docs/current/static/transaction-iso.html)
+-   [SQL Server SET TRANSACTION ISOLATION LEVEL](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?view=sql-server-2017)
+-   [SQL Server Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017)
+-   [Hermitage: Testing transaction isolation levels](https://github.com/ept/hermitage)

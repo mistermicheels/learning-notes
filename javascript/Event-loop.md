@@ -5,15 +5,6 @@ description: A high-level overview of how JavaScript handles concurrency using i
 
 # Event loop (JavaScript)
 
-See:
-
--   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
--   [Concurrency model and the event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
--   [Event loop explainer](https://github.com/atotic/event-loop)
--   [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
--   [Understanding the Node.js event loop phases and how it executes the JavaScript code.](https://dev.to/lunaticmonk/understanding-the-node-js-event-loop-phases-and-how-it-executes-the-javascript-code-1j9)
--   [Don't Block the Event Loop (or the Worker Pool)](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
-
 ## Contents
 
 -   [JavaScript and concurrency](#javascript-and-concurrency)
@@ -26,6 +17,7 @@ See:
     -   [Recommendation: watch out with JSON and regexes](#recommendation-watch-out-with-json-and-regexes)
     -   [Recommendation: task partitioning](#recommendation-task-partitioning)
     -   [Recommendation: offloading](#recommendation-offloading)
+-   [Resources](#resources)
 
 ## JavaScript and concurrency
 
@@ -249,3 +241,12 @@ Also note that task partitioning shouldn't be taken too far, as there is also so
 For some kinds of long-running synchronous computations, task partitioning is very hard to achieve. In this case, you can spare the event loop (and potentially even make better use of the available CPU cores) by running those computations inside their own [child process](https://nodejs.org/api/child_process.html), [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), ... 
 
 Do note that there is some overhead for creating these and communicating with them. You can mitigate this overhead by maintaining a pool of reusable workers/processes (instead of creating new ones each time) and limiting the amount of communication that is needed.
+
+## Resources
+
+-   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+-   [Concurrency model and the event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+-   [Event loop explainer](https://github.com/atotic/event-loop)
+-   [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
+-   [Understanding the Node.js event loop phases and how it executes the JavaScript code.](https://dev.to/lunaticmonk/understanding-the-node-js-event-loop-phases-and-how-it-executes-the-javascript-code-1j9)
+-   [Don't Block the Event Loop (or the Worker Pool)](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)

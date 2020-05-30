@@ -5,10 +5,6 @@ description: An overview of how the this keyword works in JavaScript
 
 # The this keyword (JavaScript)
 
-See:
-
--   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -19,6 +15,7 @@ See:
     -   [`new` binding](#new-binding)
 -   [Priority of the rules](#priority-of-the-rules)
 -   [Lexical `this`](#lexical-this)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -252,3 +249,7 @@ const Test = () => {
 
 const theObject = new Test(); // TypeError
 ```
+
+## Resources
+
+-   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)

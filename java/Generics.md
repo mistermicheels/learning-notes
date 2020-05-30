@@ -5,20 +5,6 @@ description: An overview of generics in Java
 
 # Generics (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-
-Simple class hierarchy for examples:
-
-```java
-public class Animal {}
-```
-
-```java
-public class Dog extends Animal {}
-```
-
 ## Contents
 
 -   [Generics basics](#generics-basics)
@@ -30,6 +16,7 @@ public class Dog extends Animal {}
     -   [Bridge methods](#bridge-methods)
 -   [The Class class](#the-class-class)
 -   [Generics restrictions](#generics-restrictions)
+-   [Resources](#resources)
 
 ## Generics basics
 
@@ -312,3 +299,17 @@ Exceptions: it is not possible to throw objects of a generic class.
 
 -   Reason: type erasure. Catching instances of a generic class with a specific type parameter would require information that is not available at runtime.
 -   It is still allowed to have a type variable in your throws declaration, as this is checked by the compiler.
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+
+Simple class hierarchy for examples:
+
+```java
+public class Animal {}
+```
+
+```java
+public class Dog extends Animal {}
+```

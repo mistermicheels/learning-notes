@@ -4,17 +4,13 @@ description: Some techniques for migrating the structure of your data
 
 # Data schema migration
 
-See:
-
--   [Feature Flag Best Practices ebook](https://try.split.io/oreilly-feature-flag-best-practices)
--   [Online migrations at scale](https://stripe.com/blog/online-migrations)
-
 ## Contents
 
 -   [Big Bang](#big-bang)
 -   [Code First](#code-first)
 -   [Data First](#data-first)
 -   [Expand-Contract migrations](#expand-contract-migrations)
+-   [Resources](#resources)
 
 ## Big Bang
 
@@ -59,3 +55,8 @@ Verifying correctness of migration: _Dark Reads_
 
 -   When reading data (example: getting address info for a specific order), you read from both places where the data is available
 -   Trigger an alert if data is not identical
+
+## Resources
+
+-   [Feature Flag Best Practices ebook](https://try.split.io/oreilly-feature-flag-best-practices)
+-   [Online migrations at scale](https://stripe.com/blog/online-migrations)

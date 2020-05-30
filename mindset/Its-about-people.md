@@ -4,14 +4,6 @@ description: Why software development is about people rather than computers
 
 # It's about people
 
-See:
-
--   [Working as a Software Developer](https://henrikwarne.com/2012/12/12/working-as-a-software-developer/)
--   [7 Questions To Help You Find Out If Your Team Feels Psychologically Safe](https://hackernoon.com/7-questions-to-help-you-find-out-if-your-team-feels-psychologically-safe-wvcr3y60)
--   [The five keys to a successful Google team](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
--   [Lessons Learned in Software Development](https://henrikwarne.com/2015/04/16/lessons-learned-in-software-development/)
--   Clean Code (book by Robert C. Martin) (especially the 1st chapter)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -20,6 +12,7 @@ See:
     -   [Some general tips](#some-general-tips)
 -   [Dealing with customers](#dealing-with-customers)
 -   [Code](#code)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -104,3 +97,11 @@ Some tips:
 People are also the reason why consistency, coding standards, automation, ... are so important
 
 -   It's about making it easier to collaborate on the codebase and maintain it, not wasting people's time and energy on things that computers are better at, preventing human errors, ...
+
+## Resources
+
+-   [Working as a Software Developer](https://henrikwarne.com/2012/12/12/working-as-a-software-developer/)
+-   [7 Questions To Help You Find Out If Your Team Feels Psychologically Safe](https://hackernoon.com/7-questions-to-help-you-find-out-if-your-team-feels-psychologically-safe-wvcr3y60)
+-   [The five keys to a successful Google team](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
+-   [Lessons Learned in Software Development](https://henrikwarne.com/2015/04/16/lessons-learned-in-software-development/)
+-   Clean Code (book by Robert C. Martin) (especially the 1st chapter)

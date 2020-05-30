@@ -5,14 +5,11 @@ description: An explanation of TypeScript conditional types and an overview of s
 
 # Conditional types (TypeScript)
 
-See:
-
--   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [Predefined conditional types](#predefined-conditional-types)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -97,3 +94,7 @@ type Test6 = NonNullable<(string[] | null | undefined>; // string[]
 
 type Test7 = ReturnType<() => boolean> // boolean
 ```
+
+## Resources
+
+-   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)

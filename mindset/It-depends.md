@@ -4,10 +4,6 @@ description: Everything is a trade-off
 
 # It depends
 
-See:
-
--   [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -19,6 +15,7 @@ See:
 -   [Tools, not rules](#tools-not-rules)
 -   [Documenting the decision process](#documenting-the-decision-process)
 -   [Moving to a different approach](#moving-to-a-different-approach)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -104,3 +101,7 @@ Helps to reevaluate approach at a later time if new option pops up or situation 
 Even if architecture and code are flexible, there are some costs and risks associated with making the change. The benefits of switching to the other approach may or may not outweigh those costs and risks. 
 
 So, should you make the change? _It depends._
+
+## Resources
+
+-   [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)

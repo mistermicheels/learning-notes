@@ -4,17 +4,6 @@ description: A high-level overview of what a Microservices architecture means an
 
 # Microservices
 
-See:
-
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
--   Clean Architecture (book by Robert C. Martin)
--   [Learning the hard way: Microservices](https://itnext.io/microservices-c8b5dbdd58b8)
--   [Should that be a Microservice? Keep These Six Factors in Mind](https://content.pivotal.io/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind)
--   [A shared database is still an anti-pattern, no matter what the justification](https://www.ben-morris.com/a-shared-database-is-still-an-anti-pattern-no-matter-what-the-justification/)
--   [BoundedContext](https://www.martinfowler.com/bliki/BoundedContext.html)
--   [Pattern: Database per service](https://microservices.io/patterns/data/database-per-service.html)
--   [How to keep relationship integrity with Microservice Architecture](https://softwareengineering.stackexchange.com/questions/381279/how-to-keep-relationship-integrity-with-microservice-architecture)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -23,6 +12,7 @@ See:
     -   [Service template coupling](#service-template-coupling)
 -   [Data duplication and bounded contexts](#data-duplication-and-bounded-contexts)
 -   [Micro frontends](#micro-frontends)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -157,3 +147,14 @@ Implementation approaches:
 -   **Run-time integration via JavaScript:** Each micro frontend will be a bundle.js file that can be released independently and is retrieved and mounted asynchronously as needed, using JavaScript
     -   Example implementation: [Tailor](https://github.com/zalando/tailor)
 -   **Run-time integration via WebComponents:** Each micro frontend will define a custom HTML element (WebComponent) that the container application can instantiate
+
+## Resources
+
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+-   Clean Architecture (book by Robert C. Martin)
+-   [Learning the hard way: Microservices](https://itnext.io/microservices-c8b5dbdd58b8)
+-   [Should that be a Microservice? Keep These Six Factors in Mind](https://content.pivotal.io/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind)
+-   [A shared database is still an anti-pattern, no matter what the justification](https://www.ben-morris.com/a-shared-database-is-still-an-anti-pattern-no-matter-what-the-justification/)
+-   [BoundedContext](https://www.martinfowler.com/bliki/BoundedContext.html)
+-   [Pattern: Database per service](https://microservices.io/patterns/data/database-per-service.html)
+-   [How to keep relationship integrity with Microservice Architecture](https://softwareengineering.stackexchange.com/questions/381279/how-to-keep-relationship-integrity-with-microservice-architecture)

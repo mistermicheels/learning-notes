@@ -4,15 +4,11 @@ description: A pattern for testing hard-to-test behavior
 
 # Humble Object pattern
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   [TDD Patterns: Humble Object](https://ieftimov.com/post/tdd-humble-object/)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
 -   [Values as boundaries](#values-as-boundaries)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -50,3 +46,8 @@ The definition of a _value_ in this context: anything immutable
     -   Example: Java's String class
 
 Additional benefit of these values (in addition to testability): values like these are easy to pass as messages. This way, values can be used as boundaries between classes, subsystems, processes and even different machines.
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   [TDD Patterns: Humble Object](https://ieftimov.com/post/tdd-humble-object/)

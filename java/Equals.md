@@ -5,13 +5,6 @@ description: How and why to write custom equals methods in Java
 
 # Equals (Java)
 
-See:
-
--   [EqualsVerifier](http://jqno.nl/equalsverifier/)
--   [How to Write an Equality Method in Java](http://www.artima.com/lejava/articles/equality.html)
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
-
 ## Contents
 
 -   [Why override standard equals?](#why-override-standard-equals)
@@ -30,6 +23,7 @@ See:
         -   [The easy way](#the-easy-way)
 -   [In practice](#in-practice)
 -   [Testing `equals` methods](#testing-equals-methods)
+-   [Resources](#resources)
 
 ## Why override standard equals?
 
@@ -389,3 +383,10 @@ public void equalsContract() {
 Uses reflection to inspect class and test its `equals` and `hashCode` methods with 100% coverage.
 
 [Overview of detected errors](http://jqno.nl/equalsverifier/errormessages/). It is also possible to suppress certain errors.
+
+## Resources
+
+-   [EqualsVerifier](http://jqno.nl/equalsverifier/)
+-   [How to Write an Equality Method in Java](http://www.artima.com/lejava/articles/equality.html)
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)

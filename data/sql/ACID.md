@@ -4,13 +4,10 @@ description: An overview of the ACID properties offered by relational databases
 
 # ACID properties
 
-See:
-
--   [ACID (computer science)](https://en.wikipedia.org/wiki/ACID_(computer_science))
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -30,3 +27,7 @@ The four ACID properties:
     -   Relational database systems typically provide multiple isolation levels, where higher levels protect against more concurrency-induced phenomena than lower levels. For more details, see [transaction isolation levels](./Transaction-isolation-levels.md).
 -   _Durability_: 
     -   Once a transaction has been successfully committed, it will remain so, even if the system crashes, power is shut off, etc. right after the transaction has completed.
+
+## Resources
+
+-   [ACID (computer science)](https://en.wikipedia.org/wiki/ACID_(computer_science))

@@ -5,17 +5,13 @@ description: An overview of how overloading, overriding and method hiding works 
 
 # Overloading, overriding and method hiding (Java)
 
-See:
-
--   [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
--   [Java Method Hiding and Overriding](https://crunchify.com/java-method-hiding-and-overriding-override-static-method-in-java/9)
-
 ## Contents
 
 -   [Overloading](#overloading)
 -   [Overriding](#overriding)
 -   [Combining overloading and overriding](#combining-overloading-and-overriding)
 -   [Method hiding](#method-hiding)
+-   [Resources](#resources)
 
 ## Overloading
 
@@ -169,3 +165,8 @@ staticSubAsSuper.testStaticMethod(testObject); // super (!!!)
 No overriding here! Instead, we get _method hiding_.
 
 Can be pretty confusing (not only the method hiding itself, but also the fact that we call a static method in a way that makes it look like an instance method), which is also why we get warnings when doing this.
+
+## Resources
+
+-   [Overloading in the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se10/html/jls-8.html#jls-8.4.9)
+-   [Java Method Hiding and Overriding](https://crunchify.com/java-method-hiding-and-overriding-override-static-method-in-java/9)

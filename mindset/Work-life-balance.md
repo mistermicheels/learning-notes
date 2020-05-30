@@ -4,22 +4,6 @@ description: How to improve your work-life balance and why it's beneficial to bo
 
 # Work-life balance
 
-See:
-
--   [Want to Be Happy at Work? Care Less About It](https://www.quietrev.com/want-to-be-happy-at-work-care-less-about-it/)
--   [Caring less made me better at my job](https://medium.com/@Sindemark/caring-less-made-me-better-at-my-job-fdefdaf9ca94)
--   [1 in 5 Employees Is Highly Engaged and at Risk of Burnout](https://hbr.org/2018/02/1-in-5-highly-engaged-employees-is-at-risk-of-burnout)
--   [The Research Is Clear: Long Hours Backfire for People and for Companies](https://hbr.org/2015/08/the-research-is-clear-long-hours-backfire-for-people-and-for-companies)
--   [Stop Working and Go Home](https://www.bloomberg.com/opinion/articles/2019-11-06/long-work-hours-waste-time-and-lead-to-lower-productivity)
--   [The compelling case for working a lot less](https://www.bbc.com/worklife/article/20171204-the-compelling-case-for-working-a-lot-less)
--   [The futile comfort of working long hours](https://codewithoutrules.com/2018/02/11/working-long-hours/)
--   [Avoiding hour creep: get your work done and still go home at 5PM](https://codewithoutrules.com/2018/06/15/avoid-hour-creep/)
--   [Work/life balance will make you a better software engineer](https://codewithoutrules.com/2016/11/10/work-life-balance-software-engineer/)
--   [Can software engineering be meaningful work?](https://codewithoutrules.com/2019/04/12/meaningful-programming-work/)
--   [How I Broke the Cycle of Stress](https://blogs.scientificamerican.com/observations/how-i-broke-the-cycle-of-stress/)
--   [How to Feel Less Overwhelmed as a Developer](https://medium.com/@juliahaigh/how-to-feel-less-overwhelmed-as-a-developer-79bc816709de)
--   [It's perfectly fine to only code at work, don't let anyone tell you otherwise.](https://dev.to/ben/its-perfectly-fine-to-only-code-at-work-dont-let-anyone-tell-you-otherwise--25i3)
-
 ## Contents
 
 -   [Don't care too much](#dont-care-too-much)
@@ -29,6 +13,7 @@ See:
 -   [Separate work and personal life](#separate-work-and-personal-life)
 -   [Pursue other interests](#pursue-other-interests)
     -   [What about self-improvement?](#what-about-self-improvement)
+-   [Resources](#resources)
 
 ## Don't care too much
 
@@ -166,3 +151,19 @@ Don't get intimidated by job adverts!
 -   Even for skills/technologies that are really needed, there's likely a lot that you can just learn on the job as you go, especially if they are relatively similar to things you already have experience with
 -   If you're looking at job adverts to get a feel for what your current skill set is worth, remember taking them with a big grain of salt
 -   If you're looking for a new job, don't let intimidating job adverts keep you from applying. Just state what you know, what you don't know (yet), and how some things you do know could help you to learn some of the things you don't know yet. Then, it's up to the company to decide if you're interesting enough to interview.
+
+## Resources
+
+-   [Want to Be Happy at Work? Care Less About It](https://www.quietrev.com/want-to-be-happy-at-work-care-less-about-it/)
+-   [Caring less made me better at my job](https://medium.com/@Sindemark/caring-less-made-me-better-at-my-job-fdefdaf9ca94)
+-   [1 in 5 Employees Is Highly Engaged and at Risk of Burnout](https://hbr.org/2018/02/1-in-5-highly-engaged-employees-is-at-risk-of-burnout)
+-   [The Research Is Clear: Long Hours Backfire for People and for Companies](https://hbr.org/2015/08/the-research-is-clear-long-hours-backfire-for-people-and-for-companies)
+-   [Stop Working and Go Home](https://www.bloomberg.com/opinion/articles/2019-11-06/long-work-hours-waste-time-and-lead-to-lower-productivity)
+-   [The compelling case for working a lot less](https://www.bbc.com/worklife/article/20171204-the-compelling-case-for-working-a-lot-less)
+-   [The futile comfort of working long hours](https://codewithoutrules.com/2018/02/11/working-long-hours/)
+-   [Avoiding hour creep: get your work done and still go home at 5PM](https://codewithoutrules.com/2018/06/15/avoid-hour-creep/)
+-   [Work/life balance will make you a better software engineer](https://codewithoutrules.com/2016/11/10/work-life-balance-software-engineer/)
+-   [Can software engineering be meaningful work?](https://codewithoutrules.com/2019/04/12/meaningful-programming-work/)
+-   [How I Broke the Cycle of Stress](https://blogs.scientificamerican.com/observations/how-i-broke-the-cycle-of-stress/)
+-   [How to Feel Less Overwhelmed as a Developer](https://medium.com/@juliahaigh/how-to-feel-less-overwhelmed-as-a-developer-79bc816709de)
+-   [It's perfectly fine to only code at work, don't let anyone tell you otherwise.](https://dev.to/ben/its-perfectly-fine-to-only-code-at-work-dont-let-anyone-tell-you-otherwise--25i3)

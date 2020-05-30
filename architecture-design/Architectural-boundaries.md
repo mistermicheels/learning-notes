@@ -4,13 +4,6 @@ description: The importance of boundaries in architecture, different kinds of bo
 
 # Architectural boundaries
 
-See:
-
--   Clean Architecture (book by Robert C. Martin)
--   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
--   [Conway’s Corollary](http://www.ianbicking.org/blog/2015/08/conways-corollary.html)
--   [Our Software Dependency Problem](https://research.swtch.com/deps)
-
 ## Contents
 
 -   [Architecture is about boundaries](#architecture-is-about-boundaries)
@@ -24,6 +17,7 @@ See:
 -   [Boundaries and the web](#boundaries-and-the-web)
 -   [Boundaries and third-party dependencies](#boundaries-and-third-party-dependencies)
 -   [Boundaries and duplication](#boundaries-and-duplication)
+-   [Resources](#resources)
 
 ## Architecture is about boundaries
 
@@ -134,3 +128,10 @@ See [Boundaries and third-party dependencies](./architectural-boundaries-details
 ## Boundaries and duplication
 
 See [Boundaries and duplication](./architectural-boundaries-details/Boundaries-duplication.md)
+
+## Resources
+
+-   Clean Architecture (book by Robert C. Martin)
+-   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+-   [Conway’s Corollary](http://www.ianbicking.org/blog/2015/08/conways-corollary.html)
+-   [Our Software Dependency Problem](https://research.swtch.com/deps)

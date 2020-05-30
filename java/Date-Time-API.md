@@ -5,10 +5,6 @@ description: An overview of the Java Date and Time API
 
 # Date and Time API (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-
 ## Contents
 
 -   [Date and Time API basics](#date-and-time-api-basics)
@@ -19,6 +15,7 @@ See:
     -   [Local time](#local-time)
 -   [Zoned time](#zoned-time)
 -   [Formatting and parsing dates](#formatting-and-parsing-dates)
+-   [Resources](#resources)
 
 ## Date and Time API basics
 
@@ -176,3 +173,7 @@ System.out.println(parsed1.equals(parsed2)); // true
 // throws DateTimeParseException
 LocalDate parsed3 = LocalDate.parse("2019/08/28", patternFormatter);
 ```
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)

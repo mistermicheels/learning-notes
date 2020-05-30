@@ -4,10 +4,6 @@ description: An overview of database normalization for relational databases
 
 # Database normalization
 
-See: 
-
--   [Database normalization](https://en.wikipedia.org/wiki/Database_normalization)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -15,6 +11,7 @@ See:
     -   [1NF (first normal form)](#1nf-first-normal-form)
     -   [2NF (second normal form)](#2nf-second-normal-form)
     -   [3NF (third normal form)](#3nf-third-normal-form)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -153,3 +150,7 @@ Solution: separate Genre table
 | -------- | --------------- |
 | 1        | Tutorial        |
 | 2        | Popular science |
+
+## Resources
+
+-   [Database normalization](https://en.wikipedia.org/wiki/Database_normalization)

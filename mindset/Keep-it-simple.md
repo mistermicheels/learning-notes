@@ -4,23 +4,6 @@ description: Some tips for reducing effort and improving results by avoiding nee
 
 # Keep it simple
 
-See:
-
--   [Simplicity, Please - A Manifesto for Software Development](https://www.infoq.com/articles/simplicity-manifesto-development/)
--   [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)
--   [You Are Not Google](https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb)
--   [YAGNI, Cargo Cult and Overengineering - the Planes Won't Land Just Because You Built a Runway in Your Backyard](https://codeahoy.com/2017/08/19/yagni-cargo-cult-and-overengineering-the-planes-wont-land-just-because-you-built-a-runway-in-your-backyard/)
--   [Choose Boring Technology](https://mcfunley.com/choose-boring-technology)
--   [Tech Choices I Regret at Spectrum](https://mxstbr.com/thoughts/tech-choice-regrets-at-spectrum)
--   [Write Stupid Code](https://thorstenball.com/blog/2015/10/22/write-stupid-code/)
--   [Less Dirty Code](https://hackernoon.com/less-dirty-code-2c27321g)
--   [The Simplest Thing That Could Possibly Work](http://www.agilenutshell.com/simplest_thing)
--   [YAGNI](https://martinfowler.com/bliki/Yagni.html)
--   [Jonathan Blow on solving hard problems](https://www.youtube.com/watch?v=6XAu4EPQRmY) ([transcript](https://old.reddit.com/r/programming/comments/bx8p52/jonathan_blow_on_solving_hard_problems/eq4rl7j/))
--   [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle)
--   [The Danger of “Simplicity”](https://asthasr.github.io/posts/danger-of-simplicity/)
--   [I could do that in a weekend!](https://danluu.com/sounds-easy/)
-
 ## Contents
 
 -   [Architecture](#architecture)
@@ -31,6 +14,7 @@ See:
 -   [Processes](#processes)
 -   [Effort](#effort)
 -   [Don't take it too far](#dont-take-it-too-far)
+-   [Resources](#resources)
 
 ## Architecture
 
@@ -142,3 +126,20 @@ See:
 -   If you want to build a reliable system, you might have to spend more time on proper error handling than on development of the actual happy path!
 -   Relaxing quality standards can help you move fast in the beginning, but too much technical debt can slow further development to a crawl and require an enormous amount of time and energy to fix later on
 -   As always, [It depends](./It-depends.md)
+
+## Resources
+
+-   [Simplicity, Please - A Manifesto for Software Development](https://www.infoq.com/articles/simplicity-manifesto-development/)
+-   [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)
+-   [You Are Not Google](https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb)
+-   [YAGNI, Cargo Cult and Overengineering - the Planes Won't Land Just Because You Built a Runway in Your Backyard](https://codeahoy.com/2017/08/19/yagni-cargo-cult-and-overengineering-the-planes-wont-land-just-because-you-built-a-runway-in-your-backyard/)
+-   [Choose Boring Technology](https://mcfunley.com/choose-boring-technology)
+-   [Tech Choices I Regret at Spectrum](https://mxstbr.com/thoughts/tech-choice-regrets-at-spectrum)
+-   [Write Stupid Code](https://thorstenball.com/blog/2015/10/22/write-stupid-code/)
+-   [Less Dirty Code](https://hackernoon.com/less-dirty-code-2c27321g)
+-   [The Simplest Thing That Could Possibly Work](http://www.agilenutshell.com/simplest_thing)
+-   [YAGNI](https://martinfowler.com/bliki/Yagni.html)
+-   [Jonathan Blow on solving hard problems](https://www.youtube.com/watch?v=6XAu4EPQRmY) ([transcript](https://old.reddit.com/r/programming/comments/bx8p52/jonathan_blow_on_solving_hard_problems/eq4rl7j/))
+-   [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle)
+-   [The Danger of “Simplicity”](https://asthasr.github.io/posts/danger-of-simplicity/)
+-   [I could do that in a weekend!](https://danluu.com/sounds-easy/)

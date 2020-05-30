@@ -4,14 +4,6 @@ description: On keeping your feedback loops short
 
 # Fail fast
 
-See:
-
--   [Inefficient Efficiency](https://medium.com/@kentbeck_7670/inefficient-efficiency-5b3ab5294791)
--   [You Are Solving The Wrong Problem](https://uxmag.com/articles/you-are-solving-the-wrong-problem)
--   [3 Problems to Stop Looking For in Code Reviews](https://medium.com/swlh/3-problems-to-stop-looking-for-in-code-reviews-981bb169ba8b)
--   The Pragmatic Programmer (book by Andrew Hunt and David Thomas) ([summary](https://github.com/HugoMatilla/The-Pragmatic-Programmer))
--   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
-
 ## Contents
 
 -   [Basic idea](#basic-idea)
@@ -20,6 +12,7 @@ See:
 -   [Development process](#development-process)
     -   [Tracer bullets and prototypes](#tracer-bullets-and-prototypes)
 -   [People](#people)
+-   [Resources](#resources)
 
 ## Basic idea
 
@@ -96,3 +89,11 @@ Both can help you to get early customer feedback, as well as feedback on some te
 -   If you notice tension in the room, discuss it explicitly before it grows too big to handle
 -   If something doesn't sit well with you, bring it up before it grows into a huge source of worry or frustration
     -   Plenty of people have quit their jobs over issues that could have easily been solved if they would have been brought up early enough
+
+## Resources
+
+-   [Inefficient Efficiency](https://medium.com/@kentbeck_7670/inefficient-efficiency-5b3ab5294791)
+-   [You Are Solving The Wrong Problem](https://uxmag.com/articles/you-are-solving-the-wrong-problem)
+-   [3 Problems to Stop Looking For in Code Reviews](https://medium.com/swlh/3-problems-to-stop-looking-for-in-code-reviews-981bb169ba8b)
+-   The Pragmatic Programmer (book by Andrew Hunt and David Thomas) ([summary](https://github.com/HugoMatilla/The-Pragmatic-Programmer))
+-   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)

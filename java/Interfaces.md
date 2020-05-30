@@ -5,19 +5,13 @@ description: An overview of interfaces in Java
 
 # Interfaces (Java)
 
-See:
-
--   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
--   [Evolution of Interfaces in History of Java](https://dzone.com/articles/evolution-of-interface-in-history-of-java)
--   [Difference between Abstract Class and Interface in Java](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)
--   [The diamond problem](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
-
 ## Contents
 
 -   [Basics](#basics)
 -   [Default methods](#default-methods)
 -   [Abstract classes vs. interfaces](#abstract-classes-vs-interfaces)
 -   [Default methods and inheritance](#default-methods-and-inheritance)
+-   [Resources](#resources)
 
 ## Basics
 
@@ -105,3 +99,10 @@ public class Class implements InterfaceA, InterfaceB {
 If a class inherits from a superclass implementing a certain method but also implements an interface that has a default method with the same signature,  the implementation from the superclass will always have priority
 
 -   This prevents default methods from changing the behavior of code that was written before Java 8.
+
+## Resources
+
+-   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
+-   [Evolution of Interfaces in History of Java](https://dzone.com/articles/evolution-of-interface-in-history-of-java)
+-   [Difference between Abstract Class and Interface in Java](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)
+-   [The diamond problem](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)

@@ -4,16 +4,11 @@ description: Some tips on making decisions as a team
 
 # Team decision-making
 
-See:
-
--   [Teamwork is difficult, can Sociocracy help? by Ruben De Gauw](https://www.youtube.com/watch?v=GTt_4IP6wac)
--   [Asynchronous Communication: The Real Reason Remote Workers Are More Productive](https://doist.com/blog/asynchronous-communication/)
--   [Why does writing matter in remote work?](http://www.timcasasola.com/blog/writing)
-
 ## Contents
 
 -   [Consent as an alternative to consensus](#consent-as-an-alternative-to-consensus)
 -   [Synchronous and asynchronous decision-making](#synchronous-and-asynchronous-decision-making)
+-   [Resources](#resources)
 
 ## Consent as an alternative to consensus
 
@@ -67,3 +62,9 @@ Often, you can get the best results (while minimizing total time investment) by 
     -   Asynchronous discussion makes sense for a few well thought out messages. If the conversation requires a lot of back-and-forth, synchronous discussion probably works better.
     -   Writing things down has some benefits of its own, see also [Why does writing matter in remote work?](http://www.timcasasola.com/blog/writing)
 -   Once the meeting starts, you can use the earlier asynchronous work to make optimal use of the higher communication bandwidth that meetings provide
+
+## Resources
+
+-   [Teamwork is difficult, can Sociocracy help? by Ruben De Gauw](https://www.youtube.com/watch?v=GTt_4IP6wac)
+-   [Asynchronous Communication: The Real Reason Remote Workers Are More Productive](https://doist.com/blog/asynchronous-communication/)
+-   [Why does writing matter in remote work?](http://www.timcasasola.com/blog/writing)

@@ -5,12 +5,6 @@ description: The CSS box model, blocks and inline boxes, inner and outer display
 
 # Box model (CSS)
 
-See:
-
--   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
--   [The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
--   [Normal Flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow)
-
 ## Contents
 
 -   [Blocks and inline boxes](#blocks-and-inline-boxes)
@@ -32,6 +26,7 @@ See:
 -   [Inline blocks (`display: inline-block`)](#inline-blocks-display-inline-block)
 -   [Sizing elements](#sizing-elements)
 -   [Hiding elements](#hiding-elements)
+-   [Resources](#resources)
 
 ## Blocks and inline boxes
 
@@ -212,3 +207,9 @@ For inline boxes:
 
 -   `display: none;`: Remove the element from the document flow, which means that it will not take up any space and other elements can take its place
 -   `visibility: hidden;`: Hide the element, but still let it take up space (and thus push away other elements as necessary)
+
+## Resources
+
+-   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
+-   [The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+-   [Normal Flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow)

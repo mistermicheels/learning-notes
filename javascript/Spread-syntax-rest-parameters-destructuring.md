@@ -5,12 +5,6 @@ description: An overview of JavaScript spread syntax, rest parameters and destru
 
 # Spread syntax, rest parameters and destructuring (JavaScript)
 
-See:
-
--   [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
--   [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
--   [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-
 ## Contents
 
 -   [Spread syntax](#spread-syntax)
@@ -18,6 +12,7 @@ See:
 -   [Destructuring](#destructuring)
     -   [Array destructuring](#array-destructuring)
     -   [Object destructuring](#object-destructuring)
+-   [Resources](#resources)
 
 ## Spread syntax
 
@@ -158,3 +153,9 @@ test({ name: "Cookie" }); // Cookie Doe
 test({ lastName: undefined }); // John Doe
 test({ lastName: null }); // John null
 ```
+
+## Resources
+
+-   [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+-   [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+-   [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
