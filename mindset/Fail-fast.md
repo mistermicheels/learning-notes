@@ -10,6 +10,7 @@ See:
 -   [You Are Solving The Wrong Problem](https://uxmag.com/articles/you-are-solving-the-wrong-problem)
 -   [3 Problems to Stop Looking For in Code Reviews](https://medium.com/swlh/3-problems-to-stop-looking-for-in-code-reviews-981bb169ba8b)
 -   The Pragmatic Programmer (book by Andrew Hunt and David Thomas) ([summary](https://github.com/HugoMatilla/The-Pragmatic-Programmer))
+-   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
 
 ## Contents
 
@@ -42,6 +43,9 @@ All of this also means that, when trying to solve a problem, it can be a lot mor
 -   Split big problems into small steps that allow you to verify that you're on the right track after each step
 -   Tackle risky or uncertain parts as early as possible
 -   Be proactive about asking for feedback
+    -   This can be as simple as announcing something you're about to do, which gives people a chance to stop you or suggest an alternative approach (this is usually also faster than asking and waiting for explicit permission)
+        -   "Do whatever you want, but do it loudly" (from [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt))
+-   Make sure that you know how to check if a task is "done" and if it solved the problem you wanted to solve
 
 ## Architecture, design and code
 

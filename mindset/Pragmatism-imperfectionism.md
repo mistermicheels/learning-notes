@@ -10,6 +10,7 @@ See:
 -   [3 Ways Owning Your Mistakes Will Make You Powerful](https://www.entrepreneur.com/article/232417)
 -   [Why you need to own your mistakes](https://www.klipfolio.com/blog/own-your-mistakes)
 -   How to Be an Imperfectionist (book by Stephen Guise)
+-   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
 -   [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
 -   [Quantity Always Trumps Quality](https://blog.codinghorror.com/quantity-always-trumps-quality/)
 -   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
@@ -24,6 +25,7 @@ See:
 -   [Imperfectionist mindset](#imperfectionist-mindset)
     -   [Be humble](#be-humble)
     -   [Own your mistakes](#own-your-mistakes)
+    -   [Focus on what you can control](#focus-on-what-you-can-control)
     -   [Focus on putting in the work rather than on the results](#focus-on-putting-in-the-work-rather-than-on-the-results)
     -   [Prefer incremental improvement over sudden perfection](#prefer-incremental-improvement-over-sudden-perfection)
     -   [Consider going for imperfect action now instead of possibly perfect action in the future](#consider-going-for-imperfect-action-now-instead-of-possibly-perfect-action-in-the-future)
@@ -82,6 +84,12 @@ See:
 -   Instead of ruminating about mistakes you have made, put that time and energy into fixing the situation or preventing the mistake from happening again
 -   People who admit their mistakes come across as more confident, reliable and relatable than those who pretend to be perfect
 
+### Focus on what you can control
+
+-   A lot of things are out of your control, which means it's a waste of energy to stress out over them or try to change them
+-   Instead, focus on what you can control
+-   "Don’t get stuck thinking that you can’t do good work unless something you can’t control changes" (from [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt))
+
 ### Focus on putting in the work rather than on the results
 
 -   Worrying about results steals time and energy that you could otherwise spend on putting in the actual work that is needed to get the results
@@ -96,6 +104,7 @@ See:
 -   Incremental improvement gives you early feedback on whether you're moving in the right direction
 -   Incremental improvement is often a lot more practical than sudden huge changes
     -   Example: First writing a working "first draft" of the code and then improving its readability can be a lot more effective than trying to write perfectly clean code immediately
+        -   "First make it work, then make it clean"
     -   Example: When introducing stricter coding standards to an existing project, changing all the existing code is often not practical or justifiable. But, if you apply the new standards whenever you write new code or touch an existing piece of code, all parts of the codebase that are under active development will soon follow the new standards
 -   Big goals are daunting. Instead, chop the work up into small steps and follow the process, focusing on one step at a time.
 -   There is often a compounding where early progress makes future progress easier

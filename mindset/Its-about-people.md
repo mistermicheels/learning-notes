@@ -68,6 +68,7 @@ In a psychologically safe team, you can have a meeting full of passionate and he
 -   If you are stuck, feel you are missing some information, or would just like some feedback on your approach: ask! Helping each other out is not only beneficial to the outcome of the current task, but also strengthens the bond between team members.
 -   Don't hesitate to do something small (or even big) for your team mates if you see they could use it
 -   Share credit whenever you can. When you accomplish something, make sure to mention who else helped or contributed to the success.
+-   When something goes wrong, focus on finding the systemic root cause rather than who caused this particular issue
 -   Avoid putting unnecessary pressure on your team mates when you're under pressure yourself
     -   However, don't be afraid to ask the team if there's anyone who can help share the load
 -   "No matter how correct you are, you won't get anywhere by making the other person feel stupid." ([source](https://news.ycombinator.com/item?id=23100530))
