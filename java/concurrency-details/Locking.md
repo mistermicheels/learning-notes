@@ -15,7 +15,7 @@ description: Some details regarding locking as a low-level concurrency tool in J
 
 ## A word of caution
 
-Note: locking is a low-level concurrency tool typically used by system programmers writing things like web servers or middleware. When writing normal applications, it's probably easier and safer to use higher-level concurrency tools (see other notes in this folder).
+Note: locking is a low-level concurrency tool typically used by system programmers writing things like web servers or middleware. When writing normal applications, it's probably easier and safer to use higher-level concurrency tools (see [Concurrency](../Concurrency.md) and the thread-safe date structures in [Thread safety](./Thread-safety.md)).
 
 ## Locks
 

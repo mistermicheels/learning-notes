@@ -12,6 +12,7 @@
 -   [Deployable components](Deployable-components.md)
 -   [Exception handling](Exception-handling.md)
 -   [Humble Object pattern](Humble-Object-pattern.md)
+-   [Separation of concerns](Separation-of-concerns.md)
 -   [**Architectural boundaries details**](architectural-boundaries-details/README.md)
     -   [Boundaries and the database](architectural-boundaries-details/Boundaries-database.md)
     -   [Boundaries and duplication](architectural-boundaries-details/Boundaries-duplication.md)

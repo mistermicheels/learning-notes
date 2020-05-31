@@ -27,7 +27,7 @@ Idea: each class (or module, or function, or ...) should be responsible for a si
 
 Arguably most important principle, is applicable on all levels of the system
 
-Closely related: [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
+Closely related: [Separation of concerns](../Separation-of-concerns.md)
 
 Benefits:
 

@@ -14,6 +14,7 @@ If you prefer to read them on GitHub, the overview below might be useful.
     -   [Deployable components](architecture-design/Deployable-components.md)
     -   [Exception handling](architecture-design/Exception-handling.md)
     -   [Humble Object pattern](architecture-design/Humble-Object-pattern.md)
+    -   [Separation of concerns](architecture-design/Separation-of-concerns.md)
     -   [**Architectural boundaries details**](architecture-design/architectural-boundaries-details/README.md)
         -   [Boundaries and the database](architecture-design/architectural-boundaries-details/Boundaries-database.md)
         -   [Boundaries and duplication](architecture-design/architectural-boundaries-details/Boundaries-duplication.md)
