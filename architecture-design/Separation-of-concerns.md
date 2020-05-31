@@ -143,8 +143,7 @@ public class FinancialReportGenerator2 {
 
 public class DepartmentResultsRetriever {
     public List<DepartmentResult> getDepartmentResults(
-        Connection connection
-    ) throws SQLException {
+            Connection connection) throws SQLException {
         List<DepartmentResult> departmentResults = new ArrayList<>();
         
         String sql = "SELECT * FROM public.department_results";
@@ -183,8 +182,7 @@ public class FinancialReportDataGenerator {
     }
 
     public List<FinancialReportDataEntry> getReportData(
-        List<DepartmentResult> departmentResults
-    ) {
+            List<DepartmentResult> departmentResults) {
         List<FinancialReportDataEntry> data = new ArrayList<>();
 
         for (DepartmentResult departmentResult : departmentResults) {
@@ -193,8 +191,11 @@ public class FinancialReportDataGenerator {
 
             int differenceWithTarget = departmentResult.revenue - targetRevenue;
 
-            data.add(new FinancialReportDataEntry(departmentResult.departmentName,
-                    departmentResult.costs, departmentResult.revenue, targetRevenue,
+            data.add(new FinancialReportDataEntry(
+                    departmentResult.departmentName,
+                    departmentResult.costs,
+                    departmentResult.revenue,
+                    targetRevenue,
                     differenceWithTarget));
         }
 
