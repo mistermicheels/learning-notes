@@ -139,13 +139,13 @@ There are two ways in which abstract base classes are used.
 
 ### Solution For 1 - Strategy Pattern
 
-![Option1](https://i.stack.imgur.com/Bu4Vy.png)
+![Abstract situation 1](./_img/Composition-over-inheritance/abstract-situation-1.png)
 
 If you have the first situation, then you actually have an interface defined by the virtual methods in the abstract class that your derived classes are implementing.
 
 You should consider making this a real interface, changing your abstract class to be concrete, and take an instance of this interface in its constructor. Your derived classes then become implementations of this new interface.
 
-![IMotor](https://i.stack.imgur.com/wPPqA.png)
+![Abstract solution 1](./_img/Composition-over-inheritance/abstract-solution-1.png)
 
 This means you can now test your previously abstract class using a mock instance of the new interface, and each new implementation through the now public interface. Everything is simple and testable.
 
@@ -153,11 +153,11 @@ This means you can now test your previously abstract class using a mock instance
 
 If you have the second situation, then your abstract class is working as a helper class.
 
-![AbstractHelper](https://i.stack.imgur.com/ABrGO.png)
+![Abstract situation 2](./_img/Composition-over-inheritance/abstract-situation-2.png)
 
 Take a look at the functionality it contains. See if any of it can be pushed onto the objects that are being manipulated to minimize this duplication. If you still have anything left, look at making it a helper class that your concrete implementation take in their constructor and remove their base class.
 
-![Motor Helper](https://i.stack.imgur.com/eySjQ.png)
+![Abstract solution 2](./_img/Composition-over-inheritance/abstract-solution-2.png)
 
 This again leads to concrete classes that are simple and easily testable.
 
