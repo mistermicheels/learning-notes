@@ -23,6 +23,7 @@ If you prefer to read them on GitHub, the overview below might be useful.
         -   [Horizontal versus vertical separation](architecture-design/architectural-boundaries-details/Horizontal-vertical-separation.md)
         -   [Separation mechanisms](architecture-design/architectural-boundaries-details/Separation-mechanisms.md)
     -   [**Object-oriented design**](architecture-design/oo-design/README.md)
+        -   [Composition over inheritance](architecture-design/oo-design/Composition-over-inheritance.md)
         -   [SOLID principles](architecture-design/oo-design/SOLID-principles.md)
     -   [**Reference architectures**](architecture-design/reference-architectures/README.md)
         -   [Clean Architecture](architecture-design/reference-architectures/Clean-Architecture.md)

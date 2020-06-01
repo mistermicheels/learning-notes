@@ -120,6 +120,7 @@ Some problems with this:
     -   What if we want to use nested HTML lists instead of a table?
     -   What if we want to get the department data from a CSV file instead of from a DB?
     -   What if we want to compare results from different ways of calculating target revenue?
+    -   What if we want to output HTML as well as a PDF? Or allow users to choose which one they want?
 
 ### Implementation with proper separation of concerns
 
@@ -281,6 +282,7 @@ Comparison with earlier implementation:
         -   We could also create different `DepartmentResultsRetriever`  classes and choose which one to use in which case. With a bit of work, we can make connection/files into constructor arguments and make all of those `DepartmentResultsRetriever` implement the same interface, allowing even more flexibility.
         -   If needed, it's easy to test the retrieval separately without having to worry about the calculation and presentation of the report
     -   If we want to compare results from different ways of calculating target revenue, we just need to create different  `TargetRevenueCalculator` classes implementing a common interface and then plug them into `FinancialReportDataGenerator` as needed
+    -   If we want to allow users to choose whether to get back HTML or a PDF, the only thing we need to do is add an alternative report formatter. We don't need to touch any of the data retrieval or calculation logic
 
 ## Resources
 

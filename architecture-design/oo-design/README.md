@@ -6,4 +6,5 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
+-   [Composition over inheritance](Composition-over-inheritance.md)
 -   [SOLID principles](SOLID-principles.md)

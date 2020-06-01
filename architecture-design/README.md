@@ -21,6 +21,7 @@
     -   [Horizontal versus vertical separation](architectural-boundaries-details/Horizontal-vertical-separation.md)
     -   [Separation mechanisms](architectural-boundaries-details/Separation-mechanisms.md)
 -   [**Object-oriented design**](oo-design/README.md)
+    -   [Composition over inheritance](oo-design/Composition-over-inheritance.md)
     -   [SOLID principles](oo-design/SOLID-principles.md)
 -   [**Reference architectures**](reference-architectures/README.md)
     -   [Clean Architecture](reference-architectures/Clean-Architecture.md)
