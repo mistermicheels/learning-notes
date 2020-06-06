@@ -256,8 +256,11 @@ function remarkAdjustImagesAndLinks({ relativePath }) {
     }
 }
 
-function getImageNodeReplacement(node, relativeFilePath) {
+function getImageNodeReplacement(node, relativeFilePath) {  
     const originalUrl = node.url;
+
+    checkNoteImageUrl(originalUrl, relativeFilePath);
+
     const imageFilename = path.basename(originalUrl);
     const relativeFolder = removeMarkdownExtension(relativeFilePath);
 
@@ -268,6 +271,22 @@ function getImageNodeReplacement(node, relativeFilePath) {
         ...node, 
         url: newUrl
     };
+}
+
+function checkNoteImageUrl(originalUrl, relativeFilePath) {
+    const noteFilename = path.basename(relativeFilePath);
+    const noteFilenameNoExtension = removeMarkdownExtension(noteFilename);
+
+    const expectedNoteImageFolderUrls = [
+        `./_img/${noteFilenameNoExtension}`,
+        `_img/${noteFilenameNoExtension}`
+    ];
+
+    const imageFolderUrl = path.dirname(originalUrl);
+
+    if (!expectedNoteImageFolderUrls.includes(imageFolderUrl)) {
+        throw new Error(`Problem with ${relativeFilePath}: unexpected image URL ${originalUrl}`);
+    }
 }
 
 function getInternalLinkNodeReplacement(node, relativePath) {
