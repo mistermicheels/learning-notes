@@ -6,5 +6,6 @@
 
 <!-- optional markdown-notes-tree directory description ends here -->
 
+-   [Avoiding fat service classes](Avoiding-fat-service-classes.md)
 -   [Composition over inheritance](Composition-over-inheritance.md)
 -   [SOLID principles](SOLID-principles.md)
