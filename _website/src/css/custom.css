@@ -37,3 +37,20 @@ a i.fas.fa-external-link-alt {
   font-weight: bold;
   margin-top: 60px;
 }
+
+/* override default Docusaurus behavior sidebar collapse */	
+
+.menu .menu__list-item.menu__list-item--collapsed .menu__list {	
+  height: unset;	
+  overflow: unset;	
+}	
+
+/* collapse icon */	
+.menu .menu__link.menu__link--sublist:after {	
+    visibility: hidden;	
+}	
+
+/* expand icon*/	
+.menu .menu__list-item.menu__list-item--collapsed .menu__link--sublist:after {	
+    visibility: hidden;	
+}
