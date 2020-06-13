@@ -28,9 +28,16 @@
   font-weight: bolder;
 }
 
-a i.fas.fa-external-link-alt {
-  color: #3578e5;
-  color: var(--ifm-link-color);
+.embedded-fa-icon {
+  max-width: 1em;
+  max-height: 1em;
+  position: relative;
+  top: 0.125em;
+}
+
+a svg.embedded-fa-icon {
+  fill: #3578e5;
+  fill: var(--ifm-link-color);
 }
 
 .github-footer {

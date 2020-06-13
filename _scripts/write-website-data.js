@@ -323,7 +323,7 @@ function getExternalLinkNodeReplacement(node, relativeFilePath) {
 }
 
 function getExternalLinkHtml(url, linkText) {
-    return `<a href="${ url }" target="_blank" rel="nofollow noopener noreferrer">${linkText} <i class="fas fa-external-link-alt"></i></a>`;
+    return `<a href="${ url }" target="_blank" rel="nofollow noopener noreferrer">${linkText} <svg class="embedded-fa-icon"><use href="#external-link-alt"></use></svg></a>`;
 }
 
 function replaceTitleByYamlFrontMatterAndDescription(input, { description, treeTitle = undefined }, relativePath) {
@@ -357,6 +357,6 @@ function addGitHubFooter(input, relativePath) {
     const gitHubUrlPrefix = "https://github.com/mistermicheels/learning-notes/blob/master/";
     const gitHubUrl = normalizeUrl(`${gitHubUrlPrefix}${relativePath}`, { keepCase: true });
     const gitHubLink = getExternalLinkHtml(gitHubUrl, "View this note on GitHub");
-    const footerLine = `<div class="github-footer"><i class="fab fa-github"></i> ${gitHubLink}</div>`;
+    const footerLine = `<div class="github-footer"><svg class="embedded-fa-icon"><use href="#github"></use></svg> ${gitHubLink}</div>`;
     return input + "\n" + footerLine + "\n";
 }

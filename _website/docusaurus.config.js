@@ -67,7 +67,7 @@ License</a>.`,
   ],
   plugins: [
     path.resolve(__dirname, './extended-favicon-plugin'),
-    path.resolve(__dirname, './font-awesome-plugin'),
+    path.resolve(__dirname, './embedded-font-awesome-icons-plugin'),
     path.resolve(__dirname, './collapse-sidebar-again-if-js-enabled-plugin'),
   ],
 };
