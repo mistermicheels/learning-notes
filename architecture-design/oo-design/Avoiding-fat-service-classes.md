@@ -45,20 +45,33 @@ Benefits:
 
 -   Class per action means that we get some very focused classes
 -   Class per action means we can easily compose higher-level actions out of lower-level actions
--   This approach makes it relatively provide undo functionality or show a history of actions (if needed)
+-   This approach makes it relatively easy to provide undo functionality or show a history of actions (if needed)
 
 Example: virtual file system
 
--   Fat service class with functionality for file creation, file deletion, replacing a folder's contents with contents from an archive
--   Action class for create, for delete, ...
--   Action class for replacing a folder's contents with contents from an archive delegates to action classes for create and delete
--   Cross-cutting concerns:
-    -   For every call to the service class, all actions must happen within a single DB transaction
-    -   All actions generate events and updates to an in-memory representation of the current state of the file system, but those cannot be applied until the entire transaction is committed
-    -   Solution:
-        1.  Service class passes transactional DB connection when constructing the actions
-        2.  Actions return events and updates to be applied to in-memory file system representation, service class collects them
-        3.  When all actions for a service call have completed, service class commits DB transaction, sends events and applies updates to in-memory file system representation
+-   Situation:
+    -   Fat service class with functionality for file creation, file update, file deletion, replacing a folder's contents with contents from an archive, ...
+    -   For every call to the service class, all changes must happen within a single DB transaction
+    -   All changes generate events that other components can listen to, plus they generate updates to an in-memory representation of the current state of the file system. However, those events and updates are only valid once the entire transaction is committed.
+-   Solution:
+    -   Each file action (create, update, delete, ...) is implemented as its own class
+    -   All of these file action classes share the same interface, which specifies that they return events and in-memory cache updates
+    -   Bigger actions (archive import etc.) delegate work to smaller actions that they create
+    -   For every call to the service class, it creates the necessary actions based on the received input and also passes a transactional DB connection on construction
+    -   Service class collects event and cache updates
+    -   When all actions for a service class call have completed, the service class commits the DB transaction, sends events and applies updates to the in-memory file system representation
+    -   In this particular case, file actions depended on several lower-level services. Solution: file action factory service with methods for creating each type of action. Each method takes action input + DB connection and calls the action's constructor with action input, DB connection and instances of lower level services.
+
+```typescript
+export interface FileAction {
+    public executeAndGetResult(): Promise<FileActionResult>;
+}
+
+export interface FileActionResult {
+    events: FileEvent[];
+    cacheUpdates: FileCacheUpdate[];
+}
+```
 
 ## Resources
 
