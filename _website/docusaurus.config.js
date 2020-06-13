@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  title: 'learning-notes (mistermicheels)',
+  title: 'learning-notes',
   tagline: 'A collection of my notes regarding things I have learned over the years',
   url: 'https://learning-notes.mistermicheels.com',
   baseUrl: '/',
