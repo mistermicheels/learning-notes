@@ -26,6 +26,8 @@
 
 .menu__link.menu__link--sublist {
   font-weight: bolder;
+  color: #444950;
+  color: var(--ifm-color-gray-800);
 }
 
 .embedded-fa-icon {
