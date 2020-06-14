@@ -88,6 +88,7 @@ If you prefer to read them on GitHub, the overview below might be useful.
     -   [Code review and collaboration workflows](processes-techniques/Code-review-collaboration.md)
     -   [Feature flags](processes-techniques/Feature-flags.md)
     -   [Issue troubleshooting](processes-techniques/Issue-troubleshooting.md)
+    -   [Small commits and pull requests](processes-techniques/Small-commits-pull-requests.md)
     -   [Team decision-making](processes-techniques/Team-decision-making.md)
     -   [Trunk Based Development](processes-techniques/Trunk-Based-Development.md)
 -   [**Soft skills**](soft-skills/README.md)

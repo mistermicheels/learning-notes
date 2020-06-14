@@ -10,5 +10,6 @@
 -   [Code review and collaboration workflows](Code-review-collaboration.md)
 -   [Feature flags](Feature-flags.md)
 -   [Issue troubleshooting](Issue-troubleshooting.md)
+-   [Small commits and pull requests](Small-commits-pull-requests.md)
 -   [Team decision-making](Team-decision-making.md)
 -   [Trunk Based Development](Trunk-Based-Development.md)
