@@ -65,7 +65,7 @@ Benefits:
 -   Avoids long-running feature branches
     -   Reduces risk of developers writing conflicting code
     -   Allows developers to build on top of each other's changes without having to build on top of someone else's feature branch (or, even worse, some combination of other people's branches)
-    -   See also [Trunk-Based Development](./Trunk-Based-development.md)
+    -   See also [Trunk-Based Development](./Trunk-Based-Development.md)
 
 ## Resources
 
