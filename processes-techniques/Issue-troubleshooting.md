@@ -30,7 +30,7 @@ description: Some tips for troubleshooting issues in your system
     -   It's very unlikely that the issue is caused by bugs in your compiler, language runtime, browser, database software, libraries (especially if they are mature and battle-tested)
 -   Don't rush and don't skimp on breaks
     -   Trying to go too fast may make you miss important details or fail to see a general pattern, leading to a lot of time and energy spent going in the wrong direction
-    -   Breaks are needed to stay sharp, plus taking your focus away from the problem can trigger a lightbulb moment as well. See also [Hammock-driven development](../mindset/Hammock-driven-development.md)
+    -   Breaks are needed to stay sharp, plus taking your focus away from the problem can trigger a light bulb moment as well. See also [Hammock-driven development](../mindset/Hammock-driven-development.md)
 -   Ask for help if it makes sense!
     -   An extra pair of eyes can help to see anything you missed
     -   The act of describing the issue to someone might already give you some ideas
@@ -46,6 +46,9 @@ Reproducing the issue locally should typically be your first priority
     -   It's about shortening the feedback loop! See also [Fail fast](../mindset/Fail-fast.md)
 -   Once you find input, data, settings, ... that allows you to reproduce the issue, store it somewhere for reference
     -   Playing around with these could suddenly cause the issue to disappear and make you lose your reproduction scenario
+-   Ideally, set up some automated tests that reproduce the issue
+    -   These can guide you when fixing the issue, plus they act as regression tests to make sure the issue isn't introduced again
+    -   Setting up the tests at this point allows you to validate that they indeed fail when the issue is present
 
 How to get there
 
@@ -75,7 +78,8 @@ If the error is caused by the system getting into a certain state but you can't 
 ## After fixing the issue
 
 -   If you haven't been able to reproduce the issue locally before, spend some time making sure that you can now reproduce it locally using your increased knowledge of the issue
--   Create automated tests that will detect the issue if it's introduced again
+-   Make sure you have appropriate automated tests that will detect the issue if it's introduced again
+    -   Ideally, you already wrote some automated tests that failed before fixing the issue and that are now passing due to your fix
 -   Clean up data if necessary
 -   Document your findings and share with the team
     -   Especially important if the issue taught you new things you will need to pay attention to as a team

@@ -92,6 +92,7 @@ description: Some tips for reducing effort and improving results by avoiding nee
 
 ## Effort
 
+-   ‘Doing it right’ doesn’t make sense if it costs you more effort without real practical benefits
 -   Pareto principle: you can likely get 80% of the benefits by only spending 20% of the effort
     -   20% of the functionality can provide 80% of the value to your end users
     -   20% of the testing can give you 80% of the confidence that your application works
