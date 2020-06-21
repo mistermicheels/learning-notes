@@ -1,5 +1,6 @@
 ---
 description: Why composing objects out of other objects is often preferable to creating inheritance hierarchies
+last_modified: 2020-06-01T19:43:01+02:00
 ---
 
 # Composition over inheritance

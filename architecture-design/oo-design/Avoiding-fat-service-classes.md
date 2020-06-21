@@ -1,5 +1,6 @@
 ---
 description: Some ways to avoid service classes getting bigger and bigger
+last_modified: 2020-06-13T13:29:49+02:00
 ---
 
 # Avoiding fat service classes

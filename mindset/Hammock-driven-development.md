@@ -1,5 +1,6 @@
 ---
 description: Sometimes, the best thing you can do for your code is to stop thinking about it - at least consciously
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Hammock-driven development

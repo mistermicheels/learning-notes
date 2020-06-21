@@ -1,5 +1,6 @@
 ---
 description: An overview of the SOLID principles for object-oriented design
+last_modified: 2020-05-31T14:45:09+02:00
 ---
 
 # SOLID principles

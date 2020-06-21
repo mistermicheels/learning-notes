@@ -1,6 +1,7 @@
 ---
 tree_title: Box model
 description: The CSS box model, blocks and inline boxes, inner and outer display types, margins, padding and borders, ...
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Box model (CSS)

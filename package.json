@@ -4,7 +4,7 @@
     "description": "Contains script invocations and their dependencies",
     "scripts": {
         "pre-commit": "npm run check-and-write-data",
-        "check-and-write-data": "npm run _replace-tabs && npm run _write-notes-trees && npm run _write-tocs-and-format && npm run _validate-internal-links && npm run _custom-checks && npm run _write-website-data",
+        "check-and-write-data": "npm run _replace-tabs && npm run _write-notes-trees && npm run _write-tocs-and-format && npm run _validate-internal-links && npm run _custom-checks-adjustments && npm run _write-website-data",
         "build-website": "npm run check-and-write-data && cd _website && npm run build && cd .. && npm run _generate-sitemap",
         "serve-built-website": "node ./_scripts/serve-built-website.js",
         "build-and-serve": "npm run build-website && npm run serve-built-website",
@@ -14,7 +14,7 @@
         "_write-notes-trees": "markdown-notes-tree --ignore CONTRIBUTING.md --linkToSubdirectoryReadme --notesBeforeDirectories",
         "_write-tocs-and-format": "remark --rc-path _scripts/remark-write-tocs-and-format.config.json --ignore-path .remarkignore . --output",
         "_validate-internal-links": "remark --rc-path _scripts/remark-validate-internal-links.config.json --ignore-path .remarkignore --frail .",
-        "_custom-checks": "node ./_scripts/custom-checks.js",
+        "_custom-checks-adjustments": "node ./_scripts/custom-checks-adjustments.js",
         "_write-website-data": "node ./_scripts/write-website-data.js",
         "_generate-sitemap": "node ./_scripts/generate-sitemap.js"
     },

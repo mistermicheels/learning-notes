@@ -1,5 +1,6 @@
 ---
 description: How architectural boundaries apply to the use of databases
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Boundaries and the database

@@ -1,6 +1,7 @@
 ---
 tree_title: Thread safety
 description: Concurrency issues in Java and how to prevent them
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Thread safety (Java)

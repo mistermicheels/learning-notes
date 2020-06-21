@@ -1,5 +1,6 @@
 ---
 description: How and why to use locking with relational databases
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Optimistic and pessimistic locking in SQL

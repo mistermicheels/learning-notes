@@ -1,5 +1,6 @@
 ---
 description: An overview of architectural fitness functions as a way to check if your architecture matches your needs
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Architectural fitness functions

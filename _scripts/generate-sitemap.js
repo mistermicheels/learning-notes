@@ -1,9 +1,10 @@
 // we generate the sitemap ourselves as Docusaurus currently doesn't do it
 // run this after the Docusaurus build so it doesn't get overwritten
 
-const { SitemapStream, streamToPromise } = require('sitemap');
+const { SitemapStream, streamToPromise } = require("sitemap");
 const path = require("path");
 const fsExtra = require("fs-extra");
+const frontMatter = require("front-matter");
 
 execute();
 
@@ -60,10 +61,22 @@ async function getSitemap(allPageSuffixes) {
 
     for (const pageSuffix of allPageSuffixes) {
         // the slash at the end is important, links without the slash at the end get redirected
-        smStream.write({ url: `/${pageSuffix}/`});        
+        smStream.write({ url: `/${pageSuffix}/`, lastmod: getLastModifiedString(pageSuffix) });        
     }
 
     smStream.end();
 
     return streamToPromise(smStream);
+}
+
+function getLastModifiedString(pageSuffix) {
+    const filePath = path.join(process.cwd(), "_website", "docs", pageSuffix + ".md")
+    const contents = fsExtra.readFileSync(filePath, { encoding: "utf-8" });
+    const parsedFrontMatter = frontMatter(contents);
+
+    if (!parsedFrontMatter.attributes.last_modified) {
+        return undefined;
+    }
+
+    return new Date(parsedFrontMatter.attributes.last_modified).toISOString();
 }

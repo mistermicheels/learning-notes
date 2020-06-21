@@ -1,6 +1,7 @@
 ---
 tree_title: Inheritance, the cascade and specificity
 description: An overview of how CSS rules with their selectors actually affect HTML elements
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Inheritance, the cascade and specificity (CSS)

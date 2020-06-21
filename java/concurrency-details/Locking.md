@@ -1,6 +1,7 @@
 ---
 tree_title: Locking
 description: Some details regarding locking as a low-level concurrency tool in Java
+last_modified: 2020-05-31T14:45:09+02:00
 ---
 
 # Locking (Java)

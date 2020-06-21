@@ -1,6 +1,7 @@
 ---
 tree_title: Flexbox
 description: The main idea of CSS Flexbox
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Flexbox (CSS)

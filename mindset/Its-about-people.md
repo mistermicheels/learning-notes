@@ -1,5 +1,6 @@
 ---
 description: Why software development is about people rather than computers
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # It's about people

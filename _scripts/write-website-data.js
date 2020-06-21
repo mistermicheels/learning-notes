@@ -4,7 +4,7 @@ const path = require("path");
 const fsExtra = require("fs-extra");
 const frontMatter = require("front-matter");
 const remark = require("remark");
-const visit = require('unist-util-visit');
+const visit = require("unist-util-visit");
 
 const websiteDocsPath = getAbsolutePath("_website", "docs");
 const websiteStaticDocsPath = getAbsolutePath("_website", "docs-static");
@@ -109,7 +109,7 @@ function getEndOfLineRegex() {
 }
 
 function isNoteFile(name) {
-    return name.endsWith(".md") && name !== "README.md" && name !== 'CONTRIBUTING.md';
+    return name.endsWith(".md") && name !== "README.md" && name !== "CONTRIBUTING.md";
 }
 
 function normalizeUrl(url, { keepCase = false } = {}) {
@@ -171,13 +171,13 @@ function writeDataForNote(relativePath) {
 }
 
 function transformNoteContents(contents, relativePath) {
-    const { bodyAfterFrontMatter, description, treeTitle } = parseFrontMatter(contents, relativePath);
+    const { bodyAfterFrontMatter, description, lastModified, treeTitle } = parseFrontMatter(contents, relativePath);
 
     let newContents = bodyAfterFrontMatter;
     newContents = stripTableOfContents(newContents);
     newContents = adjustImagesAndLinks(newContents, relativePath);
-    newContents = replaceTitleByYamlFrontMatterAndDescription(newContents, { description, treeTitle }, relativePath);
-    newContents = addGitHubFooter(newContents, relativePath);
+    newContents = replaceTitleByYamlFrontMatterAndDescription(newContents, { description, lastModified, treeTitle }, relativePath);
+    newContents = addGitHubFooter(newContents, lastModified, relativePath);
     return newContents;
 }
 
@@ -187,18 +187,21 @@ function parseFrontMatter(contents, relativePath) {
 
     if (!frontMatterAttributes.description) {
         throw new Error(`Problem with ${relativePath}: front matter doesn't contain description.`);
+    } else if (!frontMatterAttributes.last_modified) {
+        throw new Error(`Problem with ${relativePath}: front matter doesn't contain last_modified.`);
     }
 
     const attributesKeys = Object.keys(frontMatterAttributes);
 
-    if (attributesKeys.some(key => key !== 'tree_title' && key !== 'description')) {
-        throw new Error(`Problem with ${relativePath}: unexpected attribute in front matter.`)
+    if (attributesKeys.some(key => !["tree_title", "description", "last_modified"].includes(key))) {
+        throw new Error(`Problem with ${relativePath}: unexpected attribute ${key} in front matter.`)
     }
     
     return {
         bodyAfterFrontMatter: parsedFrontMatter.body.trimLeft(),
         description: frontMatterAttributes.description,
-        treeTitle: frontMatterAttributes.tree_title || undefined
+        lastModified: new Date(frontMatterAttributes.last_modified).toISOString(),
+        treeTitle: frontMatterAttributes.tree_title || undefined,
     }
 }
 
@@ -326,7 +329,7 @@ function getExternalLinkHtml(url, linkText) {
     return `<a href="${ url }" target="_blank" rel="nofollow noopener noreferrer">${linkText} <svg class="embedded-fa-icon"><use href="#external-link-alt"></use></svg></a>`;
 }
 
-function replaceTitleByYamlFrontMatterAndDescription(input, { description, treeTitle = undefined }, relativePath) {
+function replaceTitleByYamlFrontMatterAndDescription(input, { description, lastModified, treeTitle = undefined }, relativePath) {
     // because this runs after pre-commit scripts and front matter is already stripped, we know the first line will be the title
     const titleLine = input.split(getEndOfLineRegex(), 1)[0];
     const title = titleLine.substring(2);
@@ -340,7 +343,9 @@ function replaceTitleByYamlFrontMatterAndDescription(input, { description, treeT
     let frontMatterContents =
         `title: ${title}` + 
         "\n" +
-        `description: ${description}`;
+        `description: ${description}` + 
+        "\n" +
+        `last_modified: ${lastModified}`;
 
     if (treeTitle) {
         frontMatterContents = 
@@ -353,10 +358,15 @@ function replaceTitleByYamlFrontMatterAndDescription(input, { description, treeT
     return frontMatter + "\n\n" + `_${description}_` + contentsAfterTitleLine;
 }
 
-function addGitHubFooter(input, relativePath) {
+function addGitHubFooter(input, lastModified, relativePath) {
     const gitHubUrlPrefix = "https://github.com/mistermicheels/learning-notes/blob/master/";
     const gitHubUrl = normalizeUrl(`${gitHubUrlPrefix}${relativePath}`, { keepCase: true });
     const gitHubLink = getExternalLinkHtml(gitHubUrl, "View this note on GitHub");
-    const footerLine = `<div class="github-footer"><svg class="embedded-fa-icon"><use href="#github"></use></svg> ${gitHubLink}</div>`;
-    return input + "\n" + footerLine + "\n";
+    const gitHubPart = `<p><svg class="embedded-fa-icon"><use href="#github"></use></svg> <strong>${gitHubLink}</strong></p>`;
+    
+    const lastModifiedDateString = lastModified.substring(0, lastModified.indexOf("T"));
+    const lastModifiedPart = `<p><strong>Last modified:</strong> ${lastModifiedDateString}</p>`;
+    
+    const footer = `<div class="github-footer">${gitHubPart}${lastModifiedPart}</div>`
+    return input + "\n" + footer + "\n";
 }

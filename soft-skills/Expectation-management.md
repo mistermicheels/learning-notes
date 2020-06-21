@@ -1,5 +1,6 @@
 ---
 description: How to manage expectations and why it's important
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Expectation management

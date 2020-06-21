@@ -1,6 +1,7 @@
 ---
 tree_title: Type guards
 description: An overview of how to use TypeScript type guards, including creating your own custom ones
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Type guards (TypeScript)

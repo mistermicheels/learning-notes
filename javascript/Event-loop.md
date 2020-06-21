@@ -1,6 +1,7 @@
 ---
 tree_title: Event loop
 description: A high-level overview of how JavaScript handles concurrency using its Event Loop
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Event loop (JavaScript)

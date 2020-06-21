@@ -1,6 +1,7 @@
 ---
 tree_title: Interfaces
 description: An overview of interfaces in Java
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Interfaces (Java)

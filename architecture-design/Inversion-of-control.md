@@ -1,5 +1,6 @@
 ---
 description: What inversion of control means and why it's useful when building applications
+last_modified: 2020-06-07T17:55:54+02:00
 ---
 
 # Inversion of control

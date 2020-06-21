@@ -1,5 +1,6 @@
 ---
 description: A very high-level overview of the data store landscape, covering relational databases (SQL), NoSQL and NewSQL data stores
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # SQL, NoSQL, NewSQL

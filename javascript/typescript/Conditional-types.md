@@ -1,6 +1,7 @@
 ---
 tree_title: Conditional types
 description: An explanation of TypeScript conditional types and an overview of some useful predefined ones
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Conditional types (TypeScript)

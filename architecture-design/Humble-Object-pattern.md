@@ -1,5 +1,6 @@
 ---
 description: A pattern for testing hard-to-test behavior
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Humble Object pattern

@@ -1,5 +1,6 @@
 ---
 description: An overview of using tools to analyze your codebase
+last_modified: 2020-04-25T16:46:37+02:00
 ---
 
 # Dependency analysis tools

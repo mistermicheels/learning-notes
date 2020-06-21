@@ -1,5 +1,6 @@
 ---
 description: A simple and clear way of visualizing a system's architecture
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # C4 model

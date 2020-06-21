@@ -1,6 +1,7 @@
 ---
 tree_title: Nullable types and optional parameters/properties
 description: An overview of how TypeScript deals with null, undefined and optional parameters/properties
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Nullable types and optional parameters/properties (TypeScript)

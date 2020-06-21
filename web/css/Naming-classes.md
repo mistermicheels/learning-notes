@@ -1,6 +1,7 @@
 ---
 tree_title: Naming classes
 description: Some ideas/patterns for naming your CSS classes
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Naming classes (CSS)

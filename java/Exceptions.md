@@ -1,6 +1,7 @@
 ---
 tree_title: Exceptions
 description: The different kinds of exceptions in Java and some best practices for using them
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Exceptions (Java)

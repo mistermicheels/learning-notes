@@ -1,5 +1,6 @@
 ---
 description: Some tips on making decisions as a team
+last_modified: 2020-06-14T18:51:13+02:00
 ---
 
 # Team decision-making

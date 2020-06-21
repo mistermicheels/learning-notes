@@ -1,5 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Work-life balance

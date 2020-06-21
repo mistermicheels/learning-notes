@@ -1,5 +1,6 @@
 ---
-description: Some thoughts on defining deployable components and the dependencies between them 
+description: Some thoughts on defining deployable components and the dependencies between them
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Deployable components

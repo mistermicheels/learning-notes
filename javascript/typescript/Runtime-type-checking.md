@@ -1,5 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
+last_modified: 2020-04-25T16:46:37+02:00
 ---
 
 # Runtime type checking in TypeScript

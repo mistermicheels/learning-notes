@@ -1,6 +1,7 @@
 ---
 tree_title: Concurrency
 description: An overview of concurrent programming in Java
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Concurrency (Java)

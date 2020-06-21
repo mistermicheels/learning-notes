@@ -1,5 +1,6 @@
 ---
 description: Why you should strive to commit early, push often and keep pull requests small
+last_modified: 2020-06-14T21:47:17+02:00
 ---
 
 # Small commits and pull requests

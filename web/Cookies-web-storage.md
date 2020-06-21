@@ -1,5 +1,6 @@
 ---
 description: What are Cookies and Web Storage? What do they have in common? What are their differences?
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Cookies and Web Storage

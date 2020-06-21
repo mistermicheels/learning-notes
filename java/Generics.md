@@ -1,6 +1,7 @@
 ---
 tree_title: Generics
 description: An overview of generics in Java
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Generics (Java)

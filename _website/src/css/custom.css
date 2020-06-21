@@ -42,9 +42,11 @@ a svg.embedded-fa-icon {
   fill: var(--ifm-link-color);
 }
 
-.github-footer {
-  font-weight: bold;
+div.github-footer {
   margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* override default Docusaurus behavior sidebar collapse */	

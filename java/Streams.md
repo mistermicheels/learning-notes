@@ -1,6 +1,7 @@
 ---
 tree_title: Streams
 description: An overview of Java Streams and when/how to use them
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Streams (Java)

@@ -1,5 +1,6 @@
 ---
 description: An overview of the ACID properties offered by relational databases
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # ACID properties

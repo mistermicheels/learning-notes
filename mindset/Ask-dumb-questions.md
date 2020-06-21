@@ -1,5 +1,6 @@
 ---
 description: Why you shouldn't be afraid of asking the "dumb" questions
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Ask the dumb questions

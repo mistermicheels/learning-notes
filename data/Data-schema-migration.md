@@ -1,5 +1,6 @@
 ---
 description: Some techniques for migrating the structure of your data
+last_modified: 2020-06-14T18:51:13+02:00
 ---
 
 # Data schema migration

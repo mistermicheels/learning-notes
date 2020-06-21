@@ -1,5 +1,6 @@
 ---
 description: A way to divide your system based on functional areas
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Package by feature or component

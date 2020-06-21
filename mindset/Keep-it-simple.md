@@ -1,5 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
+last_modified: 2020-06-14T18:51:13+02:00
 ---
 
 # Keep it simple

@@ -1,5 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Pragmatism and imperfectionism

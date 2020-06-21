@@ -1,6 +1,7 @@
 ---
 tree_title: Index types
 description: Some examples of TypeScript index types and how to use them
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Index types (TypeScript)

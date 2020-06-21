@@ -1,6 +1,7 @@
 ---
 tree_title: Responsive design
 description: Making your site look good on any device and screen
+last_modified: 2020-05-30T15:54:15+02:00
 ---
 
 # Responsive design (CSS)
