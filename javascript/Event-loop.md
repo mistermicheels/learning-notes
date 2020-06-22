@@ -1,7 +1,7 @@
 ---
 tree_title: Event loop
 description: A high-level overview of how JavaScript handles concurrency using its Event Loop
-last_modified: 2020-06-22T17:34:07.325Z
+last_modified: 2020-06-22T17:38:11.639Z
 ---
 
 # Event loop (JavaScript)
@@ -64,6 +64,7 @@ const currentValue = sharedCounter;
 // execution gets interrupted here
 await somePromise;
 
+// note sure what has executed in the meantime
 sharedCounter = currentValue + 1; 
 ```
 
