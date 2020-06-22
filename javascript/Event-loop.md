@@ -1,7 +1,7 @@
 ---
 tree_title: Event loop
 description: A high-level overview of how JavaScript handles concurrency using its Event Loop
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-06-22T17:34:07.325Z
 ---
 
 # Event loop (JavaScript)
@@ -41,9 +41,9 @@ Note that, although the JavaScript code runs in a single thread, the engine migh
 
 Another important thing about JavaScript concurrency is that it is _non-preemptive_. Basically, that means that the execution of a piece of code will never be interrupted unless the code itself asks for it.
 
-In Java, concurrency is achieved using threads which could be interrupted (preempted) at any moment. This means that even code like `sharedCounter++` can lead to unexpected behavior in programs using concurrency, as it's possible that the execution is interrupted after the current value is read but before the new value is written. If that happens and some other code changed the counter during the interruption, your shared counter will probably not behave as you intended. This situation is called a _race condition_. See also [Java threads](../java/concurrency-details/Threads.md).
+In a lot of languages, things are quite different. In Java, for example, concurrency is achieved using threads which could be interrupted (preempted) at any moment. This means that even code like `sharedCounter++` can lead to unexpected behavior in programs using concurrency, as it's possible that the execution is interrupted after the current value is read but before the new value is written. If that happens and some other code changed the counter during the interruption, your shared counter will probably not behave as you intended. This situation is called a _race condition_. See also [Java threads](../java/concurrency-details/Threads.md).
 
-In JavaScript, we have the guarantee that synchronous code (no asynchronous calls) will always be executed atomically, entirely, to completion .
+Because JavaScript concurrency is _non-preemptive_, we don't have this problem. Instead, we have the guarantee that synchronous code (no asynchronous calls) will always be executed atomically, entirely, to completion.
 
 ```javascript
 const currentValue = sharedCounter;

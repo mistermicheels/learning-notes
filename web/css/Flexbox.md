@@ -1,7 +1,7 @@
 ---
 tree_title: Flexbox
 description: The main idea of CSS Flexbox
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-06-22T17:34:07.343Z
 ---
 
 # Flexbox (CSS)
@@ -47,7 +47,8 @@ Alignment along the main axis: [justify-content](https://developer.mozilla.org/e
 -   `flex-end`: make items sit towards the endof the main axis
 -   `center`: make items sit towards the center of the main axis
 -   `space-around`: evenly distribute items (same amount of spacing between adjacent items) and leave half of that spacing at the start and end of the main axis
--   `space-around`: evenly distribute items (same amount of spacing between adjacent items), without any spacing at the start and end of the main axis
+-   `space-between`: evenly distribute items (same amount of spacing between adjacent items), without any spacing at the start and end of the main axis
+    -   Simple use case: two elements, one sticking to the left side of the container and one sticking to the right side of the container
 
 Alingment along the cross axis: [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) (set at the level of the container, can override at the item level using [align-self](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self))
 
