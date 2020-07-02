@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-02T16:17:19.384Z
 ---
 
 # Work-life balance
@@ -80,7 +80,18 @@ The **benefits** of working fewer hours
     -   Efficiency vs. effectiveness: Effectiveness is picking a direction, efficiency is running really hard in that direction. No matter how hard you run, you will never make it to your destination if you are running in the wrong direction.
 -   You have the energy to give your best during the hours you do work, as well as the time to recover from it so you can have that same energy tomorrow as well
 
-A **strategy** to keep yourself from working long hours:
+A strategy to **get your work done** within limited time:
+
+-   Establish clear priorities for your tasks (decided either by yourself or your boss) and start with the most important task
+    -   Even if you don't get as much done as planned, you can still go home knowing that you worked on the most important stuff first
+-   Plan how to approach your tasks in the most effective way
+    -   Investing in this kind of upfront planning can save you hours or even days
+-   When a new task appears, establish its priority relative to your other tasks and push other tasks back as needed
+    -   If your plate is full, you might need to drop or delegate another task
+    -   Potentially, you might be able to offer an alternative ("I can't do X, but I can do Y")
+-   Set clear boundaries regarding the amount of work that you can do
+
+A strategy to **leave when you plan to**:
 
 -   Determine the schedule to follow, so you know beforehand at what time you should stop working
 -   In the last 1.5 hours or so before you should leave:
@@ -88,7 +99,7 @@ A **strategy** to keep yourself from working long hours:
     -   If you finish, consider not starting a new big task but instead catching up on smaller tasks like code reviews, taking a step back to see if everything you're doing makes sense in the big picture, planning future work, ...
         -   Starting a new big task is risky because by the time you properly get going it's time to leave
         -   If starting the new big task is the only thing that makes sense, focus on things that make it easier to stop and start again (chopping it up into smaller parts, doing some analysis and writing down your findings, ...)
--   In the last 15 minutes of your working day, stop working and write down everything you need to know in order to continue the task later on
+-   In the last 15 minutes, stop working and write down everything you need to know in order to continue the task later on
     -   Benefit: you can get off to a flying start the next morning
     -   Benefit: doing this helps your brain to work on the task in the background while you are relaxing. See also [Hammock-driven development](./Hammock-driven-development.md).
 
@@ -162,6 +173,7 @@ Don't get intimidated by job adverts!
 -   [Stop Working and Go Home](https://www.bloomberg.com/opinion/articles/2019-11-06/long-work-hours-waste-time-and-lead-to-lower-productivity)
 -   [The compelling case for working a lot less](https://www.bbc.com/worklife/article/20171204-the-compelling-case-for-working-a-lot-less)
 -   [The futile comfort of working long hours](https://codewithoutrules.com/2018/02/11/working-long-hours/)
+-   [My FOSS Story](https://blog.burntsushi.net/foss/)
 -   [Avoiding hour creep: get your work done and still go home at 5PM](https://codewithoutrules.com/2018/06/15/avoid-hour-creep/)
 -   [Work/life balance will make you a better software engineer](https://codewithoutrules.com/2016/11/10/work-life-balance-software-engineer/)
 -   [Can software engineering be meaningful work?](https://codewithoutrules.com/2019/04/12/meaningful-programming-work/)
