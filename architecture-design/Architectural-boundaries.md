@@ -1,6 +1,6 @@
 ---
 description: The importance of boundaries in architecture, different kinds of boundaries, costs and evolution of boundaries, ...
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-03T15:50:17.640Z
 ---
 
 # Architectural boundaries
@@ -38,14 +38,13 @@ Benefits of this separation: **flexibility**!
 -   **Lower coupling**: Decouple components so changes in one component don't require changes in other components
 -   **Higher cohesion**: Group together things that change at the same rate and for the same reasons (cohesion)
     -   Manifestation of the Single Responsibility Principle (from the [SOLID principles](./oo-design/SOLID-principles.md)), but this time at the architectural level
--   Low coupling and higher cohesion are basically about **encapsulating volatility**. When one part of your system needs to change, you want to prevent others from having to change as wel. In particular, you don't want change in the more volatile parts of your system force change in the more stable parts of your system.
+-   Low coupling and higher cohesion are basically about **encapsulating volatility**. When one part of your system needs to change, you want to prevent others from having to change as well. In particular, you don't want change in the more volatile parts of your system force change in the more stable parts of your system.
 -   Ability to **delay choices** until last possible moment
 
 Example: Separating main business logic from persistence logic
 
--   If the business logic doesn’t have any idea about the database we use (or potentially even the fact that we use a database), we have the flexibility to change the database that our system depends on without having to make any kind of changes to the main business logic
+-   If the main business logic doesn’t have any idea about the database we use (or potentially even the fact that we use a database), we have the flexibility to change the database that our system depends on without having to make any kind of changes to the main business logic
 -   If we need to make changes to the main business logic that do not influence the kind of data that needs to be persisted, we can make those changes without the persistence code having to know anything about them
--   You could potentially build all of the business logic without connecting to a database, simply writing code against some persistence interfaces describing what kind of data you will need to store and retrieve, and thus delay the decision of which kind of database to use until you have a better idea of what you need from your persistence solution
 
 Example: Separating different functional areas from each other
 

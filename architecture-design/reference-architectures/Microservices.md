@@ -1,6 +1,6 @@
 ---
 description: A high-level overview of what a Microservices architecture means and when it can be useful
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-03T15:50:17.648Z
 ---
 
 # Microservices
@@ -8,6 +8,7 @@ last_modified: 2020-05-30T15:54:15+02:00
 ## Contents
 
 -   [Basic idea](#basic-idea)
+-   [Benefits/drawbacks](#benefitsdrawbacks)
 -   [Coupling in a microservices architecture](#coupling-in-a-microservices-architecture)
     -   [Integration coupling](#integration-coupling)
     -   [Service template coupling](#service-template-coupling)
@@ -29,7 +30,7 @@ last_modified: 2020-05-30T15:54:15+02:00
     -   Freedom to choose or change the technology used by a service based on what makes most sense. Some service may use a relational database while another one uses a document store. A service providing information about the relationships between different users could switch to a graph database without any other service being affected by the change.
 -   Different small teams each take ownership of one or more of these services
     -   Team responsible for a microservice takes control of development and deployment
-        -   Each service is expected to handle reasonable error scenarios and recover if possibe
+        -   Each service is expected to handle reasonable error scenarios and recover if possible
     -   Changes within a single functional domain (= single service) can happen within a single team
     -   Coordination with other teams is only required if the communication with their services needs changes as well
     -   Challenge: making sure integration points between services don't break (things like contract testing can help)
@@ -39,7 +40,7 @@ last_modified: 2020-05-30T15:54:15+02:00
     -   Several services, each of which might be scaled across several instances -> large number of processes to watch
     -   This means having a good monitoring and logging setup is essential in keeping the system running smoothly
 
-Benefits/drawbacks:
+## Benefits/drawbacks
 
 -   Can help with scaling the development organization into several teams that can (to a large extent) work independently of each other
     -   Apart from decisions impacting the communication between services, different teams can work independently. This helps to scale the development organization, as communication is way more efficient within a small, focused team than within a large team with large scope.

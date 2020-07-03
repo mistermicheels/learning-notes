@@ -1,6 +1,6 @@
 ---
 description: Why duplication is not always bad and how architectural boundaries can create false duplication
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-03T15:50:17.635Z
 ---
 
 # Boundaries and duplication
@@ -32,7 +32,7 @@ Advice:
     2.  Requirements change and one of the places that had the duplicated code now needs to do something slightly different.
     3.  The developer implementing the change sees the abstraction and feels obligated to keep it. They extend it with a parameter to trigger the slightly different behavior.
     4.  Repeat 3 and 4 until the abstraction's code becomes a mess containing way too much behavior as well as being very risky and hard to modify when needed.
--   Better principe to follow: **Avoid Hasty Abstractions** ([AHA Programming](https://kentcdodds.com/blog/aha-programming))
+-   Better principle to follow: **Avoid Hasty Abstractions** ([AHA Programming](https://kentcdodds.com/blog/aha-programming))
     -   "Prefer duplication over the wrong abstraction"
 
 ## Data duplication and bounded contexts

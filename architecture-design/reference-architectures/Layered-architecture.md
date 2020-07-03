@@ -1,6 +1,6 @@
 ---
 description: A way to divide your system's code into different layers with different purposes
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-03T15:50:17.647Z
 ---
 
 # Layered architecture
@@ -8,6 +8,8 @@ last_modified: 2020-05-30T15:54:15+02:00
 ## Contents
 
 -   [Basic idea](#basic-idea)
+-   [Benefits/drawbacks](#benefitsdrawbacks)
+-   [Typical layers](#typical-layers)
 -   [Open/closed layers](#openclosed-layers)
 -   [Typical antipattern: lasagna architecture](#typical-antipattern-lasagna-architecture)
 -   [Resources](#resources)
@@ -23,7 +25,18 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   Request passes through layers from top to bottom and then back up
     -   Each layer can depend one or a few layers below it but should not know anything about any layer above it
 
-Typical layers (bottom-up):
+## Benefits/drawbacks
+
+-   Easy to get started with this kind of architecture
+-   Easy to make technical changes (e.g., swapping out the database) as changes will be confined to a single layer (and if that layer's interface changes, it will likely only affect the layer above it)
+-   Functional changes are likely to require changes to several layers
+    -   Problem: when working on a single functional area, you will likely need to find the relevant classes below several top-level folders (according to the layer they are in)
+    -   This often means that a layered architecture is not a good way to split up a system into several parts maintained by independent teams
+-   If separation by functional areas is more important, consider looking at [Package by feature or component](./Package-by-feature-or-component.md)
+
+## Typical layers
+
+Starting from the bottom:
 
 -   Database layer: the actual database
 -   Persistence layer: takes care of talking to the database
@@ -36,16 +49,8 @@ Typical layers (bottom-up):
 -   Presentation layer: contains code related to interaction with the user
     -   APIs are exposed here
     -   Server-side rendering would also sit here
--   Note: a layered architecture could have more layers than these if it makes sense
 
-Benefits/drawbacks:
-
--   Easy to get started with this kind of architecture
--   Easy to make technical changes (e.g., swapping out the database) as changes will be confined to a single layer (and if that layer's interface changes, it will likely only affect the layer above it)
--   Functional changes are likely to require changes to several layers
-    -   Problem: when working on a single functional area, you will likely need to find the relevant classes below several top-level folders (according to the layer they are in)
-    -   This often means that a layered architecture is not a good way to split up a system into several parts maintained by independent teams
--   If separation by functional areas is more important, consider looking at [Package by feature or component](./Package-by-feature-or-component.md)
+Note: a layered architecture could have more layers than these if it makes sense
 
 ## Open/closed layers
 

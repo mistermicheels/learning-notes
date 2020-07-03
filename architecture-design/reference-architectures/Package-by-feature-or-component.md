@@ -1,6 +1,6 @@
 ---
 description: A way to divide your system based on functional areas
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-03T15:50:17.650Z
 ---
 
 # Package by feature or component
@@ -8,6 +8,7 @@ last_modified: 2020-05-30T15:54:15+02:00
 ## Contents
 
 -   [Basic idea](#basic-idea)
+-   [Benefits/drawbacks](#benefitsdrawbacks)
 -   [Testing](#testing)
 -   [Resources](#resources)
 
@@ -21,7 +22,7 @@ last_modified: 2020-05-30T15:54:15+02:00
 
 -   Divide system into features/components based on functional areas
 -   A feature/component exposes an interface for the outside world to use and hides its internals (including DB access etc.) from the rest of the codebase
-    -   In package by feature, features are separated onto the level of controllers
+    -   In package by feature, features are separated up to the level of controllers
         -   If one feature needs another, it needs to go through the controller
     -   In package by component, the separation happens below the level of controllers
         -   If one component needs to call another, there is no need to go through controllers
@@ -35,17 +36,17 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   Top-level structure shows functional areas of the application rather than technical layers
 -   Within feature/component, likely to have some kind of layered structure, may or may not be the same across all features/components
 
-Benefits/drawbacks:
+Note: probably still some cross-cutting concerns that apply to several features/components
+
+-   Can just put these next to the features/components structure
+-   Not all code has to be divided into features/components
+
+## Benefits/drawbacks
 
 -   Good way to divide codebase into different functional areas that different teams could potentially take ownership of
     -   "Modular monolith"
     -   Can be a good stepping stone towards microservices
 -   Finding a sensible way to divide the system into clearly separated features/components could be challenging or feel artificial for some applications
-
-Note: probably still some cross-cutting concerns that apply to several features/components
-
--   Can just put these next to the features/components structure
--   Not all code has to be divided into features/components
 
 ## Testing
 

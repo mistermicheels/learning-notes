@@ -1,6 +1,6 @@
 ---
 description: The Clean Architecture as proposed by Robert C. Martin
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-03T15:50:17.646Z
 ---
 
 # Clean Architecture
@@ -8,8 +8,10 @@ last_modified: 2020-05-30T15:54:15+02:00
 ## Contents
 
 -   [Basic idea](#basic-idea)
+-   [Benefits/drawbacks](#benefitsdrawbacks)
 -   [The different layers](#the-different-layers)
 -   [Boundaries between the layers](#boundaries-between-the-layers)
+-   [Database independence](#database-independence)
 -   [Resources](#resources)
 
 ## Basic idea
@@ -19,10 +21,10 @@ last_modified: 2020-05-30T15:54:15+02:00
 ([image source](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
 
 -   Inspired by Hexagonal Architecture (Ports and Adapters) etc.
--   Divides the systems into different layers
+-   Divides the systems into different layers based on technical purpose
 -   Inner layers contain business logic, outer layers contain details like the UI, database access, external systems, ...
     -   Outermost layer typically is or contains the "Main" part which glues everything together and starts the system
-    -   Business logic layer does not depend on the layer containing database access!
+    -   Business logic layer does not depend on the layer containing database access
 -   Direction of code dependencies is always from outer layers to inner layers
     -   The idea is that outer layers act as "plugins" to inner layers
     -   This allows for changes in the outer layers (or the existence of multiple alternatives in the outer layers) without inner layers having to know about it
@@ -33,12 +35,22 @@ last_modified: 2020-05-30T15:54:15+02:00
     -   Need to take care to enforce this, so for example a Controller will not call a database gateway directly
 -   Every layer only communicates with the one directly above/below it
 -   Communication between layers typically happens by passing simple DTOs (Data Transfer Objects)
--   Note: layers based on technical parts rather than functional parts
-    -   Focus is on decoupling core logic from database, UI, file system, ... so those are all easy to change
-    -   Single functional change likely to require touching several layers
-        -   Not meant to be a way to split up system into functional parts that different teams can take full ownership of
-            -   Still possible to some extent: [Implementing Clean Architecture - Make it scream](http://www.plainionist.net/Implementing-Clean-Architecture-Scream/)
-        -   Could be very useful inside a single functional part
+
+## Benefits/drawbacks
+
+-   Pretty complex
+    -   For a simpler alternative that splits layers based on technical purpose, see [Layered architecture](./Layered-architecture.md))
+-   Decouples core logic from database, UI, frameworks, ...
+    -   Easy to unit test core logic
+    -   Database, UI, frameworks ... can be swapped out without requiring changes to the core logic
+        -   You might not actually need that flexibility for each of them
+    -   Being strict about this can require a lot of overhead in terms of additional classes, getting data in and out of DTOs to pass between layers, taking care of things that your framework would normally automatically take care of, ...
+        -   See also below: [Boundaries between the layers](#boundaries-between-the-layers)
+    -   Depending on how far you take the "database independence" part, you might be making suboptimal use of your database. See also below: [Database independence](#database-independence)
+-   Single functional change likely to require touching several layers
+    -   Not meant to be a way to split up system into functional parts that different teams can take full ownership of
+    -   Could be very useful inside a single functional part
+-   If separation by functional areas is more important, consider looking at [Package by feature or component](./Package-by-feature-or-component.md)
 
 ## The different layers
 
@@ -99,6 +111,20 @@ Note: in practice, you could have more layers. However, the dependency rule stil
 -   The View is created from View Model created by the Presenter
     -   View Model contains as much data as possible so minimal logic is required in the view
     -   See also [Humble Object pattern](../Humble-Object-pattern.md)
+
+## Database independence
+
+Robert C. Martin suggests to build all of the business logic before even choosing what kind of database to use, simply writing code against some persistence interfaces describing what kind of data you will need to store and retrieve. This has some particular benefits/drawbacks:
+
+-   You can delay the decision of which kind of database to use until you have a better idea of what you need from your persistence solution
+-   By writing code without taking any database's limitations into account, you could make it very hard to find a database that actually has everything you need
+-   By defining your entities and their relationships before even choosing what kind of database (relational, document store, ...) you are going to use, you are probably making suboptimal use of the database you end up using
+    -   The kind of data you'd want to store together and the way you would want to represent relationships can be totally different for a relational database and a document store
+    -   The kind of queries that you can perform in an efficient way can be very different depending on the kind of database that you use
+    -   In the end, you might actually find yourself building not-so-pretty workarounds just so you can use your database in a way that fits the persistence interfaces you wrote and the business logic that depends on them
+    -   Any mismatch in this area is likely to have a (potentially severe) negative effect on performance
+-   Different kinds of databases have different guarantees regarding consistency, transactional behavior, ...
+    -   Not properly taking these into account can lead to accidental corruption of data
 
 ## Resources
 
