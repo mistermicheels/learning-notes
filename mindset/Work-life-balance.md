@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2020-07-02T16:17:19.384Z
+last_modified: 2020-07-04T12:00:22.685Z
 ---
 
 # Work-life balance
@@ -89,6 +89,7 @@ A strategy to **get your work done** within limited time:
 -   When a new task appears, establish its priority relative to your other tasks and push other tasks back as needed
     -   If your plate is full, you might need to drop or delegate another task
     -   Potentially, you might be able to offer an alternative ("I can't do X, but I can do Y")
+    -   Make sure that you communicate this to stakeholders as needed. See also [Expectation management](../soft-skills/Expectation-management.md)
 -   Set clear boundaries regarding the amount of work that you can do
 
 A strategy to **leave when you plan to**:

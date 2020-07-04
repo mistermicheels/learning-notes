@@ -1,6 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-04T12:00:22.682Z
 ---
 
 # Pragmatism and imperfectionism
@@ -68,9 +68,15 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   Since you are not perfect, it is expected that you make mistakes
     -   Mistakes you make in _specific_ situations do not imply that you are not good at what you do _in general_
     -   It feels great to realize this and get comfortable admitting your mistakes
--   Rather than trying to hide your mistakes, admit them and give honest information about what happened. Bonus points if you already have ideas on how to solve the problem.
+-   Rather than trying to hide your mistakes, admit them and give honest information about what happened
+    -   People who admit their mistakes come across as more confident, reliable and relatable than those who pretend to be perfect
+    -   Bonus points if you already have ideas on how to solve the problem
+    -   Bonus points if you can improve your process so the same mistake won't be able to happen again
 -   Instead of ruminating about mistakes you have made, put that time and energy into fixing the situation or preventing the mistake from happening again
--   People who admit their mistakes come across as more confident, reliable and relatable than those who pretend to be perfect
+-   If someone in the team makes a mistake, take responsibility as a team
+    -   Naming the person who made a mistake doesn't solve anything, and gives the impression that the team likes to blame individuals instead of taking responsibility
+    -   Remember that everybody makes mistakes. If the process allowed for this mistake to happen, it was a matter of time before someone actually made the mistake, and it could easily have been someone else who made the mistake.
+    -   Solve the issue as a team and improve your process as a team
 
 ### Focus on what you can control
 
@@ -156,6 +162,7 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   [Pragmatic Software Development](https://medium.com/gsoft-tech/pragmatic-software-development-59d12790e422)
 -   [3 Ways Owning Your Mistakes Will Make You Powerful](https://www.entrepreneur.com/article/232417)
 -   [Why you need to own your mistakes](https://www.klipfolio.com/blog/own-your-mistakes)
+-   [How to professionally acknowledge to a client that a former coworker made a mistake in production?](https://workplace.stackexchange.com/questions/159311/how-to-professionally-acknowledge-to-a-client-that-a-former-coworker-made-a-mist)
 -   How to Be an Imperfectionist (book by Stephen Guise)
 -   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
 -   [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
