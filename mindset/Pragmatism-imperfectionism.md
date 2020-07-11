@@ -1,6 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
-last_modified: 2020-07-04T12:00:22.682Z
+last_modified: 2020-07-11T16:56:51.612Z
 ---
 
 # Pragmatism and imperfectionism
@@ -29,6 +29,8 @@ last_modified: 2020-07-04T12:00:22.682Z
 -   See also [Keep it simple](./Keep-it-simple.md)
 
 ## Don't expect perfection
+
+Programming is hard and people are not perfect, so don't expect perfection.
 
 -   Don't expect perfection from **yourself**
     -   Just like any other human, you are not perfect

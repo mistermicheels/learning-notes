@@ -10,6 +10,7 @@
 -   [Architectural fitness functions](Architectural-fitness-functions.md)
 -   [Deletes](Deletes.md)
 -   [Deployable components](Deployable-components.md)
+-   [Duplication](Duplication.md)
 -   [Exception handling](Exception-handling.md)
 -   [Humble Object pattern](Humble-Object-pattern.md)
 -   [Inversion of control](Inversion-of-control.md)

@@ -12,6 +12,7 @@ If you prefer to read them on GitHub, the overview below might be useful.
     -   [Architectural fitness functions](architecture-design/Architectural-fitness-functions.md)
     -   [Deletes](architecture-design/Deletes.md)
     -   [Deployable components](architecture-design/Deployable-components.md)
+    -   [Duplication](architecture-design/Duplication.md)
     -   [Exception handling](architecture-design/Exception-handling.md)
     -   [Humble Object pattern](architecture-design/Humble-Object-pattern.md)
     -   [Inversion of control](architecture-design/Inversion-of-control.md)

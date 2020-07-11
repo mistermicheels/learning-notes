@@ -1,7 +1,7 @@
 ---
 tree_title: Generics
 description: An overview of generics in Java
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-07-11T16:56:51.595Z
 ---
 
 # Generics (Java)
@@ -20,6 +20,16 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   [Resources](#resources)
 
 ## Generics basics
+
+Simple class hierarchy for examples:
+
+```java
+public class Animal {}
+```
+
+```java
+public class Dog extends Animal {}
+```
 
 Example generic interface:
 
@@ -304,13 +314,3 @@ Exceptions: it is not possible to throw objects of a generic class.
 ## Resources
 
 -   Core Java SE 9 for the Impatient (book by Cay S. Horstmann)
-
-Simple class hierarchy for examples:
-
-```java
-public class Animal {}
-```
-
-```java
-public class Dog extends Animal {}
-```
