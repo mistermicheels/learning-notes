@@ -1,6 +1,6 @@
 ---
 description: Some thoughts on defining deployable components and the dependencies between them
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-08-22T16:08:26.020Z
 ---
 
 # Deployable components
@@ -29,7 +29,7 @@ Deployable components:
     -   Could be aggregated into single archive (example: .war file)
     -   Could be independently deployed as some kind of dynamically loaded plugins
 -   Regardless of how they end up being deployed, in principle they are independently deployable and thus independently developable
-    -   Example: Executable is built from component A, B and C where both A and B depend on C. Because they are indepedently deployable components, new versions of C might be developed while still including an older version of C in the executables until A and B are adjusted to those new versions.
+    -   Example: Executable is built from component A, B and C where both A and B depend on C. Component C is in full development, with new versions being released all the time. Because these are independently deployable components, it's possible to keep using an older version of C in the executable until A and B are adjusted to support the newest version of C.
 
 ## Component cohesion
 
@@ -88,9 +88,11 @@ If the graph is indeed a DAG, it is easy to find out which components could be a
 
 If you have a cycle, then the components in that cycle are not really independently developable and deployable!
 
--   People working on these components must make sure to all use exactly the same release of each other's components
-    -   If A -> B -> C -> A, a new version of A must be compatible with a new version of C which is compatible with that new version of A
--   Very difficult to test your component in isolation because your dependencies also depend on the changes you make
+-   People working on these components must make sure that the components stay compatible in both directions
+    -   If A -> B -> C -> A, any new version of A must be compatible with a version of C which is compatible with that new version of A
+-   Difficult to test your component in isolation because your dependencies also depend on the changes you make
+-   Depending on your build system, circular dependencies between components might make it hard or even impossible to actually build the components
+    -   If you need a built version of all your dependencies before you can build your component, you get a chicken and egg situation where your component cannot be built before building its dependencies but your dependencies can also not be built before building your component
 -   Essentially, components in the cycle are reduced to a single component
 
 #### Breaking cycles

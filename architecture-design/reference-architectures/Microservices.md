@@ -1,6 +1,6 @@
 ---
 description: A high-level overview of what a Microservices architecture means and when it can be useful
-last_modified: 2020-07-03T15:50:17.648Z
+last_modified: 2020-08-22T16:08:26.027Z
 ---
 
 # Microservices
@@ -45,8 +45,10 @@ last_modified: 2020-07-03T15:50:17.648Z
 -   Can help with scaling the development organization into several teams that can (to a large extent) work independently of each other
     -   Apart from decisions impacting the communication between services, different teams can work independently. This helps to scale the development organization, as communication is way more efficient within a small, focused team than within a large team with large scope.
     -   Services can be developed and deployed independently
-    -   Services can be scaled independently (you don't have to scale your entire monolith to support your most volatile component in terms of need for capacity)
     -   Different services can have different release cycles
+-   Can help with scaling in the technical sense
+    -   Services can be scaled independently (you don't have to scale your entire monolith to support your most volatile component in terms of need for capacity)
+    -   Having a separate database per service can help with database scaling (each individual database will likely be smaller and will likely need to deal with less load)
 -   Can be overkill (and introduce more problems than it solves) for a single small team
 -   Challenging to find the best way to divide the system into services. Defining this upfront is risky. Typically, it's best to start with a monolith or very small number of services and extract certain parts into separate services when it makes sense.
 

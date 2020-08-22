@@ -1,7 +1,7 @@
 ---
 tree_title: Object prototypes and classes
 description: JavaScript objects, the prototype chain, classes, encapsulation, ...
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-08-22T16:08:26.048Z
 ---
 
 # Object prototypes and classes (JavaScript)
@@ -498,13 +498,21 @@ class A {
         this.getName = function() {
             return name;
         }
+        
+        this.setName = function(newName) {
+               name = newName;
+        }
     }
 }
 
 const instance = new A("theName");
+console.log(instance.getName()); // theName
+instance.setName("theNewName");
+console.log(instance.getName()); // theNewName
+
 console.log(instance.name); // undefined
 instance.name = "test";
-console.log(instance.getName()); // theName
+console.log(instance.getName()); // theNewName
 ```
 
 Simplest workaround: convention that properties starting with underscore (`_`) are private. Example:
