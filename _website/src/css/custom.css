@@ -80,3 +80,9 @@ div.github-footer {
 .menu .menu__list-item.menu__list-item--collapsed .menu__link--sublist:after {	
     visibility: hidden;	
 }
+
+/* get rid of pagination links at the bottom (seems there is no config option for this) */
+
+.pagination-nav {
+  display: none;
+}

@@ -43,10 +43,6 @@ License</a>.`,
       theme: require('prism-react-renderer/themes/github'), // syntax highlighting
     },
     disableDarkMode: true,
-    gtag: {
-      trackingID: 'UA-130247825-2',
-      anonymizeIP: true,
-    },
     algolia: {
       apiKey: 'e85182cad56736f15db2007a1edb6ab7',
       indexName: 'mistermicheels_learning-notes',
@@ -70,5 +66,6 @@ License</a>.`,
     path.resolve(__dirname, './extended-favicon-plugin'),
     path.resolve(__dirname, './embedded-font-awesome-icons-plugin'),
     path.resolve(__dirname, './collapse-sidebar-again-if-js-enabled-plugin'),
+    path.resolve(__dirname, './goatcounter-plugin'),
   ],
 };
