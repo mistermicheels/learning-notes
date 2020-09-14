@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2020-07-04T12:00:22.685Z
+last_modified: 2020-09-14T22:25:06.590Z
 ---
 
 # Work-life balance
@@ -10,7 +10,10 @@ last_modified: 2020-07-04T12:00:22.685Z
 -   [Don't care too much](#dont-care-too-much)
     -   [Caring just enough](#caring-just-enough)
 -   [Don't work long hours](#dont-work-long-hours)
-    -   [Working fewer hours](#working-fewer-hours)
+    -   [Overwork triggers](#overwork-triggers)
+    -   [Benefits of working fewer hours](#benefits-of-working-fewer-hours)
+    -   [Getting your work done on time](#getting-your-work-done-on-time)
+    -   [Leaving when you plan to](#leaving-when-you-plan-to)
 -   [Separate work and personal life](#separate-work-and-personal-life)
 -   [Pursue other interests](#pursue-other-interests)
     -   [What about self-improvement?](#what-about-self-improvement)
@@ -63,24 +66,43 @@ Both for factory workers and knowledge workers, there have been studies that dem
 Some reasons why long hours don't work:
 
 -   They make people continue working when they're actually tired and no longer productive
--   They lead to stress and health problems lake bad sleep, depression and impaired memory, which all make you worse at your job during all of the hours that you're working
+-   They lead to stress and health problems like bad sleep, depression and impaired memory, which all make you worse at your job during all of the hours that you're working
 -   They lead to people getting sick, burning out or quitting
 -   They give people a false sense of comfort: "It's okay, I can always squeeze in one more hour". This prevents them from actually having to look at the bigger picture, prioritize and improve their effectiveness
 -   They make people, consciously or subconsciously, dial back the intensity of their efforts in order to be able to make it until the end of a long day
 
 Harsh but sensible quote from [this article](https://hbr.org/2015/08/the-research-is-clear-long-hours-backfire-for-people-and-for-companies): "Keep overworking, and you’ll progressively work more stupidly on tasks that are increasingly meaningless"
 
-### Working fewer hours
+### Overwork triggers
 
-The **benefits** of working fewer hours
+Some triggers that can cause people to overwork (and some tips on dealing with them):
+
+-   **Stress:** Stress about the never-ending backlog, looming deadlines, the chance that the business might fail, ...
+    -   Remind yourself that there will always be more work, that deadlines and scope are often not as fixed as they appear to be, and that some things are at least partially out of your control. In any case, getting proper rest and relaxation will put you in the best position to deal with whatever life decides to throw your way.
+-   **Insecurity:** The feeling that you aren't doing enough, looking bad in front of your manager and peers, ...
+    -   If this is the case, you are likely failing to see the actual value that you are bringing. You might also be setting unrealistic expectations for yourself. If you're really worried about your performance, ask your manager about it. See also [Expectation management](../soft-skills/Expectation-management.md).
+-   **Frustration:** Feeling frustrated because you were not able to get done what you planned to get done
+    -   If this happened because something else came up, remind yourself that it's not realistic to expect yourself to finish the planned work as well. Additionally, the work you did instead might actually be very valuable. Sometimes, you can feel like you "got nothing done" when in reality you made a huge contribution to your team's success by mentoring people, clarifying requirements with stakeholders, planning future work, making sure team members are on the same page, ...
+    -   If this happened because for whatever reason the work you planned to do is taking longer than expected, remind yourself that shit happens. After some proper rest and relaxation, you will also be in a better position to finish the work the next day.
+-   **Guilt:** Feeling guilty because you had an off day and couldn't get yourself to be productive
+    -   Often, an off day is caused by a lack of rest and relaxation. In this case, overworking out of guilt is the best way to guarantee that tomorrow will be an off day as well. Instead, get some much-needed rest to set yourself up for a more productive day tomorrow.
+-   **Obsession:** Getting obsessed with a problem you're solving
+    -   Remind yourself that it's probably way more efficient to get some rest and continue tomorrow. Additionally, switching from a problem you're obsessed with to a completely unrelated leisure activity is the ideal setup for [Hammock-driven development](./Hammock-driven-development.md).
+
+### Benefits of working fewer hours
+
+Working fewer hours comes with some clear benefits:
 
 -   You are forced to look at the bigger picture to see if the tasks you are working on are really important and if you're tackling them in the simplest, most effective way
 -   You are forced to give more realistic estimates that account for the inevitable fact that some things will go wrong or might need more thought and discussion
 -   You are forced to spend more time thinking and planning up front, which greatly reduces the amount of work that is needed later on
     -   Efficiency vs. effectiveness: Effectiveness is picking a direction, efficiency is running really hard in that direction. No matter how hard you run, you will never make it to your destination if you are running in the wrong direction.
 -   You have the energy to give your best during the hours you do work, as well as the time to recover from it so you can have that same energy tomorrow as well
+    -   "It's a marathon, not a sprint"
 
-A strategy to **get your work done** within limited time:
+### Getting your work done on time
+
+Some tips to get your work done within the limited time you have:
 
 -   Establish clear priorities for your tasks (decided either by yourself or your boss) and start with the most important task
     -   Even if you don't get as much done as planned, you can still go home knowing that you worked on the most important stuff first
@@ -92,13 +114,15 @@ A strategy to **get your work done** within limited time:
     -   Make sure that you communicate this to stakeholders as needed. See also [Expectation management](../soft-skills/Expectation-management.md)
 -   Set clear boundaries regarding the amount of work that you can do
 
-A strategy to **leave when you plan to**:
+### Leaving when you plan to
+
+Sometimes, it's easy to get caught up in a task and end up staying late anyway. A strategy to prevent this:
 
 -   Determine the schedule to follow, so you know beforehand at what time you should stop working
 -   In the last 1.5 hours or so before you should leave:
     -   Continue working on whatever you were working on
     -   If you finish, consider not starting a new big task but instead catching up on smaller tasks like code reviews, taking a step back to see if everything you're doing makes sense in the big picture, planning future work, ...
-        -   Starting a new big task is risky because by the time you properly get going it's time to leave
+        -   Starting a new big task is risky because by the time you properly get going it's already time to leave
         -   If starting the new big task is the only thing that makes sense, focus on things that make it easier to stop and start again (chopping it up into smaller parts, doing some analysis and writing down your findings, ...)
 -   In the last 15 minutes, stop working and write down everything you need to know in order to continue the task later on
     -   Benefit: you can get off to a flying start the next morning
@@ -174,6 +198,8 @@ Don't get intimidated by job adverts!
 -   [Stop Working and Go Home](https://www.bloomberg.com/opinion/articles/2019-11-06/long-work-hours-waste-time-and-lead-to-lower-productivity)
 -   [The compelling case for working a lot less](https://www.bbc.com/worklife/article/20171204-the-compelling-case-for-working-a-lot-less)
 -   [The futile comfort of working long hours](https://codewithoutrules.com/2018/02/11/working-long-hours/)
+-   [Why senior engineers get nothing done](https://swizec.com/blog/why-senior-engineers-get-nothing-done/)
+-   [How to manage an “over worker”?](https://workplace.stackexchange.com/questions/102909/how-to-manage-an-over-worker)
 -   [My FOSS Story](https://blog.burntsushi.net/foss/)
 -   [Avoiding hour creep: get your work done and still go home at 5PM](https://codewithoutrules.com/2018/06/15/avoid-hour-creep/)
 -   [Work/life balance will make you a better software engineer](https://codewithoutrules.com/2016/11/10/work-life-balance-software-engineer/)
