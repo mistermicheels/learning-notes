@@ -1,6 +1,6 @@
 ---
 description: Some ways to improve the quality of your team's code through code review and collaboration
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-17T18:38:43.482Z
 ---
 
 # Code review and collaboration workflows
@@ -15,9 +15,11 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   [Synchronous review](#synchronous-review)
     -   [Synchronous review and pairing](#synchronous-review-and-pairing)
 -   [Asynchronous review](#asynchronous-review)
+    -   [What to do while waiting for feedback?](#what-to-do-while-waiting-for-feedback)
     -   [Asynchronous review and pairing](#asynchronous-review-and-pairing)
 -   [Review after the fact](#review-after-the-fact)
 -   [Automated review](#automated-review)
+-   [Applying feedback received during review](#applying-feedback-received-during-review)
 -   [Resources](#resources)
 
 ## Instant review (pair programming)
@@ -32,7 +34,7 @@ Advantages:
 -   Creates joint ownership of the code: more than one person has detailed knowledge regarding that part of the code
     -   Knowledge can get spread through the team by mixing up the pairs
 -   Helps with focus:
-    -   While there is a lot of interaction within a pair, this interaction does not require context switching because both members of the pair are already working on the same thing
+    -   While there is a lot of interaction within a pair, this interaction does not require context switching because both members of the pair are working on the same thing
     -   The pair can also keep each other on track and prevent each other from slacking off or being tempted to write quick-and-dirty code
 -   Different perspectives and levels of overview
     -   Two people know more than one
@@ -72,8 +74,7 @@ Disadvantages:
     -   While there is a chance that they can fill in the gaps in each other’s knowledge and reasoning, there is also a big chance that you will just have two people being stuck for hours on a problem that could have been solved quickly with a bit of guidance from a senior developer.
 -   Solutions:
     -   Forbidding less experienced developers to form a team
-        -   Can seem harsh
-        -   Not always practical
+        -   Can seem harsh, also not always practical
     -   Guidance provided by team
         -   The team should help them estimate how much time they should allow themselves to spend on a task and how quickly they should ask for help
 
@@ -146,18 +147,20 @@ Drawbacks:
 
 -   Asynchronous: you may have to wait a while for feedback
     -   Still some context switching when going back to the code later on
-    -   What to do while waiting for feedback?
-        -   Simplest option: work on something unrelated
-        -   If other work depends on work under review, things can get more complex. Avoid submitting code for review if it depends on other code that is still under review. It's often more productive to push people for a review of the original code.
-            -   Git example: Stay on the feature branch that you submitted for review but don't commit yet. Then, when your other work has been approved, you can stash those changes, merge your feature branch to master, pull master and unstash your changes.
-            -   If you make it clear that your PR is part of a series, reviewers might be inclined to immediately approve your PR but specify comments for further improvement
     -   The team should make sure that code and comments are reviewed and processed fairly quickly, meaning that the feedback loop stays relatively short
         -   The longer the feedback loop gets, the harder it is for a committer or reviewer to switch contexts when they receive feedback on their code or comments.
         -   A longer feedback loop also increases the chance that other changes in the codebase will conflict with the code under review
 -   Not suited for real discussion
-    -   Excessive back-and-forth can be detrimental to productivity
-        -   Some companies have guidelines to "just accept the changes if the code is decent and offer suggestions for improvement as suggestions for new changes (instead of reasons for not accepting the current changes)"
+    -   Excessive asynchronous back-and-forth can be detrimental to productivity
+    -   Some companies have guidelines to "just accept the changes if the code is decent and offer suggestions for improvement as suggestions for new changes (instead of reasons for not accepting the current changes)"
     -   Can switch to synchronous review or even pairing if they are more suitable for the current change
+
+### What to do while waiting for feedback?
+
+-   Simplest option: work on something unrelated
+-   If other work depends on work under review, things can get more complex. Avoid submitting code for review if it depends on other code that is still under review. It's often more productive to push people for a review of the original code.
+    -   You can work on top of code currently under review and reapply your changes once reviewed code gets merged
+    -   If you make it clear that your PR is part of a series, reviewers might be inclined to immediately approve your PR but specify comments for further improvement
 
 ### Asynchronous review and pairing
 
@@ -180,6 +183,14 @@ When applying the pairing strategies described in the section on synchronous rev
     -   Script that automatically checks dependencies for security vulnerabilities and licensing issues, …
 -   Great addition to any reviewing process, allows reviewers to focus on things that really need a human judgement
 
+## Applying feedback received during review
+
+For asynchronous and also synchronous review, a lot of feedback will fall into three categories:
+
+-   _"This will cause specific problem X"_ -> Fix the code
+-   _"I don’t understand what is happening."_ -> Refactor for readability or add documentation
+-   _"In my opinion ..."_ -> Take it or leave it, it's up to you
+
 ## Resources
 
 -   [4 Types Of Code Reviews Any Professional Developer Should Know About](https://dzone.com/articles/4-types-of-code-reviews-any-professional-developer)
@@ -188,3 +199,4 @@ When applying the pairing strategies described in the section on synchronous rev
 -   [Why Code Reviews Hurt Your Code Quality and Team Productivity](https://simpleprogrammer.com/code-review-trunk-based-development/)
 -   [Pairing, Are You Doing it Wrong?](https://www.thoughtworks.com/insights/blog/pairing-are-you-doing-it-wrong)
 -   [The Art of Pull Requests](https://hackernoon.com/the-art-of-pull-requests-6f0f099850f9)
+-   [Three categories of PR comments](https://medium.com/@matt_68798/i-have-trouble-with-the-guideline-whatever-one-of-us-writes-the-other-2-have-to-be-cool-with-1fec5da99c48)

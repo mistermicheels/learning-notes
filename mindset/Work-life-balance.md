@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2020-10-17T10:18:45.603Z
+last_modified: 2020-10-17T18:38:43.479Z
 ---
 
 # Work-life balance
@@ -15,8 +15,13 @@ last_modified: 2020-10-17T10:18:45.603Z
     -   [Getting your work done on time](#getting-your-work-done-on-time)
     -   [Leaving when you plan to](#leaving-when-you-plan-to)
 -   [Separate work and personal life](#separate-work-and-personal-life)
+    -   [Detaching from work in the evening](#detaching-from-work-in-the-evening)
 -   [Pursue other interests](#pursue-other-interests)
     -   [What about self-improvement?](#what-about-self-improvement)
+        -   [Make time for learning at work](#make-time-for-learning-at-work)
+        -   [Your spare time is your spare time](#your-spare-time-is-your-spare-time)
+        -   [Don't get intimidated by articles and blogs](#dont-get-intimidated-by-articles-and-blogs)
+        -   [Don't get intimidated by job ads](#dont-get-intimidated-by-job-ads)
 -   [Resources](#resources)
 
 ## Don't care too much
@@ -137,11 +142,19 @@ Sometimes, it's easy to get caught up in a task and end up staying late anyway. 
         -   Avoid opening your work laptop at home
     -   When working for home
         -   Have a clear schedule regarding what is work time and what is personal time
-        -   Make the distinction between work time and personal time as clear as possible (use a separate desk for working, don't use your work machine for personal stuff, ...)
+        -   Make the distinction between work time and personal time as clear as possible (use a separate desk for working, don't use your work machine for personal stuff, wear dedicated work clothes, ...)
     -   Avoid having any work-related communication coming into your phone
 -   When you're working, work. When you're not working, don't work
     -   Goes both ways: it also helps to avoid doing personal stuff during designated work time, otherwise the lines get blurry and you could even guilt-trip yourself into working in your personal time in order to compensate
     -   Especially when working from home, it can sometimes be nice to be able to combine work and private stuff as the need arises. However, you risk constantly being in a gray zone where you are always “kind of working but also kind of not working”. It's often better to plan blocks of time for work and blocks of time for private stuff and to keep those blocks as clearly separated as possible.
+
+### Detaching from work in the evening
+
+-   Move from your working space to somewhere else
+-   Put your work machine, work notes, ... where you don't see them
+-   Take off your work clothes
+-   Get some exercise or just go for a short walk
+-   Pursue some non-work-related interests (see below)
 
 ## Pursue other interests
 
@@ -159,10 +172,15 @@ What pursuing other interests helps with:
 
 ### What about self-improvement?
 
-First of all:
+#### Make time for learning at work
 
--   It's not required to be working on anything work-related or career-related in your free time. As software developers, we are expected to learn a lot of things on the job.
+-   As software developers, we are expected to learn a lot of things on the job, within normal working hours.
+    -   "Learning is part of your job. Make time for it." ([“It never gets easier, you just go faster.”](https://letterstoanewdeveloper.com/2020/04/27/it-never-gets-easier-you-just-go-faster/))
 -   If your job does not give your opportunities to learn and grow, it's probably time for another job
+
+#### Your spare time is your spare time
+
+It's not required to be working on anything work-related or career-related in your free time!
 
 But what if you _want_ to write code or improve your knowledge and skills in your free time?
 
@@ -174,20 +192,20 @@ But what if you _want_ to write code or improve your knowledge and skills in you
 -   If you want to improve your knowledge, focus on learning concepts. See also [Concepts, not code](./Concepts-not-code.md)
 -   Remember: there's no need to pressure yourself about this kind of stuff!
 
-Don't get intimidated by articles and blogs!
+#### Don't get intimidated by articles and blogs
 
 -   The field is huge, nobody knows all there is to know about everything
 -   If you feel like you know nothing after reading some impressive article written by someone in a different subfield, remember that they probably don't have a lot of relevant knowledge regarding the stuff you are working on and know a lot about
 -   It's mostly about your ability to figure out things as you go
 -   You will always have some gaps in your knowledge. While it's good to be aware of them, it's not good to be intimidated by them.
 
-Don't get intimidated by job adverts!
+#### Don't get intimidated by job ads
 
--   Job adverts are written with the perfect candidate in mind, which by definition means that that candidate doesn't exist
+-   Job ads are written with the perfect candidate in mind, which by definition means that that candidate doesn't exist
 -   While some of the listed skills/technologies are really needed for the job, the rest is often just things they want to use but aren't really using in practice, things they included in an attempt to make the job look more interesting, ...
 -   Even for skills/technologies that are really needed, there's likely a lot that you can just learn on the job as you go, especially if they are relatively similar to things you already have experience with
--   If you're looking at job adverts to get a feel for what your current skill set is worth, remember taking them with a big grain of salt
--   If you're looking for a new job, don't let intimidating job adverts keep you from applying. Just state what you know, what you don't know (yet), and how some things you do know could help you to learn some of the things you don't know yet. Then, it's up to the company to decide if you're interesting enough to interview.
+-   If you're looking at job ads to get a feel for what your current skill set is worth, remember taking them with a big grain of salt
+-   If you're looking for a new job, don't let intimidating job ads keep you from applying. Just state what you know, what you don't know (yet), and how some things you do know could help you to learn some of the things you don't know yet. Then, it's up to the company to decide if you're interesting enough to interview.
 
 ## Resources
 
@@ -203,7 +221,9 @@ Don't get intimidated by job adverts!
 -   [My FOSS Story](https://blog.burntsushi.net/foss/)
 -   [Avoiding hour creep: get your work done and still go home at 5PM](https://codewithoutrules.com/2018/06/15/avoid-hour-creep/)
 -   [Work/life balance will make you a better software engineer](https://codewithoutrules.com/2016/11/10/work-life-balance-software-engineer/)
+-   [Ask HN: How do you switch off from work, particularly when working from home?](https://news.ycombinator.com/item?id=24196433)
 -   [Can software engineering be meaningful work?](https://codewithoutrules.com/2019/04/12/meaningful-programming-work/)
 -   [How I Broke the Cycle of Stress](https://blogs.scientificamerican.com/observations/how-i-broke-the-cycle-of-stress/)
+-   [“It never gets easier, you just go faster.”](https://letterstoanewdeveloper.com/2020/04/27/it-never-gets-easier-you-just-go-faster/)
 -   [How to Feel Less Overwhelmed as a Developer](https://medium.com/@juliahaigh/how-to-feel-less-overwhelmed-as-a-developer-79bc816709de)
 -   [It's perfectly fine to only code at work, don't let anyone tell you otherwise.](https://dev.to/ben/its-perfectly-fine-to-only-code-at-work-dont-let-anyone-tell-you-otherwise--25i3)
