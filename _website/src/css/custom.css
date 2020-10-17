@@ -5,7 +5,6 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #3578e5;
   --ifm-color-primary-dark: #1d68e1;
@@ -17,18 +16,101 @@
   --ifm-code-font-size: 95%;
 }
 
-.docusaurus-highlight-code-line {
-  background-color: rgb(232, 234, 236);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+.footer.footer--dark {
+  --ifm-footer-background-color: #282c34;
 }
+
+html[data-theme="dark"] {
+  --ifm-color-primary: #79b6f2;
+  --ifm-color-primary-dark: #58a4ef;
+  --ifm-color-primary-darker: #479bed;
+  --ifm-color-primary-darkest: #1680e8;
+  --ifm-color-primary-light: #9ac8f5;
+  --ifm-color-primary-lighter: #abd1f7;
+  --ifm-color-primary-lightest: #dcecfc;
+
+  --ifm-background-color: #1f201c;
+  --ifm-background-surface-color: #272822;
+  --ifm-background-surface-color-secondary: #2a2b25;
+  --ifm-navbar-background-color: #272822;
+
+  --ifm-code-background: #282c34;
+  --ifm-code-color: #ffffff;
+
+  background-color: #1f201c;
+
+  --ifm-heading-color: #ffffff;
+  --ifm-color-secondary: #f0f0f0;
+  --ifm-blockquote-color: #c0c0c0;
+}
+
+/* nested links in menu */
 
 .menu__link.menu__link--sublist {
   font-weight: bolder;
   color: #444950;
   color: var(--ifm-color-gray-800);
 }
+
+html[data-theme="dark"] .menu__link.menu__link--sublist {
+  color: #ffffff;
+  color: var(--ifm-color-white);
+}
+
+/* GitHub logo, taken from https://github.com/facebook/docusaurus/blob/master/website/src/css/custom.css */
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+html[data-theme="dark"] .header-github-link:before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+/* remove blue shadow around light/dark toggle */
+
+nav .react-toggle--focus .react-toggle-thumb {
+  box-shadow: none;
+}
+
+nav .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  box-shadow: none;
+}
+
+/* override default Docusaurus behavior sidebar collapse (will be overridden again if JS is enabled) */
+
+.menu .menu__list-item.menu__list-item--collapsed .menu__list {
+  height: unset;
+  overflow: unset;
+}
+
+/* collapse icon */
+.menu .menu__link.menu__link--sublist:after {
+  visibility: hidden;
+}
+
+/* expand icon*/
+.menu .menu__list-item.menu__list-item--collapsed .menu__link--sublist:after {
+  visibility: hidden;
+}
+
+/* get rid of pagination links at the bottom (seems there is no config option for this) */
+
+.pagination-nav {
+  display: none;
+}
+
+/* custom elements */
 
 .embedded-fa-icon {
   max-width: 1em;
@@ -37,7 +119,12 @@
   top: 0.125em;
 }
 
-a svg.embedded-fa-icon {
+html[data-theme="dark"] .embedded-fa-icon {
+  fill: #ffffff;
+}
+
+a svg.embedded-fa-icon,
+html[data-theme="dark"] a svg.embedded-fa-icon {
   fill: #3578e5;
   fill: var(--ifm-link-color);
 }
@@ -47,42 +134,4 @@ div.github-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-/* https://github.com/facebook/docusaurus/blob/master/website/src/css/custom.css */
-
-.header-github-link:hover {
-  opacity: 0.6;
-}
-
-.header-github-link:before {
-  content: '';
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-    no-repeat;
-}
-
-/* override default Docusaurus behavior sidebar collapse */	
-
-.menu .menu__list-item.menu__list-item--collapsed .menu__list {	
-  height: unset;	
-  overflow: unset;	
-}	
-
-/* collapse icon */	
-.menu .menu__link.menu__link--sublist:after {	
-    visibility: hidden;	
-}	
-
-/* expand icon*/	
-.menu .menu__list-item.menu__list-item--collapsed .menu__link--sublist:after {	
-    visibility: hidden;	
-}
-
-/* get rid of pagination links at the bottom (seems there is no config option for this) */
-
-.pagination-nav {
-  display: none;
 }

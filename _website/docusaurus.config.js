@@ -40,9 +40,10 @@ module.exports = {
 License</a>.`,
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'), // syntax highlighting
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/oceanicNext'),
     },
-    disableDarkMode: true,
+    disableDarkMode: false,
     algolia: {
       apiKey: 'e85182cad56736f15db2007a1edb6ab7',
       indexName: 'mistermicheels_learning-notes',
