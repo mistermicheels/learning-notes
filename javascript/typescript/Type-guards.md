@@ -1,7 +1,7 @@
 ---
 tree_title: Type guards
 description: An overview of how to use TypeScript type guards, including creating your own custom ones
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-17T18:41:29.849Z
 ---
 
 # Type guards (TypeScript)
@@ -13,13 +13,14 @@ last_modified: 2020-05-30T15:54:15+02:00
     -   [`typeof` type guards](#typeof-type-guards)
     -   [`instanceof` type guards](#instanceof-type-guards)
     -   [Type guards based on common property](#type-guards-based-on-common-property)
+    -   [Type guards based on available properties](#type-guards-based-on-available-properties)
 -   [User-defined type guards](#user-defined-type-guards)
 -   [Resources](#resources)
 
 ## Basic idea
 
 -   Test, at runtime, whether a certain value is of a certain type
--   TypeScript compiler knows that, if the test passes, the value is indeed of that type
+-   TypeScript compiler can use this information to make better assumptions
 
 ## Built-in type guards
 
@@ -71,13 +72,13 @@ function test(instance: ClassA | ClassB) {
 
 ### Type guards based on common property
 
-Can be used to implement _discriminated unions_ (see [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions)):
+Can be used to implement _Discriminating Unions_ (see [Discriminating Unions](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#discriminating-unions)):
 
 -   Types with common property indicating type
 -   A type alias that is the union of these types
 -   Type guards on the common property
 
-Example (from [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions)):
+Example:
 
 ```typescript
 interface Square {
@@ -115,13 +116,25 @@ function area(shape: Shape) {
 
 TypeScript recognizes that the common property `kind` determines the type here
 
-This also works with regular if-statements:
+Also works with regular if-statements:
 
 ```typescript
 function test(shape: Shape) {
     if (shape.kind === "rectangle") {
         // shape has type Rectangle here
         console.log(shape.height);
+    }
+}
+```
+
+### Type guards based on available properties
+
+Example code (uses the interfaces from the above example):
+
+```typescript
+function test(shape: Shape) {
+    if ("radius" in shape) {
+        // shape has type Circle here
     }
 }
 ```
@@ -181,3 +194,4 @@ function test(input: object) {
 ## Resources
 
 -   [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+-   [Unions and Intersection Types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)

@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2020-10-17T10:18:45.593Z
+last_modified: 2020-10-17T18:41:29.847Z
 ---
 
 # Runtime type checking in TypeScript
@@ -8,12 +8,15 @@ last_modified: 2020-10-17T10:18:45.593Z
 ## Contents
 
 -   [Why additional type checking?](#why-additional-type-checking)
+-   [What about type guards?](#what-about-type-guards)
 -   [Strictness of runtime checking](#strictness-of-runtime-checking)
 -   [Runtime type checking strategies](#runtime-type-checking-strategies)
     -   [Manual checks in custom code](#manual-checks-in-custom-code)
     -   [Manual checks using a validation library](#manual-checks-using-a-validation-library)
     -   [Manually creating JSON Schemas](#manually-creating-json-schemas)
     -   [Automatically generating JSON Schemas](#automatically-generating-json-schemas)
+        -   [Generating JSON Schemas from TypeScript code](#generating-json-schemas-from-typescript-code)
+        -   [Generating JSON Schemas from example JSON input](#generating-json-schemas-from-example-json-input)
     -   [Transpilation](#transpilation)
     -   [Deriving static types from runtime types](#deriving-static-types-from-runtime-types)
     -   [Decorator-based class validation](#decorator-based-class-validation)
@@ -24,11 +27,23 @@ TypeScript only performs static type checking at compile time! The generated Jav
 
 -   Works fine for type checking within your codebase
 -   Doesn’t provide any kind of protection against malformed input (for example, when receiving input from API)
+-   Isn't designed to express typical input validation constraints (minimum array length, string matching a certain pattern) that are about more than simple type safety
+    -   Several of the methods below provide an easy way to specify these kinds of constraints together with the actual TypeScript types
+
+## What about type guards?
+
+Type guards are a way to provide information to the TypeScript compiler by having the code check values at runtime.
+
+-   Some degree of runtime type checking
+-   Often, type guards combine information available at runtime with information from type declarations specified in the code. The compiler will make incorrect assumptions if the actual input doesn't match those type declarations.
+
+See also [Type guards](./Type-guards.md)
 
 ## Strictness of runtime checking
 
 -   Needs to be at least as strict as compile-time checking (otherwise, we lose the guarantees that the compile-time checking provides)
--   Can be more strict if desired (e.g., require age to be >= 0)
+-   Can be more strict if desired (require age to be >= 0, require string to match a certain pattern)
+    -   Note that the TypeScript compiler will not be able to rely on such information
 
 ## Runtime type checking strategies
 
@@ -90,13 +105,70 @@ Example JSON Schema:
 
 ### Automatically generating JSON Schemas
 
--   Generating JSON Schemas from TypeScript code
-    -   Example library:  [typescript-json-schema](https://github.com/YousefED/typescript-json-schema) (can be used both from CLI and from code)
-    -   Need to make sure Schemas and code stay in sync!
--   Generating JSON Schemas from example JSON input
-    -   Doesn’t use the type information you have already defined in your TypeScript code
-    -   Can lead to errors if there is a mismatch between the input JSON you provide
-    -   Again, need to make sure Schemas and code stay in sync!
+#### Generating JSON Schemas from TypeScript code
+
+Most robust one at the moment: [ts-json-schema-generator](https://github.com/vega/ts-json-schema-generator) (for some alternatives, see [this discussion](https://github.com/vega/ts-json-schema-generator/issues/101))
+
+Example input, including specific constraints that are stricter than TS type checking:
+
+```typescript
+interface Person {
+    /** @pattern ^[A-Z][a-z]+$  */
+    firstName: string;
+
+    lastName: string;
+
+    /**
+     * @asType integer
+     * @minimum 0
+     */
+    age: number;
+}
+```
+
+Example output (with default options):
+
+```json
+{
+  "$ref": "#/definitions/Person",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Person": {
+      "additionalProperties": false,
+      "properties": {
+        "age": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "firstName": {
+          "pattern": "^[A-Z][a-z]+$",
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "age"
+      ],
+      "type": "object"
+    }
+  }
+}
+```
+
+Some benefits/drawbacks:
+
+-   Single source of truth
+-   Need to make sure generated schemas and code stay in sync!
+
+#### Generating JSON Schemas from example JSON input
+
+-   Doesn’t use the type information you have already defined in your TypeScript code
+-   Can lead to errors if there is a mismatch between the input JSON you provide and the types
+-   Need to make sure generated schemas and code stay in sync!
 
 ### Transpilation
 
@@ -237,4 +309,4 @@ validate(inputAsClassInstance).then(errors => {
 Note: class-validator needs actual class instances to work on
 
 -   Here, we used its sister library class-transformer to transform our plain input into an actual `Person` instance. 
-    -   Note: The transformation in itself does not perform any kind of type checking!
+    -   The transformation in itself does not perform any kind of type checking!
