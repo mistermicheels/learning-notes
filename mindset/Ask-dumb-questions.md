@@ -1,6 +1,6 @@
 ---
 description: Why you shouldn't be afraid of asking the "dumb" questions
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-17T10:18:45.596Z
 ---
 
 # Ask the dumb questions
@@ -44,7 +44,7 @@ The value of asking "dumb" questions:
 -   How important is this?
 -   How time-sensitive is this?
 -   Is this a decision we can postpone?
--   What is the smallest thing we could do to immediately add value here?
+-   What is the smallest thing we could do to immediately add value here? Any quick wins?
 -   Do we need a full solution immediately or can we go for a partial solution or workaround in the short term?
 -   What is the simplest approach that could possibly work?
 -   Can we find an alternative that is simpler?

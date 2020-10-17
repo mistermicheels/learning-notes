@@ -1,6 +1,6 @@
 ---
 description: Everything is a trade-off
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-17T10:18:45.599Z
 ---
 
 # It depends
@@ -98,6 +98,8 @@ Document options, trade-offs, ...
 Helps to reevaluate approach at a later time if new option pops up or situation changes!
 
 ## Moving to a different approach
+
+What if, for some reason, you are convinced that the approach you are currently using is clearly inferior to some other approach?
 
 Even if architecture and code are flexible, there are some costs and risks associated with making the change. The benefits of switching to the other approach may or may not outweigh those costs and risks. 
 

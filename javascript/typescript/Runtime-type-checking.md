@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2020-04-25T16:46:37+02:00
+last_modified: 2020-10-17T10:18:45.593Z
 ---
 
 # Runtime type checking in TypeScript
@@ -40,7 +40,7 @@ TypeScript only performs static type checking at compile time! The generated Jav
 
 ### Manual checks using a validation library
 
-Example validation library: [joi](https://hapi.dev/family/joi/)
+Example validation library: [joi](https://joi.dev/)
 
 ```typescript
 import Joi from "@hapi/joi"

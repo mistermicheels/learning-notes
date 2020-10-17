@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2020-09-14T22:25:06.590Z
+last_modified: 2020-10-17T10:18:45.603Z
 ---
 
 # Work-life balance
@@ -21,7 +21,7 @@ last_modified: 2020-09-14T22:25:06.590Z
 
 ## Don't care too much
 
-If you don't care about work one single bit, you'll probably won't do a very good job. However, most people have the the reverse problem: they care too much about work.
+If you don't care about work one single bit, you probably won't do a very good job. However, most people have the the reverse problem: they care too much about work.
 
 Caring too much is bad for both you and your company:
 

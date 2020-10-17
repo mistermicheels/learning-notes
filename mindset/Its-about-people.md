@@ -1,6 +1,6 @@
 ---
 description: Why software development is about people rather than computers
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-17T10:18:45.600Z
 ---
 
 # It's about people
@@ -91,7 +91,7 @@ Some tips:
 -   Be explicit
     -   Use names that make it immediately clear what value a variable holds or what a function does
     -   Don't aim for the shortest possible code, instead aim for code that explicitly walks the reader through what it is doing
-    -   Use a folder structure that makes it immediately what functionality sits where
+    -   Use a folder structure that immediately makes it clear what functionality sits where
 -   Don't try to be too clever
 -   See also [Keep it simple - Code](./Keep-it-simple.md#code)
 
