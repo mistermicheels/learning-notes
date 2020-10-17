@@ -57,6 +57,10 @@ html[data-theme="dark"] .menu__link.menu__link--sublist {
   color: var(--ifm-color-white);
 }
 
+html[data-theme="dark"] .menu .menu__link.menu__link--active {
+  color: var(--ifm-menu-color-active)
+}
+
 /* GitHub logo, taken from https://github.com/facebook/docusaurus/blob/master/website/src/css/custom.css */
 
 .header-github-link:hover {
