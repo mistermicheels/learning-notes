@@ -1,6 +1,6 @@
 ---
 description: Why concepts are more powerful and important than code
-last_modified: 2020-10-18T13:34:24.102Z
+last_modified: 2020-10-18T13:48:48.838Z
 ---
 
 # Concepts, not code
@@ -13,7 +13,7 @@ last_modified: 2020-10-18T13:34:24.102Z
     -   [Learning new technologies](#learning-new-technologies)
         -   [The problem with learning new technologies](#the-problem-with-learning-new-technologies)
         -   [The solution: focus on concepts](#the-solution-focus-on-concepts)
-        -   [Discovering new technologies and their concepts:](#discovering-new-technologies-and-their-concepts)
+        -   [Discovering new technologies and their concepts](#discovering-new-technologies-and-their-concepts)
 -   [Understanding systems](#understanding-systems)
 -   [Building systems](#building-systems)
 -   [Resources](#resources)
@@ -65,7 +65,7 @@ There is a huge compounding effect when learning concepts:
 -   Understanding the main concepts and patterns used by the technology can give you inspiration for solving similar or even completely different problems in your own code
 -   Only spend the time and effort on in-depth learning for technologies that you are actually using
 
-#### Discovering new technologies and their concepts:
+#### Discovering new technologies and their concepts
 
 -   Check some tech news websites, newsletters or conference schedules
 -   When you find something interesting, look at the technology's website, read conference talk descriptions (no need to actually watch the talk) or potentially watch short lightning talks about it
