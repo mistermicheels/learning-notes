@@ -1,7 +1,7 @@
 ---
 tree_title: Compiler API
 description: An overview of how you can use the TypeScript Compiler API to process TypeScript code programmatically
-last_modified: 2020-04-25T16:46:37+02:00
+last_modified: 2020-10-18T09:56:36.951Z
 ---
 
 # Compiler API (TypeScript)
@@ -85,6 +85,8 @@ Output:
     -----PlusToken: +
     -----FirstLiteralToken: 2
     -EndOfFileToken:
+
+Note: Starting from TypeScript 4, the output will specify `FirstStatement` instead of `VariableStatement`. This is just an alias for `VariableStatement`. See also [What is the difference between ts.SyntaxKind.VariableStatement and ts.SyntaxKind.FirstStatement](https://stackoverflow.com/questions/59463751/what-is-the-difference-between-ts-syntaxkind-variablestatement-and-ts-syntaxk).
 
 Here, we used `ts.Node.forEachChild()` to get the children for a node in the AST. There is an alternative to this, `ts.Node.getChildren(sourceFile).forEach()`, which creates a more detailed AST:
 
@@ -173,6 +175,8 @@ Note:`getSourceFile` method of the CompilerHost is called twice:
 Directly from code:
 
 ```typescript
+import * as ts from "typescript";
+
 const code = `const test: number = 1 + 2;`;
 const transpiledCode = ts.transpileModule(code, {}).outputText;
 console.log(transpiledCode); // var test = 1 + 2;
@@ -280,7 +284,7 @@ recursivelyPrintVariableDeclarations(sourceFile, sourceFile);
 
 ## Creating a custom linter
 
-The TypeScript compiler API makes it pretty straightforward to create your own custom linter that generates errors or warnings if it finds certain things in the code. For an example, see this part of the compiler API documentation: [Traversing the AST with a little linter](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#traversing-the-ast-with-a-little-linter). Note that the code uses the kind SyntaxKind of the node (`node.kind`) to determine the kind of node and then casts the node to its specific type, allowing for convenient access to certain child nodes.
+The TypeScript compiler API makes it pretty straightforward to create your own custom linter that generates errors or warnings if it finds certain things in the code. For an example, see this part of the compiler API documentation: [Traversing the AST with a little linter](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#traversing-the-ast-with-a-little-linter). Note that the code uses the SyntaxKind of the node (`node.kind`) to determine the kind of node and then casts the node to its specific type, allowing for convenient access to certain child nodes.
 
 The example above doesn’t create a Program, because there is no need to create one. If the information in the AST suffices for your linter, it is easier and more efficient to just create a SourceFile directly. More advanced linters may need type checking, which means you will need to generate a Program for the code to be linted in order to obtain a TypeChecker.
 
@@ -289,6 +293,8 @@ The example above doesn’t create a Program, because there is no need to create
 The documentation for the compiler API includes an example that uses a TypeChecker to extract and emit type documentation for the code: [Using the Type Checker](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#using-the-type-checker)
 
 ## Altering or creating code programmatically
+
+Note: the code examples below include different code depending on TS version. For more details regarding what changed in 4.0, see [this PR](https://github.com/microsoft/TypeScript/pull/35282).
 
 ### Parsing and string processing
 
@@ -300,6 +306,7 @@ The documentation for the compiler API includes an example that uses a TypeCheck
 ```typescript
 import * as ts from "typescript";
 
+// before TS 4.0
 const statement = ts.createVariableStatement(
     [],
     ts.createVariableDeclarationList(
@@ -307,6 +314,20 @@ const statement = ts.createVariableStatement(
             ts.createIdentifier("testVar"),
             ts.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
             ts.createStringLiteral("test")
+        )],
+        ts.NodeFlags.Const
+    )
+);
+
+// starting from TS 4.0
+const statement = ts.factory.createVariableStatement(
+    [],
+    ts.factory.createVariableDeclarationList(
+        [ts.factory.createVariableDeclaration(
+            ts.factory.createIdentifier("testVar"),
+            undefined,
+            ts.factory.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
+            ts.factory.createStringLiteral("test")
         )],
         ts.NodeFlags.Const
     )
@@ -345,7 +366,11 @@ const transformerFactory: ts.TransformerFactory<ts.Node> = (
             node = ts.visitEachChild(node, visit, context);
 
             if (ts.isIdentifier(node)) {
+                // before TS 4.0
                 return ts.createIdentifier(node.text + "suffix");
+
+                // starting from TS 4.0
+                return context.factory.createIdentifier(node.text + "suffix");
             } else {
                 return node;
             }
