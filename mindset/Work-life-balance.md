@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2020-10-17T18:38:43.479Z
+last_modified: 2020-10-18T13:34:24.110Z
 ---
 
 # Work-life balance
@@ -177,6 +177,11 @@ What pursuing other interests helps with:
 -   As software developers, we are expected to learn a lot of things on the job, within normal working hours.
     -   "Learning is part of your job. Make time for it." ([“It never gets easier, you just go faster.”](https://letterstoanewdeveloper.com/2020/04/27/it-never-gets-easier-you-just-go-faster/))
 -   If your job does not give your opportunities to learn and grow, it's probably time for another job
+-   Even if you use outdated technology at work, you can still learn about new technologies on the job
+    -   Minimize the required time investment by focusing on concepts rather than specifics (see also [Concepts, not code - Learning new technologies](./Concepts-not-code.md#learning-new-technologies))
+    -   Look for actual problems caused by outdated technology, find alternative technologies solving the problem, explain to your manager how those could solve the problem without huge investment of time and resources, and ideally get buy-in to investigate further and actually try the technology
+        -   Examples of actual problems: Hard to find and hire people who know the technology or are willing to learn it, time and energy wasted on doing repetitive work, having to work around bugs in the technology that are no longer getting fixed within reasonable time frames, ...
+        -   Even if you don't get buy-in to investigate further, you have added some tools to your mental toolbox
 
 #### Your spare time is your spare time
 
@@ -225,5 +230,6 @@ But what if you _want_ to write code or improve your knowledge and skills in you
 -   [Can software engineering be meaningful work?](https://codewithoutrules.com/2019/04/12/meaningful-programming-work/)
 -   [How I Broke the Cycle of Stress](https://blogs.scientificamerican.com/observations/how-i-broke-the-cycle-of-stress/)
 -   [“It never gets easier, you just go faster.”](https://letterstoanewdeveloper.com/2020/04/27/it-never-gets-easier-you-just-go-faster/)
+-   [Your technical skills are obsolete: now what?](https://codewithoutrules.com/2017/10/23/obsolete-skills/)
 -   [How to Feel Less Overwhelmed as a Developer](https://medium.com/@juliahaigh/how-to-feel-less-overwhelmed-as-a-developer-79bc816709de)
 -   [It's perfectly fine to only code at work, don't let anyone tell you otherwise.](https://dev.to/ben/its-perfectly-fine-to-only-code-at-work-dont-let-anyone-tell-you-otherwise--25i3)

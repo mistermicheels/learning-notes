@@ -1,6 +1,6 @@
 ---
 description: Why concepts are more powerful and important than code
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-18T13:34:24.102Z
 ---
 
 # Concepts, not code
@@ -11,6 +11,9 @@ last_modified: 2020-05-30T15:54:15+02:00
     -   [Concepts are universal and timeless](#concepts-are-universal-and-timeless)
     -   [Compounding](#compounding)
     -   [Learning new technologies](#learning-new-technologies)
+        -   [The problem with learning new technologies](#the-problem-with-learning-new-technologies)
+        -   [The solution: focus on concepts](#the-solution-focus-on-concepts)
+        -   [Discovering new technologies and their concepts:](#discovering-new-technologies-and-their-concepts)
 -   [Understanding systems](#understanding-systems)
 -   [Building systems](#building-systems)
 -   [Resources](#resources)
@@ -40,7 +43,7 @@ There is a huge compounding effect when learning concepts:
 
 ### Learning new technologies
 
-The problem with learning new technologies:
+#### The problem with learning new technologies
 
 -   There are a huge number of existing tools, frameworks, libraries, languages, ...
 -   In addition to that, there is a constant stream of new technologies that are coming out
@@ -51,17 +54,18 @@ The problem with learning new technologies:
     -   By the time something becomes relevant to you, it might have been deprecated, made obsolete by a new and better alternative, ...
     -   By the time something becomes relevant to you, any specifics you learned about how to use it might be outdated (and thus, pretty much useless)
 
-Approach for dealing with this:
+#### The solution: focus on concepts
 
 -   Go for breadth of knowledge rather than in-depth learning
 -   When encountering technology that might be relevant to you in the future, learn just enough about it to understand its main concepts:
     -   What problem does it solve?
     -   What are the concepts it uses to solve that problem?
 -   The goal here is to learn just enough to put the technology in your "mental toolbox", allowing you to go back to it when you run into a problem that the technology solves
+    -   This takes orders of magnitude less time and energy than learning the technology in-depth
 -   Understanding the main concepts and patterns used by the technology can give you inspiration for solving similar or even completely different problems in your own code
 -   Only spend the time and effort on in-depth learning for technologies that you are actually using
 
-Discovering new technologies and their concepts:
+#### Discovering new technologies and their concepts:
 
 -   Check some tech news websites, newsletters or conference schedules
 -   When you find something interesting, look at the technology's website, read conference talk descriptions (no need to actually watch the talk) or potentially watch short lightning talks about it

@@ -1,6 +1,6 @@
 ---
 description: Some tips for troubleshooting issues in your system
-last_modified: 2020-06-14T18:51:13+02:00
+last_modified: 2020-10-18T13:34:24.114Z
 ---
 
 # Issue troubleshooting
@@ -79,9 +79,11 @@ If the error is caused by the system getting into a certain state but you can't 
 ## After fixing the issue
 
 -   If you haven't been able to reproduce the issue locally before, spend some time making sure that you can now reproduce it locally using your increased knowledge of the issue
+    -   It might be worth adjusting your setup to make it easier to reproduce these kinds of issues in the future
 -   Make sure you have appropriate automated tests that will detect the issue if it's introduced again
     -   Ideally, you already wrote some automated tests that failed before fixing the issue and that are now passing due to your fix
 -   Clean up data if necessary
+-   Check if there's a need for additional logging that would make it easier to debug these kinds of issues in the future
 -   Document your findings and share with the team
     -   Especially important if the issue taught you new things you will need to pay attention to as a team
 

@@ -1,6 +1,6 @@
 ---
 description: Why software development is about people rather than computers
-last_modified: 2020-10-17T10:18:45.600Z
+last_modified: 2020-10-18T13:34:24.106Z
 ---
 
 # It's about people
@@ -83,7 +83,7 @@ Write code for people, not for computers
 -   When adding new code, people often actually spend more time looking at older code than writing the new code itself
     -   You want to properly understand how the new code fits in with the rest of the system, avoid reinventing the wheel or creating bad duplication, stay consistent with other parts of the codebase where it makes sense, ...
 -   The computer itself doesn't care if your code is an unreadable mess or not
-    -   Quote from Martin Fowler: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+    -   _"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."_ - Martin Fowler
 -   Often, a readable piece of decently performant code adds way more value to the codebase than a hard-to-read piece of heavily optimized code
 
 Some tips:

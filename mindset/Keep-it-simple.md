@@ -1,6 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
-last_modified: 2020-06-14T18:51:13+02:00
+last_modified: 2020-10-18T13:34:24.108Z
 ---
 
 # Keep it simple
@@ -40,6 +40,7 @@ last_modified: 2020-06-14T18:51:13+02:00
     -   Community size and active maintenance are important!
     -   Note: this doesn't mean you should stay stuck with ancient tech forever! As always, [It depends](./It-depends.md)
 -   Use existing solutions for technological problems that you do not understand deeply or are not at the core of what you do
+    -   _"If the overwhelming majority of your hand-written code isn’t domain-specific and doesn’t relate to the application’s purpose, then you’re using the wrong tools."_ (see [Programming Sucks! Or At Least, It Ought To  - The Daily WTF](https://thedailywtf.com/articles/Programming-Sucks!-Or-At-Least%2C-It-Ought-To-))
 
 ## Code
 
@@ -49,14 +50,18 @@ last_modified: 2020-06-14T18:51:13+02:00
         -   You can immediately see what it does and how it does it
         -   Makes review, troubleshooting and changes easy
     -   Writing simple, obvious code is way more challenging than writing complex, "clever" code that takes a while to wrap your head around
-        -   "_Any fool can write code that a computer can understand. Good programmers write code that humans can understand._"
+        -   "_Any fool can write code that a computer can understand. Good programmers write code that humans can understand._" - Martin Fowler
     -   An idiot might make a better code reviewer than a genius, because if the code isn't "dumb" enough the idiot won't understand it
     -   The biggest compliment you can get about your code is "is that all there is to it?"
     -   You know you have a great developer if you give them a complex problem and they solve it using simple building blocks that fit together in obvious ways
+-   Don't sacrifice readability and maintainability for performance, unless it's needed to solve a real performance problem
 
 ## Features and scope
 
 -   Is a new feature really worth the development/maintenance effort and added complexity in codebase, operations, application user interface, ...?
+    -   Code needs to be developed and maintained
+    -   Feature needs to be incorporated in user interface, documented, ...
+    -   Feature might conflict with other features, now or in the future, from functional or technical point of view
 -   Customers asking for a complex feature might be missing an alternative, simpler feature which provides the same or even more benefits
     -   Ask yourself: "What is the user really trying to accomplish"
 -   Features that seem important to you might not be important at all to your customers
@@ -120,6 +125,7 @@ last_modified: 2020-06-14T18:51:13+02:00
 
 ## Don't take it too far
 
+-   _"Make everything as simple as possible, but not simpler."_ - Albert Einstein
 -   Determining how simple something should be is a tradeoff
 -   You should probably not try to "simplify away" the unavoidable complexities in your domain (those complexities might even be the reason your system exists)
 -   The definition of "good enough" will likely be different based on how crucial the problem you are solving is to the system/domain
@@ -139,6 +145,7 @@ last_modified: 2020-06-14T18:51:13+02:00
 -   [Tech Choices I Regret at Spectrum](https://mxstbr.com/thoughts/tech-choice-regrets-at-spectrum)
 -   [Write Stupid Code](https://thorstenball.com/blog/2015/10/22/write-stupid-code/)
 -   [Less Dirty Code](https://hackernoon.com/less-dirty-code-2c27321g)
+-   [Programming Sucks! Or At Least, It Ought To  - The Daily WTF](https://thedailywtf.com/articles/Programming-Sucks!-Or-At-Least%2C-It-Ought-To-)
 -   [The Simplest Thing That Could Possibly Work](http://www.agilenutshell.com/simplest_thing)
 -   [YAGNI](https://martinfowler.com/bliki/Yagni.html)
 -   [Jonathan Blow on solving hard problems](https://www.youtube.com/watch?v=6XAu4EPQRmY) ([transcript](https://old.reddit.com/r/programming/comments/bx8p52/jonathan_blow_on_solving_hard_problems/eq4rl7j/))
