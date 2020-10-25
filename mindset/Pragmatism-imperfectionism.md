@@ -1,6 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
-last_modified: 2020-07-11T16:56:51.612Z
+last_modified: 2020-10-25T19:10:48.885Z
 ---
 
 # Pragmatism and imperfectionism
@@ -139,23 +139,28 @@ Programming is hard and people are not perfect, so don't expect perfection.
 
 ### Make success easier than failure
 
+Basic idea:
+
 -   All humans tend to get lazy and take the easiest route
     -   This is especially true if they're under some kind of time pressure
 -   Use this to your advantage by making success easier than failure
     -   Make it so easy to do the right thing that it would actually be _more_ work to do the wrong thing
     -   If you want to create substantial and persistent change in the way people do things, you need to make sure that the "right way" to do something is also the easiest way for people to achieve their goals. Instead of forcing people to do something, you need to make them _want_ to do it. Otherwise, they will always find their way around it.
         -   Making the "right way" easier is often about tooling, but training can also have a large impact
--   Example: productivity
+
+Examples:
+
+-   Productivity
     -   Chop up your tasks until they're so small and well-defined that it's easier (and more fun) to start and complete them than to find excuses for avoiding them
--   Example: enforcing coding standards
+-   Enforcing coding standards
     -   Writing up a document with coding standards and then expecting the team to follow them through sheer discipline is not the ideal approach
     -   Automated formatting checks and linting make it easy to recognize and fix deviations from the standards
     -   Even better if everyone in the team has their IDE set up so all code is automatically formatted according to the standards whenever a file is saved
--   Example: making people write better PR descriptions
+-   Making people write better PR descriptions
     -   Can make success easier than failure by setting up a PR template where people just need to fill in the blanks
         -   Can include description of changes, how to test things, ...
         -   Can also include a checklist (written/adjusted relevant tests, ensured backwards API compatibility, ...) that we want developers to go through before committing their PR
--   Example: architectural governance
+-   Architectural governance
     -   Want teams to do incremental rollouts instead of immediately applying new code to all instances or users? Foresee a deployment pipeline where that is the default behavior and where you need to jump through a few hoops to bypass the mechanism.
     -   Want developers to respect certain boundaries in your modular monolith? Enforce the boundaries programmatically and require thorough reviewing of any changes to the enforced rules.
 

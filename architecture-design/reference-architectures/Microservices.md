@@ -1,6 +1,6 @@
 ---
 description: A high-level overview of what a Microservices architecture means and when it can be useful
-last_modified: 2020-08-22T16:08:26.027Z
+last_modified: 2020-10-25T19:10:48.850Z
 ---
 
 # Microservices
@@ -50,11 +50,17 @@ last_modified: 2020-08-22T16:08:26.027Z
     -   Services can be scaled independently (you don't have to scale your entire monolith to support your most volatile component in terms of need for capacity)
     -   Having a separate database per service can help with database scaling (each individual database will likely be smaller and will likely need to deal with less load)
 -   Can be overkill (and introduce more problems than it solves) for a single small team
--   Challenging to find the best way to divide the system into services. Defining this upfront is risky. Typically, it's best to start with a monolith or very small number of services and extract certain parts into separate services when it makes sense.
+    -   Adds complexity regarding testing, deployment, monitoring, ...
+    -   Network communication between services introduces a lot of ways for calls to fail
+    -   Any inappropriate coupling between different parts of the codebase becomes a much bigger problem if those parts are in different services
+    -   Limits the scope of DB-level transactions
+-   Challenging to find the best way to divide the system into services
+    -   Defining this upfront is risky. Typically, it's best to start with a monolith or very small number of services and extract certain parts into separate services when it makes sense.
+    -   Finding good service boundaries is hard, refactoring service boundaries is very hard
 
 ## Coupling in a microservices architecture
 
-The goal of a microservices architecture is typically to minimize inappropriate coupling. However, some coupling is still needed to create a useful system.
+One requirement for a good microservices architecture is to minimize inappropriate coupling. However, some coupling is still needed to create a useful system.
 
 ### Integration coupling
 
@@ -67,10 +73,9 @@ _Service template_: shared template that all services can build upon
 -   Contains general stuff like monitoring, logging, and authentication/authorization.
 -   Teams maintaining the services build their services upon this template
 -   Much easier to ensure compliance and manage upgrades to monitoring system etc. than if each service team would build their own version of this
-    -   When the infrastructure team pushes an upgrade to the service template, the services pick it up the next time they go through the deployment pipeline
 -   This likely means all services will be built using the same language or limited set of languages. Although this takes away some of the freedom regarding technology, it also means that developers can more easily move between teams if necessary and that it's easier to create shared libraries or share knowledge between teams.
 
-Example general service templates: [DropWizard](https://www.dropwizard.io) and [Spring Boot](https://spring.io/projects/spring-boot)
+Example generic service templates: [DropWizard](https://www.dropwizard.io) and [Spring Boot](https://spring.io/projects/spring-boot)
 
 ## Data duplication and bounded contexts
 

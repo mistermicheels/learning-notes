@@ -1,6 +1,6 @@
 ---
 description: Some ways to improve the quality of your team's code through code review and collaboration
-last_modified: 2020-10-17T18:38:43.482Z
+last_modified: 2020-10-25T19:10:48.889Z
 ---
 
 # Code review and collaboration workflows
@@ -180,6 +180,8 @@ When applying the pairing strategies described in the section on synchronous rev
 -   Examples
     -   Automated code formatting
     -   Linter enforcing a certain coding style and forbidding some bad practices
+    -   Tool that detects security issues, common bugs, code smells, duplication, ...
+        -   Example: [SonarQube](https://www.sonarqube.org/)
     -   Script that automatically checks dependencies for security vulnerabilities and licensing issues, …
 -   Great addition to any reviewing process, allows reviewers to focus on things that really need a human judgement
 

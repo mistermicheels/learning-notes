@@ -1,6 +1,6 @@
 ---
 description: Everything is a trade-off
-last_modified: 2020-10-17T10:18:45.599Z
+last_modified: 2020-10-25T19:10:48.881Z
 ---
 
 # It depends
@@ -108,3 +108,4 @@ So, should you make the change? _It depends._
 ## Resources
 
 -   [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)
+-   [Five Worlds](https://www.joelonsoftware.com/2002/05/06/five-worlds/)

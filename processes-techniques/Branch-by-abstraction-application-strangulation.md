@@ -1,6 +1,6 @@
 ---
 description: These techniques allow breaking large changes into chunks of smaller changes that don't break the system
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T19:10:48.888Z
 ---
 
 # Branch By Abstraction and application strangulation
@@ -92,6 +92,8 @@ Very similar to Branch by Abstraction, but operates at different level:
 
 -   Branch by Abstraction happens within a single codebase, using abstraction mechanisms of the programming language
 -   Application strangulation could be used to migrate between different applications potentially written in completely different languages. The abstraction layer typically comes in the form of a reverse proxy that decides whether to call the API of the old application or the API of the new application (this could depend on the specific call being made and will likely change throughout the migration)
+
+See the real-world example below, or another real-world example: [How Shopify Reduced Storefront Response Times with a Rewrite](https://engineering.shopify.com/blogs/engineering/how-shopify-reduced-storefront-response-times-rewrite).
 
 ### Real-world example
 

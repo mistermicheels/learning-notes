@@ -1,6 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
-last_modified: 2020-10-18T13:34:24.108Z
+last_modified: 2020-10-25T19:10:48.883Z
 ---
 
 # Keep it simple
@@ -111,7 +111,7 @@ last_modified: 2020-10-18T13:34:24.108Z
         -   Also goes for code reviews
 -   Not everything is a priority
     -   Some things are not worth spending more time and energy on, even if you know they could be improved
-    -   If you're feeling overwhelmed, it's time to take a look at what is really a priority, possibly together with your team, manager, ...
+    -   If you're feeling overwhelmed, it's time to take a look at what is really a priority, possibly together with your team or manager
     -   Pick your battles: not every discussion is a hill you should be willing to die on.
 -   Ask for help when it makes sense
     -   If you're struggling with something, you're likely to find a colleague that can help you out
@@ -131,6 +131,9 @@ last_modified: 2020-10-18T13:34:24.108Z
 -   The definition of "good enough" will likely be different based on how crucial the problem you are solving is to the system/domain
     -   It is probably not a good idea to take a lot of shortcuts in the foundations of your codebase/architecture
     -   A situation that occurs all the time in the domain probably deserves some extra effort
+-   The definition of "good enough" will need to depend on how high the cost of failure is
+    -   See also [Why are we so bad at software engineering?](https://www.bitlog.com/2020/02/12/why-are-we-so-bad-at-software-engineering/)
+    -   If the cost of failure is high, it can make sense to do pre-mortems to identify and mitigate potential sources of failure
 -   If you want to build a reliable system, you might have to spend more time on proper error handling than on development of the actual happy path!
 -   Relaxing quality standards can help you move fast in the beginning, but too much technical debt can slow further development to a crawl and require an enormous amount of time and energy to fix later on
 -   As always, [It depends](./It-depends.md)
