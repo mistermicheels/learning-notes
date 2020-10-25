@@ -1,6 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
-last_modified: 2020-10-25T19:10:48.883Z
+last_modified: 2020-10-25T21:56:09.018Z
 ---
 
 # Keep it simple
@@ -107,7 +107,7 @@ last_modified: 2020-10-25T19:10:48.883Z
 -   Know when to stop optimizing!
     -   The more you optimize, the lower the ROI of additional optimizations and the higher the benefit would be of spending the effort on other things instead
     -   Applies to architecture, code quality, solution approaches, ...
-    -   At some point, rather than to keep discussing and polishing, it makes sense to ask if you can all agree that it’s the current option is good enough
+    -   At some point, rather than to keep discussing and polishing, it makes sense to ask if you can all agree that the current option is good enough
         -   Also goes for code reviews
 -   Not everything is a priority
     -   Some things are not worth spending more time and energy on, even if you know they could be improved

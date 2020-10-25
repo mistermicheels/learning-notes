@@ -1,6 +1,6 @@
 ---
 description: Some tips for troubleshooting issues in your system
-last_modified: 2020-10-18T13:34:24.114Z
+last_modified: 2020-10-25T21:56:09.030Z
 ---
 
 # Issue troubleshooting
@@ -16,6 +16,8 @@ last_modified: 2020-10-18T13:34:24.114Z
 
 ## General tips
 
+Write it down!
+
 -   Write down what you know about the problem
 -   List your hypotheses and strategies for proving/disproving them
     -   You can eliminate potential causes by taking them out of the picture or testing them separately
@@ -26,17 +28,23 @@ last_modified: 2020-10-18T13:34:24.114Z
     -   Keep in mind that coincidences can happen! For example, the fact that an issue is first observed right after a release doesn't necessarily mean that it's caused by the changes made during the release.
 -   List any interesting observations you make
 -   List any patterns you see
--   Look for the most obvious, dumb things first
-    -   It's typically just your code, your data or your settings
-    -   It's very unlikely that the issue is caused by bugs in your compiler, language runtime, browser, database software, libraries (especially if they are mature and battle-tested)
--   Don't rush and don't skimp on breaks
-    -   Trying to go too fast may make you miss important details or fail to see a general pattern, leading to a lot of time and energy spent going in the wrong direction
-    -   Breaks are needed to stay sharp, plus taking your focus away from the problem can trigger a light bulb moment as well. See also [Hammock-driven development](../mindset/Hammock-driven-development.md)
--   Ask for help if it makes sense!
-    -   An extra pair of eyes can help to see anything you missed
-    -   The act of describing the issue to someone might already give you some ideas
-    -   Even if the other person doesn't know a lot about that part of the system, they might still provide valuable input. See also [Hammock-driven development - Bonus: the power of interactions and the outsider effect](../mindset/Hammock-driven-development.md#bonus-the-power-of-interactions-and-the-outsider-effect)
-    -   In addition to asking people in your team, it could also make sense to ask people in the online development community
+
+Look for the most obvious, dumb things first
+
+-   It's typically just your code, your data or your settings
+-   It's very unlikely that the issue is caused by bugs in your compiler, language runtime, browser, database software, libraries (especially if they are mature and battle-tested)
+
+Don't rush and don't skimp on breaks
+
+-   Trying to go too fast may make you miss important details or fail to see a general pattern, leading to a lot of time and energy spent going in the wrong direction
+-   Breaks are needed to stay sharp, plus taking your focus away from the problem can trigger a light bulb moment as well. See also [Hammock-driven development](../mindset/Hammock-driven-development.md)
+
+Ask for help if it makes sense!
+
+-   An extra pair of eyes can help to see anything you missed
+-   The act of describing the issue to someone might already give you some ideas
+-   Even if the other person doesn't know a lot about that part of the system, they might still provide valuable input. See also [Hammock-driven development - Bonus: the power of interactions and the outsider effect](../mindset/Hammock-driven-development.md#bonus-the-power-of-interactions-and-the-outsider-effect)
+-   In addition to asking people in your team, it could also make sense to ask people online
 
 ## Reproducing the issue locally
 

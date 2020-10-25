@@ -1,7 +1,7 @@
 ---
 tree_title: Thread safety
 description: Concurrency issues in Java and how to prevent them
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T21:56:08.989Z
 ---
 
 # Thread safety (Java)
@@ -176,9 +176,9 @@ Useful for coordinating work between tasks: blocking queues
 -   Examples: `LinkedBlockingQueue` and `ArrayBlockingQueue`
 -   Producer tasks add elements into the queue, consumer tasks retrieve them
 -   The queue blocks when trying to add an element through `put()` if the queue is currently full
-    -   this makes producer tasks block if they get too far ahead of the consumers
--   The queue blocks when trying to retrieve an element through `take()`if the queue is empty
-    -   this makes consumer tasks block until the producers catch up
+    -   This makes producer tasks block if they get too far ahead of the consumers
+-   The queue blocks when trying to retrieve an element through `take()` if the queue is empty
+    -   This makes consumer tasks block until the producers catch up
 -   In addition to the blocking methods
     -   Methods that throw on queue full/empty: `add()`, `remove()`, `element()`
     -   Methods that return null false on queue full/empty: `offer()`, `poll()`, `peak()`

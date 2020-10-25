@@ -1,6 +1,6 @@
 ---
 description: Everything is a trade-off
-last_modified: 2020-10-25T19:10:48.881Z
+last_modified: 2020-10-25T21:56:09.016Z
 ---
 
 # It depends
@@ -86,10 +86,10 @@ Best practices:
 
 Methodologies (DDD, SCRUM, ...) are tools, not rules!
 
--   not necessarily applicable to every situation
--   not always possible/desired to be completely strict about "rules"
-    -   often makes sense to adjust the details of approach to fit the specific requirements of your project and team
-    -   often, different people already have different interpretations of the rules regarding those details!
+-   Not necessarily applicable to every situation
+-   Not always possible/desired to be completely strict about "rules"
+    -   Often makes sense to adjust the details of approach to fit the specific requirements of your project and team
+    -   Often, different people already have different interpretations of the rules regarding those details!
 
 ## Documenting the decision process
 

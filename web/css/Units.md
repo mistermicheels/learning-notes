@@ -1,7 +1,7 @@
 ---
 tree_title: Units
 description: An overview of the most important CSS units and some advice on when to use which
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T21:56:09.044Z
 ---
 
 # Units (CSS)
@@ -19,7 +19,7 @@ last_modified: 2020-05-30T15:54:15+02:00
     -   Drawback when using px for font size: ignores any non-standard default font size that user has configured in browser
 -   Relative to parent element: `%`
     -   See also [Box model](./Box-model.md)
--   Relative to vieport: `vh`, `vw ` (% of viewport height, % of viewport width)
+-   Relative to viewport: `vh`, `vw ` (% of viewport height, % of viewport width)
     -   See also [Box model](./Box-model.md)
     -   Also `vmin`, `vmax` (% of smallest viewport dimension, % of largest viewport dimension)
 -   Relative to font size

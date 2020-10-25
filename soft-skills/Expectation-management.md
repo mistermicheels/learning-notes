@@ -1,6 +1,6 @@
 ---
 description: How to manage expectations and why it's important
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T21:56:09.034Z
 ---
 
 # Expectation management
@@ -61,15 +61,20 @@ Benefits:
     -   Clearly indicate the fact that things can go wrong and what their impact could be
     -   The more uncertainty, the lower you should set expectations
 -   You might be able to please people in the short term by giving them an unrealistically optimistic estimate, but that will backfire once they find out that it doesn't match reality at all
--   Example: You're asked for on estimate on how long a task will take. You know from experience that it can be done in 1 day if everything goes well, but due to a lot of factors it  can take up to 5 days if luck is not on your side
+
+Examples:
+
+-   You're asked for on estimate on how long a task will take. You know from experience that it can be done in 1 day if everything goes well, but due to a lot of factors it  can take up to 5 days if luck is not on your side
     -   If you say you can do it in 1 day, the other person will likely be happy about it, but there's a very big chance you will have to disappoint them later on when the task turns out taking 2-5 times your estimate
     -   If you say you can do it in 5 days, the other person might question your estimate as being way too high, but they are likely to understand when you point out the risk factors. If you then end up completing the task in 1 day, they will be thrilled. If you end up needing the full 5 days, they will still be happy, because they adjusted their expectations (and maybe some expectations further down the chain) to your conservative estimate
--   Example: Someone asks you for help, but you're not sure if you can find the time for it given your other commitments
+-   Someone asks you for help, but you're not sure if you can find the time for it given your other commitments
     -   If you tell them you'll make it happen and then end up not finding the time, they will almost certainly be disappointed
     -   If you tell them you most likely won't be able to do it, they will likely appreciate every minute that you can free up to help them
--   Note: Don't take it too far
-    -   Don't set expectations that are so low that it takes no effort at all to exceed them
-    -   If you keep giving unrealistically pessimistic estimates, people will stop paying attention to them
+
+Note: Don't take it too far
+
+-   Don't set expectations that are so low that it takes no effort at all to exceed them
+-   If you keep giving unrealistically pessimistic estimates, people will stop paying attention to them
 
 ## Managing your expectations of others
 

@@ -1,6 +1,6 @@
 ---
 description: A way to build flexibility into your codebase, allowing some features or alternate code paths to be toggled on or off at will
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T21:56:09.027Z
 ---
 
 # Feature flags
@@ -54,9 +54,9 @@ function calculateTotal() {
 
 Toggle router gives more flexibility:
 
--   state of the flag could potentially be changed from within the code by making a call to the toggle router
-    -   useful for testing
--   state of the flag could be determined based on config file, DB, or even the current user executing the request
+-   State of the flag could potentially be changed from within the code by making a call to the toggle router
+    -   Useful for testing
+-   State of the flag could be determined based on config file, DB, or even the current user executing the request
 
 ## Feature flag use cases
 

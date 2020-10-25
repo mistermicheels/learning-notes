@@ -1,6 +1,6 @@
 ---
 description: What to consider when deleting things
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T21:56:08.969Z
 ---
 
 # Deletes
@@ -35,7 +35,7 @@ Drawbacks/challenges:
     -   Hard to allow restoring data from within the application
         -   However, maybe your users don't really need that? Maybe all they need is better protection against accidental deletes or a backup/export functionality?
     -   Hard to enforce referential integrity and business rules when restoring
-    -   Schema might have changed between the delete and the restore
+    -   Schema might have changed between the delete and the restore!
 -   Requires separate history-keeping
     -   Could be audit log
     -   Could be archive table where you copy deleted records to before actually deleting them from the primary table
@@ -57,36 +57,38 @@ Benefits:
 
 Drawbacks/challenges:
 
--   When retrieving data, we need to be careful not to include the "deleted" data for normal queries
+-   Need to be careful not to retrieve "deleted" data for normal queries
     -   Some ORM libraries can help with this
-    -   For a solution at the DB level, you could create a view excluding the deleted data and then use that view by default when querying
+    -   Could create a database view excluding the deleted data and use that view by default when querying
     -   Becomes even trickier when JOINs etc. are involved
--   Deleted data stays in the system, taking up space and possibly impacting performance, even if you really don't need it anymore
-    -   You would need to manually clean up soft-deleted data that you want to permanently delete
-    -   This could be mitigated by setting up some kind of time-based permanent deletion (example: all soft-deleted data is permanently deleted after 30 days)
+-   Deleted data stays in the system, taking up space and possibly impacting performance
+    -   Need to manually clean up soft-deleted data that you want to permanently delete
+    -   Could be mitigated by setting up some kind of time-based permanent deletion (example: all soft-deleted data is permanently deleted after 30 days)
     -   In some cases, it might make sense to allow certain users to perform hard deletes (note that this prevents any kind of subsequent restoring from within the application)
     -   Note: you may be required to fully delete certain data because of security, privacy or compliance reasons
 -   Query performance
     -   A lot queries are going to need your deletion flag, so it probably makes sense to include it in DB indexes
     -   If you expect a lot of data to be deleted with pretty much all queries ignoring deleted data, it could make sense to create a partial/filtered index holding _only_ the non-deleted data
         -   Helps with index size
-        -   Note: make sure that any queries retrieving deleted data are still sufficiently performant
+        -   Note: make sure that any queries retrieving deleted data are still sufficiently performant!
     -   You could also consider actually keeping the deleted data in a different table but with the same structure as the table holding non-deleted data (this is actually going in the direction of hard deletes + archiving)
 -   Tricky with hierarchical data
-    -   Example: Project has tasks that have subtasks. Deleting project should delete everything below it, deleting task should delete everything below it but not what's above it
+    -   Example: Project has tasks that have subtasks. Deleting an object should delete everything below it.
     -   Store deletion flag only on parent or also on everything below it?
-        -   Drawback only on parent: when things below the parent directly, we would need to check the parent to see if they're deleted
-        -   Drawback also on everything below: harder to get this right when deleting
-        -   Drawback also on everything below: what if object is deleted, then its parent is deleted, then its parent is restored?
-            -   We would expect the object that was first deleted to still be deleted, but in order for the system to support this we need to be able to distinguish between directly deleted objects and indirectly deleted objects (potentially with different flags)
--   Enforcing uniqueness is harder
-    -   Should uniqueness constraint include deleted objects? Could be confusing to users
-        -   If the answer is no, make sure that the uniqueness constraint still allows multiple deleted objects with the same name
-    -   If uniqueness constraint doesn't include deleted objects, what if restoring one of them would violate the uniqueness constraint?
--   If your system enforces quota for amounts of data, are you going to include soft-deleted objects or not?
--   Cannot replace a proper audit trail
-    -   Doesn't protect against accidentally overwritten or corrupted data
-    -   If keeping history is the goal, a "deleted" flag is likely not sufficient. You'd typically want to track when something was deleted, by who, in what context, ... 
+        -   If only on parent: when directly retrieving objects that have a parent, we would need to check the parent to see if they're deleted
+        -   If also on everything below: harder to get this right when deleting
+        -   If also on everything below: what if object is deleted, then its parent is deleted, then its parent is restored?
+            -   We would expect the object that was first deleted to still be deleted, but this would require distinguishing between directly deleted objects and indirectly deleted objects (potentially with different flags)
+-   Should uniqueness constraints include deleted objects?
+    -   If yes, could be confusing to users
+    -   If no, make sure that the uniqueness constraint still allows multiple deleted objects with the same value!
+    -   If no, what if restoring one of them would violate the uniqueness constraint?
+-   If system enforces quota based on amount of data, does that include soft-deleted objects or not?
+
+Note: Soft deletes still cannot replace a proper audit trail!
+
+-   Doesn't protect against accidentally overwritten or corrupted data
+-   If keeping history is the goal, a "deleted" flag is likely not sufficient. You'd typically want to track when something was deleted, by who, in what context, ... 
 
 ## References and deletes
 
@@ -99,7 +101,8 @@ If your application has a single DB and you're using real foreign keys, the DB w
 -   Potential approach: first check if anything is pointing to the object, then delete it
     -   Drawback: coupling! Having this kind of check means that the code for managing the object needs to know about everything that can reference the object, leading to increased coupling and a high chance of circular references
         -   In case of a monolith, you can use the Dependency Inversion Principle (see [SOLID principles](./oo-design/SOLID-principles.md)) to break the circular references
-    -   Drawback: race conditions possible if new reference to the object is added after the check but before the deletion (if you have real foreign keys, the DB will still prevent the delete, but you need to handle the error)
+    -   Drawback: race conditions possible if new reference to the object is added after the check but before the deletion
+        -   If you have real foreign keys, the DB will still prevent the delete, but you need to handle the error
 -   Potential approach: perform the delete and let the DB generate an error if anything still points to the object
     -   Drawback: not easy to turn DB errors into informative error messages to display to the user (might also introduce a lot of coupling by requiring the code for managing the object to know about everything that can reference the object)
 
@@ -108,7 +111,7 @@ If you're not using foreign keys for the references, the DB does not enforce con
 -   Example: microservices (each a different DB)
 -   Example: decoupled parts within a modular monolith (either using same DB or not)
 -   Checking references would increase coupling, and in case of microservices it pretty much guarantees circular dependencies between services
--   Race conditions are pretty much impossible to prevent here
+-   Race conditions very hard to prevent
 -   Recommended approach: don't check, just delete
 
 Alternative approach: soft deletes (see above)
@@ -129,7 +132,7 @@ In case you are using soft deletes, you need to consider whether references to s
 
 ### Dealing with references to missing objects
 
-If you don't have real foreign keys, it's pretty much impossible to guarantee that you will never have an objects pointing to a missing object
+If you don't have real foreign keys, it can be impossible to guarantee that you will never have any objects pointing to a missing object
 
 -   Could have had a race condition
 -   Deletion events could not have been processed yet
