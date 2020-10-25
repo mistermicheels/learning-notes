@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2020-10-18T13:34:24.110Z
+last_modified: 2020-10-25T12:46:04.336Z
 ---
 
 # Work-life balance
@@ -9,6 +9,9 @@ last_modified: 2020-10-18T13:34:24.110Z
 
 -   [Don't care too much](#dont-care-too-much)
     -   [Caring just enough](#caring-just-enough)
+        -   [Balance](#balance)
+        -   [Prioritize what to care about](#prioritize-what-to-care-about)
+        -   [Pragmatism and boundaries](#pragmatism-and-boundaries)
 -   [Don't work long hours](#dont-work-long-hours)
     -   [Overwork triggers](#overwork-triggers)
     -   [Benefits of working fewer hours](#benefits-of-working-fewer-hours)
@@ -36,28 +39,34 @@ Caring too much is bad for both you and your company:
 -   It wastes energy on feeling stressed, disappointed or frustrated instead of allowing you to use that energy for actual work
 -   It prevents you from recognizing tasks that are not important and thus not an effective use of your time
 
+By caring just enough and stressing less, you will actually get more productive work done and  you will be able to better identify what the most important tasks are.
+
 ### Caring just enough
 
--   It's about balance! Find the point where you're still doing a great job, but in a relaxed way without giving yourself any unnecessary stress
--   Accept that you will likely not be able to do everything you want to do, or at least not as well as you would ideally like to do it
--   Prioritize what to care about
-    -   Not all tasks or problems deserve the same amount of you caring about them
-    -   Not all issues are things you can do something about
-    -   For some things, it might even make more sense to ignore them completely, either permanently or temporarily
--   Don't waste time and energy on unimportant details that will likely go unnoticed or sort themselves out
--   Set proper boundaries and adjust people's expectations of you to what you think is reasonable (see [Expectation management](../soft-skills/Expectation-management.md))
--   If you find yourself getting overwhelmed, take a step back to see the bigger picture:
-    -   What tasks are giving you stress?
-    -   What tasks are actually a priority?
-    -   Would it really be that much of a disaster if you mess up a small detail, miss a deadline by a day, ...?
-        -   An annoyed or impatient customer is still not the end of the world
-    -   You likely have colleagues and a manager that can help you get things done and decide which things actually deserve doing in the first place
--   Realize that you are not your job
-    -   Your professional efforts and results do not define who you are
--   See also [Keep it simple](./Keep-it-simple.md)
--   See also [Pragmatism and imperfectionism](./Pragmatism-imperfectionism.md)
+#### Balance
 
-By stressing less, you will probably actually get more productive work done, plus you will be able to better identify what are the most important tasks
+-   Find the point where you're still doing a great job, but in a relaxed way without unnecessary stress
+-   Realize that you are not your job
+    -   There's more to life than work
+    -   Your professional efforts and results do not define who you are
+
+#### Prioritize what to care about
+
+-   Take a step back to see the bigger picture and find out what's really important
+-   Not all tasks or problems are really worth caring about
+-   Not all issues are things you can do something about
+-   Some things can easily be ignored, either temporarily of permanently
+    -   Don't waste time and energy on unimportant details that will likely go unnoticed or sort themselves out
+-   Your colleagues and manager can help you decide what the real priorities are (and help you get them done)
+
+#### Pragmatism and boundaries
+
+-   Accept that you won't be able to do everything, or at least not as well as you'd like
+-   Would it really be that much of a disaster if you mess up a small detail, miss a deadline by a day, ...?
+    -   An annoyed or impatient customer is still not the end of the world
+-   Set proper boundaries and adjust people's expectations of you to what you think is reasonable
+-   See also [Pragmatism and imperfectionism](./Pragmatism-imperfectionism.md)
+-   See also [Expectation management](../soft-skills/Expectation-management.md)
 
 ## Don't work long hours
 

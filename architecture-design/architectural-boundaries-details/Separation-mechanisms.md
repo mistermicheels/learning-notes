@@ -1,6 +1,6 @@
 ---
 description: An overview of separation mechanisms to create boundaries in your system
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T12:46:04.295Z
 ---
 
 # Separation mechanisms
@@ -96,6 +96,7 @@ See also [Deployable components](../Deployable-components.md)
 -   Different services are assumed to live on different machines and communicate only over the network
     -   Communication often happens over HTTP or some kind of message queue
     -   Communication between services is expensive from a performance point of view
+    -   Communication between services can fail!
 -   Each service typically developed and operated by a separate team that takes ownership of the service, including its tech stack and data
     -   Sharing of a database between services is generally considered bad practice, because it prevents services from independently making changes to their database structure (or independently choosing the database technology which makes the most sense for the service)
 -   Freedom and flexibility: Ideally, changes to a service, except for its communication with other services, do not have any effect on other services

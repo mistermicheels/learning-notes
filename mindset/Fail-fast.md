@@ -1,6 +1,6 @@
 ---
 description: On keeping your feedback loops short
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-10-25T12:46:04.333Z
 ---
 
 # Fail fast
@@ -57,6 +57,7 @@ All of this also means that, when trying to solve a problem, it can be a lot mor
 -   Set up your development environment so it immediately alerts you of syntax errors, violations of coding style convention, code that is likely to have unintended effects, ...
     -   You don't want to waste your energy and your colleagues' energy by identifying, discussing and fixing these through code reviews
 -   Fast automated tests can notify you of a bug in your code while you are in the middle of working on it, rather than having to switch contexts to fix it once the bug is found during code review or (even worse) after deployment
+-   Monitoring for errors on a shared dev environment can help to find bugs before they are deployed to production
 -   If requirements are unclear, clarify them with someone or make a quick small POC and validate that with someone
 -   New tools or processes: first set up something simple and check if the added value is what you expected is to be, only then then invest in improving
     -   Works a lot better than trying to set up something "perfect" immediately
@@ -98,3 +99,6 @@ Both can help you to get early customer feedback, as well as feedback on some te
 -   [3 Problems to Stop Looking For in Code Reviews](https://medium.com/swlh/3-problems-to-stop-looking-for-in-code-reviews-981bb169ba8b)
 -   The Pragmatic Programmer (book by Andrew Hunt and David Thomas) ([summary](https://github.com/HugoMatilla/The-Pragmatic-Programmer))
 -   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
+-   [How to validate your startup idea quickly](https://amanjain.substack.com/p/how-to-validate-your-startup-idea)
+-   [The painted door test](https://briandavidhall.com/the-painted-door-test/)
+-   [Wizard of Oz testing – a method of testing a system that does not yet exist.](https://www.simpleusability.com/inspiration/2018/08/wizard-of-oz-testing-a-method-of-testing-a-system-that-does-not-yet-exist/)
