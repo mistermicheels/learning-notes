@@ -1,9 +1,9 @@
 ---
 description: An overview of using tools to analyze your codebase
-last_modified: 2020-04-25T16:46:37+02:00
+last_modified: 2020-11-01T12:34:21.420Z
 ---
 
-# Dependency analysis tools
+# Visual dependency analysis tools
 
 ## Contents
 
@@ -25,3 +25,5 @@ Example static images: [How to easily visualize a project's dependency graph wit
 Example interactively explorable visualizations: [ngrev](https://github.com/mgechev/ngrev)
 
 ![Interactive dependency visualization](_img/Dependency-analysis-tools/interactive-dependency-visualization.png)
+
+Note: you can use these or similar tools to restrict dependencies! See also [Static analysis - Internal dependencies](../../processes-techniques/Static-analysis.md#internal-dependencies).

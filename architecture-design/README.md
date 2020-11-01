@@ -33,4 +33,4 @@
     -   [Package by feature or component](reference-architectures/Package-by-feature-or-component.md)
 -   [**Visualizing architecture**](visualizing-architecture/README.md)
     -   [C4 model](visualizing-architecture/C4-model.md)
-    -   [Dependency analysis tools](visualizing-architecture/Dependency-analysis-tools.md)
+    -   [Visual dependency analysis tools](visualizing-architecture/Dependency-analysis-tools.md)

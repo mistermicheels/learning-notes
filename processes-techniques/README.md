@@ -11,5 +11,6 @@
 -   [Feature flags](Feature-flags.md)
 -   [Issue troubleshooting](Issue-troubleshooting.md)
 -   [Small commits and pull requests](Small-commits-pull-requests.md)
+-   [Static analysis](Static-analysis.md)
 -   [Team decision-making](Team-decision-making.md)
 -   [Trunk Based Development](Trunk-Based-Development.md)

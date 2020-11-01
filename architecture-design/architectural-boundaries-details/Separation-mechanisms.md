@@ -1,6 +1,6 @@
 ---
 description: An overview of separation mechanisms to create boundaries in your system
-last_modified: 2020-11-01T12:11:42.758Z
+last_modified: 2020-11-01T12:34:21.406Z
 ---
 
 # Separation mechanisms
@@ -27,7 +27,7 @@ last_modified: 2020-11-01T12:11:42.758Z
 -   Easy to adjust and evolve the boundaries
 -   Might need additional enforcement if language mechanisms don't provide the necessary encapsulation
     -   What prevents internal code on one side of the boundary from directly calling internal code on the other side of the boundary?
-    -   It could help to check this using automated tests or linting rules
+    -   See below ([Encapsulation](#encapsulation)) and [Static analysis - Internal dependencies](../../processes-techniques/Static-analysis.md#internal-dependencies).
 -   Not visible at deployment time
     -   Does not mean they are not important! When set up correctly, they can still help to isolate different parts of the system from each other in order to facilitate independent development by multiple persons or teams
 -   Only kind of boundary in monolithic systems
@@ -49,7 +49,7 @@ Examples in Java:
 -   Making classes package protected (limitation: Java does not have real notion of nested packages)
 -   The [Java Platform Module System](../../java/Java-Platform-Module-System.md)
 
-If your language doesn't provide something like this, you may be able to set it up using automated tests that analyze dependencies, linting rules or some other kind of static analysis
+If your language doesn't provide something like this, you may be able to set it up using automated tests that analyze dependencies, linting rules or some other kind of static analysis. See also [Static analysis - Internal dependencies](../../processes-techniques/Static-analysis.md#internal-dependencies).
 
 ### Data transfer objects
 

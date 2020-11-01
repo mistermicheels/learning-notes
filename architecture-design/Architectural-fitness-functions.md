@@ -1,6 +1,6 @@
 ---
 description: An overview of architectural fitness functions as a way to check if your architecture matches your needs
-last_modified: 2020-10-25T21:56:08.966Z
+last_modified: 2020-11-01T12:34:21.410Z
 ---
 
 # Architectural fitness functions
@@ -111,17 +111,7 @@ Temporal fitness functions:
 
 Typically run by developers and in deployment pipeline
 
-Example: automated tests that check the [cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) of the code
-
-Example: automated tests checking for dependency cycles
-
-![JDepend test for dependency cycles](_img/Architectural-fitness-functions/jdepend-dependency-cycles.png)
-
-Example: automated tests checking the direction of package imports
-
-![JDepend test for direction of imports](_img/Architectural-fitness-functions/jdepend-direction-dependencies.png)
-
-([image source](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
+See also [Static analysis](../processes-techniques/Static-analysis.md)
 
 ### Holistic and triggered
 
