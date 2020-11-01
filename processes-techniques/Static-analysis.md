@@ -1,6 +1,6 @@
 ---
 description: Checking your code without running it
-last_modified: 2020-11-01T12:34:21.454Z
+last_modified: 2020-11-01T18:01:18.754Z
 ---
 
 # Static analysis
@@ -68,6 +68,7 @@ Note: stay practical about this!
     -   Example (JavaScript): [dependency-cruiser](https://www.npmjs.com/package/dependency-cruiser)
     -   Example (JavaScript): [ESLint](https://eslint.org/) ([import/no-cycle](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md))
     -   Example (Java): [JDepend](https://github.com/clarkware/jdepend) (see example code below)
+    -   Example (TypeScript): [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
 -   Enforce custom boundaries
     -   Example (JavaScript): [dependency-cruiser](https://www.npmjs.com/package/dependency-cruiser) (see example code below)
     -   Example (Java): [JDepend](https://github.com/clarkware/jdepend) (see example code below)

@@ -1,6 +1,6 @@
 ---
 description: Some thoughts on defining deployable components and the dependencies between them
-last_modified: 2020-08-22T16:08:26.020Z
+last_modified: 2020-11-01T18:01:18.710Z
 ---
 
 # Deployable components
@@ -90,6 +90,8 @@ If you have a cycle, then the components in that cycle are not really independen
 
 -   People working on these components must make sure that the components stay compatible in both directions
     -   If A -> B -> C -> A, any new version of A must be compatible with a version of C which is compatible with that new version of A
+    -   Loss of freedom regarding when to update to new versions of dependencies
+    -   Breaking changes require careful coordination
 -   Difficult to test your component in isolation because your dependencies also depend on the changes you make
 -   Depending on your build system, circular dependencies between components might make it hard or even impossible to actually build the components
     -   If you need a built version of all your dependencies before you can build your component, you get a chicken and egg situation where your component cannot be built before building its dependencies but your dependencies can also not be built before building your component
@@ -105,6 +107,8 @@ Two primary mechanisms:
     -   Example: Reverse dependency between A and C so we now have C &lt;- A -> B -> C
 -   Creating a new component that two components can depend on instead of one depending on the other
     -   Example: Create new component D that A and C depend on so we now have D &lt; - A -> B -> C -> D
+
+See also [Circular dependencies](./Circular-dependencies.md)
 
 ### Stability and volatility
 

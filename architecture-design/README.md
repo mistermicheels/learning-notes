@@ -8,6 +8,7 @@
 
 -   [Architectural boundaries](Architectural-boundaries.md)
 -   [Architectural fitness functions](Architectural-fitness-functions.md)
+-   [Circular dependencies](Circular-dependencies.md)
 -   [Deletes](Deletes.md)
 -   [Deployable components](Deployable-components.md)
 -   [Duplication](Duplication.md)
