@@ -1,6 +1,6 @@
 ---
 description: A way to divide your system based on functional areas
-last_modified: 2020-07-03T15:50:17.650Z
+last_modified: 2020-11-01T12:11:42.770Z
 ---
 
 # Package by feature or component
@@ -32,7 +32,7 @@ last_modified: 2020-07-03T15:50:17.650Z
         -   The way components are divided into functional areas could potentially differ from the way controllers are divided into functional areas
     -   Encapsulation of internals should be enforced
         -   Ideally, use language constructs like packages, modules, ...
-        -   Alternatively, integrate dependency checking rules into automated tests or linting
+        -   Alternatively, integrate dependency checking rules into automated tests, linting rules or dependency checking tools
 -   Top-level structure shows functional areas of the application rather than technical layers
 -   Within feature/component, likely to have some kind of layered structure, may or may not be the same across all features/components
 

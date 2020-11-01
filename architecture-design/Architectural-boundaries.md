@@ -1,6 +1,6 @@
 ---
 description: The importance of boundaries in architecture, different kinds of boundaries, costs and evolution of boundaries, ...
-last_modified: 2020-07-03T15:50:17.640Z
+last_modified: 2020-11-01T12:11:42.761Z
 ---
 
 # Architectural boundaries
@@ -77,7 +77,7 @@ Benefits of boundaries do not come for free!
     -   Boundaries need to be developed and maintained
     -   Boundaries' decoupling mechanisms can increase the complexity of the system as a whole
 
-If you have five teams working on a system, they will likely benefit from having five clearly separated parts with stable interfaces connecting them. The same architecture could be harmful to productivity if there is only a single small team working on the system. The experience and knowledge of different team members also plays a part. 
+If you have five teams working on a system, they will likely benefit from having five clearly separated parts with stable interfaces connecting them. The same architecture could hurt productivity if there is only a single small team working on the system. The experience and knowledge of different team members also plays a part. 
 
 When in doubt, keep it simple! 
 

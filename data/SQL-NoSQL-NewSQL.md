@@ -1,6 +1,6 @@
 ---
 description: A very high-level overview of the data store landscape, covering relational databases (SQL), NoSQL and NewSQL data stores
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-01T12:11:42.776Z
 ---
 
 # SQL, NoSQL, NewSQL
@@ -105,13 +105,15 @@ Note: this is not intended to be complete list of all possible types
 #### Document store
 
 -   Data is stored as documents containing structured data (think something JSON-like)
--   When performing queries, you can typically retrieve or filter on data inside the documents
+-   When performing queries, you can typically retrieve or filter on data at any level inside the documents
 -   Typically the main candidate for storing your application’s domain data if you don’t want to store that data in a relational database
 -   Example: MongoDB
 
 Fit:
 
--   Can be a good fit for data that has a hierarchical structure (looks like a tree), as you can just put the entire structure in a document
+-   Can be a good fit if each piece of data has a hierarchical structure (looks like a tree), as you can just put that entire structure in a document
+-   Can be a good fit if some of your fields need to hold structured data (nested data structures, arrays, ...)
+    -   Especially true if you want to query based on that structured data, or make updates inside of it
 -   Works well for one-to-one and one-to-many relationships
 -   Many-to-one and many-to-many relationships can be hard to model and query
     -   Example: you want to store information on actors, movies and which actors played in which movies
@@ -195,10 +197,11 @@ NewSQL systems are a class of relational database management systems that aim at
 ## Which one to use?
 
 -   Choosing which data store to use is a tradeoff and there is likely no “wrong” or “right” choice. 
-    -   Choice will likely depend on the kind of data you need to store, the scalability you need, the consistency you need, the knowledge of your team, etc.
+    -   Choice will likely depend on the kind of data you need to store, the kind of queries you will be performing, the scalability you need, the consistency you need, the knowledge of your team, how well the available tooling fits your use case, etc.
+    -   Different options might actually be relatively similar. For example, some relational databases offer support for structured data and some document databases offer support for transactions and schema validation.
 -   There is no rule stating that you should use either SQL, NoSQL or NewSQL. 
     -   Example: it is very common to use a relational database for your application’s domain data but use a key-value store for caching purposes. 
-    -   It could also be a good idea to store parts of your domain data in a relational database and other parts in a document database, depending on which one is a better fit for which part of the data. Of course, using multiple systems also means having to keep multiple systems running smoothly.
+    -   It could also be a good idea to store parts of your domain data in a relational database and other parts in a document database, depending on which one is a better fit for which part of the data. Of course, this means you have to keep an additional data store up and running and the team has an additional data store to get familiar with.
 
 ## Hosted data stores
 

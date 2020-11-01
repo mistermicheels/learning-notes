@@ -1,6 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
-last_modified: 2020-10-25T19:10:48.885Z
+last_modified: 2020-11-01T12:11:42.801Z
 ---
 
 # Pragmatism and imperfectionism
@@ -98,6 +98,7 @@ Programming is hard and people are not perfect, so don't expect perfection.
 -   Focus on consistently making progress or adding value
 -   Start from the way things actually are, not from the way you wish they were
 -   Incremental improvement gives you early feedback on whether you're moving in the right direction
+    -   See also [Fail fast](./Fail-fast.md)
 -   Incremental improvement is often a lot more practical than sudden huge changes
     -   Example: First writing a working "first draft" of the code and then improving its readability can be a lot more effective than trying to write perfectly clean code immediately
         -   "First make it work, then make it clean"

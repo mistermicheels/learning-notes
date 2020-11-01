@@ -1,6 +1,6 @@
 ---
 description: An overview of separation mechanisms to create boundaries in your system
-last_modified: 2020-10-25T12:46:04.295Z
+last_modified: 2020-11-01T12:11:42.758Z
 ---
 
 # Separation mechanisms
@@ -24,6 +24,10 @@ last_modified: 2020-10-25T12:46:04.295Z
 -   Use mechanisms offered by the programming language (classes, interfaces, packages, modules, …)
 -   Communication through simple method calls
     -   Fast, don't have to worry about amount of communication passing boundary
+-   Easy to adjust and evolve the boundaries
+-   Might need additional enforcement if language mechanisms don't provide the necessary encapsulation
+    -   What prevents internal code on one side of the boundary from directly calling internal code on the other side of the boundary?
+    -   It could help to check this using automated tests or linting rules
 -   Not visible at deployment time
     -   Does not mean they are not important! When set up correctly, they can still help to isolate different parts of the system from each other in order to facilitate independent development by multiple persons or teams
 -   Only kind of boundary in monolithic systems
@@ -45,7 +49,7 @@ Examples in Java:
 -   Making classes package protected (limitation: Java does not have real notion of nested packages)
 -   The [Java Platform Module System](../../java/Java-Platform-Module-System.md)
 
-If your language doesn't provide something like this, you may be able to set it up using linting rules or automated tests that analyze dependencies
+If your language doesn't provide something like this, you may be able to set it up using automated tests that analyze dependencies, linting rules or some other kind of static analysis
 
 ### Data transfer objects
 
@@ -77,6 +81,7 @@ An example of a simpler boundary is the [Facade pattern](https://en.wikipedia.or
     -   Example: DLL or JAR files
 -   Deployed independently, but they still run in the same address space
     -   Communication still through simple method calls
+-   Boundaries might need additional enforcement depending on how easy it is for code to access a component's internals
 -   When different components are developed independently from each other, you need some kind of versioning and release management system that allows developers depending on a component to decide if and when to upgrade to its next version
 -   Dependencies between components need to be managed carefully in order to prevent dependency cycles
     -   See Dependency Inversion Principle (from the [SOLID principles](../oo-design/SOLID-principles.md))
@@ -89,6 +94,7 @@ See also [Deployable components](../Deployable-components.md)
 -   Still live on the same machine, but they do not share the same address space (unless some memory sharing involved)
     -   Inter-process communication through shared memory, sockets or potentially some OS-specific mechanisms
     -   Context switching between processes (and potential marshalling and unmarshalling) means that the communication between processes has more overhead than just simple method calls. Where possible, unnecessary back-and-forth should be avoided.
+-   Boundaries easy to enforce (you can't just directly call some code running inside another process)
 
 ## Services
 
@@ -97,8 +103,9 @@ See also [Deployable components](../Deployable-components.md)
     -   Communication often happens over HTTP or some kind of message queue
     -   Communication between services is expensive from a performance point of view
     -   Communication between services can fail!
--   Each service typically developed and operated by a separate team that takes ownership of the service, including its tech stack and data
-    -   Sharing of a database between services is generally considered bad practice, because it prevents services from independently making changes to their database structure (or independently choosing the database technology which makes the most sense for the service)
+-   Hard to adjust and evolve the boundaries
+-   Boundaries easy to enforce (you can't just directly call some code running inside a separate service)
+-   Service can be developed and operated by a separate team that takes ownership of the service, including its tech stack and data
 -   Freedom and flexibility: Ideally, changes to a service, except for its communication with other services, do not have any effect on other services
 -   Still some coupling! The fact that services communicate with each other means that services will still depend on each other to some extent
     -   Example: If your service needs customer data, there are scenarios where a change to the Customer service could impact you.

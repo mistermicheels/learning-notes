@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2020-10-17T18:41:29.847Z
+last_modified: 2020-11-01T12:11:42.795Z
 ---
 
 # Runtime type checking in TypeScript
@@ -16,7 +16,6 @@ last_modified: 2020-10-17T18:41:29.847Z
     -   [Manually creating JSON Schemas](#manually-creating-json-schemas)
     -   [Automatically generating JSON Schemas](#automatically-generating-json-schemas)
         -   [Generating JSON Schemas from TypeScript code](#generating-json-schemas-from-typescript-code)
-        -   [Generating JSON Schemas from example JSON input](#generating-json-schemas-from-example-json-input)
     -   [Transpilation](#transpilation)
     -   [Deriving static types from runtime types](#deriving-static-types-from-runtime-types)
     -   [Decorator-based class validation](#decorator-based-class-validation)
@@ -162,12 +161,6 @@ Example output (with default options):
 Some benefits/drawbacks:
 
 -   Single source of truth
--   Need to make sure generated schemas and code stay in sync!
-
-#### Generating JSON Schemas from example JSON input
-
--   Doesn’t use the type information you have already defined in your TypeScript code
--   Can lead to errors if there is a mismatch between the input JSON you provide and the types
 -   Need to make sure generated schemas and code stay in sync!
 
 ### Transpilation

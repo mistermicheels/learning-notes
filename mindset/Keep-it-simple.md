@@ -1,6 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
-last_modified: 2020-10-25T21:56:09.018Z
+last_modified: 2020-11-01T12:11:42.799Z
 ---
 
 # Keep it simple
@@ -28,6 +28,9 @@ last_modified: 2020-10-25T21:56:09.018Z
     -   Evolving a simple architecture is easier than evolving a complex one!
         -   Changing boundaries inside a monolith is orders of magnitude easier than changing boundaries in a system of distributed services
     -   Typical example regarding microservices: projects that split into microservices from the start typically face a lot more problems than projects that start with a well-structured monolith and only split off into services where it provides clear benefits
+-   When changing architecture, go for small incremental steps rather than big changes
+    -   Less risk, shorter feedback loop, ...
+    -   Might make sense to temporarily keep some suboptimal parts, just to ease transition
 -   What worked for someone else will not necessarily work for you!
 -   Premature complexity is also a form of technical debt!
 
