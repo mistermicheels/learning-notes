@@ -1,6 +1,6 @@
 ---
 description: Some general best practices regarding exception handling
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-15T22:06:37.294Z
 ---
 
 # Exception handling
@@ -35,7 +35,7 @@ If your application has logging, your exception (including stack trace) should c
 When designing which and how many exception classes you need, try to consider the point of view of the caller.
 
 -   If caller needs to handle different kinds of errors in a different way, foresee different exception classes
--   If caller has only one reasonable way of handling any kind of of error, only foresee a single exception class, potentially using exception chaining to pass on more details
+-   If caller has only one reasonable way of handling any kind of of error, only foresee a single exception class that potentially includes more details regarding the specific error that happened (in Java, exception chaining could be useful here)
     -   If you are using a class with methods that can throw lots of different exception types, consider wrapping it in a class that delegates actual functionality to the wrapped class but catches a set of specific errors and wraps these into a single, more general error class.  This is one of the techniques you can use to transform a library’s interface into an interface that makes more sense to your application, decoupling your application from the interface that the library provides.
 
 ```java

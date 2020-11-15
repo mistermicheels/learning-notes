@@ -7,6 +7,7 @@
 <!-- optional markdown-notes-tree directory description ends here -->
 
 -   [Branch By Abstraction and application strangulation](Branch-by-abstraction-application-strangulation.md)
+-   [Client-first design](Client-first-design.md)
 -   [Code review and collaboration workflows](Code-review-collaboration.md)
 -   [Feature flags](Feature-flags.md)
 -   [Issue troubleshooting](Issue-troubleshooting.md)

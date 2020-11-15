@@ -24,9 +24,9 @@ If your approach is going to fail, you want to realize that as soon as possible
 
 Basically, it’s about **making the feedback loop as short as possible** so you can quickly abandon things that won't work without wasting more effort on them
 
-If your feedback loop is short enough, the process of trying things and learning from your mistakes can actually be a lot more effective than trying to get it right immediately, because you gain a lot of knowledge and experience along the way. See also [Pragmatism and imperfectionism - Consider going for imperfect action now instead of possibly perfect action in the future](Pragmatism-imperfectionism.md#consider-going-for-imperfect-action-now-instead-of-possibly-perfect-action-in-the-future)
+If your feedback loop is short enough, the process of **trying things and learning from mistakes** can actually be a lot more effective than trying to get it right immediately, because you gain a lot of knowledge and experience along the way. See also [Pragmatism and imperfectionism - Consider going for imperfect action now instead of possibly perfect action in the future](Pragmatism-imperfectionism.md#consider-going-for-imperfect-action-now-instead-of-possibly-perfect-action-in-the-future)
 
-All of this also means that, when trying to solve a problem, it can be a lot more effective to focus on reducing the length of your feedback loop first. If your current approach requires you to spend a lot of time and effort before you can validate your solution, the actual problem you should be solving is how to shorten your feedback loop. See also [You Are Solving The Wrong Problem](https://uxmag.com/articles/you-are-solving-the-wrong-problem)
+All of this also means that, when trying to solve a problem, it can be a lot more effective to focus on **reducing the length of your feedback loop first**. If your current approach requires you to spend a lot of time and effort before you can validate your solution, the actual problem you should be solving is how to shorten your feedback loop. See also [You Are Solving The Wrong Problem](https://uxmag.com/articles/you-are-solving-the-wrong-problem)
 
 ## General tips
 

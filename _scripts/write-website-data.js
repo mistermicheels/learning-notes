@@ -293,6 +293,12 @@ function checkNoteImageUrl(originalUrl, relativeFilePath) {
 }
 
 function getInternalLinkNodeReplacement(node, relativePath) {
+    const isLinkWithinPage = node.url.startsWith("#");
+
+    if (isLinkWithinPage) {
+        return node;
+    }
+
     const folderPath = path.dirname(relativePath);
     const urlRelativeToRoot = path.join(folderPath, node.url);
     const newUrl = "/" + normalizeUrl(removeMarkdownExtension(urlRelativeToRoot));
