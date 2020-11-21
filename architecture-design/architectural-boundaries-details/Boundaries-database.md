@@ -1,6 +1,6 @@
 ---
 description: How architectural boundaries apply to the use of databases
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-21T18:14:37.148Z
 ---
 
 # Boundaries and the database
@@ -55,13 +55,19 @@ The _Repository_ pattern also makes it easy to implement _caching_. Ideally, the
 
 ## Separation at the database level
 
-For larger systems, it can make sense to separate different parts of the application down to the database level. Each part uses different tables or a different database, with no links between data belonging to different parts. This kind of separation is considered good practice when setting up a microservices architecture. You can also do this in monolithic applications, potentially as a stepping stone towards a feature microservices architecture.
+For larger systems, it can make sense to separate different parts of the application down to the database level
 
-Separation at the database level makes it easier to reason about separate parts of the application without having to think about other parts. It also provides more flexibility to change the schema or database technology for a certain part of the system.
+-   Each part uses different tables or a different database
+-   No direct links (like foreign keys) between data belonging to different parts
+-   Considered good practice when setting up a microservices architecture
+    -   Sharing of database tables between services introduces tight coupling, potential data corruption in case of conflicting code between the services, ...
+-   Can also do this in monolithic applications, potentially as a stepping stone towards a future microservices architecture
+-   Easier to reason about separate parts of the application without having to think about other parts
+-   More flexibility to change the schema or database technology for a certain part of the system
 
 When drawing boundaries down to the database level, some data that is relevant to two parts of the system might exist on both sides of the boundary between them
 
-See also [Microservices](../reference-architectures/Microservices.md)
+See also [Microservices](../reference-architectures/Microservices.md), and specifically [Microservices - Data duplication and bounded contexts](../reference-architectures/Microservices.md#data-duplication-and-bounded-contexts)
 
 ## Resources
 

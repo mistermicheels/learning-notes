@@ -1,6 +1,6 @@
 ---
 description: Why you should strive to commit early, push often and keep pull requests small
-last_modified: 2020-06-14T21:47:17+02:00
+last_modified: 2020-11-21T18:14:37.212Z
 ---
 
 # Small commits and pull requests
@@ -58,6 +58,7 @@ Benefits:
 -   As a reviewer, it should take you minutes rather than hours to review a pull request
 -   It can help to split up issues/tasks into smaller ones
 -   It can help to create a sequence of pull requests for one bigger issue/task
+-   It can help to move big refactors into their own pull request
 
 Benefits:
 

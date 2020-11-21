@@ -1,6 +1,6 @@
 ---
 description: Some thoughts on defining deployable components and the dependencies between them
-last_modified: 2020-11-01T18:01:18.710Z
+last_modified: 2020-11-21T18:14:37.160Z
 ---
 
 # Deployable components
@@ -22,14 +22,13 @@ last_modified: 2020-11-01T18:01:18.710Z
 
 Deployable components: 
 
--   Smallest parts that can be deployed separately
--   Think JAR files, DLL files, ...
--   Ways of deployment
-    -   Could get linked into single executable
-    -   Could be aggregated into single archive (example: .war file)
+-   Think JAR files, DLL files, npm packages, ...
+-   Smallest parts that can be developed, versioned and deployed independently
+-   Broad definition of "deployed independently"
     -   Could be independently deployed as some kind of dynamically loaded plugins
--   Regardless of how they end up being deployed, in principle they are independently deployable and thus independently developable
-    -   Example: Executable is built from component A, B and C where both A and B depend on C. Component C is in full development, with new versions being released all the time. Because these are independently deployable components, it's possible to keep using an older version of C in the executable until A and B are adjusted to support the newest version of C.
+    -   Could be aggregated into single archive (example: .war file)
+    -   Could get linked into single executable
+    -   Example: Executable is built from component A, B and C where both A and B depend on C. Component C is in full development, with new versions being released all the time. However, it's possible to keep using an older version of C in the executable until A and B are adjusted to support the newest version of C.
 
 ## Component cohesion
 
@@ -43,7 +42,7 @@ Three important principles:
         -   There must be some overarching theme or purpose that everything within a release shares
         -   The fact that classes and modules in a release share the same version numbering and same release documentation should make sense to both the author and the users
     -   Releases of shareable software components/modules must produce the proper notifications and release documentation
-        -   Release numbers are important for measuring compatibility and for communicating changes
+        -   Version numbers are important for measuring compatibility and for communicating changes
         -   See also [Semantic Versioning](https://semver.org/)
             -   breaking.new-features.fixes
     -   This principle is inclusive: tends to make components larger

@@ -1,7 +1,7 @@
 ---
 tree_title: Index types
 description: Some examples of TypeScript index types and how to use them
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-21T18:14:37.196Z
 ---
 
 # Index types (TypeScript)
@@ -13,7 +13,7 @@ last_modified: 2020-05-30T15:54:15+02:00
     -   [Use case: mapped types](#use-case-mapped-types)
         -   [`Readonly` and `Partial`](#readonly-and-partial)
         -   [`Pick`](#pick)
-    -   [Use case: dictionaries with enum keys](#use-case-dictionaries-with-enum-keys)
+    -   [Use case: dictionaries with enum or type union keys](#use-case-dictionaries-with-enum-or-type-union-keys)
 -   [Resources](#resources)
 
 ## Index operators
@@ -139,9 +139,9 @@ type Picked = Pick<Test, "propA" | "propC">;
 // type Picked = { propA: string; propC: boolean; }
 ```
 
-### Use case: dictionaries with enum keys
+### Use case: dictionaries with enum or type union keys
 
-Example:
+Example with enum keys:
 
 ```typescript
 enum TestEnum {
@@ -152,6 +152,26 @@ enum TestEnum {
 
 type DictionaryWithAllKeys = { [key in TestEnum]: number; };
 type DictionaryWithSomeKeys = { [key in TestEnum]?: number; };
+
+// error: property 'Third' is missing
+const testAllKeys: DictionaryWithAllKeys = {
+  First: 1,
+  Second: 2
+}
+
+const testSomeKeys: DictionaryWithSomeKeys = {
+  First: 1,
+  Second: 2
+}
+```
+
+Example with type union keys:
+
+```typescript
+type TestUnion = "First" | "Second" | "Third";
+
+type DictionaryWithAllKeys = { [key in TestUnion]: number; };
+type DictionaryWithSomeKeys = { [key in TestUnion]?: number; };
 
 // error: property 'Third' is missing
 const testAllKeys: DictionaryWithAllKeys = {

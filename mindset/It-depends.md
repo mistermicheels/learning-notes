@@ -1,6 +1,6 @@
 ---
 description: Everything is a trade-off
-last_modified: 2020-10-25T21:56:09.016Z
+last_modified: 2020-11-21T18:14:37.203Z
 ---
 
 # It depends
@@ -14,7 +14,9 @@ last_modified: 2020-10-25T21:56:09.016Z
 -   [Good solutions and flexibility](#good-solutions-and-flexibility)
 -   [Best practices](#best-practices)
 -   [Tools, not rules](#tools-not-rules)
+-   [Test-driving approaches](#test-driving-approaches)
 -   [Documenting the decision process](#documenting-the-decision-process)
+-   [Implementing the chosen approach](#implementing-the-chosen-approach)
 -   [Moving to a different approach](#moving-to-a-different-approach)
 -   [Resources](#resources)
 
@@ -91,11 +93,23 @@ Methodologies (DDD, SCRUM, ...) are tools, not rules!
     -   Often makes sense to adjust the details of approach to fit the specific requirements of your project and team
     -   Often, different people already have different interpretations of the rules regarding those details!
 
+## Test-driving approaches
+
+It can help to compare candidate approaches through techniques like prototyping (see also [Fail fast](./Fail-fast.md))
+
 ## Documenting the decision process
 
 Document options, trade-offs, ...
 
 Helps to reevaluate approach at a later time if new option pops up or situation changes!
+
+## Implementing the chosen approach
+
+The approach you choose will likely still some drawbacks/limitations, don't let this block you!
+
+-   Actually commit to implementing the chosen approach and giving it a fair chance
+-   Don't keep second-guessing your decision after you've made it
+-   If you're afraid you'll run into some unforeseen drawbacks/limitations, plan your implementation in such a way that they will turn up sooner rather than later (see also [Fail fast](./Fail-fast.md))
 
 ## Moving to a different approach
 

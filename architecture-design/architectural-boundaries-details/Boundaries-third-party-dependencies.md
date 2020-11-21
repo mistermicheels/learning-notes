@@ -1,6 +1,6 @@
 ---
 description: Why it's important to create boundaries around your dependencies
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-21T18:14:37.151Z
 ---
 
 # Boundaries and third-party dependencies
@@ -37,6 +37,8 @@ Be extra careful when dealing with frameworks!
 
 -   Frameworks tend to dictate the structure of your application and may even ask you to base your domain objects on the abstractions they provide. If you allow this, it will be very difficult to get the framework out afterwards. 
 -   Could help to let the framework operate on some kind of separate representation of your domain objects instead of the domain objects themselves. Your boundary could then take care of performing the necessary translations between that separate representation and the actual domain objects.
+    -   Can require a lot of overhead in terms of additional classes, getting data in and out of DTOs to pass between layers, taking care of things that your framework would normally automatically take care of, ...
+    -   Might not be worth it!
 
 ## Resources
 

@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2020-11-01T12:11:42.795Z
+last_modified: 2020-11-21T18:14:37.198Z
 ---
 
 # Runtime type checking in TypeScript
@@ -106,7 +106,7 @@ Example JSON Schema:
 
 #### Generating JSON Schemas from TypeScript code
 
-Most robust one at the moment: [ts-json-schema-generator](https://github.com/vega/ts-json-schema-generator) (for some alternatives, see [this discussion](https://github.com/vega/ts-json-schema-generator/issues/101))
+Most robust library at the moment: [ts-json-schema-generator](https://github.com/vega/ts-json-schema-generator) (for some alternatives, see [this discussion](https://github.com/vega/ts-json-schema-generator/issues/101))
 
 Example input, including specific constraints that are stricter than TS type checking:
 

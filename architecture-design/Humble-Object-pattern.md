@@ -1,6 +1,6 @@
 ---
 description: A pattern for testing hard-to-test behavior
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-21T18:14:37.163Z
 ---
 
 # Humble Object pattern
@@ -16,7 +16,7 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   Problem: some behavior (like how data is represented on a screen) is hard to test
 -   Solution: split the behavior into two parts
     -   Humble Object containing the hard-to-test stuff, stripped down to the bare essence
-    -   Other part which contains everything stripped from the Humble Object
+    -   Other, easily testable part which contains everything stripped from the Humble Object
 
 Example: showing data in a UI
 

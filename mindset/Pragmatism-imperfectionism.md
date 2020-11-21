@@ -1,6 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
-last_modified: 2020-11-01T12:11:42.801Z
+last_modified: 2020-11-21T18:14:37.206Z
 ---
 
 # Pragmatism and imperfectionism
@@ -79,6 +79,8 @@ Programming is hard and people are not perfect, so don't expect perfection.
     -   Naming the person who made a mistake doesn't solve anything, and gives the impression that the team likes to blame individuals instead of taking responsibility
     -   Remember that everybody makes mistakes. If the process allowed for this mistake to happen, it was a matter of time before someone actually made the mistake, and it could easily have been someone else who made the mistake.
     -   Solve the issue as a team and improve your process as a team
+
+Relevant article: [So you've made a mistake and it's public...](https://meta.wikimedia.org/wiki/So_you%27ve_made_a_mistake_and_it%27s_public...)
 
 ### Focus on what you can control
 

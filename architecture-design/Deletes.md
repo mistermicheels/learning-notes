@@ -1,6 +1,6 @@
 ---
 description: What to consider when deleting things
-last_modified: 2020-10-25T21:56:08.969Z
+last_modified: 2020-11-21T18:14:37.158Z
 ---
 
 # Deletes
@@ -100,7 +100,7 @@ If your application has a single DB and you're using real foreign keys, the DB w
 
 -   Potential approach: first check if anything is pointing to the object, then delete it
     -   Drawback: coupling! Having this kind of check means that the code for managing the object needs to know about everything that can reference the object, leading to increased coupling and a high chance of circular references
-        -   In case of a monolith, you can use the Dependency Inversion Principle (see [SOLID principles](./oo-design/SOLID-principles.md)) to break the circular references
+        -   See also [Circular dependencies](./Circular-dependencies.md)
     -   Drawback: race conditions possible if new reference to the object is added after the check but before the deletion
         -   If you have real foreign keys, the DB will still prevent the delete, but you need to handle the error
 -   Potential approach: perform the delete and let the DB generate an error if anything still points to the object

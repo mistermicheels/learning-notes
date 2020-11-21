@@ -1,6 +1,6 @@
 ---
 description: Some ideas on finding good names
-last_modified: 2020-11-15T22:06:37.297Z
+last_modified: 2020-11-21T18:14:37.164Z
 ---
 
 # Names
@@ -250,7 +250,7 @@ Example of an exception to this: `popcount()`
 -   Bad names make it harder to build a mental model of the code, which also makes it harder to create a good design
 -   If it's hard to name something, this can be an indicator that the thing you're trying to name is not designed well
     -   Could be taking on too many responsibilities
-    -   Could be missing an crucial part
+    -   Could be missing a crucial part
 
 ## Names and legacy code
 

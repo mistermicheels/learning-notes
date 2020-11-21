@@ -1,7 +1,7 @@
 ---
 tree_title: Naming classes
 description: Some ideas/patterns for naming your CSS classes
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-21T18:14:37.218Z
 ---
 
 # Naming classes (CSS)
@@ -16,10 +16,11 @@ last_modified: 2020-05-30T15:54:15+02:00
 ## Some general tips
 
 -   Use `snake-case`
--   Name classes by feature (example: `.page-title`) instead of style (eample: `.title-blue`)
+-   Name classes by feature (example: `.page-title`) instead of style (example: `.title-blue`)
     -   One reason: if name your class by style and you want to change something about the style, you would need to change the class name and change the HTML accordingly everywhere it's used
-    -   Note that CSS frameworks often have utility classes that are named by style (`.visibility-hidden`, `.text-center`, ...). There are even frameworks like [Tailwind CSS](https://tailwindcss.com/) that pretty much rely completely on these kinds of utility classes.
--   Don't go too specific: instead of creating very specifc classes (or selector) that have a lot of duplication between them, try to encapsulate different parts of the behavior you want into classes that you can then combine
+    -   Note: CSS frameworks often have utility classes that are named by style (`.visibility-hidden`, `.text-center`, ...).
+    -   Note: There are frameworks like [Tailwind CSS](https://tailwindcss.com/) that pretty much rely completely on utility classes that are named after the style they apply. For the philosophy behind this and some drawbacks of the rest of the advice in this note, see [CSS Utility Classes and "Separation of Concerns](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
+-   Don't go too specific: instead of creating very specific classes (or selector) that have a lot of duplication between them, try to encapsulate different parts of the behavior you want into classes that you can then combine
     -   Example: instead of `.main-article-box` or `article.main p.box`, consider going for `.box` which you can apply in different places, potentially combined with other classes
 
 ## Object Oriented CSS
