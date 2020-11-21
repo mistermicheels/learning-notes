@@ -1,6 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
-last_modified: 2020-11-01T12:11:42.799Z
+last_modified: 2020-11-21T20:39:53.059Z
 ---
 
 # Keep it simple
@@ -31,6 +31,7 @@ last_modified: 2020-11-01T12:11:42.799Z
 -   When changing architecture, go for small incremental steps rather than big changes
     -   Less risk, shorter feedback loop, ...
     -   Might make sense to temporarily keep some suboptimal parts, just to ease transition
+    -   Changes could be guided by [Architectural fitness functions](../architecture-design/Architectural-fitness-functions.md)
 -   What worked for someone else will not necessarily work for you!
 -   Premature complexity is also a form of technical debt!
 

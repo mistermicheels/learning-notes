@@ -1,6 +1,6 @@
 ---
 description: The importance of boundaries in architecture, different kinds of boundaries, costs and evolution of boundaries, ...
-last_modified: 2020-11-01T12:11:42.761Z
+last_modified: 2020-11-21T20:39:53.025Z
 ---
 
 # Architectural boundaries
@@ -112,6 +112,8 @@ Some things that may need to evolve:
     -   Ideally, a boundary should allow you to move to a higher (or lower) level of separation without the majority of the code having to know anything about the change
 
 A good architect will keep on watching the system for signs of parts that need additional separation or boundaries that have become less relevant. They will then make the necessary adjustments, taking into account both the benefits and costs associated with changing boundaries. This way, the architecture of the system will keep on evolving to suit the needs of the system and team.
+
+Evolution of boundaries could be guided by [Architectural fitness functions](./Architectural-fitness-functions.md)
 
 ## Boundaries and the database
 

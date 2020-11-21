@@ -1,6 +1,6 @@
 ---
 description: An overview of architectural fitness functions as a way to check if your architecture matches your needs
-last_modified: 2020-11-01T12:34:21.410Z
+last_modified: 2020-11-21T20:39:53.027Z
 ---
 
 # Architectural fitness functions
@@ -37,6 +37,11 @@ Architectural fitness functions:
     -   Help finding areas that need improvement
     -   Evaluate how certain changes affect how well the architecture satisfies our goals
     -   Allow us to make tradeoffs between different goals if needed
+
+Important building block of evolutionary architectures
+
+-   _"An evolutionary architecture supports guided, incremental change as a first principle across multiple dimensions"_
+-   Guidance is provided by fitness functions
 
 ## Categorizing fitness functions
 
