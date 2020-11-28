@@ -1,7 +1,7 @@
 ---
 tree_title: Naming classes
 description: Some ideas/patterns for naming your CSS classes
-last_modified: 2020-11-21T18:14:37.218Z
+last_modified: 2020-11-28T16:32:04.296Z
 ---
 
 # Naming classes (CSS)
@@ -19,7 +19,7 @@ last_modified: 2020-11-21T18:14:37.218Z
 -   Name classes by feature (example: `.page-title`) instead of style (example: `.title-blue`)
     -   One reason: if name your class by style and you want to change something about the style, you would need to change the class name and change the HTML accordingly everywhere it's used
     -   Note: CSS frameworks often have utility classes that are named by style (`.visibility-hidden`, `.text-center`, ...).
-    -   Note: There are frameworks like [Tailwind CSS](https://tailwindcss.com/) that pretty much rely completely on utility classes that are named after the style they apply. For the philosophy behind this and some drawbacks of the rest of the advice in this note, see [CSS Utility Classes and "Separation of Concerns](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
+    -   Note: There are frameworks like [Tailwind CSS](https://tailwindcss.com/) that pretty much rely completely on utility classes that are named after the style they apply. For the philosophy behind this and some drawbacks of the rest of the advice in this note, see [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/).
 -   Don't go too specific: instead of creating very specific classes (or selector) that have a lot of duplication between them, try to encapsulate different parts of the behavior you want into classes that you can then combine
     -   Example: instead of `.main-article-box` or `article.main p.box`, consider going for `.box` which you can apply in different places, potentially combined with other classes
 
@@ -131,3 +131,4 @@ BEM example (from [Get BEM](http://getbem.com/naming/)):
 
 -   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
 -   [Organizing your CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing)
+-   [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
