@@ -1,6 +1,6 @@
 ---
 description: Ideas/techniques to help you be productive in the face of uncertainty
-last_modified: 2020-11-28T20:22:03.317Z
+last_modified: 2020-11-28T21:08:18.273Z
 ---
 
 # Dealing with uncertainty
@@ -51,12 +51,15 @@ Benefits of the framework:
 
 ## Dealing with uncertain tasks
 
--   In the short-term, focus on getting rid of the uncertainty
-    -   In SCRUM, you can define a Spike for this ([Spikes in Scrum](https://medium.com/@leanscrummaster/spikes-in-scrum-3c80a65dce58))
-    -   It might make sense to postpone the implementation to the next sprint
--   Assign someone to take the lead in clearing out the uncertainty
--   Make sure to keep a clear list of what questions need to be answered
--   It might make sense to prioritize clarification of unclear tasks rather than working on more clear tasks first
+-   Prioritize getting rid of the uncertainty
+    -   In SCRUM, it can make sense to define a Spike for this ([Spikes in Scrum](https://medium.com/@leanscrummaster/spikes-in-scrum-3c80a65dce58))
+    -   For highly uncertain tasks, it can make sense to postpone the implementation to the next sprint
+    -   Assign someone to take the lead in removing the uncertainty
+    -   Make sure to keep a clear list of what questions need to be answered
+-   If some parts are already clear, see if you can get started on implementing those
+    -   You might be able to "work around the uncertainty"
+    -   It might be possible to split off some unclear parts into their own tasks
+-   It might make sense to prioritize clarification of unclear tasks over implementation of clear tasks
     -   Tease out unknown unknowns as soon as possible
     -   Ensure that the team is not suddenly blocked by a backlog with only unclear tasks
     -   See also [Fail fast](../mindset/Fail-fast.md)
