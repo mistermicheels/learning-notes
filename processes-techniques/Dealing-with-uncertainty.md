@@ -1,6 +1,6 @@
 ---
 description: Ideas/techniques to help you be productive in the face of uncertainty
-last_modified: 2020-11-28T21:08:18.273Z
+last_modified: 2020-11-28T21:26:07.929Z
 ---
 
 # Dealing with uncertainty
@@ -20,8 +20,12 @@ last_modified: 2020-11-28T21:08:18.273Z
     -   Unclear goals
     -   Unclear acceptance criteria
     -   Unclear how to achieve things from the technological side
+-   It can be useful to make this uncertainty explicit
+-   There are some useful techniques for removing uncertainty
+-   In some cases, you might be able to start "working around the uncertainty"
 -   There are likely not only _known unknowns_ but also _unknown unknowns_ that only surface when you dive deep into the functionality or solution approach
-    -   It can be useful to make a conscious effort to tease these out early through mockups, prototypes, ... (see also [Fail fast](../mindset/Fail-fast.md))
+    -   Unknowns are fact of life in software development
+    -   It can be useful to make a conscious effort to tease them out early through mockups, prototypes, ... (see also [Fail fast](../mindset/Fail-fast.md))
 
 ## Analyzing uncertainty
 
