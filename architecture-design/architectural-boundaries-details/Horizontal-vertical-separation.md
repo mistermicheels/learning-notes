@@ -1,6 +1,6 @@
 ---
 description: The benefits and drawbacks of horizontal and vertical boundaries
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-11-28T17:53:12.418Z
 ---
 
 # Horizontal versus vertical separation
@@ -9,7 +9,6 @@ last_modified: 2020-05-30T15:54:15+02:00
 
 -   [Horizontal slicing](#horizontal-slicing)
 -   [Vertical slicing](#vertical-slicing)
--   [Conway's Law](#conways-law)
 -   [Resources](#resources)
 
 ## Horizontal slicing
@@ -26,19 +25,8 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   Benefit: Changes within a single functional domain can happen within a single part of the system
     -   Especially helpful if different parts maintained by different teams!
     -   Changes within a single functional domain can happen within a single team and coordination with other teams is only required if the communication with other functional domains needs changes as well
+    -   See [Architecture and people - Conway's law](../Architecture-people.md#conways-law)
     -   See [microservices](../reference-architectures/Microservices.md), where different small teams each maintain one or more microservices that encapsulate a certain functional area across several layers of the technical stack, even down to the database
-
-## Conway's Law
-
-Conway's Law is as follows:
-
-> organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations
-
-Such designs actually make sense as well: if changes within a single part of the system can happen within a single team, it’s way easier to plan and execute these changes
-
-Consequence: if there is a mismatch between the team structure within your organization and the architecture of the application you’re working on, building the application is likely to be a struggle
-
-You can use Conway’s Law to your advantage by structuring your application (and thus your teams) in such a way that changes to the system are pretty likely to be confined to a single part of the application. In practice, it seems that vertical slicing is typically the best way to do that.
 
 ## Resources
 

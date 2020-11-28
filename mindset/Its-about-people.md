@@ -1,6 +1,6 @@
 ---
 description: Why software development is about people rather than computers
-last_modified: 2020-10-18T13:34:24.106Z
+last_modified: 2020-11-28T17:53:12.481Z
 ---
 
 # It's about people
@@ -13,6 +13,7 @@ last_modified: 2020-10-18T13:34:24.106Z
     -   [Some general tips](#some-general-tips)
 -   [Dealing with customers](#dealing-with-customers)
 -   [Code](#code)
+-   [Architecture](#architecture)
 -   [Resources](#resources)
 
 ## Basic idea
@@ -98,6 +99,10 @@ Some tips:
 People are also the reason why consistency, coding standards, automation, ... are so important
 
 -   It's about making it easier to collaborate on the codebase and maintain it, not wasting people's time and energy on things that computers are better at, preventing human errors, ...
+
+## Architecture
+
+See also [Architecture and people](../architecture-design/Architecture-people.md)
 
 ## Resources
 

@@ -9,6 +9,7 @@ You can read the notes at [learning-notes.mistermicheels.com](https://learning-n
 -   [**Architecture and design**](architecture-design/README.md)
     -   [Architectural boundaries](architecture-design/Architectural-boundaries.md)
     -   [Architectural fitness functions](architecture-design/Architectural-fitness-functions.md)
+    -   [Architecture and people](architecture-design/Architecture-people.md)
     -   [Circular dependencies](architecture-design/Circular-dependencies.md)
     -   [Deletes](architecture-design/Deletes.md)
     -   [Deployable components](architecture-design/Deployable-components.md)
