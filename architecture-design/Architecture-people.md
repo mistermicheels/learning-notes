@@ -1,6 +1,6 @@
 ---
 description: How architecture influences the team (and vice versa)
-last_modified: 2020-11-28T17:53:12.422Z
+last_modified: 2020-11-28T20:22:03.275Z
 ---
 
 # Architecture and people
@@ -16,6 +16,8 @@ last_modified: 2020-11-28T17:53:12.422Z
 ## Team size and communication paths
 
 ![img](_img/Architecture-people/communication-paths.png)
+
+([image source](https://flow-state.blogspot.com/2012/01/importance-of-small-team-size.html))
 
 -   Number of distinct communication paths blows up as team size grows
 -   As team grows, this leads to either large communication overhead or suboptimal communication

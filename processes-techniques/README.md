@@ -9,6 +9,7 @@
 -   [Branch By Abstraction and application strangulation](Branch-by-abstraction-application-strangulation.md)
 -   [Client-first design](Client-first-design.md)
 -   [Code review and collaboration workflows](Code-review-collaboration.md)
+-   [Dealing with uncertainty](Dealing-with-uncertainty.md)
 -   [Feature flags](Feature-flags.md)
 -   [Issue troubleshooting](Issue-troubleshooting.md)
 -   [Small commits and pull requests](Small-commits-pull-requests.md)

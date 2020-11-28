@@ -90,6 +90,7 @@ You can read the notes at [learning-notes.mistermicheels.com](https://learning-n
     -   [Branch By Abstraction and application strangulation](processes-techniques/Branch-by-abstraction-application-strangulation.md)
     -   [Client-first design](processes-techniques/Client-first-design.md)
     -   [Code review and collaboration workflows](processes-techniques/Code-review-collaboration.md)
+    -   [Dealing with uncertainty](processes-techniques/Dealing-with-uncertainty.md)
     -   [Feature flags](processes-techniques/Feature-flags.md)
     -   [Issue troubleshooting](processes-techniques/Issue-troubleshooting.md)
     -   [Small commits and pull requests](processes-techniques/Small-commits-pull-requests.md)
