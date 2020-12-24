@@ -1,7 +1,7 @@
 ---
 tree_title: Box model
 description: The CSS box model, blocks and inline boxes, inner and outer display types, margins, padding and borders, ...
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-12-24T11:06:11.044Z
 ---
 
 # Box model (CSS)
@@ -165,7 +165,7 @@ If the margins for two elements touch, these margins will be combined (collapsed
 
 Reasoning: if two boxes are next to each other, one of those boxes needs 50px around, and the other one needs 40px around it, then separating the boxes by 50px satisfies this
 
-There are some specific rules and special cases here, see [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+There are some specific rules and special cases here, see [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing) and [The Rules of Margin Collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/)
 
 In order to avoid confusion caused by margin collapsing, it can help to choose specific sides where you apply margins. For example, for vertical spacing between boxes, you could choose to only use `margin-top` and not `margin-bottom`
 
@@ -214,3 +214,5 @@ For inline boxes:
 -   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
 -   [The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 -   [Normal Flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow)
+-   [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+-   [The Rules of Margin Collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/)

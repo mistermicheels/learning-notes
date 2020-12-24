@@ -1,7 +1,7 @@
 ---
 tree_title: Grids
 description: The main idea of CSS Grids
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-12-24T11:06:11.048Z
 ---
 
 # Grids (CSS)
@@ -10,6 +10,8 @@ last_modified: 2020-05-30T15:54:15+02:00
 
 -   [Basic idea](#basic-idea)
 -   [Use cases](#use-cases)
+    -   [Holy grail layout](#holy-grail-layout)
+    -   [Full bleed layout](#full-bleed-layout)
 -   [Resources](#resources)
 
 ## Basic idea
@@ -34,7 +36,25 @@ Example (with indication of rows and columns as shown by [Firefox Grid Inspector
 
 ([image source](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids))
 
+### Holy grail layout
+
+![holy-grail](./_img/Grids/holy-grail.png)
+
+([image source](https://www.joshwcomeau.com/css/full-bleed/))
+
+Simple way to achieve it: [CSS Grid: Holy Grail Layout](https://www.digitalocean.com/community/tutorials/css-css-grid-holy-grail-layout)
+
+### Full bleed layout
+
+![full-bleed](./_img/Grids/full-bleed.png)
+
+([image source](https://www.joshwcomeau.com/css/full-bleed/))
+
+How to achieve it: [Full-Bleed Layout Using CSS Grid](https://www.joshwcomeau.com/css/full-bleed/)
+
 ## Resources
 
 -   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
 -   [Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+-   [CSS Grid: Holy Grail Layout](https://www.digitalocean.com/community/tutorials/css-css-grid-holy-grail-layout)
+-   [Full-Bleed Layout Using CSS Grid](https://www.joshwcomeau.com/css/full-bleed/)
