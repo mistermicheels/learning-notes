@@ -1,6 +1,6 @@
 ---
 description: Some tips on making decisions as a team
-last_modified: 2020-06-14T18:51:13+02:00
+last_modified: 2020-12-24T14:15:34.867Z
 ---
 
 # Team decision-making
@@ -43,11 +43,13 @@ An alternative way of making decisions is **consent:**
         -   An objection can lead to the proposal being dropped, but it can also lead to the proposal being improved
     -   If no objections are deemed important enough to block the proposal, the proposal is approved
         -   It can make sense to log any objections that you didn't see as showstoppers
+
+Some benefits of consent:
+
 -   Typically a lot faster than consensus, while still involving the entire team in the decision and giving the possibility to discuss some important concerns in-depth
 -   Can also be used outside of meetings: When you are about to do something that people might not be expecting, announce it to the team and give them the chance to stop you or suggest an alternative approach
     -   "Do whatever you want, but do it loudly" (from [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt))
-    -   Typically faster than asking and waiting for explicit permission
-    -   If people don't object, that means you have their consents
+    -   If people don't object, that means you have their consent
 
 There is no one-size-fits-all here, and all of these are useful to have in your toolbox. Sometimes, it even makes sense to combine them. For example, you could go for consensus within a small sub-team and then ask for consent from the rest of the team.
 

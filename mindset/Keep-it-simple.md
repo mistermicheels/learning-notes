@@ -1,6 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
-last_modified: 2020-11-21T20:39:53.059Z
+last_modified: 2020-12-24T14:15:34.859Z
 ---
 
 # Keep it simple
@@ -19,7 +19,7 @@ last_modified: 2020-11-21T20:39:53.059Z
 
 ## Architecture
 
--   Architectural complexity comes with significant development and maintenance overhead, that overhead might not be worth it!
+-   Architectural complexity comes with significant development and maintenance overhead, that overhead might not be worth it
     -   See also [Architectural boundaries - The costs of boundaries](../architecture-design/Architectural-boundaries.md#the-costs-of-boundaries)
     -   Over-engineering is often worse than under-engineering
 -   Start simple, evolve as needed based on actual problems that manifest themselves
@@ -32,8 +32,8 @@ last_modified: 2020-11-21T20:39:53.059Z
     -   Less risk, shorter feedback loop, ...
     -   Might make sense to temporarily keep some suboptimal parts, just to ease transition
     -   Changes could be guided by [Architectural fitness functions](../architecture-design/Architectural-fitness-functions.md)
--   What worked for someone else will not necessarily work for you!
--   Premature complexity is also a form of technical debt!
+-   What worked for someone else will not necessarily work for you
+-   Premature complexity is also a form of technical debt
 
 ## Technology
 
@@ -50,13 +50,8 @@ last_modified: 2020-11-21T20:39:53.059Z
 
 -   Go for "dumb code"
     -   It takes a good developer to write code that looks so simple that any idiot could have written it
-    -   Benefits:
-        -   You can immediately see what it does and how it does it
-        -   Makes review, troubleshooting and changes easy
-    -   Writing simple, obvious code is way more challenging than writing complex, "clever" code that takes a while to wrap your head around
         -   "_Any fool can write code that a computer can understand. Good programmers write code that humans can understand._" - Martin Fowler
-    -   An idiot might make a better code reviewer than a genius, because if the code isn't "dumb" enough the idiot won't understand it
-    -   The biggest compliment you can get about your code is "is that all there is to it?"
+    -   The simpler and more obvious the code, the easier it is to review, debug, maintain, ...
     -   You know you have a great developer if you give them a complex problem and they solve it using simple building blocks that fit together in obvious ways
 -   Don't sacrifice readability and maintainability for performance, unless it's needed to solve a real performance problem
 
@@ -85,12 +80,11 @@ last_modified: 2020-11-21T20:39:53.059Z
     -   Solving a problem you end up never having is a waste of time and effort
     -   It's very hard to predict exactly what your future problems will look like, so any premature solutions are likely to be solving the wrong problem
     -   Solving a problem you don't currently have makes it very hard to validate your solution
-    -   See also YAGNI
+    -   See also [YAGNI](https://martinfowler.com/bliki/Yagni.html)
 -   Small, incremental steps
     -   You don't have to solve everything at once, some things can be "good enough for now"
     -   Split problems and look for decisions you can postpone or things you can improve later
     -   Limit scope of discussions
-        -   Often makes sense to explicitly separate high-level and low-level discussions or discussions about different problems (even if somewhat related)
 -   Ask yourself: "What problem are we actually solving here?"
     -   When you find yourself solving a sub-problem three levels deep, it might make sense to consider an alternative high-level approach
 
@@ -107,24 +101,22 @@ last_modified: 2020-11-21T20:39:53.059Z
     -   20% of the functionality can provide 80% of the value to your end users
     -   20% of the testing can give you 80% of the confidence that your application works
     -   It's not the end of the world if some very rare situations lead to a transaction failing because of deadlock, suboptimal error message, ...
-    -   It's not the end of the world if some exceptional cases require an additional action taken by some batch process or even a human
+    -   It's not the end of the world if some exceptional cases require additional action by some batch process or even a human
 -   Know when to stop optimizing!
     -   The more you optimize, the lower the ROI of additional optimizations and the higher the benefit would be of spending the effort on other things instead
+    -   At some point, you need to decide that the current option is good enough
     -   Applies to architecture, code quality, solution approaches, ...
-    -   At some point, rather than to keep discussing and polishing, it makes sense to ask if you can all agree that the current option is good enough
-        -   Also goes for code reviews
 -   Not everything is a priority
     -   Some things are not worth spending more time and energy on, even if you know they could be improved
-    -   If you're feeling overwhelmed, it's time to take a look at what is really a priority, possibly together with your team or manager
+    -   If you're feeling overwhelmed, find out what the real a priorities are (your team or manager could help)
     -   Pick your battles: not every discussion is a hill you should be willing to die on.
 -   Ask for help when it makes sense
     -   If you're struggling with something, you're likely to find a colleague that can help you out
-    -   Asking for help is actually a good way to bond with your colleagues, as it shows you trust them and value their expertise
+    -   Asking for help is a good way to bond with your colleagues, as it shows you trust them and value their expertise
 -   Learning
     -   You don't have to know everything! 
     -   Keep learning, but accept that you will never come close to knowing everything, and neither will anyone else
-        -   Someone who knows a lot more than you about a certain topic is likely to know less than you about another topic
-    -   Learning high-level concepts already goes a long way
+    -   Learning high-level concepts already goes a long way (see also [Concepts, not code](./Concepts-not-code.md))
     -   It might help to keep a list of "topics to research later"
 
 ## Don't take it too far

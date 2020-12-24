@@ -1,6 +1,6 @@
 ---
 description: How architecture influences the team (and vice versa)
-last_modified: 2020-11-28T20:22:03.275Z
+last_modified: 2020-12-24T14:15:34.823Z
 ---
 
 # Architecture and people
@@ -35,7 +35,7 @@ last_modified: 2020-11-28T20:22:03.275Z
         -   Important stuff can get buried under other discussions
 -   Bigger teams will have bigger scope will thus need to juggle more information to begin with
 
-Related: Brook's law
+Related: **Brook's law**
 
 > adding manpower to a late software project makes it later
 
@@ -75,7 +75,7 @@ Some consequences:
 -   Mismatch between team structure and shape of changes = pain
     -   Having separated frontend, backend and DB teams can be a real pain if almost every required change touches all layers
 
-Inverse Conway maneuver: start from the architecture you want to achieve for a new system and design teams based on that
+**Inverse Conway maneuver**: start from the architecture you want to achieve for a new system and design teams based on that
 
 -   Example: Netflix pushed for focused, independent teams from the beginning as a way to ensure that their system would be made up of focused, loosely coupled services
 
@@ -97,9 +97,9 @@ Example: Imagine team of 15 people working on system with 5 isolated parts requi
 -   Avoid having a library/service shared and maintained by multiple teams together
     -   High overhead from inter-team communication
     -   Less efficient alignment = higher potential that change by one team will break things for others
-    -   Alternative that could help: internal open source
-        -   One team really owns the code
-        -   Other teams can make changes, but those need to be reviewed by owning team
+    -   Alternative that could help: **internal open source**
+        -   One team really owns the code (comparable to maintainers of a regular open source project)
+        -   Other teams can create issues and submit pull requests, but those need to be reviewed by owning team
         -   Still quite some overhead, reviewing effort might be high, ...
 
 ## Resources
