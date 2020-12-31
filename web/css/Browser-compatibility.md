@@ -1,7 +1,7 @@
 ---
 tree_title: Browser compatibility
 description: Making sure your CSS works in different browsers
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2020-12-31T13:17:37.842Z
 ---
 
 # Browser compatibility (CSS)
@@ -25,9 +25,9 @@ Example: [Normalize.css](https://necolas.github.io/normalize.css/)
 
 ## Checking which browsers support certain functionality
 
--   [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+-   Can use [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
     -   Example: [compatibility for grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns#Browser_compatibility)
--   [Can I Use](https://caniuse.com/)
+-   Can use [Can I Use](https://caniuse.com/)
     -   Example: [compatibility for grid-template-columns](https://caniuse.com/#feat=mdn-css_properties_grid-template-columns)
 
 ## Support queries

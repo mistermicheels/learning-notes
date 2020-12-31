@@ -15,4 +15,8 @@
 -   [Small commits and pull requests](Small-commits-pull-requests.md)
 -   [Static analysis](Static-analysis.md)
 -   [Team decision-making](Team-decision-making.md)
+-   [Testing](Testing.md)
 -   [Trunk Based Development](Trunk-Based-Development.md)
+-   [**Testing details**](testing-details/README.md)
+    -   [Testing after production](testing-details/Testing-after-production.md)
+    -   [Testing patterns](testing-details/Testing-patterns.md)

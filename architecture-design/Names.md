@@ -1,6 +1,6 @@
 ---
 description: Some ideas on finding good names
-last_modified: 2020-11-21T18:14:37.164Z
+last_modified: 2020-12-31T13:17:37.795Z
 ---
 
 # Names
@@ -220,7 +220,7 @@ Note: Not all developers are familiar with all algorithms/patterns!
 
 ## Implementer versus user names
 
-Prefer for names that make sense in the context of client code over names that describe implementation (in this context, user = developer writing client code)
+Prefer names that make sense in the context of client code over names that describe implementation (in this context, user = developer writing client code)
 
 See also [Client-first design](../processes-techniques/Client-first-design.md)
 

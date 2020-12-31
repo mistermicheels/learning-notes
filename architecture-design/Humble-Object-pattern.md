@@ -1,6 +1,6 @@
 ---
-description: A pattern for testing hard-to-test behavior
-last_modified: 2020-11-21T18:14:37.163Z
+description: Separating hard-to-test and easy-to-test behavior
+last_modified: 2020-12-31T13:17:37.792Z
 ---
 
 # Humble Object pattern

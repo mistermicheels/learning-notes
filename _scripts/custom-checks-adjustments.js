@@ -5,6 +5,8 @@ const fs = require("fs");
 const childProcess = require("child_process");
 const frontMatter = require("front-matter");
 
+const CONTENTS_HEADING = '## Contents';
+
 try {
     console.log("Performing custom checks and adjustments");
     run();
@@ -40,6 +42,7 @@ function processFolder(relativePath, relativePathsStagedFiles) {
         } else if (!isDirectory && !shouldIgnoreFile(name)) {
             const contents = fs.readFileSync(entryPath, { encoding: "utf-8" });
             checkContentsHeadingPresent(contents, entryPath);
+            checkNoListParentStartingWithLink(contents, entryPath);
             checkNoLooseLists(contents, entryPath);
             setLastModifiedIfNeeded(contents, entryPath, relativePathsStagedFiles);
         }
@@ -82,9 +85,24 @@ function getLines(input) {
 function checkContentsHeadingPresent(contents, relativePath) {
     const contentsLines = getLines(contents);
 
-    if (!contentsLines.includes('## Contents')) {
+    if (!contentsLines.includes(CONTENTS_HEADING)) {
         throw new Error(`No 'Contents' heading found in file ${relativePath}`);
     }
+}
+
+// bug/limitation current Docusaurus version
+function checkNoListParentStartingWithLink(contents, relativePath) {
+    const contentsHeadingIndex = contents.indexOf(CONTENTS_HEADING);
+    const nextHeadingIndex = contents.indexOf('##', contentsHeadingIndex + CONTENTS_HEADING.length);
+    const textFromNextHeading = contents.substring(nextHeadingIndex);
+    
+    const listParentStartingWithLinkRegex = /(\n-   \[[^\n]+\n    -)|(\n    -   \[[^\n]+\n        -)/;
+
+    if (listParentStartingWithLinkRegex.test(textFromNextHeading)) {
+        const firstMatch = listParentStartingWithLinkRegex.exec(contents)[0];
+        throw new Error(`List parent starting with link found in ${relativePath}\nMatch: ${JSON.stringify(firstMatch)}`);
+    }
+    
 }
 
 function checkNoLooseLists(contents, relativePath) {

@@ -1,6 +1,6 @@
 ---
 description: What inversion of control means and why it's useful when building applications
-last_modified: 2020-06-07T17:55:54+02:00
+last_modified: 2020-12-31T13:17:37.794Z
 ---
 
 # Inversion of control
@@ -19,7 +19,7 @@ last_modified: 2020-06-07T17:55:54+02:00
 Benefits:
 
 -   Decoupling between "how" and "when" parts
-    -   The less they need to know about each other, the easier it is to replace/adjust one of them without breaking the other
+    -   The less they need to know about each other, the easier it is to replace/adjust one without breaking the other
 -   More focused classes/modules
 
 ## Implementation
@@ -31,9 +31,9 @@ Benefits:
     -   "How" is defined inside the dependencies that are injected + in the code that determines which specific implementation will be injected (as opposed to the class/function/module instantiating its own dependencies)
         -   Second part is very useful for reusability and also makes it easy to pass in specific implementations for running automated tests
     -   "When" is defined by the code of the class/function/module that uses the dependencies
--   [Template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern)
+-   The [Template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern)
     -   Separate implementation of template method ("how" part) from logic for calling the template method ("when" part)
--   [Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)
+-   The [Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)
     -   Strategy itself defines the "how" part, code calling strategy defines the "when" part
     -   Good use case for dependency injection
 

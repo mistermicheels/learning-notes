@@ -1,7 +1,7 @@
 ---
 tree_title: Grids
 description: The main idea of CSS Grids
-last_modified: 2020-12-24T11:06:11.048Z
+last_modified: 2020-12-31T13:17:37.843Z
 ---
 
 # Grids (CSS)
@@ -38,7 +38,7 @@ Example (with indication of rows and columns as shown by [Firefox Grid Inspector
 
 ### Holy grail layout
 
-![holy-grail](./_img/Grids/holy-grail.png)
+![Holy grail layout](./_img/Grids/holy-grail.png)
 
 ([image source](https://www.joshwcomeau.com/css/full-bleed/))
 
@@ -46,7 +46,7 @@ Simple way to achieve it: [CSS Grid: Holy Grail Layout](https://www.digitalocean
 
 ### Full bleed layout
 
-![full-bleed](./_img/Grids/full-bleed.png)
+![Full bleed layout](./_img/Grids/full-bleed.png)
 
 ([image source](https://www.joshwcomeau.com/css/full-bleed/))
 
