@@ -1,6 +1,6 @@
 ---
 description: Why you shouldn't be afraid of asking the "dumb" questions
-last_modified: 2020-10-17T10:18:45.596Z
+last_modified: 2020-12-31T13:28:45.561Z
 ---
 
 # Ask the dumb questions
@@ -23,13 +23,13 @@ last_modified: 2020-10-17T10:18:45.596Z
 
 The value of asking "dumb" questions:
 
--   Helps validating that you're talking about the same thing and that 
+-   Helps validating that you're talking about the same thing and that you're on the same page
 -   Helps making implicit assumptions explicit and validating whether they are realistic
 -   Helps finding edge cases or holes in the logic
 -   Helps understanding the real reason you're doing something
 -   Helps making sure you are solving the real problem
 -   Helps finding alternative approaches
--   People asking the right questions can be very valuable in guiding the discussion towards good solutions, even if those people they don't provide any potential solutions themselves
+-   People asking the right questions can be very valuable in guiding the discussion towards good solutions, even if those people don't provide any potential solutions themselves
 -   Even if the answer to a question seems obvious to you and to the rest of the team, asking the question is the only way to confirm that it's indeed obvious to everybody
 -   Even if you are somehow the only one who is out of the loop, the team is way better off with you asking dumb questions and getting the info you need than with you continuing without asking for clarification
 
