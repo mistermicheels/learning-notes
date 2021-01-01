@@ -93,6 +93,7 @@ You can read the notes at [learning-notes.mistermicheels.com](https://learning-n
     -   [Dealing with uncertainty](processes-techniques/Dealing-with-uncertainty.md)
     -   [Feature flags](processes-techniques/Feature-flags.md)
     -   [Issue troubleshooting](processes-techniques/Issue-troubleshooting.md)
+    -   [Managing technical debt](processes-techniques/Managing-technical-debt.md)
     -   [Refactoring](processes-techniques/Refactoring.md)
     -   [Small commits and pull requests](processes-techniques/Small-commits-pull-requests.md)
     -   [Static analysis](processes-techniques/Static-analysis.md)
