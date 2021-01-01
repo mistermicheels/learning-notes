@@ -12,6 +12,7 @@
 -   [Dealing with uncertainty](Dealing-with-uncertainty.md)
 -   [Feature flags](Feature-flags.md)
 -   [Issue troubleshooting](Issue-troubleshooting.md)
+-   [Refactoring](Refactoring.md)
 -   [Small commits and pull requests](Small-commits-pull-requests.md)
 -   [Static analysis](Static-analysis.md)
 -   [Team decision-making](Team-decision-making.md)
