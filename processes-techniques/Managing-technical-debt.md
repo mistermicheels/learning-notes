@@ -1,6 +1,6 @@
 ---
 description: Technical debt and how to deal with it
-last_modified: 2021-01-01T20:24:53.349Z
+last_modified: 2021-01-02T18:48:07.387Z
 ---
 
 # Managing technical debt
@@ -19,10 +19,16 @@ last_modified: 2021-01-01T20:24:53.349Z
 
 ## Defining technical debt
 
-Technical debt: things about your system (code, architecture, ...) that aren't the way they should be
+Technical debt: things about your system that aren't the way they should be
 
--   Often impact the development team's velocity and maybe even morale
--   Might impact end users as well
+-   Unreadable code, code duplication, other code smells, ...
+    -   Might get created over time if changes are made without proper cleanup
+-   Design and architecture that are not a good fit for the system
+    -   Can be caused by not evolving them together with the system as needed
+    -   Design and architecture that are good fit now might not be good fit anymore next year
+-   Lack of proper tests, monitoring and alerting
+    -   See [Testing](./Testing.md) and [Testing after production](./testing-details/Testing-after-production.md)
+    -   Can lead to fear of improving code/design/architecture, creating even more technical debt!
 
 ## Categorizing technical debt
 
@@ -55,7 +61,7 @@ Contagion is an important aspect!
 
 ## Tracking technical debt
 
-It can help to explicitly track technical debt in your backlog or issue tracker
+It can help to explicitly track significant pieces of technical debt in your backlog or issue tracker
 
 -   Makes the technical debt explicit and visible
 -   Can prioritize it along with the rest of the tasks
@@ -74,12 +80,16 @@ Note that technical debt might be created over time by changing code without cle
 Try to keep it low!
 
 -   Code quality is essential to long-term development speed
-    -   Taking on technical debt for the sake of quickly building features may significantly impact the development time of those same features!
-    -   Over time, bad code can make development grind to a halt and bring an organization to its knees
--   Code quality can have a big impact on motivation
--   The existence of bad code can lead to developers writing more bad code
+    -   Taking on technical debt to build features faster can slow down development of those same features!
+    -   Over time, tech debt can make development grind to a halt and bring an organization to its knees
+-   Code quality can have a big impact on motivation and employee turnover
+    -   Working with bad code is draining
+    -   Lack of productivity is frustrating
+    -   In severe cases, developers feel their skills get out of date because it's too dangerous to upgrade to a recent version of the language, incorporate modern practices and replace legacy dependencies
+-   Technical debt often leads to developers creating even more technical debt
     -   Feeling that effort spent on code quality won't be valued, won't make a difference, ...
-    -   Relevant: [The Broken Windows Theory](https://github.com/dwmkerr/hacker-laws#the-broken-windows-theory)
+        -   Relevant: [The Broken Windows Theory](https://github.com/dwmkerr/hacker-laws#the-broken-windows-theory)
+    -   Slow progress and fear of breaking stuff can lead to quick fixes that only create more technical debt
 -   Spending the extra time to do things right from the start is often faster than fixing the debt later
     -   See the well-known "cost of change" curve
     -   Fixing things is harder when there's already data in DB, customers using the functionality, other code depending on the badly written or designed code (or even following its "conventions"), ...
@@ -89,13 +99,17 @@ Ideal amount of technical debt is not zero!
 -   It’s normal to have a certain amount of technical debt
 -   Professional software development is about delivering value, only reason for maintainability is that it helps to keep delivering value over time
     -   If there are no places in your codebase that make you think “we could improve this given some more time, but it’s good enough for now”, you are probably making suboptimal use of time and resources
+-   For startups, it can make sense to go for "quick and dirty" at first and clean up after establishing product-market fit
+    -   Make sure slower development (new features, changes) doesn't prevent actually reaching product-market fit!
+    -   Some alternative approaches: [Fail fast](../mindset/Fail-fast.md)
+    -   In case of throw-away prototypes, you can go wild with tech debt (just make sure they're really thrown away)
 
 Advice:
 
 -   Try to avoid creating significant technical debt
     -   If time is tight, prefer reducing scope instead of creating a mess
     -   When changing existing code, take some time to clean it up if that makes sense
--   Don't go overboard with avoiding it
+-   Don't go overboard with avoiding technical debt
     -   Making things better is not always an efficient use of your time
     -   See also [Keep it simple - Effort](../mindset/Keep-it-simple.md#Effort)
 -   If you do create technical debt, try to make sure it's isolated from other code and is easy to fix later on
@@ -111,6 +125,7 @@ What to repay?
 
 When to repay it?
 
+-   Try to make repaying technical debt a standard, implicit part of the development process
 -   It can make sense to clean up any code that you already happen to be working on
     -   Benefit: most effort on parts of code that are often modified (and thus important to keep clean)
 -   It can make sense to dedicate a certain percentage of each sprint to tasks for repaying tech debt
@@ -126,5 +141,11 @@ Techniques to use when repaying technical debt:
 ## Resources
 
 -   [TechnicalDebt](https://martinfowler.com/bliki/TechnicalDebt.html)
+-   [Pragmatic Technical Debt Management](https://www.infoq.com/articles/pragmatic-technical-debt/)
+-   [Tech Debt and the Pragmatic Middle Ground](https://blog.pragmaticengineer.com/tech-debt/)
 -   [A taxonomy of tech debt](https://technology.riotgames.com/news/taxonomy-tech-debt)
+-   [The Birth of Legacy Software – How Change Aversion Feeds On Itself](https://software.rajivprab.com/2019/11/25/the-birth-of-legacy-software-how-change-aversion-feeds-on-itself/)
+-   [Technical debt as a lack of understanding](https://daverupert.com/2020/11/technical-debt-as-a-lack-of-understanding/)
+-   [The Human Cost of Tech Debt](https://www.infragistics.com/community/blogs/b/erikdietrich/posts/the-human-cost-of-tech-debt)
 -   [The Broken Windows Theory](https://github.com/dwmkerr/hacker-laws#the-broken-windows-theory)
+-   [Technical Debt: A Repayment Plan](https://www.infoq.com/articles/tech-debt-repayment/)
