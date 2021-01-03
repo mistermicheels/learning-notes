@@ -1,6 +1,6 @@
 ---
 description: Why software development is about people rather than computers
-last_modified: 2020-11-28T17:53:12.481Z
+last_modified: 2021-01-03T11:43:26.326Z
 ---
 
 # It's about people
@@ -81,7 +81,7 @@ In a psychologically safe team, you can have a meeting full of passionate and he
 Write code for people, not for computers
 
 -   The code you write will likely be read tons of times later on (both by you and other developers)
--   When adding new code, people often actually spend more time looking at older code than writing the new code itself
+-   When adding new code, people often spend more time looking at older code than writing the new code itself
     -   You want to properly understand how the new code fits in with the rest of the system, avoid reinventing the wheel or creating bad duplication, stay consistent with other parts of the codebase where it makes sense, ...
 -   The computer itself doesn't care if your code is an unreadable mess or not
     -   _"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."_ - Martin Fowler

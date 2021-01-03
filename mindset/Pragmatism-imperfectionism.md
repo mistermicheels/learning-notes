@@ -1,6 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
-last_modified: 2020-11-21T18:14:37.206Z
+last_modified: 2021-01-03T11:43:26.329Z
 ---
 
 # Pragmatism and imperfectionism
@@ -77,14 +77,14 @@ Programming is hard and people are not perfect, so don't expect perfection.
 -   Instead of ruminating about mistakes you have made, put that time and energy into fixing the situation or preventing the mistake from happening again
 -   If someone in the team makes a mistake, take responsibility as a team
     -   Naming the person who made a mistake doesn't solve anything, and gives the impression that the team likes to blame individuals instead of taking responsibility
-    -   Remember that everybody makes mistakes. If the process allowed for this mistake to happen, it was a matter of time before someone actually made the mistake, and it could easily have been someone else who made the mistake.
+    -   Remember that everybody makes mistakes. If the process allowed for this mistake to happen, it was a matter of time before someone actually made the mistake, and it could easily have been someone else.
     -   Solve the issue as a team and improve your process as a team
 
 Relevant article: [So you've made a mistake and it's public...](https://meta.wikimedia.org/wiki/So_you%27ve_made_a_mistake_and_it%27s_public...)
 
 ### Focus on what you can control
 
--   A lot of things are out of your control, which means it's a waste of energy to stress out over them or try to change them
+-   A lot of things are out of your control, meaning it's a waste of energy to stress out over them or try to change them
 -   Instead, focus on what you can control
 -   "Don’t get stuck thinking that you can’t do good work unless something you can’t control changes" (from [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt))
 
@@ -105,10 +105,10 @@ Relevant article: [So you've made a mistake and it's public...](https://meta.wik
     -   Example: First writing a working "first draft" of the code and then improving its readability can be a lot more effective than trying to write perfectly clean code immediately
         -   "First make it work, then make it clean"
     -   Example: When introducing stricter coding standards to an existing project, changing all the existing code is often not practical or justifiable. But, if you apply the new standards whenever you write new code or touch an existing piece of code, all parts of the codebase that are under active development will soon follow the new standards
--   Big goals are daunting. Instead, chop the work up into small steps and follow the process, focusing on one step at a time.
+-   Big goals are daunting. Instead, break them into small steps and follow the process, focusing on one step at a time.
 -   There is often a compounding where early progress makes future progress easier
-    -   Example: Successfully setting up basic automated linting makes it easy to add more strict/advanced rules later on
-    -   Example: When learning, properly understanding basic concepts makes it a lot easier to understand more advanced concepts later on
+    -   Example: Setting up basic automated linting makes it easy to add more strict/advanced rules later on
+    -   Example: When learning, properly understanding basic concepts makes it a lot easier to understand more advanced concepts later on ([Concepts, not code](./Concepts-not-code.md))
 -   See also [How to Be Great? Just Be Good, Repeatably](https://blog.stephsmith.io/how-to-be-great/)
 
 ### Consider going for imperfect action now instead of possibly perfect action in the future
@@ -123,7 +123,7 @@ Relevant article: [So you've made a mistake and it's public...](https://meta.wik
 ### Focus on solutions rather than problems
 
 -   Software development is all about problem solving
-    -   Your real value is in delivering solutions
+    -   Your real value is in delivering _solutions_
 -   Often, problems don't even need to be solved in order to make progress despite them
     -   A lot of problems are not showstoppers
     -   In a lot of situations, a workaround or partial solution is enough
@@ -148,7 +148,7 @@ Basic idea:
     -   This is especially true if they're under some kind of time pressure
 -   Use this to your advantage by making success easier than failure
     -   Make it so easy to do the right thing that it would actually be _more_ work to do the wrong thing
-    -   If you want to create substantial and persistent change in the way people do things, you need to make sure that the "right way" to do something is also the easiest way for people to achieve their goals. Instead of forcing people to do something, you need to make them _want_ to do it. Otherwise, they will always find their way around it.
+    -   If you want to create substantial and persistent change in the way people do things, you need to make sure that the "right way" to do something is also the easiest way for people to achieve their goals. Instead of forcing people to do something, you need to make them _want_ to do it. Otherwise, they will always find a way around it.
         -   Making the "right way" easier is often about tooling, but training can also have a large impact
 
 Examples:

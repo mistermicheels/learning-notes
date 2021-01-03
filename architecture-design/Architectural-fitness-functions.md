@@ -1,6 +1,6 @@
 ---
 description: An overview of architectural fitness functions as a way to check if your architecture matches your needs
-last_modified: 2020-11-21T20:39:53.027Z
+last_modified: 2021-01-03T11:43:26.276Z
 ---
 
 # Architectural fitness functions
@@ -58,10 +58,10 @@ Holistic fitness functions:
 -   Useful for assessing the interactions between different architectural concerns
 -   Lots of combinations possible, need to focus on most important ones
 -   Example:
-    -   Security: evaluate staleness of data
+    -   Data freshness
     -   Scalability: number of concurrent users within a certainly latency range
-        -   Developers make this work by implementing caching, but this influences staleness of data
-    -   Very helpful to have a fitness function that tests for staleness of data with the caching enabled
+        -   Developers make this work by implementing caching, but this influences freshness of data
+    -   Very helpful to have a fitness function that tests for freshness of data with the caching enabled
 
 ### Triggered (batch) versus continuous
 

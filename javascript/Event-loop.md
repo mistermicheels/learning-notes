@@ -1,7 +1,7 @@
 ---
 tree_title: Event loop
 description: A high-level overview of how JavaScript handles concurrency using its Event Loop
-last_modified: 2020-06-22T17:38:11.639Z
+last_modified: 2021-01-03T11:43:26.313Z
 ---
 
 # Event loop (JavaScript)
@@ -199,7 +199,7 @@ Unless you're writing a simple script, go for asynchronous operations instead of
 
 ### Recommendation: watch out with JSON and regexes
 
-JSON stringifying and parsing happens synchronously. While these operations scale linearly with the length of the input, they can take a long time for large input. This means you could suffer a DOS attack if your serving using Node.js receives very large JSON inputs.
+JSON stringifying and parsing happens synchronously. While these operations scale linearly with the length of the input, they can take a long time for large input. This means you could suffer a DOS attack if your server using Node.js receives very large JSON inputs.
 
 Some ways to mitigate this:
 
@@ -212,7 +212,7 @@ Some ways to mitigate this:
 
 -   Reject large input
 -   Avoid regular expressions using nested quantifiers (like `(a+)*`), backreferences (like `(a.*) \1`, ...)
--   Use simple string matches (like `indexOf` instead of regexes where possible)
+-   Use simple string matches (like `indexOf`) instead of regexes where possible
 -   Use tools like [safe-regex](https://github.com/substack/safe-regex) or [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/) that can help you identify some (but not all) vulnerable regexes
 
 ### Recommendation: task partitioning

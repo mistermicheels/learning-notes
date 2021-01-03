@@ -1,6 +1,6 @@
 ---
 description: How and why to use locking with relational databases
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2021-01-03T11:43:26.290Z
 ---
 
 # Optimistic and pessimistic locking in SQL
@@ -209,7 +209,7 @@ See [Transaction isolation levels](Transaction-isolation-levels.md)
 -   Lack of flexibility: For this to work, everything you do as part of an operation needs to happens inside the same database transaction (like pessimistic locking)
 -   Lose control over what exactly is locked and when
     -   Increases likelihood of deadlocks if database uses locking to implement transaction isolation
--   Behavior varies widely between database vendors and sometimes even between different versions of the same database
+-   Behavior varies widely between database vendors or even between different versions of the same database
     -   Probably not the best option for applications that need to support multiple databases
 -   Does not solve the problem of lost updates in the example with multiple users concurrently editing the same item’s description
 

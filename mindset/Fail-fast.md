@@ -1,6 +1,6 @@
 ---
 description: On keeping your feedback loops short
-last_modified: 2020-10-25T12:46:04.333Z
+last_modified: 2021-01-03T11:43:26.324Z
 ---
 
 # Fail fast
@@ -32,7 +32,7 @@ All of this also means that, when trying to solve a problem, it can be a lot mor
 
 -   Identify your feedback loops and check if they can be shortened
     -   Feedback can be related to code quality, functionality, customer satisfaction, product-market fit, ...
--   Ask yourself this: "What is the simplest incarnation of my idea that already allows me to validate whether it will work?"
+-   Ask yourself: "What is the simplest incarnation of my idea that allows me to validate whether it will work?"
     -   Could be as simple as a sketch on a napkin
 -   Split big problems into small steps that allow you to verify that you're on the right track after each step
 -   Tackle risky or uncertain parts as early as possible
@@ -56,6 +56,7 @@ All of this also means that, when trying to solve a problem, it can be a lot mor
 
 -   Set up your development environment so it immediately alerts you of syntax errors, violations of coding style convention, code that is likely to have unintended effects, ...
     -   You don't want to waste your energy and your colleagues' energy by identifying, discussing and fixing these through code reviews
+    -   See also [Static analysis](../processes-techniques/Static-analysis.md)
 -   Fast automated tests can notify you of a bug in your code while you are in the middle of working on it, rather than having to switch contexts to fix it once the bug is found during code review or (even worse) after deployment
 -   Monitoring for errors on a shared dev environment can help to find bugs before they are deployed to production
 -   If requirements are unclear, clarify them with someone or make a quick small POC and validate that with someone
