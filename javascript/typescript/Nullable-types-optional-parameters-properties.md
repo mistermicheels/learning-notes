@@ -1,7 +1,7 @@
 ---
 tree_title: Nullable types and optional parameters/properties
 description: An overview of how TypeScript deals with null, undefined and optional parameters/properties
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2021-01-30T13:39:57.233Z
 ---
 
 # Nullable types and optional parameters/properties (TypeScript)
@@ -63,7 +63,7 @@ Example:
 ```typescript
 let x = instance.prop?.otherProp;
 // is equivalent to
-let x = instance.prop === null || instance.prop === undefined ? undefined : instance.prop?.otherProp;
+let x = instance.prop === null || instance.prop === undefined ? undefined : instance.prop.otherProp;
 ```
 
 Note that, if evaluation stops because something is `null`, the result is still `undefined`
