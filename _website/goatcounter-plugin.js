@@ -27,8 +27,11 @@ module.exports = function (_context, _options) {
                     // no link, external link or link within current note
                     return;
                   }
-                      
-                  window.goatcounter.count();
+
+                  // without setTimeout, we track new path but old title when moving between notes
+                  setTimeout(() => {
+                    window.goatcounter.count();
+                  });
               })`,
             },
             {
