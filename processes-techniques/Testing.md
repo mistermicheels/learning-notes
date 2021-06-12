@@ -1,6 +1,6 @@
 ---
 description: An overview of topics related to testing
-last_modified: 2020-12-31T13:17:37.836Z
+last_modified: 2021-06-12T21:25:48.107Z
 ---
 
 # Testing
@@ -227,6 +227,7 @@ Basic idea:
 
 -   Most focused tests, make sure that a certain unit works as expected
 -   Unit: function, method, class, group of tightly-related classes, ...
+-   Avoid interaction with slow/brittle external dependencies like DB, network, file system, ...
 
 Sociable versus solitary:
 
@@ -235,7 +236,7 @@ Sociable versus solitary:
 -   **Sociable unit tests**: allow talking to real collaborators (some would not call these unit tests anymore)
     -   Provide more confidence that things are really working
     -   Allow refactoring communication with collaborators without having to change the tests
-    -   Still avoid interaction with slow/brittle external dependencies like DB, network, file system, ...
+    -   Still avoid interaction with DB, network, file system, ...
 
 What to unit test:
 

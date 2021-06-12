@@ -1,6 +1,6 @@
 ---
 description: Why composing objects out of other objects is often preferable to creating inheritance hierarchies
-last_modified: 2020-06-01T19:43:01+02:00
+last_modified: 2021-06-12T21:25:48.063Z
 ---
 
 # Composition over inheritance
@@ -125,7 +125,7 @@ Comparison between the two approaches:
 
 -   In the implementation using composition, we can create dedicated, clearly named variables for hourly rate and salary and only use the relevant one
 -   If a person switches from hourly to salaried, the implementation using composition allows us to just replace the `HourlyContract` by a `SalariedContract`, without touching any of the common employee data. In the implementation using inheritance, we would need to create a new `SalariedEmployee` and copy over all of the common employee data from the earlier `HourlyEmployee` object
--   It's likely that the salary type is not the only distinguishing property of an employee. For example, we can have normal companies and managers, or we can have permanent and temporary employees. If these kinds of employees could be either hourly or salaried, it's impossible to represent this using inheritance (unless we can use multiple inheritance). In any case, the implementation using composition is way more flexible when it comes to handling new features and new kinds of employees
+-   It's likely that the salary type is not the only distinguishing property of an employee. For example, we can have normal employees and managers, or we can have permanent and temporary employees. If these kinds of employees could be either hourly or salaried, it's impossible to represent this using inheritance (unless we can use multiple inheritance). In any case, the implementation using composition is way more flexible when it comes to handling new features and new kinds of employees
 -   If the contracts become complex, having them as separate dedicated `Contract` implementations makes it a lot easier to understand them
 -   The implementation using composition makes it easy to test the different contracts in isolation, without needing to care about other aspect of employees
 
