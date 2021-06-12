@@ -1,3 +1,9 @@
+Project status:
+
+-   ✅ Actively maintained
+-   🐢 Limited bandwidth
+-   🔒 Not looking for code contributions from other developers
+
 # Learning notes
 
 These are some notes regarding things I have learned.
