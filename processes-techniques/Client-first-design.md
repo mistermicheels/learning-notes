@@ -1,6 +1,6 @@
 ---
 description: Often, it makes sense to start from the client point of view
-last_modified: 2020-11-15T22:06:37.349Z
+last_modified: 2021-10-03T14:52:55.756Z
 ---
 
 # Client-first design
@@ -102,7 +102,7 @@ Interesting alternative: **thin vertical slices**
 
 ## Resources
 
--   [Build software from front-to-back](https://happyvalley.dev/build-software-from-front-to-back/) ([HN comments](https://news.ycombinator.com/item?id=23179850))
+-   [Build software from front-to-back](https://www.happyvalley.io/posts/build-front-to-back/) ([HN comments](https://news.ycombinator.com/item?id=23179850))
 -   Some articles from c2 wiki:
     -   [Proving Top Down Design Harmful](https://wiki.c2.com/?ProvingTopDownDesignHarmful)
     -   [Two Ways To Design](https://wiki.c2.com/?TwoWaysToDesign)
