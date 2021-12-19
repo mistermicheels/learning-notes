@@ -2,7 +2,7 @@ Project status:
 
 -   ✅ Actively maintained
 -   🐢 Limited bandwidth
--   🔒 Not looking for code contributions from other developers
+-   🔒 Not looking for contributions from others
 
 # Learning notes
 
