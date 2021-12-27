@@ -1,6 +1,6 @@
 ---
 description: Why duplication is not always bad
-last_modified: 2021-06-13T10:14:39.497Z
+last_modified: 2021-12-27T16:49:37.759Z
 ---
 
 # Duplication
@@ -65,4 +65,4 @@ In the end, you have a tangled, hard-to-maintain mess that is also hard to split
 -   [AHA Programming](https://kentcdodds.com/blog/aha-programming)
 -   [The Wrong Abstraction](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
 -   [Beginner’s Guide To Abstraction](https://jesseduffield.com/Beginners-Guide-To-Abstraction/)
--   [Moist code - Why code should not be completely DRY](https://startup-cto.net/moist-code-why-code-should-not-be-completely-dry/)
+-   [Moist code - Why code should not be completely DRY](https://startup-cto.net/moist-code-why-code-should-not-be-completely-dry)
