@@ -1,6 +1,6 @@
 ---
 description: An overview of topics related to testing
-last_modified: 2021-06-12T21:25:48.107Z
+last_modified: 2022-01-02T14:25:32.151Z
 ---
 
 # Testing
@@ -102,17 +102,31 @@ Manual testing and exploration still useful!
 Basic idea:
 
 -   Pyramid of automated tests, cloud above representing limited manual testing
--   Higher levels of the pyramid:
-    -   Slower
-    -   More integrated, more confidence that the entire thing works
-    -   Allow bigger refactorings to happen without having to change the tests
-    -   Less clear where the problem is if a test fails
-    -   Higher chance of tests failing randomly
-    -   Higher chance of tests breaking because of some small insignificant change like changing a button's text
--   Lower levels of the pyramid:
-    -   Faster
+-   Lower levels of the pyramid (foundation):
+    -   Faster (short feedback loop)
     -   More focused and isolated, less brittle
     -   Confidence that parts work in isolation, but not that they work together correctly
+-   Higher levels of the pyramid:
+    -   Slower (long feedback loop)
+    -   More integrated, more confidence that the entire thing works
+    -   More obviously linked to how an actual user uses the system
+    -   Allow bigger refactoring to happen without having to change the tests
+    -   Less clear what the problem is if a test fails
+    -   Needs more work to set up components that need to be running, ensure proper data is available, clean up leftover data afterwards, prevent tests from stepping on each other's toes, ...
+    -   Higher chance of tests failing randomly
+    -   Higher chance of tests breaking because of some small insignificant change like changing a button's text
+-   Pyramid shape indicates that more tests should live at the lower levels
+
+General advice:
+
+-   Test at the lowest level that makes sense
+    -   Example: When testing complex backend rules for input validation, it probably doesn't make sense to test all of them through the UI. Instead, test them at a lower level, and potentially test one case end-to-end to make sure the UI properly handles validation errors in general.
+    -   Example: When you have a legacy "big ball of mud" system that you need to get under control, your only sensible option might be to test against the system boundary
+    -   Also applies to non-functional testing! Some things might be possible to test at a lower level
+-   If something fails at a higher level, see if you can test for that specific thing at a lower level instead
+    -   Failure of a higher-level test often indicates a missing or incorrect lower-level test
+    -   Write the missing lower-level test _before_ fixing the bug, so you're sure the test catches it
+-   Don't completely abandon higher-level testing, you need confidence that the system as a whole is working
 
 Running tests:
 
@@ -121,18 +135,6 @@ Running tests:
 -   Slower tests (higher levels of the pyramid) can be impractical to run constantly
     -   Entire suite could be run in a pipeline for every commit, or even just periodically for very heavy tests
     -   It could make sense to run a few specific ones during development if they're relevant to the current work
-
-General advice:
-
--   Tests should form a pyramid: more tests at lower levels, less tests at higher levels
-    -   Bad practice: inverted pyramid with lots of high-level tests, very slow and hard to maintain
--   Where possible, move tests to a lower level
-    -   Example: When testing complex backend rules for input validation, it doesn't make sense to test all of them through the UI. Instead, test them at a lower level, and potentially tests one case end-to-end to make sure the UI properly handles validation errors in general.
--   If something fails at a higher level, see if you can test for that specific thing at a lower level
-    -   Failure of a higher-level test often indicates a missing or incorrect lower-level test
-    -   Write the missing lower-level test _before_ fixing the bug, so you're sure the test catches it
-
-Also applies to things like performance tests! Some things might be possible to test at a lower level
 
 ## What to write tests for
 
@@ -185,6 +187,8 @@ Tests should be independent
 
 ## Writing testable code
 
+Testable code = code that makes it easy to write actual high-value tests at lower levels
+
 Some basic tips for testable design:
 
 -   Apply the usual good practices: [Separation of concerns](../architecture-design/Separation-of-concerns.md), [Single responsibility principle (SRP)](../architecture-design/oo-design/SOLID-principles.md#single-responsibility-principle-srp), ...
@@ -219,7 +223,13 @@ Test Double use cases:
     -   Example: in-memory database in integration tests
     -   Example: fake third-party service
         -   Relevant tool (Java): WireMock
+        -   Relevant tool (JavaScript): PollyJS
         -   Relevant tool (cross-platform): Mountebank
+        -   Could also just be a custom-developed piece of backend with some canned responses
+
+Test Doubles could also be useful outside of automated testing!
+
+-   Example: a fake third-party service can be useful during development and manual testing of functionality that needs the service as a dependency, or even for customer demos
 
 ## Unit tests
 
@@ -233,14 +243,18 @@ Sociable versus solitary:
 
 -   **Solitary unit tests**: use test doubles for all outside collaborators (other functions, methods, classes, ...)
     -   Can be useful if working with real collaborators is awkward
--   **Sociable unit tests**: allow talking to real collaborators (some would not call these unit tests anymore)
-    -   Provide more confidence that things are really working
+-   **Sociable unit tests**: allow talking to real collaborators (other functions, methods, classes, ...)
+    -   Provide more confidence that things are really working    
     -   Allow refactoring communication with collaborators without having to change the tests
+    -   You can cover a lot of ground with these!    
     -   Still avoid interaction with DB, network, file system, ...
+    -   Some would not call these "unit tests" anymore
 
 What to unit test:
 
--   Can in principle unit test all production code, regardless of what layer it belongs to
+-   You can use unit tests for code at any layer
+-   Focus on where the most complex logic sits
+    -   Ideally, code structure makes it easy to unit test that logic (see also [Writing testable code](#writing-testable-code))
 -   Test public interface (functionality that class exposes to the outside world)
     -   If you feel the need to test a private method separately, this is a sign that the class you're testing is too complex and has too many responsibilities. Extract the logic of the private method to a separate, easily-testable class.
 -   Ensure that all non-trivial code paths are tested

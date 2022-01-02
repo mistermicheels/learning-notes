@@ -1,6 +1,6 @@
 ---
 description: Why testing in production (rather than before deploying) could make sense in some cases
-last_modified: 2020-12-31T13:17:37.832Z
+last_modified: 2022-01-02T14:25:32.148Z
 ---
 
 # Testing after production
@@ -22,11 +22,11 @@ last_modified: 2020-12-31T13:17:37.832Z
 ## Mean time between failures versus mean time to repair
 
 -   Mean time between failures (MTBF): indication of how often issues make it to production
--   Mean time to repair (MTTR): indication of how long it takes you to fix such issues
+-   Mean time to repair (MTTR): indication of how long it takes you to detect and fix such issues
 
 Tradeoff MTBF versus MTTR:
 
--   Sometimes, more efficient to spend effort on getting better at fixing issues than on adding more automated tests
+-   Sometimes, it's more efficient to spend effort on getting better at detecting and fixing issues in production than on adding more automated tests
 -   Best tradeoff depends on your organization
 -   Do not completely abandon one in favor of the other
     -   It's probably not a good idea to just throw stuff into production without any level of testing
