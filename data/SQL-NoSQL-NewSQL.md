@@ -1,6 +1,6 @@
 ---
 description: A very high-level overview of the data store landscape, covering relational databases (SQL), NoSQL and NewSQL data stores
-last_modified: 2020-11-01T12:11:42.776Z
+last_modified: 2022-01-27T17:34:32.965Z
 ---
 
 # SQL, NoSQL, NewSQL
@@ -95,6 +95,8 @@ NoSQL databases typically don't offer transactions with ACID guarantees that rel
 Strategies for dealing with lack of transactional support:
 
 -   Redesign your data model so you don’t need more transactional support than what the system offers
+    -   Document databases often provide powerful update functionality for atomically performing a set of changes at the level of a single document (set new value for one property + increment another property + add a new element to an array property + ...)
+    -   The database might provide operations such as "update the first entry matching this filter and return it" that you can use instead of separate retrieve and update operations
 -   Perform the required concurrency control at the level of your application
 -   Tolerate the possible concurrency issues caused by not having transactions and adjust your application and possibly your users’ expectations to this
 

@@ -1,6 +1,6 @@
 ---
 description: How and why to use locking with relational databases
-last_modified: 2021-01-03T11:43:26.290Z
+last_modified: 2022-01-27T17:34:32.961Z
 ---
 
 # Optimistic and pessimistic locking in SQL
@@ -18,6 +18,8 @@ last_modified: 2021-01-03T11:43:26.290Z
 -   [Locking rows versus locking objects](#locking-rows-versus-locking-objects)
 -   [Alternatives](#alternatives)
     -   [Atomic updates and database-level restrictions](#atomic-updates-and-database-level-restrictions)
+        -   [Database-level checks for status of related object](#database-level-checks-for-status-of-related-object)
+        -   [Find one and update](#find-one-and-update)
     -   [Higher transaction isolation levels](#higher-transaction-isolation-levels)
 -   [Resources](#resources)
 
@@ -100,6 +102,8 @@ Example for scenario where users can edit item descriptions:
 ## Optimistic locking implementation using SQL
 
 (examples assume isolation level Read Committed, which is the default level in several popular relational databases and even the lowest available level for some)
+
+(examples use PostgreSQL dialect)
 
 ### WHERE
 
@@ -191,14 +195,49 @@ Some approaches:
 
 ### Atomic updates and database-level restrictions
 
-Structure data and application in such a way that all updates are made using atomic UPDATE queries that only update exactly the relevant data
+Basic idea: structure data and application in such a way that all updates are made using atomic UPDATE queries that only update exactly the relevant data
 
 -   Could be useful for simple CRUD apps
 -   Tricky if value A depends on value B but they can be changed separately
 -   Tricky if relationships are involved
 -   Does not solve the problem of data being lost if multiple users concurrently edit the description for the same item!
 
-Could also be useful when validity of update depends on status of related object , but only if checks for that are at the DB level. For example, let's say we can link items to a group, but only if the group has status “Active”. We can enforce this at the DB level if we link items to a separate table holding IDs for active groups. This way, if we have a transaction adding an item to a group and a concurrent transaction making that group inactive (thus removing it from the active groups table), the DB will not allow both transactions to succeed.
+#### Database-level checks for status of related object
+
+When the validity of an update depends on the status of a related object, you might also be able to put the checks for that at the database level and rely purely on the [ACID](./ACID.md) guarantees provided by the DB. For example, let's say we can link items to a group, but only if the group has status “Active”. We can enforce this at the DB level if we link items to a separate table holding IDs for active groups. This way, if we have a transaction adding an item to a group and a concurrent transaction making that group inactive (thus removing it from the active groups table), the DB will not allow both transactions to succeed.
+
+#### Find one and update
+
+Interesting example: using a single query, find a row matching a certain condition and also update it so it doesn't match the condition anymore (example uses SQL Server dialect)
+
+```sql
+UPDATE TOP (1) tickets
+SET is_available = 0
+OUTPUT inserted.ticket_id
+WHERE is_available = 1
+```
+
+This is similar to, for example, MongoDB's `findOneAndUpdate`. The above approach makes sure that the same ticket is not reserved twice, even with multiple clients running this query at the same time.
+
+If you want to accomplish the same using a separate `SELECT` query and `UPDATE` query, you would need to foresee some explicit optimistic/pessimistic locking or use a higher transaction isolation level (see below).
+
+Note that some other approaches to accomplish the same with a single query do not provide the same guarantees as the query above. For example, this PostgreSQL query is prone to race conditions when executed concurrently by multiple clients and might reserve the same ticket twice:
+
+```sql
+WITH cte AS (
+    SELECT ticket_id
+    FROM tickets
+    WHERE is_available = true
+    LIMIT 1
+)
+UPDATE tickets t
+SET is_available = false
+FROM cte
+WHERE t.ticket_id = cte.ticket_id
+RETURNING t.ticket_id;
+```
+
+In order to prevent race conditions for this query, we'd need to use pessimistic locking by including `FOR UPDATE` in the `SELECT`. Alternatively, we could introduce optimistic locking by adding `AND is_available = true` to the `WHERE` clause of the `UPDATE`, but then it's possible that we don't get a ticket ID back while there are still available tickets in the DB.
 
 ### Higher transaction isolation levels
 
