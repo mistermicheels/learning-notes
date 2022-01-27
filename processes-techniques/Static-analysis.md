@@ -1,6 +1,6 @@
 ---
 description: Checking your code without running it
-last_modified: 2020-11-01T18:01:18.754Z
+last_modified: 2022-01-27T17:10:03.000Z
 ---
 
 # Static analysis
@@ -42,6 +42,8 @@ Great addition to automated testing and code reviews
 -   Example (Java): [SpotBugs](https://spotbugs.github.io/)
 -   Example (multi-language): [SonarQube](https://www.sonarqube.org/)
     -   ESLint plugin with some relevant rules: [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
+-   Example (multi-language): [Semgrep](https://semgrep.dev/)
+    -   Very straightforward way to add own rules on top of community rules
 
 ## Technical debt and duplication
 
@@ -69,6 +71,8 @@ Note: stay practical about this!
     -   Example (JavaScript): [ESLint](https://eslint.org/) ([import/no-cycle](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md))
     -   Example (Java): [JDepend](https://github.com/clarkware/jdepend) (see example code below)
     -   Example (TypeScript): [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
+-   Enforce monorepo boundaries
+    -   Example (JavaScript): [eslint-plugin-monorepo-cop](https://www.npmjs.com/package/eslint-plugin-monorepo-cop)
 -   Enforce custom boundaries
     -   Example (JavaScript): [dependency-cruiser](https://www.npmjs.com/package/dependency-cruiser) (see example code below)
     -   Example (Java): [JDepend](https://github.com/clarkware/jdepend) (see example code below)

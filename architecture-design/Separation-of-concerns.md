@@ -1,6 +1,6 @@
 ---
 description: Why different aspects of the code should be kept separate
-last_modified: 2020-06-01T19:26:41+02:00
+last_modified: 2022-01-27T17:10:02.943Z
 ---
 
 # Separation of concerns
@@ -26,19 +26,20 @@ Benefits:
 
 -   Low coupling: code for doing one thing can be changed independently of code doing other things
 -   High cohesion: all of the code for doing one thing sits together, so if you have to make changes you don't need to go looking around the codebase for bits and pieces of code doing this thing
--   If you need to make changes to the software:
+-   Easier to make changes
     -   You will likely need to change less code (only the code for things that are relevant to the change you need to make)
     -   If the changes you need to make are related to a particular thing, the change is much easier because all the code for that particular thing sits together and you can change it without having to fully understand other code that does other things
     -   If you only touch code doing a particular thing, you are unlikely to break code doing other things
     -   You could even completely swap out code doing one thing, without having to touch code doing other things
--   Since code for different things is separated, it's easier to test one thing in isolation without being bothered by other aspects
+    -   Putting all data access code together makes it a lot easier to reason about indexes etc.
+-   Easier to test: can test one thing in isolation without being bothered by other aspects
     -   Also related to [Humble Object pattern - Values as boundaries](./Humble-Object-pattern.md#values-as-boundaries)
 
 Writing code that properly separates concerns can be a bit more challenging than writing code that just throws everything together, but the effort will very quickly pay off through better maintainability
 
 Some things to separate:
 
--   Business logic and data retrieval
+-   Business logic and data access
 -   Business logic and input validation
 -   Business logic and authorization
 -   Business logic and presentation

@@ -1,6 +1,6 @@
 ---
 description: Some ideas on finding good names
-last_modified: 2020-12-31T13:17:37.795Z
+last_modified: 2022-01-27T17:10:02.926Z
 ---
 
 # Names
@@ -18,7 +18,7 @@ last_modified: 2020-12-31T13:17:37.795Z
     -   [Don't include unnecessary context](#dont-include-unnecessary-context)
     -   [Don't include unnecessary specifics](#dont-include-unnecessary-specifics)
     -   [Don't include words that don't mean anything](#dont-include-words-that-dont-mean-anything)
-    -   [Don't use "and" or "or"](#dont-use-and-or-or)
+    -   [Avoid "and" or "or"](#avoid-and-or-or)
 -   [Solution domain names](#solution-domain-names)
 -   [Implementer versus user names](#implementer-versus-user-names)
 -   [Names and design](#names-and-design)
@@ -160,7 +160,7 @@ class UserService {
 Note: sometimes, additional context _is_ necessary!
 
 -   Inside an `Address` class, it's clear what `state` means
--   Used separately in another context, a variable named `state` could contain anything (especially since "state" is a generic term in software development), so `addressState` or `stateName` would be better
+-   Used separately in another context, a variable named `state` could contain anything (especially since "state" is a generic term in software development), so `addressState` would be better
 
 ### Don't include unnecessary specifics
 
@@ -190,7 +190,7 @@ Rule of thumb: does the name still mean the same if you remove the generic word?
 -   If yes, remove it
 -   If no, keep it (or try to find a better name)
 
-### Don't use "and" or "or"
+### Avoid "and" or "or"
 
 Function names using "and" or "or" to combine parts typically mean the function is doing too much
 
@@ -200,6 +200,10 @@ Ways to improve this:
 -   If the two things should really always happen together:
     -   Consider finding a better name for that entire operation
     -   Consider creating something else that encapsulates the combination of the smaller pieces
+
+Exceptions:
+
+-   "getXOrThrow" can be a very useful pattern to indicate a function that will throw when it can't find what it's looking for
 
 ## Solution domain names
 

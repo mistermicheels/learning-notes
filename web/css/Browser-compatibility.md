@@ -1,7 +1,7 @@
 ---
 tree_title: Browser compatibility
 description: Making sure your CSS works in different browsers
-last_modified: 2020-12-31T13:17:37.842Z
+last_modified: 2022-01-27T17:10:03.020Z
 ---
 
 # Browser compatibility (CSS)
@@ -13,6 +13,7 @@ last_modified: 2020-12-31T13:17:37.842Z
 -   [Support queries](#support-queries)
 -   [Vendor prefixes](#vendor-prefixes)
 -   [Polyfills](#polyfills)
+-   [Testing in different browsers](#testing-in-different-browsers)
 -   [Resources](#resources)
 
 ## Eliminating inconsistencies
@@ -78,6 +79,10 @@ Polyfill = JavaScript that enables certain features in browsers that would not s
 Can be useful, but polyfills come at a cost (loading + execution time)
 
 Also, it is pretty much impossible to create a CSS polyfill that is not either big, slow or doesn't behave the way it should in all cases. See [The Dark Side of Polyfilling CSS](https://philipwalton.com/articles/the-dark-side-of-polyfilling-css/).
+
+## Testing in different browsers
+
+Useful tool: [BrowserStack](https://www.browserstack.com/) (or one of its many alternatives)
 
 ## Resources
 

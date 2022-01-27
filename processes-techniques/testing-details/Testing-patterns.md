@@ -1,6 +1,6 @@
 ---
 description: Some useful patterns for writing tests or making production code more testable
-last_modified: 2020-12-31T13:17:37.834Z
+last_modified: 2022-01-27T17:10:03.008Z
 ---
 
 # Testing patterns
@@ -27,8 +27,10 @@ See also separate note for [Humble Object pattern](../../architecture-design/Hum
 -   Problem: Behavior depending on current time can be hard to test
 -   Solution: Don't get current time directly, but access it through some kind of wrapper that allows you to manually set the time to a specific value for testing purposes
 -   Alternative: Pass in current time as a parameter for code you want to keep easy to test (more functional approach)
+-   Alternative: Some testing tools can hook into the language's default clock/timers functionality
+    -   Example: [Cypress cy.clock()](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks#Clock)
 
-Wrapping can also be used for other dependencies that are hard to control or mock
+You can also wrap other dependencies that are hard to control or mock
 
 ## Object Mother pattern
 

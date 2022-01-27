@@ -1,6 +1,6 @@
 ---
 description: Different kinds of circular dependencies, how to detect them and how to get rid of them if needed
-last_modified: 2020-11-01T18:01:18.706Z
+last_modified: 2022-01-27T17:10:02.914Z
 ---
 
 # Circular dependencies
@@ -37,6 +37,7 @@ last_modified: 2020-11-01T18:01:18.706Z
 ### Between deployable components
 
 -   Independently developable, independently deployable
+    -   This includes JAR files, DLL files, npm packages, ...
 -   Circular dependencies at this level are bad, since they prevent the components from really being independently developable and deployable (and testable)
 -   Might even lead to problems in building the components, depending on the language
 -   See [Deployable components - Acyclic Dependencies Principle](./Deployable-components.md#acyclic-dependencies-principle)

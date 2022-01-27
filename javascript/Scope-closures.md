@@ -1,7 +1,7 @@
 ---
 tree_title: Scope and closures
 description: Execution contexts, lexical scope, the scope chain, function scope vs. block scope, closures, etc.
-last_modified: 2022-01-27T10:39:48.410Z
+last_modified: 2022-01-27T17:10:02.972Z
 ---
 
 # Scope and closures (JavaScript)
@@ -155,7 +155,7 @@ For more use cases, also see the section on closures below.
 
 ## Function scope versus block scope
 
-Functions are a good and common way to hide variables and functions from outside code. Consider the following code, which needs to do some work with a variable `b` but doesn't want any other code to know about it.
+Functions are a good and common way to hide variables and functions from outside code. Consider the following code, which defines a variable `b` but doesn't want any other code to know about it.
 
 ```javascript
 const a = 2;
@@ -251,7 +251,7 @@ greetBob(); // Hello Bob
 greetJohn(); // Hello John
 ```
 
-Use case: simulating private variables
+Use case: simulating private variables (this is called the Revealing Module Pattern)
 
 ```javascript
 function makeCounter() {    

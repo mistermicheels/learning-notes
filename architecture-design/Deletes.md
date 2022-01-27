@@ -1,6 +1,6 @@
 ---
 description: What to consider when deleting things
-last_modified: 2020-11-21T18:14:37.158Z
+last_modified: 2022-01-27T17:10:02.917Z
 ---
 
 # Deletes
@@ -20,6 +20,8 @@ last_modified: 2020-11-21T18:14:37.158Z
 
 ### Hard deletes
 
+(also called physical deletes)
+
 Basic idea: when deleting something, actually delete it from the DB
 
 Benefits:
@@ -36,16 +38,18 @@ Drawbacks/challenges:
         -   However, maybe your users don't really need that? Maybe all they need is better protection against accidental deletes or a backup/export functionality?
     -   Hard to enforce referential integrity and business rules when restoring
     -   Schema might have changed between the delete and the restore!
--   Requires separate history-keeping
+-   Requires separate history-keeping (if you actually need that history)
     -   Could be audit log
     -   Could be archive table where you copy deleted records to before actually deleting them from the primary table
     -   Typically requires additional insert query next to the normal delete query, so could be slower than just updating a flag like with soft deletes (see below)
 
 ### Soft deletes
 
+(also called logical deletes)
+
 Basic idea: when deleting something, keep it in the DB but mark it as deleted
 
--   Could be marked using a boolean flag, you could also go for a deletion timestamp field which gives you some more info
+-   Could be marked using a boolean flag (or a deletion timestamp, which gives you some more info)
 
 Benefits:
 
