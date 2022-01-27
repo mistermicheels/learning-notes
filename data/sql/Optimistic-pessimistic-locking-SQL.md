@@ -1,6 +1,6 @@
 ---
 description: How and why to use locking with relational databases
-last_modified: 2022-01-27T17:34:32.961Z
+last_modified: 2022-01-27T18:38:25.885Z
 ---
 
 # Optimistic and pessimistic locking in SQL
@@ -221,7 +221,7 @@ This is similar to, for example, MongoDB's `findOneAndUpdate`. The above approac
 
 If you want to accomplish the same using a separate `SELECT` query and `UPDATE` query, you would need to foresee some explicit optimistic/pessimistic locking or use a higher transaction isolation level (see below).
 
-Note that some other approaches to accomplish the same with a single query do not provide the same guarantees as the query above. For example, this PostgreSQL query is prone to race conditions when executed concurrently by multiple clients and might reserve the same ticket twice:
+Note that some other ways of performing the update using a single query do not provide the same guarantees as the query above. For example, this PostgreSQL query is prone to race conditions when executed concurrently by multiple clients and might reserve the same ticket twice:
 
 ```sql
 WITH cte AS (
@@ -237,7 +237,7 @@ WHERE t.ticket_id = cte.ticket_id
 RETURNING t.ticket_id;
 ```
 
-In order to prevent race conditions for this query, we'd need to use pessimistic locking by including `FOR UPDATE` in the `SELECT`. Alternatively, we could introduce optimistic locking by adding `AND is_available = true` to the `WHERE` clause of the `UPDATE`, but then it's possible that we don't get a ticket ID back while there are still available tickets in the DB.
+Running this query has more or less the same effect as running a separate `SELECT` query and `UPDATE` query. In order to prevent race conditions for this query, we'd need to use pessimistic locking by including `FOR UPDATE` in the `SELECT`. Alternatively, we could introduce optimistic locking by adding `AND is_available = true` to the `WHERE` clause of the `UPDATE`, but then it's possible that we don't get a ticket ID back while there are still available tickets in the DB.
 
 ### Higher transaction isolation levels
 
