@@ -44,6 +44,7 @@ function processFolder(relativePath, relativePathsStagedFiles) {
             checkContentsHeadingPresent(contents, entryPath);
             checkNoListParentStartingWithLink(contents, entryPath);
             checkNoLooseLists(contents, entryPath);
+            checkNoEllipsisInFrontMatter(contents, entryPath);
             setLastModifiedIfNeeded(contents, entryPath, relativePathsStagedFiles);
         }
     }
@@ -111,6 +112,15 @@ function checkNoLooseLists(contents, relativePath) {
     if (looseListRegex.test(contents)) {
         const firstMatch = looseListRegex.exec(contents)[0];
         throw new Error(`Loose list found in file ${relativePath}\nMatch: ${JSON.stringify(firstMatch)}`);
+    }
+}
+
+// ellipsis (...) is an "end of a document" indicator in YAML
+function checkNoEllipsisInFrontMatter(contents, relativePath) {
+    const frontMatterCode = frontMatter(contents).frontmatter;
+
+    if (frontMatterCode.includes("...")) {
+        throw new Error(`Ellipsis found in front matter of file ${relativePath}`);
     }
 }
 
