@@ -1,7 +1,7 @@
 ---
 tree_title: Scope and closures
-description: Execution contexts, lexical scope, the scope chain, function scope vs. block scope, closures, ...
-last_modified: 2020-05-30T15:54:15+02:00
+description: Execution contexts, lexical scope, the scope chain, function scope vs. block scope, closures, etc.
+last_modified: 2022-01-27T10:39:48.410Z
 ---
 
 # Scope and closures (JavaScript)

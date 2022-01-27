@@ -1,7 +1,7 @@
 ---
 tree_title: Object prototypes and classes
-description: JavaScript objects, the prototype chain, classes, encapsulation, ...
-last_modified: 2020-08-22T16:08:26.048Z
+description: JavaScript objects, the prototype chain, classes, encapsulation, etc.
+last_modified: 2022-01-27T10:39:48.408Z
 ---
 
 # Object prototypes and classes (JavaScript)

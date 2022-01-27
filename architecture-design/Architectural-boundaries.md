@@ -1,6 +1,6 @@
 ---
-description: The importance of boundaries in architecture, different kinds of boundaries, costs and evolution of boundaries, ...
-last_modified: 2020-11-21T20:39:53.025Z
+description: The importance of boundaries in architecture, different kinds of boundaries, costs and evolution of boundaries, etc.
+last_modified: 2022-01-27T10:39:48.371Z
 ---
 
 # Architectural boundaries
