@@ -1,7 +1,7 @@
 ---
 tree_title: Object prototypes and classes
 description: JavaScript objects, the prototype chain, classes, encapsulation, etc.
-last_modified: 2022-01-27T10:39:48.408Z
+last_modified: 2022-01-28T13:13:31.554Z
 ---
 
 # Object prototypes and classes (JavaScript)
@@ -17,7 +17,12 @@ last_modified: 2022-01-27T10:39:48.408Z
 -   [Prototypical inheritance and object-oriented design](#prototypical-inheritance-and-object-oriented-design)
 -   [Object-oriented design vs. delegation-oriented design](#object-oriented-design-vs-delegation-oriented-design)
 -   [Classes](#classes)
+    -   [Instance-level fields](#instance-level-fields)
+    -   [Static (class-level) fields](#static-class-level-fields)
+        -   [Simulating static class fields](#simulating-static-class-fields)
 -   [Encapsulation](#encapsulation)
+    -   [Encapsulation using private fields and methods](#encapsulation-using-private-fields-and-methods)
+    -   [Encapsulation without using private fields and methods](#encapsulation-without-using-private-fields-and-methods)
 -   [Resources](#resources)
 
 ## JavaScript objects
@@ -413,66 +418,115 @@ const instance = new Test(); // id() on Test.prototype is shadowed by id on inst
 console.log(instance.id()); // TypeError: instance.id is not a function
 ```
 
-If you ever need to keep a shared property at the level of the class, it's safer to set it directly on the class rather than on the `.prototype` of the class where the methods sit. Note: setting the property directly on the class is also how TypeScript implements static class properties.
+### Instance-level fields
+
+Modern JavaScript supports the concept of "field declarations", a more explicit way of declaring the class' fields. This feature was added long after classes were introduced  ([check browser support on Can I Use](https://caniuse.com/?search=public%20class%20fields)).
+
+The code below is an example of using public instance fields:
+
+```javascript
+class A {
+    name = 'you can specify a default if you want';
+    
+    constructor(name) {
+        this.name = name;
+    }
+
+    getName() {
+        return this.name;
+    }
+}
+```
+
+For some info on private instance fields, see below: [Encapsulation using private fields and methods](#encapsulation-using-private-fields-and-methods)
+
+### Static (class-level) fields
+
+You can use static fields if you want a field to exist at the level of the class rather than at the level of its instances. This feature was added long after classes were introduced ([check browser support on Can I Use](https://caniuse.com/?search=public%20class%20fields)).
+
+```javascript
+class Test {
+    static SHARED_COUNTER = 0;
+
+    incrementSharedCounter() {
+        Test.SHARED_COUNTER++;
+    }
+  
+    getSharedCounter() {
+        return Test.SHARED_COUNTER;
+    }
+}
+
+const instance = new Test();
+console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 0, 0
+
+Test.SHARED_COUNTER++;
+console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 1, 1
+
+instance.incrementSharedCounter(); //
+console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 2, 2
+```
+
+#### Simulating static class fields
+
+If you need to keep a shared property at the level of the class but you can't use static fields, the best approach is probably to set it directly on the class (rather than, for example, on the `.prototype` of the class where the methods sit). Note: setting the property directly on the class is also how TypeScript implements static class properties.
 
 Working example putting properties directly on the class:
 
 ```javascript
 class Test {
     incrementSharedCounter() {
-        // we are forced to use Test.sharedCounter and not this.sharedCounter
-        Test.sharedCounter++; 
+        // use Test.sharedCounter and not this.sharedCounter
+        Test.SHARED_COUNTER++; 
     }
   
     getSharedCounter() {
-        return Test.sharedCounter;
+        return Test.SHARED_COUNTER;
     }
 }
 
-Test.sharedCounter = 0;
+Test.SHARED_COUNTER = 0;
 
 const instance = new Test();
-console.log(instance.getSharedCounter(), Test.sharedCounter); // 0, 0
+console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 0, 0
 
-Test.sharedCounter++;
-console.log(instance.getSharedCounter(), Test.sharedCounter); // 1, 1
+Test.SHARED_COUNTER++;
+console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 1, 1
 
 instance.incrementSharedCounter();
-console.log(instance.getSharedCounter(), Test.sharedCounter); // 2, 2
+console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 2, 2
 ```
 
-Example with accidental shadowing:
+Accidental shadowing when putting on the `.prototype`:
 
 ```javascript
 class Test {
     incrementSharedCounter() {
-        this.sharedCounter++; // accidental shadowing!
+        this.SHARED_COUNTER++; // accidental shadowing!
     }
   
     getSharedCounter() {
-        return this.sharedCounter;
+        return this.SHARED_COUNTER;
     }
 }
 
-Test.prototype.sharedCounter = 0;
+Test.prototype.SHARED_COUNTER = 0;
 
 const instance = new Test();
-console.log(instance.getSharedCounter(), Test.prototype.sharedCounter); // 0, 0
+console.log(instance.getSharedCounter(), Test.prototype.SHARED_COUNTER); // 0, 0
 
-Test.prototype.sharedCounter++;
-console.log(instance.getSharedCounter(), Test.prototype.sharedCounter); // 1, 1
+Test.prototype.SHARED_COUNTER++;
+console.log(instance.getSharedCounter(), Test.prototype.SHARED_COUNTER); // 1, 1
 
-instance.incrementSharedCounter(); // instance now gets its own sharedCounter property
-console.log(instance.getSharedCounter(), Test.prototype.sharedCounter); // 2, 1
+instance.incrementSharedCounter(); // instance now gets its own SHARED_COUNTER property
+console.log(instance.getSharedCounter(), Test.prototype.SHARED_COUNTER); // 2, 1
 ```
 
 ## Encapsulation
 
-One important concept in object-oriented design is _encapsulation_: classes expose a public interface while hiding internals using private fields and private methods. Currently, JavaScript doesn't offer private fields and methods, although there is a proposal underway to provide public and private class fields (see [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)). 
+One important concept in object-oriented design is _encapsulation_: classes expose a public interface while hiding internals using private fields and private methods.
 
-There are also several techniques that can be used as workarounds (closures, `Symbols`, `WeakMaps`, `Proxies`, ...), but all have some performance or "cleanness" disadvantages. See: [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript), [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes), [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d), ...
-
-Example without any encapsulation:
+Example of a class without any encapsulation:
 
 ```javascript
 class A {
@@ -489,6 +543,92 @@ const instance = new A("theName");
 instance.name = "test";
 console.log(instance.getName()); // test
 ```
+
+### Encapsulation using private fields and methods
+
+This feature was added long after classes were introduced ([check browser support on Can I Use](https://caniuse.com/?search=private%20class%20fields))
+
+Example using private fields:
+
+```javascript
+class A {
+    #name;
+
+    constructor(name) {
+        this.#name = name;
+    }
+
+    getName() {
+        return this.#name;
+    }
+}
+
+const instance = new A("theName");
+instance.#name = "test"; // SyntaxError
+```
+
+Note that private fields cannot be added dynamically, they can only be declared up-front
+
+Private fields can also be **static** (class-level). In this case, it's recommended to always access them through the class itself rather than using `this` in the code for a static method, since the latter can lead to some confusing errors.
+
+```javascript
+class BaseClassWithPrivateStaticField {
+    static #PRIVATE_STATIC_FIELD;
+
+    static basePublicStaticMethod() {
+        // do this
+        return BaseClassWithPrivateStaticField.#PRIVATE_STATIC_FIELD;
+    }
+}
+
+class SubClass extends BaseClassWithPrivateStaticField {}
+
+BaseClassWithPrivateStaticField.basePublicStaticMethod(); // ok
+SubClass.basePublicStaticMethod(); // ok
+```
+
+```javascript
+class BaseClassWithPrivateStaticField {
+    static #PRIVATE_STATIC_FIELD;
+
+    static basePublicStaticMethod() {
+        // don't do this
+        return this.#PRIVATE_STATIC_FIELD;
+    }
+}
+
+class SubClass extends BaseClassWithPrivateStaticField {}
+
+BaseClassWithPrivateStaticField.basePublicStaticMethod(); // ok
+SubClass.basePublicStaticMethod(); // TypeError
+```
+
+In addition to private fields, you can also add private (static) **methods**
+
+```javascript
+class A {
+    #name;
+
+    constructor(name) {
+        this.#setName(name);
+    }
+
+    getName() {
+        return this.#name;
+    }
+
+    #setName(name) {
+        this.#name = `some prefix + ${name}`;
+    }
+}
+
+const instance = new A("theName");
+instance.#setName("test"); // SyntaxError
+```
+
+### Encapsulation without using private fields and methods
+
+For a long time, JavaScript classes did not support the concept of private fields (or even fields in general). In order to still support encapsulation, people came up with all kinds of workarounds (closures, `Symbols`, `WeakMaps`, `Proxies`, ...), but all of those workarounds have some performance or "cleanness" disadvantages. See: [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript), [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes), [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d), ...
 
 Example simulating private fields using closures (drawback: methods are created again for every instance instead of just putting them on the prototype):
 
@@ -539,7 +679,8 @@ instance._name = "test"; // as per convention, you should not do this
 -   [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 -   [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 -   [Prototype pollution attacks in NodeJS applications](https://www.youtube.com/watch?v=LUsiFV3dsK8&feature=emb_logo)
--   [Class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields)
+-   [Public class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
+-   [Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 -   [Private properties in JavaScript](https://curiosity-driven.org/private-properties-in-javascript)
 -   [Private properties in JavaScript ES6 classes](https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes)
 -   [ES6 classes with private members](https://dev.to/jankapunkt/es6-classes-with-private-members-144d)
