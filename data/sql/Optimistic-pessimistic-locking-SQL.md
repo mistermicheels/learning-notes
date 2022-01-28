@@ -1,6 +1,6 @@
 ---
 description: How and why to use locking with relational databases
-last_modified: 2022-01-27T18:38:25.885Z
+last_modified: 2022-01-28T10:14:49.298Z
 ---
 
 # Optimistic and pessimistic locking in SQL
@@ -237,7 +237,7 @@ WHERE t.ticket_id = cte.ticket_id
 RETURNING t.ticket_id;
 ```
 
-Running this query has more or less the same effect as running a separate `SELECT` query and `UPDATE` query. In order to prevent race conditions for this query, we'd need to use pessimistic locking by including `FOR UPDATE` in the `SELECT`. Alternatively, we could introduce optimistic locking by adding `AND is_available = true` to the `WHERE` clause of the `UPDATE`, but then it's possible that we don't get a ticket ID back while there are still available tickets in the DB.
+Running this query has more or less the same effect as running a separate `SELECT` query and `UPDATE` query. By the time this query gets to the `UPDATE` part, it's possible that the ticket returned from the `SELECT` has already been updated by another client. In order to prevent race conditions for this query, we'd need to use pessimistic locking by including `FOR UPDATE` in the `SELECT`. Alternatively, we could introduce optimistic locking by adding `AND is_available = true` to the `WHERE` clause of the `UPDATE`, but then we might get no ticket ID back while there are actually still plenty of available tickets in the DB.
 
 ### Higher transaction isolation levels
 
