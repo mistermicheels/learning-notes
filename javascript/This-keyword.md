@@ -1,7 +1,7 @@
 ---
 tree_title: The this keyword
 description: An overview of how the this keyword works in JavaScript
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2022-01-28T13:09:44.526Z
 ---
 
 # The this keyword (JavaScript)
@@ -169,6 +169,22 @@ existingObject.logA = function () {
 existingObject.logA(); // before, test, after
 ```
 
+Interesting monkey patching trick: find the source of unwanted console output
+
+```javascript
+["log", "warn"].forEach(function (method) {
+    const old = console[method];
+    
+    console[method] = function () {
+        const stack = new Error().stack.split(/\n/)
+            .filter(line => line !== "Error")
+            .join("\n");
+
+        return old.apply(console, [...arguments, stack]);
+    };
+});
+```
+
 ### `new` binding
 
 The `new` binding occurs when using the keyword `new` to call a function. Invoking a function using the `new` keyword has the following effect:
@@ -254,3 +270,4 @@ const theObject = new Test(); // TypeError
 ## Resources
 
 -   [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+-   [Where is that console.log?](https://remysharp.com/2014/05/23/where-is-that-console-log/)
