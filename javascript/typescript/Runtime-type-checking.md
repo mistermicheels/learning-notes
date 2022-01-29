@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2020-11-21T18:14:37.198Z
+last_modified: 2022-01-29T17:04:09.215Z
 ---
 
 # Runtime type checking in TypeScript
@@ -16,16 +16,18 @@ last_modified: 2020-11-21T18:14:37.198Z
     -   [Manually creating JSON Schemas](#manually-creating-json-schemas)
     -   [Automatically generating JSON Schemas](#automatically-generating-json-schemas)
         -   [Generating JSON Schemas from TypeScript code](#generating-json-schemas-from-typescript-code)
+        -   [Generating JSON Schemas from runtime types](#generating-json-schemas-from-runtime-types)
     -   [Transpilation](#transpilation)
     -   [Deriving static types from runtime types](#deriving-static-types-from-runtime-types)
     -   [Decorator-based class validation](#decorator-based-class-validation)
+    -   [Frameworks integrating runtime type checking](#frameworks-integrating-runtime-type-checking)
 
 ## Why additional type checking?
 
 TypeScript only performs static type checking at compile time! The generated JavaScript, which is what actually runs when you run your code, does not know anything about the types. 
 
 -   Works fine for type checking within your codebase
--   Doesn’t provide any kind of protection against malformed input (for example, when receiving input from API)
+-   Doesn’t provide any kind of protection against malformed external input
 -   Isn't designed to express typical input validation constraints (minimum array length, string matching a certain pattern) that are about more than simple type safety
     -   Several of the methods below provide an easy way to specify these kinds of constraints together with the actual TypeScript types
 
@@ -41,7 +43,7 @@ See also [Type guards](./Type-guards.md)
 ## Strictness of runtime checking
 
 -   Needs to be at least as strict as compile-time checking (otherwise, we lose the guarantees that the compile-time checking provides)
--   Can be more strict if desired (require age to be >= 0, require string to match a certain pattern)
+-   Can be more strict if desired (require age to be >= 0, require string to match a regex)
     -   Note that the TypeScript compiler will not be able to rely on such information
 
 ## Runtime type checking strategies
@@ -57,18 +59,20 @@ See also [Type guards](./Type-guards.md)
 Example validation library: [joi](https://joi.dev/)
 
 ```typescript
-import Joi from "@hapi/joi"
+import Joi from "joi"
 
 const schema = Joi.object({
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
-    age: Joi.number().integer().min(0).required()
+    age: Joi.number().integer().min(0).required(),
 });
 ```
 
 -   Flexible
 -   Easy to write
 -   Can easily get out of sync with actual code
+
+Note: there are some very similar libraries than can derive TypeScript types from the runtime type definitions ([see below](#deriving-static-types-from-runtime-types))
 
 ### Manually creating JSON Schemas
 
@@ -98,15 +102,16 @@ Example JSON Schema:
 ```
 
 -   Standard format, lots of libraries available for validation ...
+    -   Example library for validation: [ajv](https://www.npmjs.com/package/ajv)
 -   JSON: easy to store and share
--   Can become very verbose and they can be tedious to generate by hand
--   Need to make sure Schemas and code stay in sync!
+-   Can become very verbose and can be tedious to create by hand
+-   Can easily get out of sync with actual code
 
 ### Automatically generating JSON Schemas
 
 #### Generating JSON Schemas from TypeScript code
 
-Most robust library at the moment: [ts-json-schema-generator](https://github.com/vega/ts-json-schema-generator) (for some alternatives, see [this discussion](https://github.com/vega/ts-json-schema-generator/issues/101))
+Most robust library at the moment: [ts-json-schema-generator](https://www.npmjs.com/package/ts-json-schema-generator) (for some alternatives, see [this discussion](https://github.com/vega/ts-json-schema-generator/issues/101))
 
 Example input, including specific constraints that are stricter than TS type checking:
 
@@ -158,14 +163,28 @@ Example output (with default options):
 }
 ```
 
-Some benefits/drawbacks:
+Benefits compared to manually creating JSON Schemas:
 
 -   Single source of truth
--   Need to make sure generated schemas and code stay in sync!
+-   You can use scripts to make sure generated schemas and code stay in sync
+
+#### Generating JSON Schemas from runtime types
+
+For some of the runtime type checking libraries mentioned in this note, it's possible to automatically generate JSON Schemas based on the defined runtime types. Some examples:
+
+-   The [joi](https://joi.dev/) library (see [Manual checks using a validation library](#manual-checks-using-a-validation-library))
+    -   Can use [joi-to-json](https://www.npmjs.com/package/joi-to-json)
+-   The [zod](https://www.npmjs.com/package/zod) library (see [Deriving static types from runtime types](#deriving-static-types-from-runtime-types))
+    -   Can use [zod-to-json-schema](https://www.npmjs.com/package/zod-to-json-schema)
+    -   Bonus points because it allows deriving static types from runtime types
+-   The [@sinclair/typebox](https://www.npmjs.com/package/@sinclair/typebox) library (see [Deriving static types from runtime types](#deriving-static-types-from-runtime-types))
+    -   JSON Schema is immediately generated in the background
+    -   Runtime type checking is implemented through generated JSON Schema
+    -   Bonus points because it allows deriving static types from runtime types
 
 ### Transpilation
 
-Example library: [ts-runtime](https://github.com/fabiandev/ts-runtime)
+Example library: [ts-runtime](https://www.npmjs.com/package/ts-runtime)
 
 -   Processes code
 -   Transpiles code into equivalent code with built-in runtime type checking
@@ -213,7 +232,7 @@ Note: Library is still in an experimental stage and not recommended for producti
 
 ### Deriving static types from runtime types
 
-Example library: [io-ts](https://github.com/gcanti/io-ts)
+Example library: [yup](https://www.npmjs.com/package/yup)
 
 -   You define runtime types
 -   TypeScript infers the corresponding static types from these
@@ -221,44 +240,61 @@ Example library: [io-ts](https://github.com/gcanti/io-ts)
 Example runtime type:
 
 ```typescript
-import t from "io-ts";
+import { object, string, number, InferType } from "yup";
 
-const PersonType = t.type({
-  firstName: t.string,
-  lastName: t.string,
-  age: t.refinement(t.number, n => n >= 0, 'Positive')
-})
+const personSchema = yup.object({
+    firstName: yup.string().required(),
+    lastName: yup.string().required(),
+    age: yup.number().integer().positive().required(),
+});
 ```
 
-Extracting the corresponding static type:
+Extracting the corresponding static TypeScript type:
 
 ```typescript
-interface Person extends t.TypeOf<typeof PersonType> {}
+type Person = yup.InferType<typeof personSchema>;
 ```
 
 Equivalent to:
 
 ```typescript
-interface Person {
+type Person = {
     firstName: string;
     lastName: string;
     age: number;
 }
 ```
 
+Benefits/drawbacks:
+
 -   No possibility for types to get out of sync
--   [io-ts](https://github.com/gcanti/io-ts) is pretty powerful, supports recursive types etc.
--   Requires you to define your types as io-ts runtime types, which does not work when you are defining classes
-    -   One way to handle this could be to define an interface using io-ts and then make the class implement the interface. However, this means you need to make sure to update the io-ts type whenever you are adding properties to your class.
--   Harder to share interfaces (e.g. between backend and frontend) because they are io-ts types rather than plain TypeScript interfaces
+-   You need to define your types as `yup` runtime types, not ideal if you want to validate input against a class definition
+    -   One way to handle this: define a `yup` type matching the class, create an interface based on the type alias obtained from `yup` and then make the class implement the interface. This way, TypeScript helps you to keep the `yup` type in sync with the class, although not all cases are covered (for example, you still need to remember to update the `yup` type when adding properties to the class).
+    -   Probably, decorator-based class validation is a better approach in this case ([see below](#decorator-based-class-validation))
+-   Harder to share types (e.g. between backend and frontend) because they are `yup` types rather than plain TypeScript types
+
+Some alternative libraries ([compare their popularity](https://www.npmtrends.com/@sinclair/typebox-vs-io-ts-vs-ow-vs-runtypes-vs-yup-vs-zod)):
+
+-   The [ow](https://www.npmjs.com/package/ow) library
+-   The [io-ts](https://www.npmjs.com/package/io-ts) library
+    -   Built on [fp-ts](https://www.npmjs.com/package/fp-ts), a library for typed functional programming in TypeScript
+    -   Can be confusing if you're not familiar with functional programming concepts
+    -   Provides more strict static type checking than standard TypeScript
+        -   For example, if you define a property `age` that must be an integer, the inferred TypeScript type will not have `age: number` but instead it will have  `age: t.Branded<number, t.IntBrand>`. Using a value of that type is straightforward, since you can use it anywhere you can use a `number`. In order to obtain a value of the type, you must either pass through the runtime type checking (recommended) or bypass TypeScript type checking altogether with something like `const age: t.Branded<number, t.IntBrand> = 1 as any`  (might make sense for test data and hardcoded values).
+        -   The extra type safety may or may not be worth the extra boilerplate and complexity for your use case
+-   The [zod](https://www.npmjs.com/package/zod) library
+-   The [runtypes](https://www.npmjs.com/package/runtypes) library
+-   The [@sinclair/typebox](https://www.npmjs.com/package/@sinclair/typebox) library
+    -   Generates in-memory JSON Schemas in the background
+    -   You need another library (like [ajv](https://www.npmjs.com/package/ajv)) for the actual validation
 
 ### Decorator-based class validation
 
-Example library: [class-validator](https://github.com/typestack/class-validator)
+Example library: [class-validator](https://www.npmjs.com/package/class-validator)
 
 -   Uses decorators on class properties
 -   Very similar to Java’s JSR-380 Bean Validation 2.0 (implemented by, for example, Hibernate Validator)
-    -   Part of a family of Java EE-like libraries that also includes [typeorm](https://github.com/typeorm/typeorm) (ORM, similar to Java’s JPA) and [routing-controllers](https://github.com/typestack/routing-controllers) (similar to Java’s JAX-RS for defining APIs)
+    -   Part of a family of Java EE-like libraries that also includes [typeorm](https://www.npmjs.com/package/typeorm) (ORM, similar to Java’s JPA) and [routing-controllers](https://www.npmjs.com/package/routing-controllers) (similar to Java’s JAX-RS for defining APIs)
 
 Example code:
 
@@ -295,11 +331,29 @@ validate(inputAsClassInstance).then(errors => {
 });
 ```
 
+Benefits/drawbacks:
+
 -   No possibility for types to get out of sync
--   Good for checking classes
--   Can be useful for checking interfaces by defining a class implementing the interface
+-   Good for validating against a class definition
+-   Not ideal if you want to validate input against an interface
+    -   One way to handle this: define a class implementing the interface and add the decorators there. This way, TypeScript helps you to keep the class in sync with the interface, although not all cases are covered (for example, you still need to remember to update the class type when removing properties from the interface)
 
 Note: class-validator needs actual class instances to work on
 
--   Here, we used its sister library class-transformer to transform our plain input into an actual `Person` instance. 
+-   Here, we used its sister library [class-transformer](https://www.npmjs.com/package/class-transformer) to transform our plain input into an actual `Person` instance
     -   The transformation in itself does not perform any kind of type checking!
+
+### Frameworks integrating runtime type checking
+
+Some example frameworks:
+
+-   The [NestJS](https://nestjs.com/) framework
+    -   Integrates with [class-validator](https://www.npmjs.com/package/class-validator) for runtime type checking ([doc](https://docs.nestjs.com/techniques/validation))
+-   The [tsoa](https://tsoa-community.github.io/docs/) framework
+    -   Automatically generates OpenAPI specs from your code
+    -   Uses JSON Schema under the hood to provide runtime type checking
+-   The [type-graphql](https://typegraphql.com) framework
+    -   Automatically generates GraphQL SDL from your code
+    -   Integrates with [class-validator](https://www.npmjs.com/package/class-validator) for runtime type checking ([doc](https://typegraphql.com/docs/validation.html))
+-   The [routing-controllers](https://www.npmjs.com/package/routing-controllers) framework
+    -   Integrates with [class-validator](https://www.npmjs.com/package/class-validator) for runtime type checking
