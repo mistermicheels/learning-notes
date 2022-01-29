@@ -119,7 +119,7 @@ function checkNoLooseLists(contents, relativePath) {
 function checkNoEllipsisInFrontMatter(contents, relativePath) {
     const frontMatterCode = frontMatter(contents).frontmatter;
 
-    if (frontMatterCode.includes("...")) {
+    if (frontMatterCode && frontMatterCode.includes("...")) {
         throw new Error(`Ellipsis found in front matter of file ${relativePath}`);
     }
 }
