@@ -100,7 +100,7 @@ function checkNoListParentStartingWithLink(contents, relativePath) {
     const listParentStartingWithLinkRegex = /(\n-   \[[^\n]+\n    -)|(\n    -   \[[^\n]+\n        -)/;
 
     if (listParentStartingWithLinkRegex.test(textFromNextHeading)) {
-        const firstMatch = listParentStartingWithLinkRegex.exec(contents)[0];
+        const firstMatch = listParentStartingWithLinkRegex.exec(textFromNextHeading)[0];
         throw new Error(`List parent starting with link found in ${relativePath}\nMatch: ${JSON.stringify(firstMatch)}`);
     }
     
