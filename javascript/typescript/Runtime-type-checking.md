@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2022-01-29T17:04:09.215Z
+last_modified: 2022-01-29T21:01:58.594Z
 ---
 
 # Runtime type checking in TypeScript
@@ -242,17 +242,17 @@ Example runtime type:
 ```typescript
 import { object, string, number, InferType } from "yup";
 
-const personSchema = yup.object({
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
-    age: yup.number().integer().positive().required(),
+const personSchema = object({
+    firstName: string().required(),
+    lastName: string().required(),
+    age: number().integer().positive().required(),
 });
 ```
 
 Extracting the corresponding static TypeScript type:
 
 ```typescript
-type Person = yup.InferType<typeof personSchema>;
+type Person = InferType<typeof personSchema>;
 ```
 
 Equivalent to:
