@@ -1,6 +1,6 @@
 ---
 description: How and why to use locking with relational databases
-last_modified: 2022-01-28T10:14:49.298Z
+last_modified: 2022-01-31T14:29:20.416Z
 ---
 
 # Optimistic and pessimistic locking in SQL
@@ -30,10 +30,12 @@ Concurrency!
 Some scenarios:
 
 -   Your application lets users manage items. Each item has a long description. One of your users starts editing the description of item A at 10:00 and saves his changes at 10:02. Meanwhile, another user starts editing the same item’s description at 10:01 and saves it at 10:03. Because the original description that the second user started from did not yet contain the changes made by the first user, the changes made by the first user are lost without either user being notified about it.
--   Your application communicates with the database through an ORM using the common approach where you retrieve the current version of an object, make some changes to it and then save the resulting object to the database. Some user or process changes the same object right after you retrieved it, so the object you are saving does not contain those changes. This leads to your application overwriting the changes with stale data.
+-   Your application communicates with the database through an ORM using the common approach where you retrieve the current version of an object, make some changes to it and then save the entire resulting object to the database. Some user or process changes the same object right after you retrieved it, so the object you are saving does not contain those changes. This leads to your application overwriting the changes with stale data.
 -   Your application allows linking items to a group, but only if the group has status “Active”. This restriction is not enforced at the database-level. Before linking an item to a group, you verify that the group has the correct status. However, just before you save the item, another user or process changes the status of the group to “Inactive”. Once you commit, the item is now linked to an inactive group.
 
 ## Optimistic locking
+
+(some prefer the term "optimistic concurrency control"  because, unlike pessimistic locking, it does not explicitly lock resources)
 
 -   Perform most of the operation under assumption that no conflicting operations have occurred
 -   Just before saving/committing, verify that no conflicts have occurred and abort otherwise
@@ -48,13 +50,18 @@ Can be used to retrieve object, make some changes to it and then save and verify
 Benefits:
 
 -   Flexibility: don't have to care about where or when the "base version" was retrieved. Could have been in different transaction, could have been 15 minutes ago when a user started editing, ...
--   Deadlocks less likely and straightforward to prevent them by always saving object in same order (DB-level locks only acquired when saving)
+-   Deadlocks are less likely and it's straightforward to prevent them by always saving object in same order (DB-level locks are only acquired when saving)
 
 Drawbacks:
 
 -   If conflict does occur, you need to deal with operation being aborted
-    -   Retrying can make sense in some scenarios (e.g. ORM retrieves object, makes changes and immediately saves it). If the operation fails, we can retrieve the most recent version and then try making our changes on that one. Note: retry attempts should likely be limited, leading to the possibility for failure again!
+    -   Retrying can make sense in some scenarios
+        -   Example: ORM retrieves object, makes changes and immediately saves it. If the operation fails, we can retrieve the most recent version and then try making our changes on that one.
+        -   Note: a conflict means that data has changed, might invalidate some precondition!
+        -   Note: retry attempts should likely be limited, leading to the possibility for failure again!
     -   Retrying does not make sense in first scenario (users concurrently editing descriptions), because it would just let users unknowingly overwrite each other's changes again. Here, we need user input (e.g. manual merging of changes)!
+-   Not ideal if there's lot of conflicting access to the same resource
+    -   In that case, you would be aborting operations all the time
 
 ## Pessimistic locking
 
@@ -77,7 +84,7 @@ Attempts to obtain a lock when it's not allowed will typically block until the c
 Benefits:
 
 -   Completely prevents conflicts from occurring! 
-    -   Could actually be best -performing strategy in high-concurrency environments.
+    -   Could actually be best-performing strategy in high-concurrency environments
 
 Drawbacks
 

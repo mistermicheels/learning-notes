@@ -1,6 +1,6 @@
 ---
 description: Why you should strive to commit early, push often and keep pull requests small
-last_modified: 2020-11-21T18:14:37.212Z
+last_modified: 2022-01-31T14:29:20.513Z
 ---
 
 # Small commits and pull requests
@@ -17,18 +17,24 @@ last_modified: 2020-11-21T18:14:37.212Z
 -   Commits should be "atomic": a single commit should be dedicated to a single (sub)task
 -   Separate commits for refactoring, bug fixes and new features
 -   Avoid batching multiple kinds of changes together in a single commit
--   Each commit should represent one step forward in your process of solving the bug or implementing the feature (still likely to touch multiple files)
-    -   A commit represent a small incremental change to the codebase
+-   Each commit should represent one step forward in your process of solving the bug or implementing the feature
+    -   A commit represents a small incremental change to the codebase
+    -   Still likely to touch multiple files
 -   Each commit should leave the codebase in a valid state
     -   Tests should pass, the system should build properly, ...
     -   Ideally, the commit also includes new tests relevant to the commit
+-   Avoid committing throwaway code, commented-out code, `TODO` comments, ...
+    -   These make commit history harder to understand and PRs harder to review
 
 Approach:
 
 -   Divide your work into small subtasks (30-60 minutes is ideal, more than 4 hours is probably too long)
-    -   Added benefit: this is a great way to fight procrastination and also makes it easier to context switch when you need to
+    -   Added benefit: this is a great way to fight procrastination and also makes it easier to context switch if needed
 -   Work only on one subtask at a time and commit your changes once you have finished a subtask (taking care to leave the codebase in a valid state)
 -   If you see the need for refactoring of fixes in the code you need to touch, try to put these in separate commits (either before or after you make your main changes)
+    -   If you are about to make a change which should be a separate commit (dependency install, refactor, …) you can stash your current changes to start from a clean slate and make that change as one logical commit. Then, you can restore the stash and continue.
+-   If you already have a whole bunch of uncommitted changes that should ideally be split into multiple commits, you can stage specific files or even specific lines inside files to commit them separately
+    -   Can work fine as long as different logical changes don't touch the same code
 
 Benefits:
 

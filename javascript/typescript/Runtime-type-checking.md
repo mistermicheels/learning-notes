@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2022-01-31T10:44:35.296Z
+last_modified: 2022-01-31T14:29:20.468Z
 ---
 
 # Runtime type checking in TypeScript
@@ -181,6 +181,9 @@ For some of the runtime type checking libraries mentioned in this note, it's pos
     -   JSON Schema is immediately generated in the background
     -   Runtime type checking is implemented through generated JSON Schema
     -   Bonus points because it allows deriving static types from runtime types
+-   The [class-validator](https://www.npmjs.com/package/class-validator) library (see [Decorator-based class validation](#decorator-based-class-validation))
+    -   Can use [class-validator-jsonschema](https://www.npmjs.com/package/class-validator-jsonschema)
+    -   Bonus points because it integrates static and runtime type checking
 
 ### Transpilation
 
