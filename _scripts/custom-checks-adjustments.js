@@ -42,6 +42,7 @@ function processFolder(relativePath, relativePathsStagedFiles) {
         } else if (!isDirectory && !shouldIgnoreFile(name)) {
             const contents = fs.readFileSync(entryPath, { encoding: "utf-8" });
             checkContentsHeadingPresent(contents, entryPath);
+            checkNoDoubleSpaces(contents, entryPath);
             checkNoListParentStartingWithLink(contents, entryPath);
             checkNoLooseLists(contents, entryPath);
             checkNoEllipsisInFrontMatter(contents, entryPath);
@@ -88,6 +89,15 @@ function checkContentsHeadingPresent(contents, relativePath) {
 
     if (!contentsLines.includes(CONTENTS_HEADING)) {
         throw new Error(`No 'Contents' heading found in file ${relativePath}`);
+    }
+}
+
+function checkNoDoubleSpaces(contents, relativePath) {
+    const doubleSpaceRegex = /(\w|`)+  (\w|`)/;
+
+    if (doubleSpaceRegex.test(contents)) {
+        const firstMatch = doubleSpaceRegex.exec(contents)[0];
+        throw new Error(`Double space found in ${relativePath}\nMatch: ${JSON.stringify(firstMatch)}`);
     }
 }
 
