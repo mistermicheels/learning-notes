@@ -1,7 +1,7 @@
 ---
 tree_title: Object prototypes and classes
 description: JavaScript objects, the prototype chain, classes, encapsulation, etc.
-last_modified: 2022-01-28T13:13:31.554Z
+last_modified: 2022-01-31T10:44:35.283Z
 ---
 
 # Object prototypes and classes (JavaScript)
@@ -155,11 +155,11 @@ console.log(objectB.hasOwnProperty("counter")); // true
 
 Here, the line `objectB.counter++` is equivalent to `objectB.counter = objectB.counter + 1`, which:
 
--   Looks for a property `counter` on the prototype chain and finds it on  `objectA`
+-   Looks for a property `counter` on the prototype chain and finds it on `objectA`
 -   Gets the value of that property
 -   Creates a new property `counter` on `objectB`
 
-From that point on, `objectB` has its own  `counter` property shadowing the  `counter` property on  `objectA`.
+From that point on, `objectB` has its own `counter` property shadowing the `counter` property on `objectA`.
 
 Shadowing is not only an issue with simple properties but also with methods (which are just properties with a function as value). Therefore, it is recommended to avoid creating different methods with the same name in a prototype chain.
 
@@ -466,6 +466,8 @@ console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 1, 1
 instance.incrementSharedCounter(); //
 console.log(instance.getSharedCounter(), Test.SHARED_COUNTER); // 2, 2
 ```
+
+For some info on private static fields, see below: [Encapsulation using private fields and methods](#encapsulation-using-private-fields-and-methods)
 
 #### Simulating static class fields
 

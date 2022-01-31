@@ -1,6 +1,6 @@
 ---
 description: These techniques allow breaking large changes into chunks of smaller changes that don't break the system
-last_modified: 2020-10-25T19:10:48.888Z
+last_modified: 2022-01-31T10:44:35.327Z
 ---
 
 # Branch By Abstraction and application strangulation
@@ -55,7 +55,7 @@ Drawbacks of using branches for these kinds of big changes:
 Benefits Branch by Abstraction:
 
 -   Allows making changes in an incremental way while keeping the system running at all times
--   You can still collaborate with other developers in one single branch, meaning that potential conflicts are  detected immediately
+-   You can still collaborate with other developers in one single branch, meaning that potential conflicts are detected immediately
 -   Because the system keeps on working, you could choose to release a working version of the system containing a half-completed migration
 
 See also [Trunk Based Development](./Trunk-Based-Development.md)

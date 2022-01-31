@@ -1,6 +1,6 @@
 ---
 description: A very high-level overview of the data store landscape, covering relational databases (SQL), NoSQL and NewSQL data stores
-last_modified: 2022-01-27T17:34:32.965Z
+last_modified: 2022-01-31T10:44:35.250Z
 ---
 
 # SQL, NoSQL, NewSQL
@@ -169,7 +169,7 @@ Fit:
 Fit:
 
 -   Good fit when your data can naturally be represented as a network of nodes connected by edges that represent relationships between nodes
--   Example: people on a social network site and their friends. If you model this as each person being a node and each friendship being an edge connecting nodes, storing the data in a graph database helps  you recommend friends of friends, identify clusters of people that are all friends of each other, etc.
+-   Example: people on a social network site and their friends. If you model this as each person being a node and each friendship being an edge connecting nodes, storing the data in a graph database helps you recommend friends of friends, identify clusters of people that are all friends of each other, etc.
 
     Note: there exist extensions to RDBMSes (for example PostgreSQL) that offer graph database capabilities as well
 

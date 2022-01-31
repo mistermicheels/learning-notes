@@ -1,6 +1,6 @@
 ---
 description: How to improve your work-life balance and why it's beneficial to both you and your company
-last_modified: 2021-01-30T13:39:57.244Z
+last_modified: 2022-01-31T10:44:35.317Z
 ---
 
 # Work-life balance
@@ -39,7 +39,7 @@ Caring too much is bad for both you and your company:
 -   It wastes energy on feeling stressed, disappointed or frustrated instead of allowing you to use that energy for actual work
 -   It prevents you from recognizing tasks that are not important and thus not an effective use of your time
 
-By caring just enough and stressing less, you will actually get more productive work done and  you will be able to better identify what the most important tasks are.
+By caring just enough and stressing less, you will actually get more productive work done and you will be able to better identify what the most important tasks are.
 
 ### Caring just enough
 
@@ -177,7 +177,7 @@ What pursuing other interests helps with:
 -   Could help you get along better with customers and colleagues
 -   Goal diversification (setting and pursuing different kinds of goals, so not only those related to work) leads to reduced stress and improved wellbeing (see [How I Broke the Cycle of Stress](https://blogs.scientificamerican.com/observations/how-i-broke-the-cycle-of-stress/)) 
 -   Getting your mind off of anything work-related is a prerequisite for letting your subconscious work its magic on your work tasks (see [Hammock-driven development](./Hammock-driven-development.md))
--   People want to be involved in something that's meaningful to them. Even though you can often find some meaning in your job if you focus on the right moments, your job shouldn't be your only source of meaning. Outside of work, you can easily find meaning in  appreciating beauty and nature, creating something just for creation's sake, volunteering, having quality time with people that are important to you, ...
+-   People want to be involved in something that's meaningful to them. Even though you can often find some meaning in your job if you focus on the right moments, your job shouldn't be your only source of meaning. Outside of work, you can easily find meaning in appreciating beauty and nature, creating something just for creation's sake, volunteering, having quality time with people that are important to you, ...
 
 ### What about self-improvement?
 

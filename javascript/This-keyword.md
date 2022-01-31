@@ -1,7 +1,7 @@
 ---
 tree_title: The this keyword
 description: An overview of how the this keyword works in JavaScript
-last_modified: 2022-01-28T13:09:44.526Z
+last_modified: 2022-01-31T10:44:35.286Z
 ---
 
 # The this keyword (JavaScript)
@@ -22,7 +22,7 @@ last_modified: 2022-01-28T13:09:44.526Z
 
 -   Every function has access to a `this` reference
 -   The `this` reference is assigned a value when creating the _execution context_ for an execution of the function (see [Scope and closures](./Scope-closures.md))
-    -   Note that this means that a function's  `this` can point to different things based on how it's executed!
+    -   Note that this means that a function's `this` can point to different things based on how it's executed!
     -   Run-time binding, not write-time binding! In that sense, it's a bit the opposite of lexical scoping (see [Scope and closures](./Scope-closures.md))
 -   What the `this` reference points to is determined by a number of rules
 
@@ -216,7 +216,7 @@ console.log(two.a); // two
 
 From highest to lowest:
 
--   `new`  binding (overrides all the rest)
+-   `new` binding (overrides all the rest)
 -   Explicit binding
 -   Implicit binding
 -   Default binding

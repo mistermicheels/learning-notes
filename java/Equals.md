@@ -1,7 +1,7 @@
 ---
 tree_title: Equals
 description: How and why to write custom equals methods in Java
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2022-01-31T10:44:35.256Z
 ---
 
 # Equals (Java)
@@ -221,7 +221,7 @@ The `equals` and `hashCode` methods are pretty much what Eclipse generates by de
 
 ### Allowing subclasses to be equal to superclasses
 
-Problem with `equals`  method using `getClass`: 
+Problem with `equals` method using `getClass`: 
 
 ```java
 @Test

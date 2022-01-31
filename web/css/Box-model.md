@@ -1,7 +1,7 @@
 ---
 tree_title: Box model
 description: The CSS box model, blocks and inline boxes, inner and outer display types, margins, padding and borders, etc.
-last_modified: 2022-01-27T10:39:48.439Z
+last_modified: 2022-01-31T10:44:35.358Z
 ---
 
 # Box model (CSS)
@@ -157,7 +157,7 @@ html {
 
 -   Define the space _around_ the element's box. They do not affect the size of the box, but they do affect the space _between_ boxes
 -   Can also be **negative**, making boxes overlap
--   Can be set using the `margin` property or individually for each side using the `margin-top`, `margin-right`, `margin-bottom` and  `margin-left` properties
+-   Can be set using the `margin` property or individually for each side using the `margin-top`, `margin-right`, `margin-bottom` and `margin-left` properties
 
 #### Margin collapsing
 

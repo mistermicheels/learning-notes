@@ -1,6 +1,6 @@
 ---
 description: An overview of ways to add runtime type checking to TypeScript applications
-last_modified: 2022-01-29T21:01:58.594Z
+last_modified: 2022-01-31T10:44:35.296Z
 ---
 
 # Runtime type checking in TypeScript
@@ -271,7 +271,7 @@ Benefits/drawbacks:
 -   You need to define your types as `yup` runtime types, not ideal if you want to validate input against a class definition
     -   One way to handle this: define a `yup` type matching the class, create an interface based on the type alias obtained from `yup` and then make the class implement the interface. This way, TypeScript helps you to keep the `yup` type in sync with the class, although not all cases are covered (for example, you still need to remember to update the `yup` type when adding properties to the class).
     -   Probably, decorator-based class validation is a better approach in this case ([see below](#decorator-based-class-validation))
--   Harder to share types (e.g. between backend and frontend) because they are `yup` types rather than plain TypeScript types
+-   Harder to share static types (e.g. between backend and frontend) because they are inferred from `yup` types
 
 Some alternative libraries ([compare their popularity](https://www.npmtrends.com/@sinclair/typebox-vs-io-ts-vs-ow-vs-runtypes-vs-yup-vs-zod)):
 
@@ -280,7 +280,7 @@ Some alternative libraries ([compare their popularity](https://www.npmtrends.com
     -   Built on [fp-ts](https://www.npmjs.com/package/fp-ts), a library for typed functional programming in TypeScript
     -   Can be confusing if you're not familiar with functional programming concepts
     -   Provides more strict static type checking than standard TypeScript
-        -   For example, if you define a property `age` that must be an integer, the inferred TypeScript type will not have `age: number` but instead it will have  `age: t.Branded<number, t.IntBrand>`. Using a value of that type is straightforward, since you can use it anywhere you can use a `number`. In order to obtain a value of the type, you must either pass through the runtime type checking (recommended) or bypass TypeScript type checking altogether with something like `const age: t.Branded<number, t.IntBrand> = 1 as any`  (might make sense for test data and hardcoded values).
+        -   For example, if you define a property `age` that must be an integer, the inferred TypeScript type will not have `age: number` but instead it will have `age: t.Branded<number, t.IntBrand>`. Using a value of that type is straightforward, since you can use it anywhere you can use a `number`. In order to obtain a value of the type, you must either pass through the runtime type checking (recommended) or bypass TypeScript type checking altogether with something like `const age: t.Branded<number, t.IntBrand> = 1 as any`  (might make sense for test data and hardcoded values).
         -   The extra type safety may or may not be worth the extra boilerplate and complexity for your use case
 -   The [zod](https://www.npmjs.com/package/zod) library
 -   The [runtypes](https://www.npmjs.com/package/runtypes) library

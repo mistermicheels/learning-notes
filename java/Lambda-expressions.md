@@ -1,7 +1,7 @@
 ---
 tree_title: Lambda expressions
 description: The idea behind lambda expressions, how to use them, lambda expression scope, etc.
-last_modified: 2022-01-27T10:39:48.402Z
+last_modified: 2022-01-31T10:44:35.268Z
 ---
 
 # Lambda expressions (Java)
@@ -282,7 +282,7 @@ Some important differences:
     -   Unlike lambda expressions, they can define and access their own instance variables. 
     -   This also means that, if you use the `this` keyword in a method of a local/anonymous class, it refers to the instance of the class itself and not to the `this` reference of the method creating the local/anonymous class. 
         -   Can use this to call default methods on the interface that they are implementing!
-        -   Still possible to access  `this` reference of the method creating the local/anonymous class if needed
+        -   Still possible to access `this` reference of the method creating the local/anonymous class if needed
 
 Example more than one abstract method:
 
@@ -347,7 +347,7 @@ InterfaceA interfaceA = new InterfaceA() {
 };
 ```
 
-Example accessing  `this` reference of the enclosing method:
+Example accessing `this` reference of the enclosing method:
 
 ```java
 public class Test {    

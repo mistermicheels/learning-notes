@@ -1,7 +1,7 @@
 ---
 tree_title: Inheritance, the cascade and specificity
 description: An overview of how CSS rules with their selectors actually affect HTML elements
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2022-01-31T10:44:35.363Z
 ---
 
 # Inheritance, the cascade and specificity (CSS)
@@ -59,7 +59,7 @@ Factors to consider, in decreasing order of priority:
 
 ### Importance
 
-You can add `!important` to a property value to make it the "most important" one, meaning that this value beats all values without  `!important` that could apply to the element
+You can add `!important` to a property value to make it the "most important" one, meaning that this value beats all values without `!important` that could apply to the element
 
 ```css
 .test {
@@ -109,8 +109,8 @@ Important: the universal selector (`*`), combinators and the negation pseudo-cla
 
 Some examples:
 
--   `h1.the-class`  is more specific than `h1`
--   `.class-a > .class-b > class-c` is more specific than  `.class-b > class-c`
+-   `h1.the-class` is more specific than `h1`
+-   `.class-a > .class-b > class-c` is more specific than `.class-b > class-c`
 -   `#the-id` is more specific than `.class-a > .class-b > class-c`
 
 Note: **inherited** property values can be seen as rules that are less specific than all of the above --> very easy to override. Can be useful to set some defaults at the level of the body, for example font family. It's possible to "increase the specificity" of inheritance by setting a property's value to `inherit` in a rule with a more specific selector.

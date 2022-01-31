@@ -1,7 +1,7 @@
 ---
 tree_title: Flexbox
 description: The main idea of CSS Flexbox
-last_modified: 2020-06-22T17:34:07.343Z
+last_modified: 2022-01-31T10:44:35.361Z
 ---
 
 # Flexbox (CSS)
@@ -33,7 +33,7 @@ last_modified: 2020-06-22T17:34:07.343Z
 
 You can control the sizing of flex items along the main axis by setting their `flex` property (see [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) for a bit more details)
 
-The  `flex` property can have up to 3 values:
+The `flex` property can have up to 3 values:
 
 -   Flex grow: a unitless proportion that indicates the extent to which the item will grow with its container
 -   Flex shrink: a unitless proportion that indicates the extent to which the item will shrink (if needed) to fit the container

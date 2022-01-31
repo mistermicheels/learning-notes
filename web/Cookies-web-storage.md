@@ -1,6 +1,6 @@
 ---
 description: What are Cookies and Web Storage? What do they have in common? What are their differences?
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2022-01-31T10:44:35.355Z
 ---
 
 # Cookies and Web Storage
@@ -23,7 +23,7 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   Are sent automatically as `Cookie` headers with each request to a domain and path matching the cookie's specified `Domain` and `Path`
     -   Good for information that needs to be sent to the server on each call (for example tokens)
     -   Can be particularly handy in cases where it's hard to control the actual request made to the server (examples: GET request from and `<img>` tag, server-side rendering where each navigation loads a new page from the server, ...)
-    -   Not good for storing large amounts of data that  don't need to be sent every time
+    -   Not good for storing large amounts of data that don't need to be sent every time
 -   Lifetime:
     -   Session cookies: no specified expiry date or max age. Normally lasts until the browser is shut down, although browsers may use _session restoring_ which means they survive across browser restarts
     -   Permanent cookies: specific expiry date (specified through `Expires`) or max age (specified through `Max-Age`)

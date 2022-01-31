@@ -1,6 +1,6 @@
 ---
 description: An overview of the Java Platform Module System
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2022-01-31T10:44:35.263Z
 ---
 
 # Java Platform Module System
@@ -144,7 +144,7 @@ JDK: one huge library with all functionality spread across a huge number of pack
 
 -   You are not required to make your own applications modular (see the part about the unnamed module above)
 -   You may run into trouble with older applications that access internal classes that are no longer exported from the modules that contain them
-    -   By default, Java 9 only gives you a warning about illegal access. However, it is recommended to run your applications with the `--illegal-access=deny`  flag which blocks all illegal access and will be the default in newer Java versions
+    -   By default, Java 9 only gives you a warning about illegal access. However, it is recommended to run your applications with the `--illegal-access=deny` flag which blocks all illegal access and will be the default in newer Java versions
     -   You can still allow your code to access some internal classes by using the `--add-exports` flag
         -   Syntax: `--add-exports module.name/package.name=module.to.export.it.to`
         -   Example, exporting to the unnamed module: `--add-exports java.sql.rowset/com.sun.rowset=ALL_UNNAMED`

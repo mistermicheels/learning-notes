@@ -1,7 +1,7 @@
 ---
 tree_title: Nullable types and optional parameters/properties
 description: An overview of how TypeScript deals with null, undefined and optional parameters/properties
-last_modified: 2021-01-30T13:39:57.233Z
+last_modified: 2022-01-31T10:44:35.294Z
 ---
 
 # Nullable types and optional parameters/properties (TypeScript)
@@ -54,7 +54,7 @@ const test8: string | null | undefined = null;
 
 (introduced in TypeScript 3.7)
 
-Operator `?` that allows to stop evaluation  when something is `null` or `undefined`
+Operator `?` that allows to stop evaluation when something is `null` or `undefined`
 
 Motivation: accessing `instance.prop.otherProp.nextProp` where at each level the property may be `null` or `undefined` (leading to runtime errors if we fail to check for it)
 
