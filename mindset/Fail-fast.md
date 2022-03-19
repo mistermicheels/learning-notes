@@ -1,6 +1,6 @@
 ---
 description: On keeping your feedback loops short
-last_modified: 2021-01-03T11:43:26.324Z
+last_modified: 2022-03-19T11:07:39.841Z
 ---
 
 # Fail fast
@@ -60,7 +60,7 @@ All of this also means that, when trying to solve a problem, it can be a lot mor
 -   Fast automated tests can notify you of a bug in your code while you are in the middle of working on it, rather than having to switch contexts to fix it once the bug is found during code review or (even worse) after deployment
 -   Monitoring for errors on a shared dev environment can help to find bugs before they are deployed to production
 -   If requirements are unclear, clarify them with someone or make a quick small POC and validate that with someone
--   New tools or processes: first set up something simple and check if the added value is what you expected is to be, only then then invest in improving
+-   New tools or processes: first set up something simple and check if the added value is what you expected it to be, only then invest in improving
     -   Works a lot better than trying to set up something "perfect" immediately
 
 ### Tracer bullets and prototypes

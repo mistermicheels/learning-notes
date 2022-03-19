@@ -1,6 +1,6 @@
 ---
 description: How architecture influences the team (and vice versa)
-last_modified: 2020-12-24T14:15:34.823Z
+last_modified: 2022-03-19T11:07:39.771Z
 ---
 
 # Architecture and people
@@ -11,6 +11,7 @@ last_modified: 2020-12-24T14:15:34.823Z
 -   [Conway's law](#conways-law)
 -   [Experience and preferences](#experience-and-preferences)
 -   [Code ownership](#code-ownership)
+-   [Technical/architectural governance](#technicalarchitectural-governance)
 -   [Resources](#resources)
 
 ## Team size and communication paths
@@ -101,6 +102,16 @@ Example: Imagine team of 15 people working on system with 5 isolated parts requi
         -   One team really owns the code (comparable to maintainers of a regular open source project)
         -   Other teams can create issues and submit pull requests, but those need to be reviewed by owning team
         -   Still quite some overhead, reviewing effort might be high, ...
+
+## Technical/architectural governance
+
+How to make people follow coding style, architectural rules, ...?
+
+-   Make sure everybody understands the rules
+    -   Write them down, teach them to new hires, ...
+-   Bonus points if people are involved in the creation of the rules
+-   Automate!
+    -   See also [Pragmatism and imperfectionism - Make success easier than failure](../mindset/Pragmatism-imperfectionism.md#make-success-easier-than-failure)
 
 ## Resources
 
