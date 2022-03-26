@@ -1,6 +1,6 @@
 ---
 description: Checking your code without running it
-last_modified: 2022-01-27T17:10:03.000Z
+last_modified: 2022-03-26T14:43:03.368Z
 ---
 
 # Static analysis
@@ -60,7 +60,7 @@ Note: stay practical about this!
     -   Example (JavaScript): [dependency-cruiser](https://www.npmjs.com/package/dependency-cruiser) (check for dependencies missing in `package.json`, production code relying on `devDependencies` or `optionalDependencies`, ...)
 -   Check for known vulnerabilities in third-party dependencies
     -   Example (JavaScript): `npm audit`
-    -   Example (multi-language): GitHub dependency vulnerability checks (see [Managing vulnerabilities in your project's dependencies](https://docs.github.com/en/free-pro-team@latest/github/managing-security-vulnerabilities/managing-vulnerabilities-in-your-projects-dependencies))
+    -   Example (multi-language): GitHub dependency vulnerability checks (see [About supply chain security](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-supply-chain-security))
 -   Check licenses for third-party dependencies
     -   Example (JavaScript): [NPM License Checker](https://www.npmjs.com/package/license-checker)
 
