@@ -3,7 +3,7 @@ import {Redirect} from '@docusaurus/router';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function Home() {
-  return <Redirect to={useBaseUrl('/about/about')} />;
+  return <Redirect to={useBaseUrl('/about/about/')} />;
 }
 
 export default Home;

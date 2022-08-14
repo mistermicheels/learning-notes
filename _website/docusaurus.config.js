@@ -8,6 +8,7 @@ const config = {
   tagline: 'Notes regarding things I have learned',
   url: 'https://learning-notes.mistermicheels.com',
   baseUrl: '/',
+  trailingSlash: true,
   onBrokenLinks: 'ignore', // broken links are checked using other scripts
   onBrokenMarkdownLinks: 'ignore', // broken links are checked using other scripts
   favicon: 'favicon.ico',

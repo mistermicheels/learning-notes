@@ -293,20 +293,28 @@ function checkNoteImageUrl(originalUrl, relativeFilePath) {
 }
 
 function getInternalLinkNodeReplacement(node, relativePath) {
-    const isLinkWithinPage = node.url.startsWith("#");
+    return { 
+        ...node, 
+        url: getNewInternalLinkUrl(node.url, relativePath)
+    };
+}
+
+function getNewInternalLinkUrl(oldUrl, relativePath) {
+    const isLinkWithinPage = oldUrl.startsWith("#");
 
     if (isLinkWithinPage) {
-        return node;
+        return oldUrl;
     }
 
     const folderPath = path.dirname(relativePath);
-    const urlRelativeToRoot = path.join(folderPath, node.url);
+    const urlRelativeToRoot = path.join(folderPath, oldUrl);
     const newUrl = "/" + normalizeUrl(removeMarkdownExtension(urlRelativeToRoot));
-
-    return { 
-        ...node, 
-        url: newUrl
-    };
+    
+    if (newUrl.includes("#")) {
+        return newUrl.replace("#", "/#");
+    } else {
+        return newUrl + "/";
+    }
 }
 
 /**
