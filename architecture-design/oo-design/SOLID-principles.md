@@ -1,6 +1,6 @@
 ---
 description: An overview of the SOLID principles for object-oriented design
-last_modified: 2020-05-31T14:45:09+02:00
+last_modified: 2022-08-14T12:23:43.293Z
 ---
 
 # SOLID principles
@@ -40,7 +40,7 @@ Benefits:
 
 Before: financial report generation logic (what to include, calculations) and presentation logic (negative in red, pagination, ...) are mixed.
 
-![SRP before](_img/SOLID-principles/SRP-before.png)
+![SRP before](_img/SOLID-principles/srp-before.png)
 
 Problems:
 
@@ -49,7 +49,7 @@ Problems:
 
 Application of SRP: separate report generation and presentation
 
-![SRP after](_img/SOLID-principles/SRP-after.png)
+![SRP after](_img/SOLID-principles/srp-after.png)
 
 ## Open–closed principle (OCP)
 
@@ -76,11 +76,11 @@ What extension could mean here:
 
 Interface for `FinancialReportFormatter`
 
-![OCP before adding functionality](_img/SOLID-principles/OCP-before-adding-functionality.png)
+![OCP before adding functionality](_img/SOLID-principles/ocp-before-adding-functionality.png)
 
 Adding PDF format support without changing existing report generation code
 
-![OCP after adding functionality](_img/SOLID-principles/OCP-after-adding-functionality.png)
+![OCP after adding functionality](_img/SOLID-principles/ocp-after-adding-functionality.png)
 
 ## Liskov substitution principle (LSP)
 
@@ -160,11 +160,11 @@ Also applies at higher level, e.g. selecting third-party dependencies:
 
 Before:
 
-![ISP before](_img/SOLID-principles/ISP-before.png)
+![ISP before](_img/SOLID-principles/isp-before.png)
 
 After:
 
-![ISP after](_img/SOLID-principles/ISP-after.png)
+![ISP after](_img/SOLID-principles/isp-after.png)
 
 ## Dependency inversion principle (DIP)
 
@@ -181,13 +181,13 @@ More relaxed formulation:
 
 Initial situation
 
-![DIP before](_img/SOLID-principles/DIP-before.png)
+![DIP before](_img/SOLID-principles/dip-before.png)
 
 Problem: Dependency points from general part (business logic) to specific part (presentation)
 
 Solution: introduce abstraction to apply DIP
 
-![DIP after](_img/SOLID-principles/DIP-after.png)
+![DIP after](_img/SOLID-principles/dip-after.png)
 
 Flow of control still from general part (business logic) to specific part (presentation), but direction of dependency is now reversed
 
@@ -197,7 +197,7 @@ Flow of control still from general part (business logic) to specific part (prese
 
 Allows a general class to trigger methods on specific classes by letting the specific classes subscribe to the general class. When using this pattern, the general class does not know about the specific classes. All it knows about is an `Observer` interface that the specific classes implement.
 
-![Observer](_img/SOLID-principles/Observer.png)
+![Observer](_img/SOLID-principles/observer.png)
 
 ## Resources
 
