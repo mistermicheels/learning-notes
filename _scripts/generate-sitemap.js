@@ -45,7 +45,9 @@ function getDocIds(sidebarItems) {
 
     for (const item of sidebarItems) {
         if (typeof item === "string") {
-            docIds.push(item);
+            // we renamed about.md -> about-note.md so Docusaurus doesn't think it's a category description
+            // however, the final URL is still about/about
+            docIds.push(item === "about/about-note" ? "about/about" : item);
         } else {
             docIds.push(...getDocIds(item.items));
         }
@@ -70,6 +72,10 @@ async function getSitemap(allPageSuffixes) {
 }
 
 function getLastModifiedString(pageSuffix) {
+    if (pageSuffix.startsWith("about")) {
+        return undefined;
+    }
+
     const filePath = path.join(process.cwd(), "_website", "docs", pageSuffix + ".md")
     const contents = fsExtra.readFileSync(filePath, { encoding: "utf-8" });
     const parsedFrontMatter = frontMatter(contents);
