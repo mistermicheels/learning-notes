@@ -1,7 +1,7 @@
 ---
 tree_title: Inheritance, the cascade and specificity
 description: An overview of how CSS rules with their selectors actually affect HTML elements
-last_modified: 2022-01-31T10:44:35.363Z
+last_modified: 2022-08-14T14:59:43.020Z
 ---
 
 # Inheritance, the cascade and specificity (CSS)
@@ -126,5 +126,3 @@ When using a CSS reset stylesheet (see above), any custom CSS rules can be loade
 -   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
 -   [Cascade and inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 -   [The CSS Cascade](https://wattenberger.com/blog/css-cascade)
-
-All of these determine how CSS rules with their selectors actually affect the HTML elements
