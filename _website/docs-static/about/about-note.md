@@ -1,5 +1,6 @@
 ---
 title: About these notes
+slug: about
 ---
 
 These are some notes regarding things I have learned. 

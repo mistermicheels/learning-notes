@@ -1,4 +1,4 @@
-// we generate the sitemap ourselves as Docusaurus currently doesn't do it
+// we generate the sitemap ourselves with some customizations
 // run this after the Docusaurus build so it doesn't get overwritten
 
 const { SitemapStream, streamToPromise } = require("sitemap");

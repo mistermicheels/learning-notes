@@ -45,7 +45,7 @@ function writeSidebarsFile() {
             {
                 type: "category",
                 label: "About",
-                items: ["about/about", "about/contributing"]
+                items: ["about/about-note", "about/contributing"]
             },
             ...sidebarItemsForNotes
         ]
