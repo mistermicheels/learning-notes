@@ -62,6 +62,7 @@ const config = {
         appId: '38H0OSE8H7',
         apiKey: '1119242d2ba32e7ccfd08f8ae82b3efe',
         indexName: 'mistermicheels_learning-notes',
+        contextualSearch: false
       },
     }),
   
