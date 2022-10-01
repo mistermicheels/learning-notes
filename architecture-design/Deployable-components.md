@@ -1,6 +1,6 @@
 ---
 description: Some thoughts on defining deployable components and the dependencies between them
-last_modified: 2020-11-21T18:14:37.160Z
+last_modified: 2022-10-01T10:59:07.948Z
 ---
 
 # Deployable components
@@ -51,6 +51,7 @@ Three important principles:
         -   Similar to Single Responsibility Principle in [SOLID principles](oo-design/SOLID-principles.md)
     -   If the code of an application must change, you would ideally have all the changes to occur in a single component, so you only have to redeploy that single component
         -   Other components depending on that single component do not need to be revalidated or redeployed
+        -   If you always need to change and redeploy component A and B together, consider merging them into one component
     -   Relation to Open-Closed Principle from [SOLID principles](oo-design/SOLID-principles.md): group together the classes that are closed to the same type of changes
     -   This principle is inclusive: tends to make components larger
 -   **CRP**: Common Reuse Principle
@@ -67,7 +68,7 @@ Tension diagram (edges of diagram show the cost of abandoning the principle on t
 
 ![Tension diagram](_img/Deployable-components/cohesion-principles-tension-diagram.jpg)
 
-([image source](https://www.codingblocks.net/podcast/clean-architecture-components-and-component-cohesion/))
+([image source](https://dev.to/codingblocks/71-clean-architecture--components-and-component-cohesion))
 
 -   Are “too many” components changing at the same time? Then your classes should be consolidated better (CCP)
 -   Do you have “too many” releases? You should take a look at streamlining and minimizing your dependencies (CRP)
@@ -164,4 +165,4 @@ What typically works:
 ## Resources
 
 -   Clean Architecture (book by Robert C. Martin)
--   [Clean Architecture – Components and Component Cohesion](https://www.codingblocks.net/podcast/clean-architecture-components-and-component-cohesion/)
+-   [Clean Architecture – Components and Component Cohesion](https://dev.to/codingblocks/71-clean-architecture--components-and-component-cohesion)

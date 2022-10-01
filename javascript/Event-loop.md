@@ -1,7 +1,7 @@
 ---
 tree_title: Event loop
 description: A high-level overview of how JavaScript handles concurrency using its Event Loop
-last_modified: 2021-12-27T16:49:37.804Z
+last_modified: 2022-10-01T10:59:07.997Z
 ---
 
 # Event loop (JavaScript)
@@ -213,7 +213,7 @@ Some ways to mitigate this:
 -   Reject large input
 -   Avoid regular expressions using nested quantifiers (like `(a+)*`), backreferences (like `(a.*) \1`, ...)
 -   Use simple string matches (like `indexOf`) instead of regexes where possible
--   Use tools like [safe-regex](https://github.com/substack/safe-regex) that can help you identify some (but not all) vulnerable regexes
+-   Use tools like [safe-regex](https://www.npmjs.com/package/safe-regex) that can help you identify some (but not all) vulnerable regexes
 
 ### Recommendation: task partitioning
 

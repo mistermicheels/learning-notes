@@ -1,6 +1,6 @@
 ---
 description: A way to build flexibility into your codebase, allowing some features or alternate code paths to be toggled on or off at will
-last_modified: 2020-10-25T21:56:09.027Z
+last_modified: 2022-10-01T10:59:08.028Z
 ---
 
 # Feature flags
@@ -276,4 +276,4 @@ Existing flags:
 
 -   [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
 -   [Effective Feature Management ebook](https://launchdarkly.com/effective-feature-management-ebook/)
--   [Feature Flag Best Practices ebook](https://try.split.io/oreilly-feature-flag-best-practices)
+-   [Feature Flag Best Practices ebook](https://www.oreilly.com/library/view/feature-flag-best/9781492050452/)

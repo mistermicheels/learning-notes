@@ -1,6 +1,6 @@
 ---
 description: Some techniques for migrating the structure of your data
-last_modified: 2020-06-14T18:51:13+02:00
+last_modified: 2022-10-01T10:59:07.973Z
 ---
 
 # Data schema migration
@@ -95,5 +95,5 @@ Verifying correctness of migration: _Dark Reads_
 
 ## Resources
 
--   [Feature Flag Best Practices ebook](https://try.split.io/oreilly-feature-flag-best-practices)
+-   [Feature Flag Best Practices ebook](https://www.oreilly.com/library/view/feature-flag-best/9781492050452/)
 -   [Online migrations at scale](https://stripe.com/blog/online-migrations)
