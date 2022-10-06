@@ -1,7 +1,7 @@
 ---
 tree_title: Exceptions
 description: The different kinds of exceptions in Java and some best practices for using them
-last_modified: 2022-01-31T10:44:35.260Z
+last_modified: 2022-10-06T15:58:58.552Z
 ---
 
 # Exceptions (Java)
@@ -223,8 +223,14 @@ In this case, `ParentNotFoundException` has a constructor which allows passing t
 You can make failure with a `NullPointerException` less likely by using the following set of rules for your code:
 
 -   Don’t return null from methods. Wherever possible, return a special case object (e.g. an empty list, which you can easily obtain from `Collections.emptyList()`, or an instance of a dedicated class that was intended for these cases).
--   Don’t pass null as a method parameter. 
--   In some other languages, for example TypeScript, the compiler can actually help you enforce these rules.
+-   Avoid passing null as a method parameter. 
+
+You can use null-safety annotations to let the compiler enforce these kinds of rules. For example, you could use the following null-safety annotations from the Spring framework `org.springframework.lang` package:
+
+-   `@NonNull` can be used to explicitly mark a field, method parameter or return value as non-nullable
+-   `@NonNullApi` can be used at package level to mark all method parameters and return values in the package as non-nullable by default
+-   `@NonNullFields` can be used at package level to mark all fields in the package as non-nullable by default
+-   `@Nullable` can be used to explicitly mark a field, method parameter or return value as nullable (useful for overriding `@NonNullApi` and `@NonNullFields` where needed)
 
 The `Objects` class has some convenient methods for preventing problems with null pointers. These can be used for checking arguments or preventing passing null.
 
@@ -238,7 +244,7 @@ public static void test(String name, String nickname) {
 }
 ```
 
-Something else that can help is the `Optional` type.
+Something else that can help is the `Optional` type. Wrapping the returned value in an `Optional` type makes it clear to the caller of your method that there may be no actual value returned. It also allows the caller to deal with missing values in a nice way. See also [Optional type (Java)](./Optional.md).
 
 ## Turning checked exceptions into unchecked exceptions
 
@@ -338,4 +344,5 @@ thread.start(); // Caught IOException
 -   Clean Code (book by Robert C. Martin)
 -   [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
 -   [When to choose checked and unchecked exceptions](https://stackoverflow.com/questions/27578/when-to-choose-checked-and-unchecked-exceptions)
+-   [Spring Null-Safety Annotations](https://www.baeldung.com/spring-null-safety-annotations)
 -   [Project Lombok @SneakyThrows (throwing checked exceptions as unchecked)](https://projectlombok.org/features/SneakyThrows)
