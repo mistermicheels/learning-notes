@@ -1,6 +1,6 @@
 ---
 description: A way to divide your system based on functional areas
-last_modified: 2020-11-01T12:34:21.417Z
+last_modified: 2022-12-31T11:20:51.256Z
 ---
 
 # Package by feature or component
@@ -68,6 +68,5 @@ The "reshaped testing pyramid" by Simon Brown (aimed at package by component or 
 -   [Package by Feature Is Demanded](https://dzone.com/articles/package-by-feature-is-demanded)
 -   [Package by component and architecturally-aligned testing](http://www.codingthearchitecture.com/2015/03/08/package_by_component_and_architecturally_aligned_testing.html)
 -   Building Evolutionary Architectures (book by Neal Ford, Rebecca Parsons and Patrick Kua) ([summary slides](http://nealford.com/downloads/Evolutionary_Architecture_Keynote_by_Neal_Ford.pdf))
--   [techtribesje](https://github.com/techtribesje/techtribesje) (example package by component repository)
 -   [Deconstructing the Monolith: Designing Software that Maximizes Developer Productivity](https://engineering.shopify.com/blogs/engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity)
 -   [Cross-cutting concerns in package-by-feature structure](https://softwareengineering.stackexchange.com/questions/379563/cross-cutting-concerns-in-package-by-feature-structure)
