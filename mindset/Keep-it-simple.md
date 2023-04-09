@@ -1,6 +1,6 @@
 ---
 description: Some tips for reducing effort and improving results by avoiding needless complexity
-last_modified: 2020-12-24T14:15:34.859Z
+last_modified: 2023-04-09T10:30:02.143Z
 ---
 
 # Keep it simple
@@ -145,7 +145,7 @@ last_modified: 2020-12-24T14:15:34.859Z
 -   [Write Stupid Code](https://thorstenball.com/blog/2015/10/22/write-stupid-code/)
 -   [Less Dirty Code](https://hackernoon.com/less-dirty-code-2c27321g)
 -   [Programming Sucks! Or At Least, It Ought To  - The Daily WTF](https://thedailywtf.com/articles/Programming-Sucks!-Or-At-Least%2C-It-Ought-To-)
--   [The Simplest Thing That Could Possibly Work](http://www.agilenutshell.com/simplest_thing)
+-   [The Simplest Thing That Could Possibly Work](https://web.archive.org/web/20221128180251/http://www.agilenutshell.com/simplest_thing)
 -   [YAGNI](https://martinfowler.com/bliki/Yagni.html)
 -   [Jonathan Blow on solving hard problems](https://www.youtube.com/watch?v=6XAu4EPQRmY) ([transcript](https://old.reddit.com/r/programming/comments/bx8p52/jonathan_blow_on_solving_hard_problems/eq4rl7j/))
 -   [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle)

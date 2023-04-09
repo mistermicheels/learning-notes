@@ -1,6 +1,6 @@
 ---
 description: An overview of topics related to testing
-last_modified: 2022-01-02T14:25:32.151Z
+last_modified: 2023-04-09T10:30:02.179Z
 ---
 
 # Testing
@@ -97,7 +97,7 @@ Manual testing and exploration still useful!
 
 ![Modern test pyramid](_img/Testing/test-pyramid.jpg)
 
-([image source](https://alisterbscott.com/kb/testing-pyramids/))
+([image source](https://web.archive.org/web/20221205220536/https://alisterbscott.com/kb/testing-pyramids/))
 
 Basic idea:
 
@@ -299,7 +299,7 @@ Basic process:
 3.  Refactor as needed, with tests as safety net
 4.  Repeat
 
-More detailed example of the process: [Introduction to Test Driven Development (TDD)](https://medium.com/hackernoon/introduction-to-test-driven-development-tdd-61a13bc92d92)
+More detailed example of the process: [Introduction to Test Driven Development (TDD)](https://web.archive.org/web/20220820045410/https://medium.com/hackernoon/introduction-to-test-driven-development-tdd-61a13bc92d92)
 
 Benefits:
 
@@ -609,7 +609,7 @@ Some complementary techniques:
     -   [Exploratory Testing](https://martinfowler.com/bliki/ExploratoryTesting.html)
 -   Building Microservices (book by Sam Newman)
 -   Agile Testing: A Practical Guide for Testers and Agile Teams (book by Lisa Crispin and Janet Gregory)
--   [Testing Pyramids & Ice-Cream Cones](https://alisterbscott.com/kb/testing-pyramids/)
+-   [Testing Pyramids & Ice-Cream Cones](https://web.archive.org/web/20221205220536/https://alisterbscott.com/kb/testing-pyramids/)
 -   [Testing Behavior vs. Testing Implementation](https://teamgaslight.com/blog/testing-behavior-vs-testing-implementation)
--   [Introduction to Test Driven Development (TDD)](https://medium.com/hackernoon/introduction-to-test-driven-development-tdd-61a13bc92d92)
+-   [Introduction to Test Driven Development (TDD)](https://web.archive.org/web/20220820045410/https://medium.com/hackernoon/introduction-to-test-driven-development-tdd-61a13bc92d92)
 -   [TDD Changed My Life](https://medium.com/javascript-scene/tdd-changed-my-life-5af0ce099f80)
