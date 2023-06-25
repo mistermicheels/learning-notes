@@ -1,6 +1,6 @@
 ---
 description: How to manage expectations and why it's important
-last_modified: 2022-01-31T10:44:35.353Z
+last_modified: 2023-06-25T16:40:14.903Z
 ---
 
 # Expectation management
@@ -95,5 +95,5 @@ Note: Don't take it too far
 -   [Expectation Management](http://sourcesofinsight.com/expectation-management/)
 -   [The 5 Golden Rules Of Expectation Management And Why You Can’t Ignore Them](https://yaro.blog/8750/expectation-management/)
 -   [My FOSS Story](https://blog.burntsushi.net/foss/) (see the part on setting boundaries)
--   [What Does It Mean to Manage Up?](https://www.tinypulse.com/blog/what-does-it-mean-to-manage-up)
+-   [What Does It Mean to Manage Up?](https://web.archive.org/web/20230331193436/https://www.tinypulse.com/blog/what-does-it-mean-to-manage-up)
 -   [The Problem with “Underpromise, Overdeliver”](https://www.pluralsight.com/blog/teams/the-problem-with--underpromise--overdeliver-)

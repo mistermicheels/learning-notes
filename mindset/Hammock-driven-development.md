@@ -1,6 +1,6 @@
 ---
 description: Sometimes, the best thing you can do for your code is to stop thinking about it - at least consciously
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2023-06-25T16:40:14.858Z
 ---
 
 # Hammock-driven development
@@ -107,6 +107,6 @@ Note: "false relaxation", like mindlessly scrolling through stuff on your phone,
 
 -   [Hammock Driven Development - Rich Hickey](https://www.youtube.com/watch?v=f84n5oFoZBc) ([transcript](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/HammockDrivenDev.md))
 -   [The Top Idea in Your Mind](http://www.paulgraham.com/top.html)
--   Imagine: How Creativity Works (book by Jonah Lehrer) ([summary](http://newbooksinbrief.com/2012/04/29/12-a-summary-of-imagine-how-creativity-works-by-jonah-lehrer/))
+-   Imagine: How Creativity Works (book by Jonah Lehrer) ([summary](https://web.archive.org/web/20220423045129/http://newbooksinbrief.com/2012/04/29/12-a-summary-of-imagine-how-creativity-works-by-jonah-lehrer/))
 -   [Inspired by Distraction: Mind Wandering Facilitates Creative Incubation](https://journals.sagepub.com/doi/abs/10.1177/0956797612446024)
 -   [Harnessing the Power of Shower Thoughts - Trusting your mind to work in the background](https://alexanderell.is/posts/trust-in-your-unconscious/)
