@@ -1,6 +1,6 @@
 ---
 description: Why you should strive to commit early, push often and keep pull requests small
-last_modified: 2022-06-26T14:54:47.602Z
+last_modified: 2024-04-15T12:47:30.733Z
 ---
 
 # Small commits and pull requests
@@ -77,5 +77,5 @@ Benefits:
 
 ## Resources
 
--   [Developer Tip: Keep Your Commits "Atomic"](https://www.freshconsulting.com/atomic-commits/)
+-   [Developer Tip: Keep Your Commits "Atomic"](https://www.freshconsulting.com/insights/blog/atomic-commits/)
 -   [Commit Early, Push Often](https://www.worklytics.co/blog/commit-early-push-often)
