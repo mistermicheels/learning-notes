@@ -1,6 +1,6 @@
 ---
 description: On keeping your feedback loops short
-last_modified: 2022-06-26T14:54:47.578Z
+last_modified: 2024-07-27T11:17:09.524Z
 ---
 
 # Fail fast
@@ -100,6 +100,6 @@ Both can help you to get early customer feedback, as well as feedback on some te
 -   [3 Problems to Stop Looking For in Code Reviews](https://medium.com/swlh/3-problems-to-stop-looking-for-in-code-reviews-981bb169ba8b)
 -   The Pragmatic Programmer (book by Andrew Hunt and David Thomas) ([summary](https://github.com/HugoMatilla/The-Pragmatic-Programmer))
 -   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
--   [How to validate your startup idea quickly](https://amanjain.substack.com/p/how-to-validate-your-startup-idea)
+-   [How to validate your startup idea quickly](https://web.archive.org/web/20230610063253/https://www.ajain.tech/p/how-to-validate-your-startup-idea)
 -   [The painted door test](https://web.archive.org/web/20210925031806/https://briandavidhall.com/the-painted-door-test/)
 -   [Wizard of Oz testing – a method of testing a system that does not yet exist.](https://www.simpleusability.com/inspiration/2018/08/wizard-of-oz-testing-a-method-of-testing-a-system-that-does-not-yet-exist/)

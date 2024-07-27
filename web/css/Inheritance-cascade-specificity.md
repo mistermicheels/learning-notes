@@ -1,7 +1,7 @@
 ---
 tree_title: Inheritance, the cascade and specificity
 description: An overview of how CSS rules with their selectors actually affect HTML elements
-last_modified: 2022-08-14T14:59:43.020Z
+last_modified: 2024-07-27T11:17:09.569Z
 ---
 
 # Inheritance, the cascade and specificity (CSS)
@@ -78,7 +78,7 @@ Some libraries, for example Bootstrap, also use this for some of their utility c
 }
 ```
 
-This is actually not the entire picture, as transitions and animations also have an effect on importance. See [here](https://wattenberger.com/blog/css-cascade#importance)
+This is actually not the entire picture, as transitions and animations also have an effect on importance. See [here](https://2019.wattenberger.com/blog/css-cascade#importance)
 
 ### Origin
 
@@ -125,4 +125,4 @@ When using a CSS reset stylesheet (see above), any custom CSS rules can be loade
 
 -   [CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/)
 -   [Cascade and inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
--   [The CSS Cascade](https://wattenberger.com/blog/css-cascade)
+-   [The CSS Cascade](https://2019.wattenberger.com/blog/css-cascade)
