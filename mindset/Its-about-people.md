@@ -1,6 +1,6 @@
 ---
 description: Why software development is about people rather than computers
-last_modified: 2021-01-03T11:43:26.326Z
+last_modified: 2024-11-17T18:47:03.871Z
 ---
 
 # It's about people
@@ -108,6 +108,6 @@ See also [Architecture and people](../architecture-design/Architecture-people.md
 
 -   [Working as a Software Developer](https://henrikwarne.com/2012/12/12/working-as-a-software-developer/)
 -   [7 Questions To Help You Find Out If Your Team Feels Psychologically Safe](https://hackernoon.com/7-questions-to-help-you-find-out-if-your-team-feels-psychologically-safe-wvcr3y60)
--   [The five keys to a successful Google team](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
+-   [The five keys to a successful Google team](https://web.archive.org/web/20221221183223/https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
 -   [Lessons Learned in Software Development](https://henrikwarne.com/2015/04/16/lessons-learned-in-software-development/)
 -   Clean Code (book by Robert C. Martin) (especially the 1st chapter)

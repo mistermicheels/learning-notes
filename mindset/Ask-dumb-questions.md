@@ -1,6 +1,6 @@
 ---
 description: Why you shouldn't be afraid of asking the "dumb" questions
-last_modified: 2020-12-31T13:28:45.561Z
+last_modified: 2024-11-17T18:47:03.863Z
 ---
 
 # Ask the dumb questions
@@ -54,4 +54,4 @@ The value of asking "dumb" questions:
 ## Resources
 
 -   [68 Bits of Unsolicited Advice](https://kk.org/thetechnium/68-bits-of-unsolicited-advice/)
--   [The five keys to a successful Google team](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
+-   [The five keys to a successful Google team](https://web.archive.org/web/20221221183223/https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)

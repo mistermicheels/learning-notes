@@ -1,6 +1,6 @@
 ---
 description: Different kinds of circular dependencies, how to detect them and how to get rid of them if needed
-last_modified: 2022-01-27T17:10:02.914Z
+last_modified: 2024-11-17T18:47:03.744Z
 ---
 
 # Circular dependencies
@@ -74,7 +74,7 @@ Potential approaches:
 -   [How to deal with cyclic dependencies in Node.js](https://stackoverflow.com/questions/10869276/how-to-deal-with-cyclic-dependencies-in-node-js)
 -   [CommonJS modules - Cycles](https://nodejs.org/api/modules.html#modules_cycles)
 -   [How to handle “circular dependency” in dependency injection](https://softwareengineering.stackexchange.com/questions/253646/how-to-handle-circular-dependency-in-dependency-injection)
--   [Why do all of the leading open-source Java libraries have circular dependencies among their packages?](https://stackoverflow.com/questions/33809884/why-do-all-of-the-leading-open-source-java-libraries-have-circular-dependencies)
+-   [Why do all of the leading open-source Java libraries have circular dependencies among their packages?](https://web.archive.org/web/20220622191026/https://stackoverflow.com/questions/33809884/why-do-all-of-the-leading-open-source-java-libraries-have-circular-dependencies)
 -   [Cyclic dependencies in microservices](https://softwareengineering.stackexchange.com/questions/398453/cyclic-dependencies-in-microservices)
 -   [What are the potential problems with operational circular dependency between microservices](https://softwareengineering.stackexchange.com/questions/350155/what-are-the-potential-problems-with-operational-circular-dependency-between-mic)
 -   [How to solve circular package dependencies](https://softwareengineering.stackexchange.com/questions/186921/how-to-solve-circular-package-dependencies)
