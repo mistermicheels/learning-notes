@@ -1,6 +1,6 @@
 ---
 description: How to thrive in a world and workplace that are full of imperfections
-last_modified: 2021-01-03T11:43:26.329Z
+last_modified: 2025-05-12T16:50:14.239Z
 ---
 
 # Pragmatism and imperfectionism
@@ -171,7 +171,7 @@ Examples:
 
 -   [Pragmatic Software Development](https://medium.com/gsoft-tech/pragmatic-software-development-59d12790e422)
 -   [3 Ways Owning Your Mistakes Will Make You Powerful](https://www.entrepreneur.com/article/232417)
--   [Why you need to own your mistakes](https://www.klipfolio.com/blog/own-your-mistakes)
+-   [Why you need to own your mistakes](https://web.archive.org/web/20231204000557/https://www.klipfolio.com/blog/own-your-mistakes)
 -   [How to professionally acknowledge to a client that a former coworker made a mistake in production?](https://workplace.stackexchange.com/questions/159311/how-to-professionally-acknowledge-to-a-client-that-a-former-coworker-made-a-mist)
 -   How to Be an Imperfectionist (book by Stephen Guise)
 -   [Three Growth Strategies for Individual Contributors](https://hackernoon.com/three-growth-strategies-for-individual-contributors-kv4q3zgt)
