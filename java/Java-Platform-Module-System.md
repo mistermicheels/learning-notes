@@ -1,6 +1,6 @@
 ---
 description: An overview of the Java Platform Module System
-last_modified: 2022-01-31T10:44:35.263Z
+last_modified: 2025-07-19T13:41:04.853Z
 ---
 
 # Java Platform Module System
@@ -47,7 +47,7 @@ Lowest level of encapsulation: classes
 
 ![Access modifiers](_img/Java-Platform-Module-System/access-modifiers.png)
 
-([image source](https://www.programcreek.com/2011/11/java-access-level-public-protected-private/))
+([image source](https://web.archive.org/web/20250416221127/https://www.programcreek.com/2011/11/java-access-level-public-protected-private/))
 
 Higher level of encapsulation: packages
 

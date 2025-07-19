@@ -1,6 +1,6 @@
 ---
 description: An overview of architectural fitness functions as a way to check if your architecture matches your needs
-last_modified: 2021-01-03T11:43:26.276Z
+last_modified: 2025-07-19T13:41:04.839Z
 ---
 
 # Architectural fitness functions
@@ -76,7 +76,7 @@ Continuous fitness functions:
 
 -   Perform constant verification of architectural aspects
 -   Example: monitoring
-    -   [Monitoring-Driven Development](https://nl.devoteam.com/en/blog-post/monitoring-driven-development-making-money/)
+    -   [Monitoring-Driven Development](https://web.archive.org/web/20240616161552/https://nl.devoteam.com/expert-view/monitoring-driven-development-are-you-making-money/)
 
 ### Static versus dynamic
 
