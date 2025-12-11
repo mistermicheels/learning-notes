@@ -1,6 +1,6 @@
 ---
 description: Refactoring, how to approach it, and when to rewrite instead
-last_modified: 2021-01-01T15:56:32.501Z
+last_modified: 2025-12-11T13:41:12.793Z
 ---
 
 # Refactoring
@@ -200,7 +200,6 @@ So, should you rewrite instead of refactoring?
 -   [What is the Mikado Method?](http://www.methodsandtools.com/archive/mikado.php)
 -   [The Mikado Method: A Great Help to Work With Legacy Code](https://improveandrepeat.com/2020/12/the-mikado-method-a-great-help-to-work-with-legacy-code/)
 -   [Legacy Code: The Mikado Method](https://www.davidtanzer.net/david%27s%20blog/legacy_code/2018/05/21/legacy-code-mikado-method.html)
--   [Zen Of Refactoring](https://www.schibsted.pl/blog/zen-of-refactoring/)
 -   [The Risks of Rewrites](http://www.bennorthrop.com/rewrite-or-refactor-book/chapter-2-the-risks-of-rewrites.php)
 -   [Why we Rewrite (Even When we Shouldn't)](http://www.bennorthrop.com/rewrite-or-refactor-book/chapter-3-why-we-rewrite-even-when-we-shouldnt.php)
 -   [Refactor vs. Rewrite](https://remesh.blog/refactor-vs-rewrite-7b260e80277a)

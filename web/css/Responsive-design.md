@@ -1,7 +1,7 @@
 ---
 tree_title: Responsive design
 description: Making your site look good on any device and screen
-last_modified: 2020-05-30T15:54:15+02:00
+last_modified: 2025-12-11T13:41:12.798Z
 ---
 
 # Responsive design (CSS)
@@ -27,7 +27,7 @@ last_modified: 2020-05-30T15:54:15+02:00
 -   Converts between "hardware pixels" and "software pixels", helping you support screens with different pixel densities
     -   On a small screen with huge pixel density, you still don't want your website to for example fill only a part of the screen or show tiny text
     -   If used correctly, a small screen with huge pixel density will appear to your CSS rules as a screen with small dimensions in terms of pixels
-    -   See also [mydevice.io](https://www.mydevice.io/#compare-devices)
+    -   See also [mydevice.io](https://mydevice.alsacreations.com/) and [whatismyviewport.com](https://whatismyviewport.com/)
 -   Doesn't change actual design, just makes sure you have sensible width and height values to base your design on
 
 Example (common, recommended version of the tag):
