@@ -1,7 +1,7 @@
 ---
 tree_title: Event loop
 description: A high-level overview of how JavaScript handles concurrency using its Event Loop
-last_modified: 2022-10-01T10:59:07.997Z
+last_modified: 2026-04-06T08:13:50.827Z
 ---
 
 # Event loop (JavaScript)
@@ -251,4 +251,4 @@ Do note that there is some overhead for creating these and communicating with th
 -   [Event loop explainer](https://github.com/atotic/event-loop)
 -   [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 -   [Understanding the Node.js event loop phases and how it executes the JavaScript code.](https://dev.to/lunaticmonk/understanding-the-node-js-event-loop-phases-and-how-it-executes-the-javascript-code-1j9)
--   [Don't Block the Event Loop (or the Worker Pool)](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
+-   [Don't Block the Event Loop (or the Worker Pool)](https://nodejs.org/learn/asynchronous-work/dont-block-the-event-loop)
